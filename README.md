@@ -2,14 +2,14 @@
 A feign-client for FNT Command generated from OpenAPI 2.0 Specs 
  
 ## Versioning 
-If there was a change in the API-Defintion (BGE or new release of FNT command) a new version of command-feign-client has to be built
+If there was a change in the API-Definition (either in BGE or new release of FNT command) a new version of command-feign-client has to be built
 
 Versioning should happen according to https://devhints.io/semver, so
 
 * Version changes of FNT-Command that break the API, are a major change
-* Version changes of FNT that add funtionality (backward compatible ) are minor changes
-* Changes to entities performed by WiTCOM usualy are minor changes.
-* bug-fixes by FNT or WiTCOM (entity) -> patch version
+* Version changes of FNT that add functionality (backwards compatible) are minor changes
+* Changes to entities (BGEs) by WiTCOM usually are minor changes.
+* bug-fixes by FNT or WiTCOM (BGE) -> patch version
 
 Document changes in Changelog.md 
 
@@ -24,6 +24,13 @@ Document changes in Changelog.md
 
 ```console
 make all
+```
+
+## Generate OpenAPI 2.0 specs
+If only OpenAPI 2.0 specs as YAML are required 
+
+```console
+make clean specs/command-openapi.yml
 ```
 
 ## Command bge2swagger
