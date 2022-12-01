@@ -3,7 +3,7 @@ BGE2SWAGGER_RELEASE			?= 1.1.1
 CMD_BASE_URL				?= https://rmdb.workspace.witcom.de
 API_VERSION					?= $(shell mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
 
-all: deploy clean
+all: clean deploy
 
 clean:
 	rm -f ./specs/command-oas-oauth.json && rm -f ./specs/command-oas.json && rm -f ./specs/command-openapi.yml
