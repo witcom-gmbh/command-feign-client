@@ -1,4 +1,6 @@
 # command-feign-client
+[![Build Status](https://drone-gh-01.witcom.services/api/badges/witcom-gmbh/command-feign-client/status.svg?ref=refs/heads/main)](https://drone-gh-01.witcom.services/witcom-gmbh/command-feign-client)
+
 A feign-client for FNT Command generated from OpenAPI Specs 
  
 ## Versioning 
