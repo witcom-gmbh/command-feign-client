@@ -34,6 +34,7 @@ Then perform a conventional commit like this (e.g. for a minor change)
 
 ```console
 git add specs/command-openapi.json
+git add openapi-feigclient/*
 cog commit feat "Adds feature XYZ"
 cog bump -a
 ```
