@@ -20,7 +20,7 @@
 		<jackson-version>2.11.4</jackson-version>
 		<jackson-threetenbp-version>2.6.4</jackson-threetenbp-version>
 		<jodatime-version>2.7</jodatime-version>
-		<generated-sources-path>${project.build.directory}/generated-sources/openapi</generated-sources-path>
+		<generated-sources-path>openapi-feignclient</generated-sources-path>
 		<generated-sources-java-path>src/main/java</generated-sources-java-path>
 		<junit-version>4.13.1</junit-version>
 		<maven-plugin-version>1.0.0</maven-plugin-version>
@@ -201,7 +201,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!-- <plugin>
+			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>build-helper-maven-plugin</artifactId>
 				<executions>
@@ -213,20 +213,20 @@
 						</goals>
 						<configuration>
 							<sources>
-								<source>${project.build.directory}/generated-sources/openapi/src/main/java</source>
+								<source>${generated-sources-path}/${generated-sources-java-path}</source>
 							</sources>
 						</configuration>
 					</execution>
 				</executions>
-			</plugin>				 -->
+			</plugin>				
 		</plugins>
 	</build>
 
 <profiles>
   <profile>
-    <id>clean-build</id>
+    <id>generate-client</id>
     <activation>
-      <activeByDefault>true</activeByDefault>
+      <activeByDefault>false</activeByDefault>
     </activation>
     <build>
       <plugins>
@@ -254,7 +254,7 @@
 							<!--
 							<generateAliasAsModel>true</generateAliasAsModel>
 							-->
-							<templateDirectory>${project.basedir}/openapi-generator/templates/libraries/feign</templateDirectory>
+							<!-- <templateDirectory>${project.basedir}/openapi-generator/templates/libraries/feign</templateDirectory> -->
 							<environmentVariables>
 								<models />
 								<apis />
@@ -268,6 +268,48 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-antrun-plugin</artifactId>
+			<version>1.7</version>
+			<executions>
+				<execution>
+				<id>cleanup-supporting-files</id>
+				<phase>generate-sources</phase>
+					<goals>
+						<goal>run</goal>
+					</goals>
+					<configuration>
+						<target>
+							<delete includeEmptyDirs="true">
+								<fileset dir="${generated-sources-path}"> 
+										<include name = "**" />
+										<exclude name = "src/**" /> <!-- in case you want to skip .svn folders to avoid SVN conflicts -->
+								</fileset>
+							</delete>
+						</target>
+					</configuration>
+				</execution>
+				<execution>
+				<id>cleanup-all-files</id>
+				<phase>clean</phase>
+					<goals>
+						<goal>run</goal>
+					</goals>
+					<configuration>
+						<target>
+							<delete includeEmptyDirs="true">
+								<fileset dir="${generated-sources-path}"> 
+										<include name = "src/**" />
+								</fileset>
+							</delete>
+						</target>
+					</configuration>
+				</execution>
+
+			</executions>
+			</plugin>
+
       </plugins>
     </build>
   </profile>

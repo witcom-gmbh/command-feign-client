@@ -1,6 +1,6 @@
 OPENAPI_GENERATOR_RELEASE	?= 7.2.0
 BGE2SWAGGER_RELEASE			?= 2.0.0
-
+API_VERSION					?= $(shell date '+%Y%m%d%H%M%S')
 all: clean deploy
 
 clean:
@@ -18,7 +18,7 @@ specs/command-openapi.json: tools/bge2swagger.jar tools/openapi-generator-cli.ja
 	@echo "Generate basic specs from ${CMD_BASE_URL}"
 	GENERATOR_OUTPUT="/tmp/command-swagger.json" java -jar tools/bge2swagger.jar
 	java -jar ./tools/openapi-generator-cli.jar generate -g openapi -o /tmp/out -i /tmp/command-swagger.json
-	mv /tmp/out/openapi.json ./specs/command-openapi.json
+	cat /tmp/out/openapi.json | jq '.info.version = "$(API_VERSION)"' > ./specs/command-openapi.json
 
 build: specs/command-openapi.json
 	mvn package
