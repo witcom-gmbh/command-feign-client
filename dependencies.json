@@ -1,0 +1,104 @@
+{
+  "dependency": [
+    {
+      "groupId": "org.openapitools",
+      "artifactId": "jackson-databind-nullable",
+      "version": "0.2.1"
+    },
+    {
+      "groupId": "io.github.openfeign",
+      "artifactId": "feign-core",
+      "version": "${feign-version}"
+    },
+    {
+      "groupId": "io.github.openfeign",
+      "artifactId": "feign-jackson",
+      "version": "${feign-version}"
+    },
+    {
+      "groupId": "io.github.openfeign",
+      "artifactId": "feign-slf4j",
+      "version": "${feign-version}"
+    },
+    {
+      "groupId": "io.github.openfeign.form",
+      "artifactId": "feign-form",
+      "version": "${feign-form-version}"
+    },
+    {
+      "groupId": "io.github.openfeign",
+      "artifactId": "feign-okhttp",
+      "version": "10.12"
+    },
+    {
+      "groupId": "com.fasterxml.jackson.core",
+      "artifactId": "jackson-core",
+      "version": "${jackson-version}"
+    },
+    {
+      "groupId": "com.fasterxml.jackson.core",
+      "artifactId": "jackson-annotations",
+      "version": "${jackson-version}"
+    },
+    {
+      "groupId": "com.fasterxml.jackson.core",
+      "artifactId": "jackson-databind",
+      "version": "${jackson-version}"
+    },
+    {
+      "groupId": "com.github.joschi.jackson",
+      "artifactId": "jackson-datatype-threetenbp",
+      "version": "${jackson-threetenbp-version}"
+    },
+    {
+      "groupId": "com.github.scribejava",
+      "artifactId": "scribejava-core",
+      "version": "8.3.1"
+    },
+    {
+      "groupId": "junit",
+      "artifactId": "junit",
+      "version": "${junit-version}",
+      "scope": "test"
+    },
+    {
+      "groupId": "com.squareup.okhttp3",
+      "artifactId": "mockwebserver",
+      "version": "3.6.0",
+      "scope": "test"
+    },
+    {
+      "groupId": "org.assertj",
+      "artifactId": "assertj-core",
+      "version": "1.7.1",
+      "scope": "test"
+    },
+    {
+      "groupId": "com.fasterxml.jackson.datatype",
+      "artifactId": "jackson-datatype-joda",
+      "version": "${jackson-version}"
+    },
+    {
+      "groupId": "com.fasterxml.jackson.datatype",
+      "artifactId": "jackson-datatype-jsr310",
+      "version": "${jackson-version}"
+    },
+    {
+      "groupId": "joda-time",
+      "artifactId": "joda-time",
+      "version": "${jodatime-version}"
+    },
+    {
+      "groupId": "org.projectlombok",
+      "artifactId": "lombok",
+      "version": "${org.projectlombok.version}",
+      "scope": "provided"
+    },
+    {
+      "groupId": "jakarta.platform",
+      "artifactId": "jakarta.jakartaee-api",
+      "version": "11.0.0-M1",
+      "scope": "provided"
+    }
+  ]
+}

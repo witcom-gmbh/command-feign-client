@@ -3,7 +3,7 @@
 
 	<groupId>de.witcom</groupId>
 	<artifactId>command-feign-client</artifactId>
-	<version>1.0.1</version>
+	<version>2.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>FNT Command REST API Libraries</name>
 	<url>http://www.witcom.de</url>
@@ -14,31 +14,29 @@
 	</description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<!-- SWAGGER CodeGen -->
-		<swagger-core-version>1.5.24</swagger-core-version>
-		<version.swagger.codegen>3.0.27</version.swagger.codegen>
+		<org.projectlombok.version>1.18.26</org.projectlombok.version>
 		<feign-version>10.12</feign-version>
 		<feign-form-version>3.8.0</feign-form-version>
 		<jackson-version>2.11.4</jackson-version>
 		<jackson-threetenbp-version>2.6.4</jackson-threetenbp-version>
 		<jodatime-version>2.7</jodatime-version>
-		<generated-sources-path>${project.build.directory}/generated-sources/swagger</generated-sources-path>
+		<generated-sources-path>${project.build.directory}/generated-sources/openapi</generated-sources-path>
 		<generated-sources-java-path>src/main/java</generated-sources-java-path>
 		<junit-version>4.13.1</junit-version>
 		<maven-plugin-version>1.0.0</maven-plugin-version>
 		<oltu-version>1.0.1</oltu-version>
-		<maven.compiler.source>11</maven.compiler.source>
-		<maven.compiler.target>11</maven.compiler.target>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
 
 	</properties>
 
 	<dependencies>
 
-		<dependency>
+		<!-- <dependency>
 			<groupId>io.swagger.parser.v3</groupId>
 			<artifactId>swagger-parser</artifactId>
 			<version>2.0.27</version>
-		</dependency>
+		</dependency> -->
 
 		<dependency>
 			<groupId>org.openapitools</groupId>
@@ -140,6 +138,13 @@
 			<artifactId>jackson-datatype-joda</artifactId>
 			<version>${jackson-version}</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-jsr310 -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-jsr310</artifactId>
+			<version>${jackson-version}</version>
+		</dependency>
+
 		<dependency>
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time</artifactId>
@@ -149,31 +154,93 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.18.2</version>
+			<version>${org.projectlombok.version}</version>
 			<scope>provided</scope>
 		</dependency>
 
-		<dependency>
+		<!-- <dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
 			<version>8.0.1</version>
+		</dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/jakarta.platform/jakarta.jakartaee-api -->
+		<dependency>
+			<groupId>jakarta.platform</groupId>
+			<artifactId>jakarta.jakartaee-api</artifactId>
+			<version>11.0.0-M1</version>
+			<scope>provided</scope>
 		</dependency>
+
 	</dependencies>
 
 	<build>
 		<plugins>
 			
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<source>17</source>
+					<target>17</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.build.directory}/lib</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- <plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>add-source</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>${project.build.directory}/generated-sources/openapi/src/main/java</source>
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>				 -->
+		</plugins>
+	</build>
+
+<profiles>
+  <profile>
+    <id>clean-build</id>
+    <activation>
+      <activeByDefault>true</activeByDefault>
+    </activation>
+    <build>
+      <plugins>
 			<plugin>
 				<groupId>org.openapitools</groupId>
 				<artifactId>openapi-generator-maven-plugin</artifactId>
-				<version>5.1.0</version>
+				<version>7.2.0</version>
 				<executions>
 					<execution>
 						<goals>
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<inputSpec>${project.basedir}/specs/command-openapi.yml</inputSpec>
+							<inputSpec>${project.basedir}/specs/command-openapi.json</inputSpec>
 							<generatorName>java</generatorName>
 							<modelPackage>com.fntsoftware.businessgateway.entities</modelPackage>
 							<apiPackage>com.fntsoftware.businessgateway.api</apiPackage>
@@ -181,6 +248,7 @@
 							<configOptions>
 								<sourceFolder>${generated-sources-java-path}</sourceFolder>
 								<dateLibrary>joda</dateLibrary>
+								<useJakartaEe>true</useJakartaEe>
 							</configOptions>
 							<output>${generated-sources-path}</output>
 							<!--
@@ -200,41 +268,27 @@
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version>
-				<configuration>
-					<source>11</source>
-					<target>11</target>
-				</configuration>
-			</plugin>
-			<plugin>
-				<artifactId>maven-dependency-plugin</artifactId>
-				<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>copy-dependencies</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${project.build.directory}/lib</outputDirectory>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
+      </plugins>
+    </build>
+  </profile>
+</profiles>
+
 
 	<distributionManagement>
 		<snapshotRepository>
-			<id>nexus-snapshots</id>
-			<url>https://nexus.dev.witcom.services/repository/maven-snapshots/</url>
+			<id>maven-snapshots</id>
+			<url>https://reposilite.witcom.services/maven-snapshots/</url>
 		</snapshotRepository>
 		<repository>
-			<id>nexus-releases</id>
-			<url>https://nexus.dev.witcom.services/repository/maven-releases/</url>
+			<id>maven-releases</id>
+			<url>https://reposilite.witcom.services/maven-releases/</url>
 		</repository>
 	</distributionManagement>
-
+	<repositories>
+		<repository>
+			<id>witcom-central</id>
+			<name>witcom-central</name>
+			<url>https://reposilite.witcom.services/maven-public/</url>
+		</repository>
+	</repositories>
 </project>

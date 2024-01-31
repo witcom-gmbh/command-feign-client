@@ -5,12 +5,12 @@
 
   <servers>
     <server>
-      <id>nexus-snapshots</id>
+      <id>maven-snapshots</id>
       <username>NEXUSUSER</username>
       <password>NEXUSPASSWORD</password>
     </server>
     <server>
-      <id>nexus-releases</id>
+      <id>maven-releases</id>
       <username>NEXUSUSER</username>
       <password>NEXUSPASSWORD</password>
     </server>
@@ -24,7 +24,7 @@
        <repository>
       <id>witcom-central</id>
       <name>witcom-central</name>
-      <url>https://nexus.dev.witcom.services/repository/maven-public/</url>
+      <url>NEXUSURL</url>
        </repository>
      </repositories>
    </profile>

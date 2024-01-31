@@ -10,9 +10,6 @@ buildNumber.properties
 # https://github.com/takari/maven-wrapper#usage-without-binary-jar
 .mvn/wrapper/maven-wrapper.jar
 
-specs/*.json
-specs/*.yml
-
 tools/*.jar
 .metadata
 bin/
@@ -110,3 +107,4 @@ local.properties
 
 .vscode/settings.json
 src/main/resources/openapi/bge.yml
+.devcontainer/.env

@@ -1,34 +1,27 @@
-OPENAPI_GENERATOR_RELEASE	?= 5.1.0
-BGE2SWAGGER_RELEASE			?= 1.1.1
-CMD_BASE_URL				?= https://rmdb.workspace.witcom.de
-API_VERSION					?= $(shell mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+OPENAPI_GENERATOR_RELEASE	?= 7.2.0
+BGE2SWAGGER_RELEASE			?= 2.0.0
 
 all: clean deploy
 
 clean:
-	rm -f ./specs/command-oas-oauth.json && rm -f ./specs/command-oas.json && rm -f ./specs/command-openapi.yml
+	rm -f ./specs/command-openapi.json
 
 tools/bge2swagger.jar:
 	@echo "Installing bge2swagger"
-	wget http://nexus.dev.witcom.services/repository/maven-releases/de/witcom/bge2swagger/$(BGE2SWAGGER_RELEASE)/bge2swagger-$(BGE2SWAGGER_RELEASE).jar -O ./tools/bge2swagger.jar
+	wget https://reposilite.witcom.services/maven-releases/de/witcom/bge2swagger/$(BGE2SWAGGER_RELEASE)/bge2swagger-$(BGE2SWAGGER_RELEASE).jar -O ./tools/bge2swagger.jar
 
 tools/openapi-generator-cli.jar:
 	@echo "Installing openapi-generator-cli"
 	wget https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/$(OPENAPI_GENERATOR_RELEASE)/openapi-generator-cli-$(OPENAPI_GENERATOR_RELEASE).jar -O ./tools/openapi-generator-cli.jar
 
-specs/command-oas-oauth.json: tools/bge2swagger.jar
-	@echo "Generate basic specs from $(CMD_BASE_URL) for API-Version $(API_VERSION)"
-	CMD_BASE_URL="$(CMD_BASE_URL)" GENERATOR_OUTPUT="./specs/command-oas.json" java -jar tools/bge2swagger.jar
-	cat ./specs/command-oas.json | jq '. + {"securityDefinitions": {"rmdb_auth": {"type": "oauth2","tokenUrl": "https://petstore.swagger.io/oauth/authorize","flow": "clientCredentials","scopes": {}}}}' > ./specs/command-oas-oauth.json
+specs/command-openapi.json: tools/bge2swagger.jar tools/openapi-generator-cli.jar
+	@echo "Generate basic specs from ${CMD_BASE_URL}"
+	GENERATOR_OUTPUT="/tmp/command-swagger.json" java -jar tools/bge2swagger.jar
+	java -jar ./tools/openapi-generator-cli.jar generate -g openapi -o /tmp/out -i /tmp/command-swagger.json
+	mv /tmp/out/openapi.json ./specs/command-openapi.json
 
-specs/command-openapi.yml: tools/openapi-generator-cli.jar specs/command-oas-oauth.json
-	@echo "Convert specs to OAS 3 for API-Version $(API_VERSION)"
-	cat ./specs/command-oas-oauth.json | jq '.info.version = "$(API_VERSION)"' > ./specs/command-oas-oauth.json.tmp && mv ./specs/command-oas-oauth.json.tmp ./specs/command-oas-oauth.json
-	java -jar ./tools/openapi-generator-cli.jar generate -g openapi-yaml -o /tmp/out -i ./specs/command-oas-oauth.json
-	mv /tmp/out/openapi/openapi.yaml ./specs/command-openapi.yml
-
-build: specs/command-openapi.yml
+build: specs/command-openapi.json
 	mvn package
 
-deploy: specs/command-openapi.yml
+deploy: specs/command-openapi.json
 	mvn deploy
