@@ -59,36 +59,15 @@ steps:
   #   - java -jar /app/openapi-generator-cli.jar generate -g openapi -o /tmp/out -i $${GENERATOR_OUTPUT}
   #   - mv /tmp/out/openapi.json ./specs/command-openapi.json
 
-  - name: Compile & package
-    image: maven:3-eclipse-temurin-17
-    environment:
-      <<: *default_environment
-    volumes:
-    - name: cache
-      path: /drone/cache
-    commands:
-    - mvn package -B -V -Dmaven.repo.local=/drone/cache
-
-  - name: rebuild-cache
-    image: meltwater/drone-cache
-    volumes:
-    - name: cache
-      path: /drone/cache
-    pull: true
-    environment:
-      AWS_ACCESS_KEY_ID:
-        from_secret: s3_cache_access_key_id
-      AWS_SECRET_ACCESS_KEY:
-        from_secret: s3_cache_access_key_secret
-    settings:
-      rebuild: true
-      cache_key: '{{ checksum "./dependencies.json" }}'
-      bucket: drone-gh-01
-      region: us-east-1
-      endpoint: https://s3.witcom.cloud
-      path_style: true
-      mount:
-        - '/drone/cache'
+  # - name: Compile & package
+  #   image: maven:3-eclipse-temurin-17
+  #   environment:
+  #     <<: *default_environment
+  #   volumes:
+  #   - name: cache
+  #     path: /drone/cache
+  #   commands:
+  #   - mvn package -B -V -Dmaven.repo.local=/drone/cache
 
   - name: create settings.xml for maven deployments
     image: alpine:latest
@@ -137,6 +116,27 @@ steps:
         - push
       branch:
       - main
+
+  - name: rebuild-cache
+    image: meltwater/drone-cache
+    volumes:
+    - name: cache
+      path: /drone/cache
+    pull: true
+    environment:
+      AWS_ACCESS_KEY_ID:
+        from_secret: s3_cache_access_key_id
+      AWS_SECRET_ACCESS_KEY:
+        from_secret: s3_cache_access_key_secret
+    settings:
+      rebuild: true
+      cache_key: '{{ checksum "./dependencies.json" }}'
+      bucket: drone-gh-01
+      region: us-east-1
+      endpoint: https://s3.witcom.cloud
+      path_style: true
+      mount:
+        - '/drone/cache'
 
 volumes:
 - name: cache
