@@ -4,8 +4,6 @@ import com.fntsoftware.businessgateway.ApiClient;
 import com.fntsoftware.businessgateway.EncodingUtils;
 import com.fntsoftware.businessgateway.entities.ApiResponse;
 
-import com.fntsoftware.businessgateway.entities.AddChangeTypeDeviceMasterCabinetRequestData;
-import com.fntsoftware.businessgateway.entities.AddChangeTypeDeviceMasterCabinetResponse;
 import com.fntsoftware.businessgateway.entities.DeviceMasterCabinetDeviceMasterCabinetRequest;
 import com.fntsoftware.businessgateway.entities.DeviceMasterCabinetDeviceMasterCabinetResponse;
 import com.fntsoftware.businessgateway.entities.DeviceMasterCabinetPowerDistributorSystemsRequestData;
@@ -16,8 +14,6 @@ import com.fntsoftware.businessgateway.entities.DeviceMasterCabinetSwitchCabinet
 import com.fntsoftware.businessgateway.entities.DeviceMasterCabinetSwitchCabinetsResponseData;
 import com.fntsoftware.businessgateway.entities.DeviceMasterCabinetSystemAttributesRequest;
 import com.fntsoftware.businessgateway.entities.DeviceMasterCabinetSystemAttributesResponse;
-import com.fntsoftware.businessgateway.entities.RemoveChangeTypeDeviceMasterCabinetRequestData;
-import com.fntsoftware.businessgateway.entities.RemoveChangeTypeDeviceMasterCabinetResponse;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,98 +21,9 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-31T11:10:37.320689708Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
 public interface DeviceMasterCabinetApi extends ApiClient.Api {
 
-
-  /**
-   * Add change type
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return AddChangeTypeDeviceMasterCabinetResponse
-   */
-  @RequestLine("POST /api/rest/entity/deviceMasterCabinet/{elid}/addChangeType?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  AddChangeTypeDeviceMasterCabinetResponse addChangeTypeDeviceMasterCabinet(@Param("sessionId") String sessionId, @Param("elid") String elid, AddChangeTypeDeviceMasterCabinetRequestData body);
-
-  /**
-   * Add change type
-   * Similar to <code>addChangeTypeDeviceMasterCabinet</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/deviceMasterCabinet/{elid}/addChangeType?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<AddChangeTypeDeviceMasterCabinetResponse> addChangeTypeDeviceMasterCabinetWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, AddChangeTypeDeviceMasterCabinetRequestData body);
-
-
-  /**
-   * Add change type
-   * 
-   * Note, this is equivalent to the other <code>addChangeTypeDeviceMasterCabinet</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link AddChangeTypeDeviceMasterCabinetQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return AddChangeTypeDeviceMasterCabinetResponse
-   */
-  @RequestLine("POST /api/rest/entity/deviceMasterCabinet/{elid}/addChangeType?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  AddChangeTypeDeviceMasterCabinetResponse addChangeTypeDeviceMasterCabinet(@Param("elid") String elid, AddChangeTypeDeviceMasterCabinetRequestData body, @QueryMap(encoded=true) AddChangeTypeDeviceMasterCabinetQueryParams queryParams);
-
-  /**
-  * Add change type
-  * 
-  * Note, this is equivalent to the other <code>addChangeTypeDeviceMasterCabinet</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return AddChangeTypeDeviceMasterCabinetResponse
-      */
-      @RequestLine("POST /api/rest/entity/deviceMasterCabinet/{elid}/addChangeType?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<AddChangeTypeDeviceMasterCabinetResponse> addChangeTypeDeviceMasterCabinetWithHttpInfo(@Param("elid") String elid, AddChangeTypeDeviceMasterCabinetRequestData body, @QueryMap(encoded=true) AddChangeTypeDeviceMasterCabinetQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>addChangeTypeDeviceMasterCabinet</code> method in a fluent style.
-   */
-  public static class AddChangeTypeDeviceMasterCabinetQueryParams extends HashMap<String, Object> {
-    public AddChangeTypeDeviceMasterCabinetQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
 
   /**
    * Query Device master cabinet
@@ -554,95 +461,6 @@ public interface DeviceMasterCabinetApi extends ApiClient.Api {
    */
   public static class DeviceMasterCabinetSystemAttributesQueryParams extends HashMap<String, Object> {
     public DeviceMasterCabinetSystemAttributesQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Remove change type
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return RemoveChangeTypeDeviceMasterCabinetResponse
-   */
-  @RequestLine("POST /api/rest/entity/deviceMasterCabinet/{elid}/removeChangeType?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  RemoveChangeTypeDeviceMasterCabinetResponse removeChangeTypeDeviceMasterCabinet(@Param("sessionId") String sessionId, @Param("elid") String elid, RemoveChangeTypeDeviceMasterCabinetRequestData body);
-
-  /**
-   * Remove change type
-   * Similar to <code>removeChangeTypeDeviceMasterCabinet</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/deviceMasterCabinet/{elid}/removeChangeType?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<RemoveChangeTypeDeviceMasterCabinetResponse> removeChangeTypeDeviceMasterCabinetWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, RemoveChangeTypeDeviceMasterCabinetRequestData body);
-
-
-  /**
-   * Remove change type
-   * 
-   * Note, this is equivalent to the other <code>removeChangeTypeDeviceMasterCabinet</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link RemoveChangeTypeDeviceMasterCabinetQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return RemoveChangeTypeDeviceMasterCabinetResponse
-   */
-  @RequestLine("POST /api/rest/entity/deviceMasterCabinet/{elid}/removeChangeType?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  RemoveChangeTypeDeviceMasterCabinetResponse removeChangeTypeDeviceMasterCabinet(@Param("elid") String elid, RemoveChangeTypeDeviceMasterCabinetRequestData body, @QueryMap(encoded=true) RemoveChangeTypeDeviceMasterCabinetQueryParams queryParams);
-
-  /**
-  * Remove change type
-  * 
-  * Note, this is equivalent to the other <code>removeChangeTypeDeviceMasterCabinet</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return RemoveChangeTypeDeviceMasterCabinetResponse
-      */
-      @RequestLine("POST /api/rest/entity/deviceMasterCabinet/{elid}/removeChangeType?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<RemoveChangeTypeDeviceMasterCabinetResponse> removeChangeTypeDeviceMasterCabinetWithHttpInfo(@Param("elid") String elid, RemoveChangeTypeDeviceMasterCabinetRequestData body, @QueryMap(encoded=true) RemoveChangeTypeDeviceMasterCabinetQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>removeChangeTypeDeviceMasterCabinet</code> method in a fluent style.
-   */
-  public static class RemoveChangeTypeDeviceMasterCabinetQueryParams extends HashMap<String, Object> {
-    public RemoveChangeTypeDeviceMasterCabinetQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

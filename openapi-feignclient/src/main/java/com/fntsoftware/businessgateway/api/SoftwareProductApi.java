@@ -49,7 +49,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-31T11:10:37.320689708Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
 public interface SoftwareProductApi extends ApiClient.Api {
 
 
@@ -320,32 +320,32 @@ public interface SoftwareProductApi extends ApiClient.Api {
    * CI class query
    * Queries the enabled CI classes
    * @param sessionId Session-ID (required)
-   * @param elid  (required)
+   * @param softwareBaseElid  (required)
    * @param body  (required)
    * @return SoftwareProductCiClassesResponse
    */
-  @RequestLine("POST /api/rest/entity/softwareProduct/{elid}/CiClasses?sessionId={sessionId}")
+  @RequestLine("POST /api/rest/entity/softwareProduct/{softwareBaseElid}/CiClasses?sessionId={sessionId}")
   @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  SoftwareProductCiClassesResponse softwareProductCiClasses(@Param("sessionId") String sessionId, @Param("elid") String elid, SoftwareProductCiClassesRequest body);
+  SoftwareProductCiClassesResponse softwareProductCiClasses(@Param("sessionId") String sessionId, @Param("softwareBaseElid") String softwareBaseElid, SoftwareProductCiClassesRequest body);
 
   /**
    * CI class query
    * Similar to <code>softwareProductCiClasses</code> but it also returns the http response headers .
    * Queries the enabled CI classes
    * @param sessionId Session-ID (required)
-   * @param elid  (required)
+   * @param softwareBaseElid  (required)
    * @param body  (required)
    * @return A ApiResponse that wraps the response boyd and the http headers.
    */
-  @RequestLine("POST /api/rest/entity/softwareProduct/{elid}/CiClasses?sessionId={sessionId}")
+  @RequestLine("POST /api/rest/entity/softwareProduct/{softwareBaseElid}/CiClasses?sessionId={sessionId}")
   @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  ApiResponse<SoftwareProductCiClassesResponse> softwareProductCiClassesWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, SoftwareProductCiClassesRequest body);
+  ApiResponse<SoftwareProductCiClassesResponse> softwareProductCiClassesWithHttpInfo(@Param("sessionId") String sessionId, @Param("softwareBaseElid") String softwareBaseElid, SoftwareProductCiClassesRequest body);
 
 
   /**
@@ -356,7 +356,7 @@ public interface SoftwareProductApi extends ApiClient.Api {
    * is convenient for services with optional query parameters, especially when
    * used with the {@link SoftwareProductCiClassesQueryParams} class that allows for
    * building up this map in a fluent style.
-   * @param elid  (required)
+   * @param softwareBaseElid  (required)
    * @param body  (required)
    * @param queryParams Map of query parameters as name-value pairs
    *   <p>The following elements may be specified in the query map:</p>
@@ -365,19 +365,19 @@ public interface SoftwareProductApi extends ApiClient.Api {
    *   </ul>
    * @return SoftwareProductCiClassesResponse
    */
-  @RequestLine("POST /api/rest/entity/softwareProduct/{elid}/CiClasses?sessionId={sessionId}")
+  @RequestLine("POST /api/rest/entity/softwareProduct/{softwareBaseElid}/CiClasses?sessionId={sessionId}")
   @Headers({
   "Content-Type: application/json",
   "Accept: application/json",
   })
-  SoftwareProductCiClassesResponse softwareProductCiClasses(@Param("elid") String elid, SoftwareProductCiClassesRequest body, @QueryMap(encoded=true) SoftwareProductCiClassesQueryParams queryParams);
+  SoftwareProductCiClassesResponse softwareProductCiClasses(@Param("softwareBaseElid") String softwareBaseElid, SoftwareProductCiClassesRequest body, @QueryMap(encoded=true) SoftwareProductCiClassesQueryParams queryParams);
 
   /**
   * CI class query
   * Queries the enabled CI classes
   * Note, this is equivalent to the other <code>softwareProductCiClasses</code> that receives the query parameters as a map,
   * but this one also exposes the Http response headers
-              * @param elid  (required)
+              * @param softwareBaseElid  (required)
               * @param body  (required)
       * @param queryParams Map of query parameters as name-value pairs
       *   <p>The following elements may be specified in the query map:</p>
@@ -386,12 +386,12 @@ public interface SoftwareProductApi extends ApiClient.Api {
       *   </ul>
           * @return SoftwareProductCiClassesResponse
       */
-      @RequestLine("POST /api/rest/entity/softwareProduct/{elid}/CiClasses?sessionId={sessionId}")
+      @RequestLine("POST /api/rest/entity/softwareProduct/{softwareBaseElid}/CiClasses?sessionId={sessionId}")
       @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
       })
-   ApiResponse<SoftwareProductCiClassesResponse> softwareProductCiClassesWithHttpInfo(@Param("elid") String elid, SoftwareProductCiClassesRequest body, @QueryMap(encoded=true) SoftwareProductCiClassesQueryParams queryParams);
+   ApiResponse<SoftwareProductCiClassesResponse> softwareProductCiClassesWithHttpInfo(@Param("softwareBaseElid") String softwareBaseElid, SoftwareProductCiClassesRequest body, @QueryMap(encoded=true) SoftwareProductCiClassesQueryParams queryParams);
 
 
    /**
@@ -1384,32 +1384,32 @@ public interface SoftwareProductApi extends ApiClient.Api {
    * Software release query
    * Queries the software releases
    * @param sessionId Session-ID (required)
-   * @param elid  (required)
+   * @param softwareBaseElid  (required)
    * @param body  (required)
    * @return SoftwareProductSoftwareReleasesResponse
    */
-  @RequestLine("POST /api/rest/entity/softwareProduct/{elid}/SoftwareReleases?sessionId={sessionId}")
+  @RequestLine("POST /api/rest/entity/softwareProduct/{softwareBaseElid}/SoftwareReleases?sessionId={sessionId}")
   @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  SoftwareProductSoftwareReleasesResponse softwareProductSoftwareReleases(@Param("sessionId") String sessionId, @Param("elid") String elid, SoftwareProductSoftwareReleasesRequest body);
+  SoftwareProductSoftwareReleasesResponse softwareProductSoftwareReleases(@Param("sessionId") String sessionId, @Param("softwareBaseElid") String softwareBaseElid, SoftwareProductSoftwareReleasesRequest body);
 
   /**
    * Software release query
    * Similar to <code>softwareProductSoftwareReleases</code> but it also returns the http response headers .
    * Queries the software releases
    * @param sessionId Session-ID (required)
-   * @param elid  (required)
+   * @param softwareBaseElid  (required)
    * @param body  (required)
    * @return A ApiResponse that wraps the response boyd and the http headers.
    */
-  @RequestLine("POST /api/rest/entity/softwareProduct/{elid}/SoftwareReleases?sessionId={sessionId}")
+  @RequestLine("POST /api/rest/entity/softwareProduct/{softwareBaseElid}/SoftwareReleases?sessionId={sessionId}")
   @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  ApiResponse<SoftwareProductSoftwareReleasesResponse> softwareProductSoftwareReleasesWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, SoftwareProductSoftwareReleasesRequest body);
+  ApiResponse<SoftwareProductSoftwareReleasesResponse> softwareProductSoftwareReleasesWithHttpInfo(@Param("sessionId") String sessionId, @Param("softwareBaseElid") String softwareBaseElid, SoftwareProductSoftwareReleasesRequest body);
 
 
   /**
@@ -1420,7 +1420,7 @@ public interface SoftwareProductApi extends ApiClient.Api {
    * is convenient for services with optional query parameters, especially when
    * used with the {@link SoftwareProductSoftwareReleasesQueryParams} class that allows for
    * building up this map in a fluent style.
-   * @param elid  (required)
+   * @param softwareBaseElid  (required)
    * @param body  (required)
    * @param queryParams Map of query parameters as name-value pairs
    *   <p>The following elements may be specified in the query map:</p>
@@ -1429,19 +1429,19 @@ public interface SoftwareProductApi extends ApiClient.Api {
    *   </ul>
    * @return SoftwareProductSoftwareReleasesResponse
    */
-  @RequestLine("POST /api/rest/entity/softwareProduct/{elid}/SoftwareReleases?sessionId={sessionId}")
+  @RequestLine("POST /api/rest/entity/softwareProduct/{softwareBaseElid}/SoftwareReleases?sessionId={sessionId}")
   @Headers({
   "Content-Type: application/json",
   "Accept: application/json",
   })
-  SoftwareProductSoftwareReleasesResponse softwareProductSoftwareReleases(@Param("elid") String elid, SoftwareProductSoftwareReleasesRequest body, @QueryMap(encoded=true) SoftwareProductSoftwareReleasesQueryParams queryParams);
+  SoftwareProductSoftwareReleasesResponse softwareProductSoftwareReleases(@Param("softwareBaseElid") String softwareBaseElid, SoftwareProductSoftwareReleasesRequest body, @QueryMap(encoded=true) SoftwareProductSoftwareReleasesQueryParams queryParams);
 
   /**
   * Software release query
   * Queries the software releases
   * Note, this is equivalent to the other <code>softwareProductSoftwareReleases</code> that receives the query parameters as a map,
   * but this one also exposes the Http response headers
-              * @param elid  (required)
+              * @param softwareBaseElid  (required)
               * @param body  (required)
       * @param queryParams Map of query parameters as name-value pairs
       *   <p>The following elements may be specified in the query map:</p>
@@ -1450,12 +1450,12 @@ public interface SoftwareProductApi extends ApiClient.Api {
       *   </ul>
           * @return SoftwareProductSoftwareReleasesResponse
       */
-      @RequestLine("POST /api/rest/entity/softwareProduct/{elid}/SoftwareReleases?sessionId={sessionId}")
+      @RequestLine("POST /api/rest/entity/softwareProduct/{softwareBaseElid}/SoftwareReleases?sessionId={sessionId}")
       @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
       })
-   ApiResponse<SoftwareProductSoftwareReleasesResponse> softwareProductSoftwareReleasesWithHttpInfo(@Param("elid") String elid, SoftwareProductSoftwareReleasesRequest body, @QueryMap(encoded=true) SoftwareProductSoftwareReleasesQueryParams queryParams);
+   ApiResponse<SoftwareProductSoftwareReleasesResponse> softwareProductSoftwareReleasesWithHttpInfo(@Param("softwareBaseElid") String softwareBaseElid, SoftwareProductSoftwareReleasesRequest body, @QueryMap(encoded=true) SoftwareProductSoftwareReleasesQueryParams queryParams);
 
 
    /**

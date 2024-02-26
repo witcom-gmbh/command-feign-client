@@ -16,8 +16,6 @@ import com.fntsoftware.businessgateway.entities.Ipv6NetrangeDomainRequestData;
 import com.fntsoftware.businessgateway.entities.Ipv6NetrangeDomainResponseData;
 import com.fntsoftware.businessgateway.entities.Ipv6NetrangeFrameContractsRequestData;
 import com.fntsoftware.businessgateway.entities.Ipv6NetrangeFrameContractsResponseData;
-import com.fntsoftware.businessgateway.entities.Ipv6NetrangeIpv6AddressesRequestData;
-import com.fntsoftware.businessgateway.entities.Ipv6NetrangeIpv6AddressesResponseData;
 import com.fntsoftware.businessgateway.entities.Ipv6NetrangeIpv6NetworkRequestData;
 import com.fntsoftware.businessgateway.entities.Ipv6NetrangeIpv6NetworkResponseData;
 import com.fntsoftware.businessgateway.entities.Ipv6NetrangeMaintenanceContractsRequestData;
@@ -36,6 +34,8 @@ import com.fntsoftware.businessgateway.entities.Ipv6NetrangeQueryRequest;
 import com.fntsoftware.businessgateway.entities.Ipv6NetrangeQueryResponse;
 import com.fntsoftware.businessgateway.entities.Ipv6NetrangeSystemAttributesRequest;
 import com.fntsoftware.businessgateway.entities.Ipv6NetrangeSystemAttributesResponse;
+import com.fntsoftware.businessgateway.entities.Ipv6NetrangeVirtualClientsRequestData;
+import com.fntsoftware.businessgateway.entities.Ipv6NetrangeVirtualClientsResponseData;
 import com.fntsoftware.businessgateway.entities.Ipv6NetrangeVirtualNasServersRequestData;
 import com.fntsoftware.businessgateway.entities.Ipv6NetrangeVirtualNasServersResponseData;
 import com.fntsoftware.businessgateway.entities.Ipv6NetrangeVirtualServersRequestData;
@@ -55,7 +55,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-31T11:10:37.320689708Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
 public interface Ipv6NetrangeApi extends ApiClient.Api {
 
 
@@ -584,95 +584,6 @@ public interface Ipv6NetrangeApi extends ApiClient.Api {
    */
   public static class Ipv6NetrangeFrameContractsQueryParams extends HashMap<String, Object> {
     public Ipv6NetrangeFrameContractsQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Get relations to IPv6 address entities
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return Ipv6NetrangeIpv6AddressesResponseData
-   */
-  @RequestLine("POST /api/rest/entity/ipv6Netrange/{elid}/Ipv6Addresses?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  Ipv6NetrangeIpv6AddressesResponseData ipv6NetrangeIpv6Addresses(@Param("sessionId") String sessionId, @Param("elid") String elid, Ipv6NetrangeIpv6AddressesRequestData body);
-
-  /**
-   * Get relations to IPv6 address entities
-   * Similar to <code>ipv6NetrangeIpv6Addresses</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/ipv6Netrange/{elid}/Ipv6Addresses?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<Ipv6NetrangeIpv6AddressesResponseData> ipv6NetrangeIpv6AddressesWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, Ipv6NetrangeIpv6AddressesRequestData body);
-
-
-  /**
-   * Get relations to IPv6 address entities
-   * 
-   * Note, this is equivalent to the other <code>ipv6NetrangeIpv6Addresses</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link Ipv6NetrangeIpv6AddressesQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return Ipv6NetrangeIpv6AddressesResponseData
-   */
-  @RequestLine("POST /api/rest/entity/ipv6Netrange/{elid}/Ipv6Addresses?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  Ipv6NetrangeIpv6AddressesResponseData ipv6NetrangeIpv6Addresses(@Param("elid") String elid, Ipv6NetrangeIpv6AddressesRequestData body, @QueryMap(encoded=true) Ipv6NetrangeIpv6AddressesQueryParams queryParams);
-
-  /**
-  * Get relations to IPv6 address entities
-  * 
-  * Note, this is equivalent to the other <code>ipv6NetrangeIpv6Addresses</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return Ipv6NetrangeIpv6AddressesResponseData
-      */
-      @RequestLine("POST /api/rest/entity/ipv6Netrange/{elid}/Ipv6Addresses?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<Ipv6NetrangeIpv6AddressesResponseData> ipv6NetrangeIpv6AddressesWithHttpInfo(@Param("elid") String elid, Ipv6NetrangeIpv6AddressesRequestData body, @QueryMap(encoded=true) Ipv6NetrangeIpv6AddressesQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>ipv6NetrangeIpv6Addresses</code> method in a fluent style.
-   */
-  public static class Ipv6NetrangeIpv6AddressesQueryParams extends HashMap<String, Object> {
-    public Ipv6NetrangeIpv6AddressesQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -1470,6 +1381,95 @@ public interface Ipv6NetrangeApi extends ApiClient.Api {
    */
   public static class Ipv6NetrangeSystemAttributesQueryParams extends HashMap<String, Object> {
     public Ipv6NetrangeSystemAttributesQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Virtual client entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return Ipv6NetrangeVirtualClientsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/ipv6Netrange/{elid}/VirtualClients?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  Ipv6NetrangeVirtualClientsResponseData ipv6NetrangeVirtualClients(@Param("sessionId") String sessionId, @Param("elid") String elid, Ipv6NetrangeVirtualClientsRequestData body);
+
+  /**
+   * Get relations to Virtual client entities
+   * Similar to <code>ipv6NetrangeVirtualClients</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/ipv6Netrange/{elid}/VirtualClients?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<Ipv6NetrangeVirtualClientsResponseData> ipv6NetrangeVirtualClientsWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, Ipv6NetrangeVirtualClientsRequestData body);
+
+
+  /**
+   * Get relations to Virtual client entities
+   * 
+   * Note, this is equivalent to the other <code>ipv6NetrangeVirtualClients</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link Ipv6NetrangeVirtualClientsQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return Ipv6NetrangeVirtualClientsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/ipv6Netrange/{elid}/VirtualClients?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  Ipv6NetrangeVirtualClientsResponseData ipv6NetrangeVirtualClients(@Param("elid") String elid, Ipv6NetrangeVirtualClientsRequestData body, @QueryMap(encoded=true) Ipv6NetrangeVirtualClientsQueryParams queryParams);
+
+  /**
+  * Get relations to Virtual client entities
+  * 
+  * Note, this is equivalent to the other <code>ipv6NetrangeVirtualClients</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return Ipv6NetrangeVirtualClientsResponseData
+      */
+      @RequestLine("POST /api/rest/entity/ipv6Netrange/{elid}/VirtualClients?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<Ipv6NetrangeVirtualClientsResponseData> ipv6NetrangeVirtualClientsWithHttpInfo(@Param("elid") String elid, Ipv6NetrangeVirtualClientsRequestData body, @QueryMap(encoded=true) Ipv6NetrangeVirtualClientsQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>ipv6NetrangeVirtualClients</code> method in a fluent style.
+   */
+  public static class Ipv6NetrangeVirtualClientsQueryParams extends HashMap<String, Object> {
+    public Ipv6NetrangeVirtualClientsQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

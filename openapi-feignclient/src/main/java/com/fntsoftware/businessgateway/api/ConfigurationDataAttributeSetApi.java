@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-31T11:10:37.320689708Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
 public interface ConfigurationDataAttributeSetApi extends ApiClient.Api {
 
 

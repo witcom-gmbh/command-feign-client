@@ -16,28 +16,18 @@ import com.fntsoftware.businessgateway.entities.PlaceInWarehouseSwitchCabinetReq
 import com.fntsoftware.businessgateway.entities.PlaceInWarehouseSwitchCabinetResponse;
 import com.fntsoftware.businessgateway.entities.PlaceInZoneSwitchCabinetRequestData;
 import com.fntsoftware.businessgateway.entities.PlaceInZoneSwitchCabinetResponse;
-import com.fntsoftware.businessgateway.entities.ReplaceObjectSwitchCabinetRequestData;
-import com.fntsoftware.businessgateway.entities.ReplaceObjectSwitchCabinetResponse;
 import com.fntsoftware.businessgateway.entities.SwitchCabinetContractsRequestData;
 import com.fntsoftware.businessgateway.entities.SwitchCabinetContractsResponseData;
 import com.fntsoftware.businessgateway.entities.SwitchCabinetCustomLocksRequestData;
 import com.fntsoftware.businessgateway.entities.SwitchCabinetCustomLocksResponseData;
 import com.fntsoftware.businessgateway.entities.SwitchCabinetDeviceMasterRequestData;
 import com.fntsoftware.businessgateway.entities.SwitchCabinetDeviceMasterResponseData;
-import com.fntsoftware.businessgateway.entities.SwitchCabinetDuctDataRequest;
-import com.fntsoftware.businessgateway.entities.SwitchCabinetDuctDataResponse;
-import com.fntsoftware.businessgateway.entities.SwitchCabinetDuctsRequestData;
-import com.fntsoftware.businessgateway.entities.SwitchCabinetDuctsResponseData;
 import com.fntsoftware.businessgateway.entities.SwitchCabinetFrameContractsRequestData;
 import com.fntsoftware.businessgateway.entities.SwitchCabinetFrameContractsResponseData;
-import com.fntsoftware.businessgateway.entities.SwitchCabinetInheritedGeoCoordinatesRequest;
-import com.fntsoftware.businessgateway.entities.SwitchCabinetInheritedGeoCoordinatesResponse;
 import com.fntsoftware.businessgateway.entities.SwitchCabinetLocationRequest;
 import com.fntsoftware.businessgateway.entities.SwitchCabinetLocationResponse;
 import com.fntsoftware.businessgateway.entities.SwitchCabinetMaintenanceContractsRequestData;
 import com.fntsoftware.businessgateway.entities.SwitchCabinetMaintenanceContractsResponseData;
-import com.fntsoftware.businessgateway.entities.SwitchCabinetMultiDuctsRequestData;
-import com.fntsoftware.businessgateway.entities.SwitchCabinetMultiDuctsResponseData;
 import com.fntsoftware.businessgateway.entities.SwitchCabinetOrganizationsRequestData;
 import com.fntsoftware.businessgateway.entities.SwitchCabinetOrganizationsResponseData;
 import com.fntsoftware.businessgateway.entities.SwitchCabinetPersonGroupsRequestData;
@@ -46,8 +36,6 @@ import com.fntsoftware.businessgateway.entities.SwitchCabinetPersonsRequestData;
 import com.fntsoftware.businessgateway.entities.SwitchCabinetPersonsResponseData;
 import com.fntsoftware.businessgateway.entities.SwitchCabinetPlaceableObjectsRequest;
 import com.fntsoftware.businessgateway.entities.SwitchCabinetPlaceableObjectsResponse;
-import com.fntsoftware.businessgateway.entities.SwitchCabinetQueryExtendedGeoCoordinatesRequest;
-import com.fntsoftware.businessgateway.entities.SwitchCabinetQueryExtendedGeoCoordinatesResponse;
 import com.fntsoftware.businessgateway.entities.SwitchCabinetQueryExtendedRequest;
 import com.fntsoftware.businessgateway.entities.SwitchCabinetQueryExtendedResponse;
 import com.fntsoftware.businessgateway.entities.SwitchCabinetQueryExtendedScrollFirstRequest;
@@ -56,10 +44,6 @@ import com.fntsoftware.businessgateway.entities.SwitchCabinetQueryExtendedScroll
 import com.fntsoftware.businessgateway.entities.SwitchCabinetQueryExtendedScrollMoreResponse;
 import com.fntsoftware.businessgateway.entities.SwitchCabinetQueryRequest;
 import com.fntsoftware.businessgateway.entities.SwitchCabinetQueryResponse;
-import com.fntsoftware.businessgateway.entities.SwitchCabinetServicesRequest;
-import com.fntsoftware.businessgateway.entities.SwitchCabinetServicesResponse;
-import com.fntsoftware.businessgateway.entities.SwitchCabinetSitesRequestData;
-import com.fntsoftware.businessgateway.entities.SwitchCabinetSitesResponseData;
 import com.fntsoftware.businessgateway.entities.SwitchCabinetSubDevicesRequest;
 import com.fntsoftware.businessgateway.entities.SwitchCabinetSubDevicesResponse;
 import com.fntsoftware.businessgateway.entities.SwitchCabinetSystemAttributesRequest;
@@ -81,7 +65,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-31T11:10:37.320689708Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
 public interface SwitchCabinetApi extends ApiClient.Api {
 
 
@@ -612,95 +596,6 @@ public interface SwitchCabinetApi extends ApiClient.Api {
   }
 
   /**
-   * Replace object
-   * Replace object
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return ReplaceObjectSwitchCabinetResponse
-   */
-  @RequestLine("POST /api/rest/entity/switchCabinet/{elid}/replaceObject?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ReplaceObjectSwitchCabinetResponse replaceObjectSwitchCabinet(@Param("sessionId") String sessionId, @Param("elid") String elid, ReplaceObjectSwitchCabinetRequestData body);
-
-  /**
-   * Replace object
-   * Similar to <code>replaceObjectSwitchCabinet</code> but it also returns the http response headers .
-   * Replace object
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/switchCabinet/{elid}/replaceObject?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<ReplaceObjectSwitchCabinetResponse> replaceObjectSwitchCabinetWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ReplaceObjectSwitchCabinetRequestData body);
-
-
-  /**
-   * Replace object
-   * Replace object
-   * Note, this is equivalent to the other <code>replaceObjectSwitchCabinet</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link ReplaceObjectSwitchCabinetQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return ReplaceObjectSwitchCabinetResponse
-   */
-  @RequestLine("POST /api/rest/entity/switchCabinet/{elid}/replaceObject?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  ReplaceObjectSwitchCabinetResponse replaceObjectSwitchCabinet(@Param("elid") String elid, ReplaceObjectSwitchCabinetRequestData body, @QueryMap(encoded=true) ReplaceObjectSwitchCabinetQueryParams queryParams);
-
-  /**
-  * Replace object
-  * Replace object
-  * Note, this is equivalent to the other <code>replaceObjectSwitchCabinet</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return ReplaceObjectSwitchCabinetResponse
-      */
-      @RequestLine("POST /api/rest/entity/switchCabinet/{elid}/replaceObject?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<ReplaceObjectSwitchCabinetResponse> replaceObjectSwitchCabinetWithHttpInfo(@Param("elid") String elid, ReplaceObjectSwitchCabinetRequestData body, @QueryMap(encoded=true) ReplaceObjectSwitchCabinetQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>replaceObjectSwitchCabinet</code> method in a fluent style.
-   */
-  public static class ReplaceObjectSwitchCabinetQueryParams extends HashMap<String, Object> {
-    public ReplaceObjectSwitchCabinetQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
    * Get relations to Contract entities
    * 
    * @param sessionId Session-ID (required)
@@ -968,184 +863,6 @@ public interface SwitchCabinetApi extends ApiClient.Api {
   }
 
   /**
-   * Query duct data
-   * Query associated ducts and multipipes
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return SwitchCabinetDuctDataResponse
-   */
-  @RequestLine("POST /api/rest/entity/switchCabinet/{elid}/DuctData?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  SwitchCabinetDuctDataResponse switchCabinetDuctData(@Param("sessionId") String sessionId, @Param("elid") String elid, SwitchCabinetDuctDataRequest body);
-
-  /**
-   * Query duct data
-   * Similar to <code>switchCabinetDuctData</code> but it also returns the http response headers .
-   * Query associated ducts and multipipes
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/switchCabinet/{elid}/DuctData?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<SwitchCabinetDuctDataResponse> switchCabinetDuctDataWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, SwitchCabinetDuctDataRequest body);
-
-
-  /**
-   * Query duct data
-   * Query associated ducts and multipipes
-   * Note, this is equivalent to the other <code>switchCabinetDuctData</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link SwitchCabinetDuctDataQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return SwitchCabinetDuctDataResponse
-   */
-  @RequestLine("POST /api/rest/entity/switchCabinet/{elid}/DuctData?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  SwitchCabinetDuctDataResponse switchCabinetDuctData(@Param("elid") String elid, SwitchCabinetDuctDataRequest body, @QueryMap(encoded=true) SwitchCabinetDuctDataQueryParams queryParams);
-
-  /**
-  * Query duct data
-  * Query associated ducts and multipipes
-  * Note, this is equivalent to the other <code>switchCabinetDuctData</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return SwitchCabinetDuctDataResponse
-      */
-      @RequestLine("POST /api/rest/entity/switchCabinet/{elid}/DuctData?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<SwitchCabinetDuctDataResponse> switchCabinetDuctDataWithHttpInfo(@Param("elid") String elid, SwitchCabinetDuctDataRequest body, @QueryMap(encoded=true) SwitchCabinetDuctDataQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>switchCabinetDuctData</code> method in a fluent style.
-   */
-  public static class SwitchCabinetDuctDataQueryParams extends HashMap<String, Object> {
-    public SwitchCabinetDuctDataQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Get relations to Duct entities
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return SwitchCabinetDuctsResponseData
-   */
-  @RequestLine("POST /api/rest/entity/switchCabinet/{elid}/Ducts?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  SwitchCabinetDuctsResponseData switchCabinetDucts(@Param("sessionId") String sessionId, @Param("elid") String elid, SwitchCabinetDuctsRequestData body);
-
-  /**
-   * Get relations to Duct entities
-   * Similar to <code>switchCabinetDucts</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/switchCabinet/{elid}/Ducts?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<SwitchCabinetDuctsResponseData> switchCabinetDuctsWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, SwitchCabinetDuctsRequestData body);
-
-
-  /**
-   * Get relations to Duct entities
-   * 
-   * Note, this is equivalent to the other <code>switchCabinetDucts</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link SwitchCabinetDuctsQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return SwitchCabinetDuctsResponseData
-   */
-  @RequestLine("POST /api/rest/entity/switchCabinet/{elid}/Ducts?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  SwitchCabinetDuctsResponseData switchCabinetDucts(@Param("elid") String elid, SwitchCabinetDuctsRequestData body, @QueryMap(encoded=true) SwitchCabinetDuctsQueryParams queryParams);
-
-  /**
-  * Get relations to Duct entities
-  * 
-  * Note, this is equivalent to the other <code>switchCabinetDucts</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return SwitchCabinetDuctsResponseData
-      */
-      @RequestLine("POST /api/rest/entity/switchCabinet/{elid}/Ducts?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<SwitchCabinetDuctsResponseData> switchCabinetDuctsWithHttpInfo(@Param("elid") String elid, SwitchCabinetDuctsRequestData body, @QueryMap(encoded=true) SwitchCabinetDuctsQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>switchCabinetDucts</code> method in a fluent style.
-   */
-  public static class SwitchCabinetDuctsQueryParams extends HashMap<String, Object> {
-    public SwitchCabinetDuctsQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
    * Get relations to Frame contract entities
    * 
    * @param sessionId Session-ID (required)
@@ -1229,91 +946,6 @@ public interface SwitchCabinetApi extends ApiClient.Api {
    */
   public static class SwitchCabinetFrameContractsQueryParams extends HashMap<String, Object> {
     public SwitchCabinetFrameContractsQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Query inherited coordinates
-   * Query the own coordinates of an object or inherit them from parents
-   * @param sessionId Session-ID (required)
-   * @param body  (required)
-   * @return SwitchCabinetInheritedGeoCoordinatesResponse
-   */
-  @RequestLine("POST /api/rest/entity/switchCabinet/inheritedGeoCoordinates?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  SwitchCabinetInheritedGeoCoordinatesResponse switchCabinetInheritedGeoCoordinates(@Param("sessionId") String sessionId, SwitchCabinetInheritedGeoCoordinatesRequest body);
-
-  /**
-   * Query inherited coordinates
-   * Similar to <code>switchCabinetInheritedGeoCoordinates</code> but it also returns the http response headers .
-   * Query the own coordinates of an object or inherit them from parents
-   * @param sessionId Session-ID (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/switchCabinet/inheritedGeoCoordinates?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<SwitchCabinetInheritedGeoCoordinatesResponse> switchCabinetInheritedGeoCoordinatesWithHttpInfo(@Param("sessionId") String sessionId, SwitchCabinetInheritedGeoCoordinatesRequest body);
-
-
-  /**
-   * Query inherited coordinates
-   * Query the own coordinates of an object or inherit them from parents
-   * Note, this is equivalent to the other <code>switchCabinetInheritedGeoCoordinates</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link SwitchCabinetInheritedGeoCoordinatesQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return SwitchCabinetInheritedGeoCoordinatesResponse
-   */
-  @RequestLine("POST /api/rest/entity/switchCabinet/inheritedGeoCoordinates?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  SwitchCabinetInheritedGeoCoordinatesResponse switchCabinetInheritedGeoCoordinates(SwitchCabinetInheritedGeoCoordinatesRequest body, @QueryMap(encoded=true) SwitchCabinetInheritedGeoCoordinatesQueryParams queryParams);
-
-  /**
-  * Query inherited coordinates
-  * Query the own coordinates of an object or inherit them from parents
-  * Note, this is equivalent to the other <code>switchCabinetInheritedGeoCoordinates</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return SwitchCabinetInheritedGeoCoordinatesResponse
-      */
-      @RequestLine("POST /api/rest/entity/switchCabinet/inheritedGeoCoordinates?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<SwitchCabinetInheritedGeoCoordinatesResponse> switchCabinetInheritedGeoCoordinatesWithHttpInfo(SwitchCabinetInheritedGeoCoordinatesRequest body, @QueryMap(encoded=true) SwitchCabinetInheritedGeoCoordinatesQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>switchCabinetInheritedGeoCoordinates</code> method in a fluent style.
-   */
-  public static class SwitchCabinetInheritedGeoCoordinatesQueryParams extends HashMap<String, Object> {
-    public SwitchCabinetInheritedGeoCoordinatesQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -1492,95 +1124,6 @@ public interface SwitchCabinetApi extends ApiClient.Api {
    */
   public static class SwitchCabinetMaintenanceContractsQueryParams extends HashMap<String, Object> {
     public SwitchCabinetMaintenanceContractsQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Get relations to Multiducts entities
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return SwitchCabinetMultiDuctsResponseData
-   */
-  @RequestLine("POST /api/rest/entity/switchCabinet/{elid}/MultiDucts?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  SwitchCabinetMultiDuctsResponseData switchCabinetMultiDucts(@Param("sessionId") String sessionId, @Param("elid") String elid, SwitchCabinetMultiDuctsRequestData body);
-
-  /**
-   * Get relations to Multiducts entities
-   * Similar to <code>switchCabinetMultiDucts</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/switchCabinet/{elid}/MultiDucts?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<SwitchCabinetMultiDuctsResponseData> switchCabinetMultiDuctsWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, SwitchCabinetMultiDuctsRequestData body);
-
-
-  /**
-   * Get relations to Multiducts entities
-   * 
-   * Note, this is equivalent to the other <code>switchCabinetMultiDucts</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link SwitchCabinetMultiDuctsQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return SwitchCabinetMultiDuctsResponseData
-   */
-  @RequestLine("POST /api/rest/entity/switchCabinet/{elid}/MultiDucts?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  SwitchCabinetMultiDuctsResponseData switchCabinetMultiDucts(@Param("elid") String elid, SwitchCabinetMultiDuctsRequestData body, @QueryMap(encoded=true) SwitchCabinetMultiDuctsQueryParams queryParams);
-
-  /**
-  * Get relations to Multiducts entities
-  * 
-  * Note, this is equivalent to the other <code>switchCabinetMultiDucts</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return SwitchCabinetMultiDuctsResponseData
-      */
-      @RequestLine("POST /api/rest/entity/switchCabinet/{elid}/MultiDucts?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<SwitchCabinetMultiDuctsResponseData> switchCabinetMultiDuctsWithHttpInfo(@Param("elid") String elid, SwitchCabinetMultiDuctsRequestData body, @QueryMap(encoded=true) SwitchCabinetMultiDuctsQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>switchCabinetMultiDucts</code> method in a fluent style.
-   */
-  public static class SwitchCabinetMultiDuctsQueryParams extends HashMap<String, Object> {
-    public SwitchCabinetMultiDuctsQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -2113,91 +1656,6 @@ public interface SwitchCabinetApi extends ApiClient.Api {
   }
 
   /**
-   * Extended geo coordinates
-   * 
-   * @param sessionId Session-ID (required)
-   * @param body  (required)
-   * @return SwitchCabinetQueryExtendedGeoCoordinatesResponse
-   */
-  @RequestLine("POST /api/rest/entity/switchCabinet/queryExtendedGeoCoordinates?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  SwitchCabinetQueryExtendedGeoCoordinatesResponse switchCabinetQueryExtendedGeoCoordinates(@Param("sessionId") String sessionId, SwitchCabinetQueryExtendedGeoCoordinatesRequest body);
-
-  /**
-   * Extended geo coordinates
-   * Similar to <code>switchCabinetQueryExtendedGeoCoordinates</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/switchCabinet/queryExtendedGeoCoordinates?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<SwitchCabinetQueryExtendedGeoCoordinatesResponse> switchCabinetQueryExtendedGeoCoordinatesWithHttpInfo(@Param("sessionId") String sessionId, SwitchCabinetQueryExtendedGeoCoordinatesRequest body);
-
-
-  /**
-   * Extended geo coordinates
-   * 
-   * Note, this is equivalent to the other <code>switchCabinetQueryExtendedGeoCoordinates</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link SwitchCabinetQueryExtendedGeoCoordinatesQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return SwitchCabinetQueryExtendedGeoCoordinatesResponse
-   */
-  @RequestLine("POST /api/rest/entity/switchCabinet/queryExtendedGeoCoordinates?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  SwitchCabinetQueryExtendedGeoCoordinatesResponse switchCabinetQueryExtendedGeoCoordinates(SwitchCabinetQueryExtendedGeoCoordinatesRequest body, @QueryMap(encoded=true) SwitchCabinetQueryExtendedGeoCoordinatesQueryParams queryParams);
-
-  /**
-  * Extended geo coordinates
-  * 
-  * Note, this is equivalent to the other <code>switchCabinetQueryExtendedGeoCoordinates</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return SwitchCabinetQueryExtendedGeoCoordinatesResponse
-      */
-      @RequestLine("POST /api/rest/entity/switchCabinet/queryExtendedGeoCoordinates?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<SwitchCabinetQueryExtendedGeoCoordinatesResponse> switchCabinetQueryExtendedGeoCoordinatesWithHttpInfo(SwitchCabinetQueryExtendedGeoCoordinatesRequest body, @QueryMap(encoded=true) SwitchCabinetQueryExtendedGeoCoordinatesQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>switchCabinetQueryExtendedGeoCoordinates</code> method in a fluent style.
-   */
-  public static class SwitchCabinetQueryExtendedGeoCoordinatesQueryParams extends HashMap<String, Object> {
-    public SwitchCabinetQueryExtendedGeoCoordinatesQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
    * Extended query scroll first
    * Queries linked master data and zone data. This query supports scrolling. Calls the query and returns the first results including the scroll-ID for the next call.
    * @param sessionId Session-ID (required)
@@ -2362,184 +1820,6 @@ public interface SwitchCabinetApi extends ApiClient.Api {
    */
   public static class SwitchCabinetQueryExtendedScrollMoreQueryParams extends HashMap<String, Object> {
     public SwitchCabinetQueryExtendedScrollMoreQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Query device services 
-   * Query services for device 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return SwitchCabinetServicesResponse
-   */
-  @RequestLine("POST /api/rest/entity/switchCabinet/{elid}/Services?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  SwitchCabinetServicesResponse switchCabinetServices(@Param("sessionId") String sessionId, @Param("elid") String elid, SwitchCabinetServicesRequest body);
-
-  /**
-   * Query device services 
-   * Similar to <code>switchCabinetServices</code> but it also returns the http response headers .
-   * Query services for device 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/switchCabinet/{elid}/Services?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<SwitchCabinetServicesResponse> switchCabinetServicesWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, SwitchCabinetServicesRequest body);
-
-
-  /**
-   * Query device services 
-   * Query services for device 
-   * Note, this is equivalent to the other <code>switchCabinetServices</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link SwitchCabinetServicesQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return SwitchCabinetServicesResponse
-   */
-  @RequestLine("POST /api/rest/entity/switchCabinet/{elid}/Services?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  SwitchCabinetServicesResponse switchCabinetServices(@Param("elid") String elid, SwitchCabinetServicesRequest body, @QueryMap(encoded=true) SwitchCabinetServicesQueryParams queryParams);
-
-  /**
-  * Query device services 
-  * Query services for device 
-  * Note, this is equivalent to the other <code>switchCabinetServices</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return SwitchCabinetServicesResponse
-      */
-      @RequestLine("POST /api/rest/entity/switchCabinet/{elid}/Services?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<SwitchCabinetServicesResponse> switchCabinetServicesWithHttpInfo(@Param("elid") String elid, SwitchCabinetServicesRequest body, @QueryMap(encoded=true) SwitchCabinetServicesQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>switchCabinetServices</code> method in a fluent style.
-   */
-  public static class SwitchCabinetServicesQueryParams extends HashMap<String, Object> {
-    public SwitchCabinetServicesQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Get relations to Site entities
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return SwitchCabinetSitesResponseData
-   */
-  @RequestLine("POST /api/rest/entity/switchCabinet/{elid}/Sites?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  SwitchCabinetSitesResponseData switchCabinetSites(@Param("sessionId") String sessionId, @Param("elid") String elid, SwitchCabinetSitesRequestData body);
-
-  /**
-   * Get relations to Site entities
-   * Similar to <code>switchCabinetSites</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/switchCabinet/{elid}/Sites?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<SwitchCabinetSitesResponseData> switchCabinetSitesWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, SwitchCabinetSitesRequestData body);
-
-
-  /**
-   * Get relations to Site entities
-   * 
-   * Note, this is equivalent to the other <code>switchCabinetSites</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link SwitchCabinetSitesQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return SwitchCabinetSitesResponseData
-   */
-  @RequestLine("POST /api/rest/entity/switchCabinet/{elid}/Sites?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  SwitchCabinetSitesResponseData switchCabinetSites(@Param("elid") String elid, SwitchCabinetSitesRequestData body, @QueryMap(encoded=true) SwitchCabinetSitesQueryParams queryParams);
-
-  /**
-  * Get relations to Site entities
-  * 
-  * Note, this is equivalent to the other <code>switchCabinetSites</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return SwitchCabinetSitesResponseData
-      */
-      @RequestLine("POST /api/rest/entity/switchCabinet/{elid}/Sites?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<SwitchCabinetSitesResponseData> switchCabinetSitesWithHttpInfo(@Param("elid") String elid, SwitchCabinetSitesRequestData body, @QueryMap(encoded=true) SwitchCabinetSitesQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>switchCabinetSites</code> method in a fluent style.
-   */
-  public static class SwitchCabinetSitesQueryParams extends HashMap<String, Object> {
-    public SwitchCabinetSitesQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

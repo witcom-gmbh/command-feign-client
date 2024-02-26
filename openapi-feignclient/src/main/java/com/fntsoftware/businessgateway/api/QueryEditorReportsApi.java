@@ -14,8 +14,6 @@ import com.fntsoftware.businessgateway.entities.QueryEditorReportsDevicesInJunkW
 import com.fntsoftware.businessgateway.entities.QueryEditorReportsDevicesInJunkWhResponse;
 import com.fntsoftware.businessgateway.entities.QueryEditorReportsMeteringDataRequest;
 import com.fntsoftware.businessgateway.entities.QueryEditorReportsMeteringDataResponse;
-import com.fntsoftware.businessgateway.entities.QueryEditorReportsResourceGroupsFromHybridResourcesRequest;
-import com.fntsoftware.businessgateway.entities.QueryEditorReportsResourceGroupsFromHybridResourcesResponse;
 import com.fntsoftware.businessgateway.entities.QueryEditorReportsServerPhysischRequest;
 import com.fntsoftware.businessgateway.entities.QueryEditorReportsServerPhysischResponse;
 import com.fntsoftware.businessgateway.entities.QueryEditorReportsServerVirtualRequest;
@@ -27,7 +25,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-31T11:10:37.320689708Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
 public interface QueryEditorReportsApi extends ApiClient.Api {
 
 
@@ -451,91 +449,6 @@ public interface QueryEditorReportsApi extends ApiClient.Api {
    */
   public static class QueryEditorReportsMeteringDataQueryParams extends HashMap<String, Object> {
     public QueryEditorReportsMeteringDataQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Resource Groups from Hybrid Resources
-   * Part of a ValuePack, please contact your project manager for use
-   * @param sessionId Session-ID (required)
-   * @param body  (required)
-   * @return QueryEditorReportsResourceGroupsFromHybridResourcesResponse
-   */
-  @RequestLine("POST /api/rest/entity/queryEditorReports/resourceGroupsFromHybridResources?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  QueryEditorReportsResourceGroupsFromHybridResourcesResponse queryEditorReportsResourceGroupsFromHybridResources(@Param("sessionId") String sessionId, QueryEditorReportsResourceGroupsFromHybridResourcesRequest body);
-
-  /**
-   * Resource Groups from Hybrid Resources
-   * Similar to <code>queryEditorReportsResourceGroupsFromHybridResources</code> but it also returns the http response headers .
-   * Part of a ValuePack, please contact your project manager for use
-   * @param sessionId Session-ID (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/queryEditorReports/resourceGroupsFromHybridResources?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<QueryEditorReportsResourceGroupsFromHybridResourcesResponse> queryEditorReportsResourceGroupsFromHybridResourcesWithHttpInfo(@Param("sessionId") String sessionId, QueryEditorReportsResourceGroupsFromHybridResourcesRequest body);
-
-
-  /**
-   * Resource Groups from Hybrid Resources
-   * Part of a ValuePack, please contact your project manager for use
-   * Note, this is equivalent to the other <code>queryEditorReportsResourceGroupsFromHybridResources</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link QueryEditorReportsResourceGroupsFromHybridResourcesQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return QueryEditorReportsResourceGroupsFromHybridResourcesResponse
-   */
-  @RequestLine("POST /api/rest/entity/queryEditorReports/resourceGroupsFromHybridResources?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  QueryEditorReportsResourceGroupsFromHybridResourcesResponse queryEditorReportsResourceGroupsFromHybridResources(QueryEditorReportsResourceGroupsFromHybridResourcesRequest body, @QueryMap(encoded=true) QueryEditorReportsResourceGroupsFromHybridResourcesQueryParams queryParams);
-
-  /**
-  * Resource Groups from Hybrid Resources
-  * Part of a ValuePack, please contact your project manager for use
-  * Note, this is equivalent to the other <code>queryEditorReportsResourceGroupsFromHybridResources</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return QueryEditorReportsResourceGroupsFromHybridResourcesResponse
-      */
-      @RequestLine("POST /api/rest/entity/queryEditorReports/resourceGroupsFromHybridResources?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<QueryEditorReportsResourceGroupsFromHybridResourcesResponse> queryEditorReportsResourceGroupsFromHybridResourcesWithHttpInfo(QueryEditorReportsResourceGroupsFromHybridResourcesRequest body, @QueryMap(encoded=true) QueryEditorReportsResourceGroupsFromHybridResourcesQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>queryEditorReportsResourceGroupsFromHybridResources</code> method in a fluent style.
-   */
-  public static class QueryEditorReportsResourceGroupsFromHybridResourcesQueryParams extends HashMap<String, Object> {
-    public QueryEditorReportsResourceGroupsFromHybridResourcesQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

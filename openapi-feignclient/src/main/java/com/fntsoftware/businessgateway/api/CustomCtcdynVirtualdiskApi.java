@@ -29,7 +29,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-31T11:10:37.320689708Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
 public interface CustomCtcdynVirtualdiskApi extends ApiClient.Api {
 
 
@@ -119,7 +119,7 @@ public interface CustomCtcdynVirtualdiskApi extends ApiClient.Api {
   }
 
   /**
-   * Get relations to Server (base) entities
+   * Get relations to Server entities
    * 
    * @param sessionId Session-ID (required)
    * @param elid  (required)
@@ -134,7 +134,7 @@ public interface CustomCtcdynVirtualdiskApi extends ApiClient.Api {
   CustomCtcdynVirtualdisk100030ResponseData customCtcdynVirtualdisk100030(@Param("sessionId") String sessionId, @Param("elid") String elid, CustomCtcdynVirtualdisk100030RequestData body);
 
   /**
-   * Get relations to Server (base) entities
+   * Get relations to Server entities
    * Similar to <code>customCtcdynVirtualdisk100030</code> but it also returns the http response headers .
    * 
    * @param sessionId Session-ID (required)
@@ -151,7 +151,7 @@ public interface CustomCtcdynVirtualdiskApi extends ApiClient.Api {
 
 
   /**
-   * Get relations to Server (base) entities
+   * Get relations to Server entities
    * 
    * Note, this is equivalent to the other <code>customCtcdynVirtualdisk100030</code> method,
    * but with the query parameters collected into a single Map parameter. This
@@ -175,7 +175,7 @@ public interface CustomCtcdynVirtualdiskApi extends ApiClient.Api {
   CustomCtcdynVirtualdisk100030ResponseData customCtcdynVirtualdisk100030(@Param("elid") String elid, CustomCtcdynVirtualdisk100030RequestData body, @QueryMap(encoded=true) CustomCtcdynVirtualdisk100030QueryParams queryParams);
 
   /**
-  * Get relations to Server (base) entities
+  * Get relations to Server entities
   * 
   * Note, this is equivalent to the other <code>customCtcdynVirtualdisk100030</code> that receives the query parameters as a map,
   * but this one also exposes the Http response headers

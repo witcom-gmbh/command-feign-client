@@ -12,10 +12,6 @@ import com.fntsoftware.businessgateway.entities.DeleteTraySectionRequestData;
 import com.fntsoftware.businessgateway.entities.DeleteTraySectionResponse;
 import com.fntsoftware.businessgateway.entities.LoopInNodeTraySectionRequestData;
 import com.fntsoftware.businessgateway.entities.LoopInNodeTraySectionResponse;
-import com.fntsoftware.businessgateway.entities.SetRouteForImportTraySectionRequestData;
-import com.fntsoftware.businessgateway.entities.SetRouteForImportTraySectionResponse;
-import com.fntsoftware.businessgateway.entities.SetRouteTraySectionRequestData;
-import com.fntsoftware.businessgateway.entities.SetRouteTraySectionResponse;
 import com.fntsoftware.businessgateway.entities.TraySectionContractsRequestData;
 import com.fntsoftware.businessgateway.entities.TraySectionContractsResponseData;
 import com.fntsoftware.businessgateway.entities.TraySectionDataCablesRequestData;
@@ -26,8 +22,6 @@ import com.fntsoftware.businessgateway.entities.TraySectionFrameContractsRequest
 import com.fntsoftware.businessgateway.entities.TraySectionFrameContractsResponseData;
 import com.fntsoftware.businessgateway.entities.TraySectionFromNodeRequestData;
 import com.fntsoftware.businessgateway.entities.TraySectionFromNodeResponseData;
-import com.fntsoftware.businessgateway.entities.TraySectionInheritedGeoCoordinatesRequest;
-import com.fntsoftware.businessgateway.entities.TraySectionInheritedGeoCoordinatesResponse;
 import com.fntsoftware.businessgateway.entities.TraySectionMaintenanceContractsRequestData;
 import com.fntsoftware.businessgateway.entities.TraySectionMaintenanceContractsResponseData;
 import com.fntsoftware.businessgateway.entities.TraySectionOrganizationsRequestData;
@@ -57,7 +51,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-31T11:10:37.320689708Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
 public interface TraySectionApi extends ApiClient.Api {
 
 
@@ -408,184 +402,6 @@ public interface TraySectionApi extends ApiClient.Api {
    */
   public static class LoopInNodeTraySectionQueryParams extends HashMap<String, Object> {
     public LoopInNodeTraySectionQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Specify route
-   * Set the geographical route of a tray section (only with GeoMaps)
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return SetRouteForImportTraySectionResponse
-   */
-  @RequestLine("POST /api/rest/entity/traySection/{elid}/setRouteForImport?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  SetRouteForImportTraySectionResponse setRouteForImportTraySection(@Param("sessionId") String sessionId, @Param("elid") String elid, SetRouteForImportTraySectionRequestData body);
-
-  /**
-   * Specify route
-   * Similar to <code>setRouteForImportTraySection</code> but it also returns the http response headers .
-   * Set the geographical route of a tray section (only with GeoMaps)
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/traySection/{elid}/setRouteForImport?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<SetRouteForImportTraySectionResponse> setRouteForImportTraySectionWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, SetRouteForImportTraySectionRequestData body);
-
-
-  /**
-   * Specify route
-   * Set the geographical route of a tray section (only with GeoMaps)
-   * Note, this is equivalent to the other <code>setRouteForImportTraySection</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link SetRouteForImportTraySectionQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return SetRouteForImportTraySectionResponse
-   */
-  @RequestLine("POST /api/rest/entity/traySection/{elid}/setRouteForImport?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  SetRouteForImportTraySectionResponse setRouteForImportTraySection(@Param("elid") String elid, SetRouteForImportTraySectionRequestData body, @QueryMap(encoded=true) SetRouteForImportTraySectionQueryParams queryParams);
-
-  /**
-  * Specify route
-  * Set the geographical route of a tray section (only with GeoMaps)
-  * Note, this is equivalent to the other <code>setRouteForImportTraySection</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return SetRouteForImportTraySectionResponse
-      */
-      @RequestLine("POST /api/rest/entity/traySection/{elid}/setRouteForImport?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<SetRouteForImportTraySectionResponse> setRouteForImportTraySectionWithHttpInfo(@Param("elid") String elid, SetRouteForImportTraySectionRequestData body, @QueryMap(encoded=true) SetRouteForImportTraySectionQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>setRouteForImportTraySection</code> method in a fluent style.
-   */
-  public static class SetRouteForImportTraySectionQueryParams extends HashMap<String, Object> {
-    public SetRouteForImportTraySectionQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Specify route
-   * Set the geographical route of a tray section (only with GeoMaps)
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return SetRouteTraySectionResponse
-   */
-  @RequestLine("POST /api/rest/entity/traySection/{elid}/setRoute?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  SetRouteTraySectionResponse setRouteTraySection(@Param("sessionId") String sessionId, @Param("elid") String elid, SetRouteTraySectionRequestData body);
-
-  /**
-   * Specify route
-   * Similar to <code>setRouteTraySection</code> but it also returns the http response headers .
-   * Set the geographical route of a tray section (only with GeoMaps)
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/traySection/{elid}/setRoute?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<SetRouteTraySectionResponse> setRouteTraySectionWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, SetRouteTraySectionRequestData body);
-
-
-  /**
-   * Specify route
-   * Set the geographical route of a tray section (only with GeoMaps)
-   * Note, this is equivalent to the other <code>setRouteTraySection</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link SetRouteTraySectionQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return SetRouteTraySectionResponse
-   */
-  @RequestLine("POST /api/rest/entity/traySection/{elid}/setRoute?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  SetRouteTraySectionResponse setRouteTraySection(@Param("elid") String elid, SetRouteTraySectionRequestData body, @QueryMap(encoded=true) SetRouteTraySectionQueryParams queryParams);
-
-  /**
-  * Specify route
-  * Set the geographical route of a tray section (only with GeoMaps)
-  * Note, this is equivalent to the other <code>setRouteTraySection</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return SetRouteTraySectionResponse
-      */
-      @RequestLine("POST /api/rest/entity/traySection/{elid}/setRoute?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<SetRouteTraySectionResponse> setRouteTraySectionWithHttpInfo(@Param("elid") String elid, SetRouteTraySectionRequestData body, @QueryMap(encoded=true) SetRouteTraySectionQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>setRouteTraySection</code> method in a fluent style.
-   */
-  public static class SetRouteTraySectionQueryParams extends HashMap<String, Object> {
-    public SetRouteTraySectionQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -1031,91 +847,6 @@ public interface TraySectionApi extends ApiClient.Api {
    */
   public static class TraySectionFromNodeQueryParams extends HashMap<String, Object> {
     public TraySectionFromNodeQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Query inherited coordinates
-   * Query the own coordinates of an object or inherit them from parents
-   * @param sessionId Session-ID (required)
-   * @param body  (required)
-   * @return TraySectionInheritedGeoCoordinatesResponse
-   */
-  @RequestLine("POST /api/rest/entity/traySection/inheritedGeoCoordinates?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  TraySectionInheritedGeoCoordinatesResponse traySectionInheritedGeoCoordinates(@Param("sessionId") String sessionId, TraySectionInheritedGeoCoordinatesRequest body);
-
-  /**
-   * Query inherited coordinates
-   * Similar to <code>traySectionInheritedGeoCoordinates</code> but it also returns the http response headers .
-   * Query the own coordinates of an object or inherit them from parents
-   * @param sessionId Session-ID (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/traySection/inheritedGeoCoordinates?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<TraySectionInheritedGeoCoordinatesResponse> traySectionInheritedGeoCoordinatesWithHttpInfo(@Param("sessionId") String sessionId, TraySectionInheritedGeoCoordinatesRequest body);
-
-
-  /**
-   * Query inherited coordinates
-   * Query the own coordinates of an object or inherit them from parents
-   * Note, this is equivalent to the other <code>traySectionInheritedGeoCoordinates</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link TraySectionInheritedGeoCoordinatesQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return TraySectionInheritedGeoCoordinatesResponse
-   */
-  @RequestLine("POST /api/rest/entity/traySection/inheritedGeoCoordinates?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  TraySectionInheritedGeoCoordinatesResponse traySectionInheritedGeoCoordinates(TraySectionInheritedGeoCoordinatesRequest body, @QueryMap(encoded=true) TraySectionInheritedGeoCoordinatesQueryParams queryParams);
-
-  /**
-  * Query inherited coordinates
-  * Query the own coordinates of an object or inherit them from parents
-  * Note, this is equivalent to the other <code>traySectionInheritedGeoCoordinates</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return TraySectionInheritedGeoCoordinatesResponse
-      */
-      @RequestLine("POST /api/rest/entity/traySection/inheritedGeoCoordinates?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<TraySectionInheritedGeoCoordinatesResponse> traySectionInheritedGeoCoordinatesWithHttpInfo(TraySectionInheritedGeoCoordinatesRequest body, @QueryMap(encoded=true) TraySectionInheritedGeoCoordinatesQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>traySectionInheritedGeoCoordinates</code> method in a fluent style.
-   */
-  public static class TraySectionInheritedGeoCoordinatesQueryParams extends HashMap<String, Object> {
-    public TraySectionInheritedGeoCoordinatesQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

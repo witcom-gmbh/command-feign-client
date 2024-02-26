@@ -4,16 +4,14 @@ import com.fntsoftware.businessgateway.ApiClient;
 import com.fntsoftware.businessgateway.EncodingUtils;
 import com.fntsoftware.businessgateway.entities.ApiResponse;
 
-import com.fntsoftware.businessgateway.entities.BlockConductorDataCableRequestData;
-import com.fntsoftware.businessgateway.entities.BlockConductorDataCableResponse;
+import com.fntsoftware.businessgateway.entities.BlockFiberDataCableRequestData;
+import com.fntsoftware.businessgateway.entities.BlockFiberDataCableResponse;
 import com.fntsoftware.businessgateway.entities.ChangeCableTypeDataCableRequestData;
 import com.fntsoftware.businessgateway.entities.ChangeCableTypeDataCableResponse;
 import com.fntsoftware.businessgateway.entities.ConnectDataCableRequestData;
 import com.fntsoftware.businessgateway.entities.ConnectDataCableResponse;
 import com.fntsoftware.businessgateway.entities.DataCableCableMasterDataCableRequestData;
 import com.fntsoftware.businessgateway.entities.DataCableCableMasterDataCableResponseData;
-import com.fntsoftware.businessgateway.entities.DataCableConductorsRequestData;
-import com.fntsoftware.businessgateway.entities.DataCableConductorsResponseData;
 import com.fntsoftware.businessgateway.entities.DataCableConnectionsRequestData;
 import com.fntsoftware.businessgateway.entities.DataCableConnectionsResponseData;
 import com.fntsoftware.businessgateway.entities.DataCableContractsRequestData;
@@ -26,8 +24,6 @@ import com.fntsoftware.businessgateway.entities.DataCableEndPortRequest;
 import com.fntsoftware.businessgateway.entities.DataCableEndPortResponse;
 import com.fntsoftware.businessgateway.entities.DataCableFrameContractsRequestData;
 import com.fntsoftware.businessgateway.entities.DataCableFrameContractsResponseData;
-import com.fntsoftware.businessgateway.entities.DataCableInheritedGeoCoordinatesRequest;
-import com.fntsoftware.businessgateway.entities.DataCableInheritedGeoCoordinatesResponse;
 import com.fntsoftware.businessgateway.entities.DataCableMaintenanceContractsRequestData;
 import com.fntsoftware.businessgateway.entities.DataCableMaintenanceContractsResponseData;
 import com.fntsoftware.businessgateway.entities.DataCableOrganizationsRequestData;
@@ -50,10 +46,10 @@ import com.fntsoftware.businessgateway.entities.ModifyConnectDataCableRequestDat
 import com.fntsoftware.businessgateway.entities.ModifyConnectDataCableResponse;
 import com.fntsoftware.businessgateway.entities.PatchDataCableRequestData;
 import com.fntsoftware.businessgateway.entities.PatchDataCableResponse;
-import com.fntsoftware.businessgateway.entities.ReserveConductorDataCableRequestData;
-import com.fntsoftware.businessgateway.entities.ReserveConductorDataCableResponse;
-import com.fntsoftware.businessgateway.entities.UnblockConductorDataCableRequestData;
-import com.fntsoftware.businessgateway.entities.UnblockConductorDataCableResponse;
+import com.fntsoftware.businessgateway.entities.ReserveFiberDataCableRequestData;
+import com.fntsoftware.businessgateway.entities.ReserveFiberDataCableResponse;
+import com.fntsoftware.businessgateway.entities.UnblockFiberDataCableRequestData;
+import com.fntsoftware.businessgateway.entities.UnblockFiberDataCableResponse;
 import com.fntsoftware.businessgateway.entities.UpdateDataCableRequestData;
 import com.fntsoftware.businessgateway.entities.UpdateDataCableResponse;
 import com.fntsoftware.businessgateway.entities.UpdateSystemAttributesDataCableRequestData;
@@ -65,49 +61,49 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-31T11:10:37.320689708Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
 public interface DataCableApi extends ApiClient.Api {
 
 
   /**
-   * Block conductor
-   * Block conductor
+   * Lock fiber
+   * Lock fiber
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
-   * @return BlockConductorDataCableResponse
+   * @return BlockFiberDataCableResponse
    */
-  @RequestLine("POST /api/rest/entity/dataCable/{elid}/blockConductor?sessionId={sessionId}")
+  @RequestLine("POST /api/rest/entity/dataCable/{elid}/blockFiber?sessionId={sessionId}")
   @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  BlockConductorDataCableResponse blockConductorDataCable(@Param("sessionId") String sessionId, @Param("elid") String elid, BlockConductorDataCableRequestData body);
+  BlockFiberDataCableResponse blockFiberDataCable(@Param("sessionId") String sessionId, @Param("elid") String elid, BlockFiberDataCableRequestData body);
 
   /**
-   * Block conductor
-   * Similar to <code>blockConductorDataCable</code> but it also returns the http response headers .
-   * Block conductor
+   * Lock fiber
+   * Similar to <code>blockFiberDataCable</code> but it also returns the http response headers .
+   * Lock fiber
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
    * @return A ApiResponse that wraps the response boyd and the http headers.
    */
-  @RequestLine("POST /api/rest/entity/dataCable/{elid}/blockConductor?sessionId={sessionId}")
+  @RequestLine("POST /api/rest/entity/dataCable/{elid}/blockFiber?sessionId={sessionId}")
   @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  ApiResponse<BlockConductorDataCableResponse> blockConductorDataCableWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, BlockConductorDataCableRequestData body);
+  ApiResponse<BlockFiberDataCableResponse> blockFiberDataCableWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, BlockFiberDataCableRequestData body);
 
 
   /**
-   * Block conductor
-   * Block conductor
-   * Note, this is equivalent to the other <code>blockConductorDataCable</code> method,
+   * Lock fiber
+   * Lock fiber
+   * Note, this is equivalent to the other <code>blockFiberDataCable</code> method,
    * but with the query parameters collected into a single Map parameter. This
    * is convenient for services with optional query parameters, especially when
-   * used with the {@link BlockConductorDataCableQueryParams} class that allows for
+   * used with the {@link BlockFiberDataCableQueryParams} class that allows for
    * building up this map in a fluent style.
    * @param elid  (required)
    * @param body  (required)
@@ -116,19 +112,19 @@ public interface DataCableApi extends ApiClient.Api {
    *   <ul>
    *   <li>sessionId - Session-ID (required)</li>
    *   </ul>
-   * @return BlockConductorDataCableResponse
+   * @return BlockFiberDataCableResponse
    */
-  @RequestLine("POST /api/rest/entity/dataCable/{elid}/blockConductor?sessionId={sessionId}")
+  @RequestLine("POST /api/rest/entity/dataCable/{elid}/blockFiber?sessionId={sessionId}")
   @Headers({
   "Content-Type: application/json",
   "Accept: application/json",
   })
-  BlockConductorDataCableResponse blockConductorDataCable(@Param("elid") String elid, BlockConductorDataCableRequestData body, @QueryMap(encoded=true) BlockConductorDataCableQueryParams queryParams);
+  BlockFiberDataCableResponse blockFiberDataCable(@Param("elid") String elid, BlockFiberDataCableRequestData body, @QueryMap(encoded=true) BlockFiberDataCableQueryParams queryParams);
 
   /**
-  * Block conductor
-  * Block conductor
-  * Note, this is equivalent to the other <code>blockConductorDataCable</code> that receives the query parameters as a map,
+  * Lock fiber
+  * Lock fiber
+  * Note, this is equivalent to the other <code>blockFiberDataCable</code> that receives the query parameters as a map,
   * but this one also exposes the Http response headers
               * @param elid  (required)
               * @param body  (required)
@@ -137,22 +133,22 @@ public interface DataCableApi extends ApiClient.Api {
       *   <ul>
           *   <li>sessionId - Session-ID (required)</li>
       *   </ul>
-          * @return BlockConductorDataCableResponse
+          * @return BlockFiberDataCableResponse
       */
-      @RequestLine("POST /api/rest/entity/dataCable/{elid}/blockConductor?sessionId={sessionId}")
+      @RequestLine("POST /api/rest/entity/dataCable/{elid}/blockFiber?sessionId={sessionId}")
       @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
       })
-   ApiResponse<BlockConductorDataCableResponse> blockConductorDataCableWithHttpInfo(@Param("elid") String elid, BlockConductorDataCableRequestData body, @QueryMap(encoded=true) BlockConductorDataCableQueryParams queryParams);
+   ApiResponse<BlockFiberDataCableResponse> blockFiberDataCableWithHttpInfo(@Param("elid") String elid, BlockFiberDataCableRequestData body, @QueryMap(encoded=true) BlockFiberDataCableQueryParams queryParams);
 
 
    /**
    * A convenience class for generating query parameters for the
-   * <code>blockConductorDataCable</code> method in a fluent style.
+   * <code>blockFiberDataCable</code> method in a fluent style.
    */
-  public static class BlockConductorDataCableQueryParams extends HashMap<String, Object> {
-    public BlockConductorDataCableQueryParams sessionId(final String value) {
+  public static class BlockFiberDataCableQueryParams extends HashMap<String, Object> {
+    public BlockFiberDataCableQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -416,95 +412,6 @@ public interface DataCableApi extends ApiClient.Api {
    */
   public static class DataCableCableMasterDataCableQueryParams extends HashMap<String, Object> {
     public DataCableCableMasterDataCableQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Get relations to Conductor entities
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return DataCableConductorsResponseData
-   */
-  @RequestLine("POST /api/rest/entity/dataCable/{elid}/Conductors?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  DataCableConductorsResponseData dataCableConductors(@Param("sessionId") String sessionId, @Param("elid") String elid, DataCableConductorsRequestData body);
-
-  /**
-   * Get relations to Conductor entities
-   * Similar to <code>dataCableConductors</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/dataCable/{elid}/Conductors?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<DataCableConductorsResponseData> dataCableConductorsWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, DataCableConductorsRequestData body);
-
-
-  /**
-   * Get relations to Conductor entities
-   * 
-   * Note, this is equivalent to the other <code>dataCableConductors</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link DataCableConductorsQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return DataCableConductorsResponseData
-   */
-  @RequestLine("POST /api/rest/entity/dataCable/{elid}/Conductors?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  DataCableConductorsResponseData dataCableConductors(@Param("elid") String elid, DataCableConductorsRequestData body, @QueryMap(encoded=true) DataCableConductorsQueryParams queryParams);
-
-  /**
-  * Get relations to Conductor entities
-  * 
-  * Note, this is equivalent to the other <code>dataCableConductors</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return DataCableConductorsResponseData
-      */
-      @RequestLine("POST /api/rest/entity/dataCable/{elid}/Conductors?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<DataCableConductorsResponseData> dataCableConductorsWithHttpInfo(@Param("elid") String elid, DataCableConductorsRequestData body, @QueryMap(encoded=true) DataCableConductorsQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>dataCableConductors</code> method in a fluent style.
-   */
-  public static class DataCableConductorsQueryParams extends HashMap<String, Object> {
-    public DataCableConductorsQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -1039,91 +946,6 @@ public interface DataCableApi extends ApiClient.Api {
    */
   public static class DataCableFrameContractsQueryParams extends HashMap<String, Object> {
     public DataCableFrameContractsQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Query inherited coordinates
-   * Query the own coordinates of an object or inherit them from parents
-   * @param sessionId Session-ID (required)
-   * @param body  (required)
-   * @return DataCableInheritedGeoCoordinatesResponse
-   */
-  @RequestLine("POST /api/rest/entity/dataCable/inheritedGeoCoordinates?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  DataCableInheritedGeoCoordinatesResponse dataCableInheritedGeoCoordinates(@Param("sessionId") String sessionId, DataCableInheritedGeoCoordinatesRequest body);
-
-  /**
-   * Query inherited coordinates
-   * Similar to <code>dataCableInheritedGeoCoordinates</code> but it also returns the http response headers .
-   * Query the own coordinates of an object or inherit them from parents
-   * @param sessionId Session-ID (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/dataCable/inheritedGeoCoordinates?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<DataCableInheritedGeoCoordinatesResponse> dataCableInheritedGeoCoordinatesWithHttpInfo(@Param("sessionId") String sessionId, DataCableInheritedGeoCoordinatesRequest body);
-
-
-  /**
-   * Query inherited coordinates
-   * Query the own coordinates of an object or inherit them from parents
-   * Note, this is equivalent to the other <code>dataCableInheritedGeoCoordinates</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link DataCableInheritedGeoCoordinatesQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return DataCableInheritedGeoCoordinatesResponse
-   */
-  @RequestLine("POST /api/rest/entity/dataCable/inheritedGeoCoordinates?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  DataCableInheritedGeoCoordinatesResponse dataCableInheritedGeoCoordinates(DataCableInheritedGeoCoordinatesRequest body, @QueryMap(encoded=true) DataCableInheritedGeoCoordinatesQueryParams queryParams);
-
-  /**
-  * Query inherited coordinates
-  * Query the own coordinates of an object or inherit them from parents
-  * Note, this is equivalent to the other <code>dataCableInheritedGeoCoordinates</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return DataCableInheritedGeoCoordinatesResponse
-      */
-      @RequestLine("POST /api/rest/entity/dataCable/inheritedGeoCoordinates?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<DataCableInheritedGeoCoordinatesResponse> dataCableInheritedGeoCoordinatesWithHttpInfo(DataCableInheritedGeoCoordinatesRequest body, @QueryMap(encoded=true) DataCableInheritedGeoCoordinatesQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>dataCableInheritedGeoCoordinates</code> method in a fluent style.
-   */
-  public static class DataCableInheritedGeoCoordinatesQueryParams extends HashMap<String, Object> {
-    public DataCableInheritedGeoCoordinatesQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -2105,44 +1927,44 @@ public interface DataCableApi extends ApiClient.Api {
   }
 
   /**
-   * Reserve conductor
-   * Reserve conductor
+   * Reserve fiber
+   * Reserve fiber
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
-   * @return ReserveConductorDataCableResponse
+   * @return ReserveFiberDataCableResponse
    */
-  @RequestLine("POST /api/rest/entity/dataCable/{elid}/reserveConductor?sessionId={sessionId}")
+  @RequestLine("POST /api/rest/entity/dataCable/{elid}/reserveFiber?sessionId={sessionId}")
   @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  ReserveConductorDataCableResponse reserveConductorDataCable(@Param("sessionId") String sessionId, @Param("elid") String elid, ReserveConductorDataCableRequestData body);
+  ReserveFiberDataCableResponse reserveFiberDataCable(@Param("sessionId") String sessionId, @Param("elid") String elid, ReserveFiberDataCableRequestData body);
 
   /**
-   * Reserve conductor
-   * Similar to <code>reserveConductorDataCable</code> but it also returns the http response headers .
-   * Reserve conductor
+   * Reserve fiber
+   * Similar to <code>reserveFiberDataCable</code> but it also returns the http response headers .
+   * Reserve fiber
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
    * @return A ApiResponse that wraps the response boyd and the http headers.
    */
-  @RequestLine("POST /api/rest/entity/dataCable/{elid}/reserveConductor?sessionId={sessionId}")
+  @RequestLine("POST /api/rest/entity/dataCable/{elid}/reserveFiber?sessionId={sessionId}")
   @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  ApiResponse<ReserveConductorDataCableResponse> reserveConductorDataCableWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ReserveConductorDataCableRequestData body);
+  ApiResponse<ReserveFiberDataCableResponse> reserveFiberDataCableWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ReserveFiberDataCableRequestData body);
 
 
   /**
-   * Reserve conductor
-   * Reserve conductor
-   * Note, this is equivalent to the other <code>reserveConductorDataCable</code> method,
+   * Reserve fiber
+   * Reserve fiber
+   * Note, this is equivalent to the other <code>reserveFiberDataCable</code> method,
    * but with the query parameters collected into a single Map parameter. This
    * is convenient for services with optional query parameters, especially when
-   * used with the {@link ReserveConductorDataCableQueryParams} class that allows for
+   * used with the {@link ReserveFiberDataCableQueryParams} class that allows for
    * building up this map in a fluent style.
    * @param elid  (required)
    * @param body  (required)
@@ -2151,19 +1973,19 @@ public interface DataCableApi extends ApiClient.Api {
    *   <ul>
    *   <li>sessionId - Session-ID (required)</li>
    *   </ul>
-   * @return ReserveConductorDataCableResponse
+   * @return ReserveFiberDataCableResponse
    */
-  @RequestLine("POST /api/rest/entity/dataCable/{elid}/reserveConductor?sessionId={sessionId}")
+  @RequestLine("POST /api/rest/entity/dataCable/{elid}/reserveFiber?sessionId={sessionId}")
   @Headers({
   "Content-Type: application/json",
   "Accept: application/json",
   })
-  ReserveConductorDataCableResponse reserveConductorDataCable(@Param("elid") String elid, ReserveConductorDataCableRequestData body, @QueryMap(encoded=true) ReserveConductorDataCableQueryParams queryParams);
+  ReserveFiberDataCableResponse reserveFiberDataCable(@Param("elid") String elid, ReserveFiberDataCableRequestData body, @QueryMap(encoded=true) ReserveFiberDataCableQueryParams queryParams);
 
   /**
-  * Reserve conductor
-  * Reserve conductor
-  * Note, this is equivalent to the other <code>reserveConductorDataCable</code> that receives the query parameters as a map,
+  * Reserve fiber
+  * Reserve fiber
+  * Note, this is equivalent to the other <code>reserveFiberDataCable</code> that receives the query parameters as a map,
   * but this one also exposes the Http response headers
               * @param elid  (required)
               * @param body  (required)
@@ -2172,66 +1994,66 @@ public interface DataCableApi extends ApiClient.Api {
       *   <ul>
           *   <li>sessionId - Session-ID (required)</li>
       *   </ul>
-          * @return ReserveConductorDataCableResponse
+          * @return ReserveFiberDataCableResponse
       */
-      @RequestLine("POST /api/rest/entity/dataCable/{elid}/reserveConductor?sessionId={sessionId}")
+      @RequestLine("POST /api/rest/entity/dataCable/{elid}/reserveFiber?sessionId={sessionId}")
       @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
       })
-   ApiResponse<ReserveConductorDataCableResponse> reserveConductorDataCableWithHttpInfo(@Param("elid") String elid, ReserveConductorDataCableRequestData body, @QueryMap(encoded=true) ReserveConductorDataCableQueryParams queryParams);
+   ApiResponse<ReserveFiberDataCableResponse> reserveFiberDataCableWithHttpInfo(@Param("elid") String elid, ReserveFiberDataCableRequestData body, @QueryMap(encoded=true) ReserveFiberDataCableQueryParams queryParams);
 
 
    /**
    * A convenience class for generating query parameters for the
-   * <code>reserveConductorDataCable</code> method in a fluent style.
+   * <code>reserveFiberDataCable</code> method in a fluent style.
    */
-  public static class ReserveConductorDataCableQueryParams extends HashMap<String, Object> {
-    public ReserveConductorDataCableQueryParams sessionId(final String value) {
+  public static class ReserveFiberDataCableQueryParams extends HashMap<String, Object> {
+    public ReserveFiberDataCableQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
   }
 
   /**
-   * Unblock conductor
-   * Unblock conductor
+   * Release fiber
+   * Release fiber
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
-   * @return UnblockConductorDataCableResponse
+   * @return UnblockFiberDataCableResponse
    */
-  @RequestLine("POST /api/rest/entity/dataCable/{elid}/unblockConductor?sessionId={sessionId}")
+  @RequestLine("POST /api/rest/entity/dataCable/{elid}/unblockFiber?sessionId={sessionId}")
   @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  UnblockConductorDataCableResponse unblockConductorDataCable(@Param("sessionId") String sessionId, @Param("elid") String elid, UnblockConductorDataCableRequestData body);
+  UnblockFiberDataCableResponse unblockFiberDataCable(@Param("sessionId") String sessionId, @Param("elid") String elid, UnblockFiberDataCableRequestData body);
 
   /**
-   * Unblock conductor
-   * Similar to <code>unblockConductorDataCable</code> but it also returns the http response headers .
-   * Unblock conductor
+   * Release fiber
+   * Similar to <code>unblockFiberDataCable</code> but it also returns the http response headers .
+   * Release fiber
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
    * @return A ApiResponse that wraps the response boyd and the http headers.
    */
-  @RequestLine("POST /api/rest/entity/dataCable/{elid}/unblockConductor?sessionId={sessionId}")
+  @RequestLine("POST /api/rest/entity/dataCable/{elid}/unblockFiber?sessionId={sessionId}")
   @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  ApiResponse<UnblockConductorDataCableResponse> unblockConductorDataCableWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, UnblockConductorDataCableRequestData body);
+  ApiResponse<UnblockFiberDataCableResponse> unblockFiberDataCableWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, UnblockFiberDataCableRequestData body);
 
 
   /**
-   * Unblock conductor
-   * Unblock conductor
-   * Note, this is equivalent to the other <code>unblockConductorDataCable</code> method,
+   * Release fiber
+   * Release fiber
+   * Note, this is equivalent to the other <code>unblockFiberDataCable</code> method,
    * but with the query parameters collected into a single Map parameter. This
    * is convenient for services with optional query parameters, especially when
-   * used with the {@link UnblockConductorDataCableQueryParams} class that allows for
+   * used with the {@link UnblockFiberDataCableQueryParams} class that allows for
    * building up this map in a fluent style.
    * @param elid  (required)
    * @param body  (required)
@@ -2240,19 +2062,19 @@ public interface DataCableApi extends ApiClient.Api {
    *   <ul>
    *   <li>sessionId - Session-ID (required)</li>
    *   </ul>
-   * @return UnblockConductorDataCableResponse
+   * @return UnblockFiberDataCableResponse
    */
-  @RequestLine("POST /api/rest/entity/dataCable/{elid}/unblockConductor?sessionId={sessionId}")
+  @RequestLine("POST /api/rest/entity/dataCable/{elid}/unblockFiber?sessionId={sessionId}")
   @Headers({
   "Content-Type: application/json",
   "Accept: application/json",
   })
-  UnblockConductorDataCableResponse unblockConductorDataCable(@Param("elid") String elid, UnblockConductorDataCableRequestData body, @QueryMap(encoded=true) UnblockConductorDataCableQueryParams queryParams);
+  UnblockFiberDataCableResponse unblockFiberDataCable(@Param("elid") String elid, UnblockFiberDataCableRequestData body, @QueryMap(encoded=true) UnblockFiberDataCableQueryParams queryParams);
 
   /**
-  * Unblock conductor
-  * Unblock conductor
-  * Note, this is equivalent to the other <code>unblockConductorDataCable</code> that receives the query parameters as a map,
+  * Release fiber
+  * Release fiber
+  * Note, this is equivalent to the other <code>unblockFiberDataCable</code> that receives the query parameters as a map,
   * but this one also exposes the Http response headers
               * @param elid  (required)
               * @param body  (required)
@@ -2261,22 +2083,22 @@ public interface DataCableApi extends ApiClient.Api {
       *   <ul>
           *   <li>sessionId - Session-ID (required)</li>
       *   </ul>
-          * @return UnblockConductorDataCableResponse
+          * @return UnblockFiberDataCableResponse
       */
-      @RequestLine("POST /api/rest/entity/dataCable/{elid}/unblockConductor?sessionId={sessionId}")
+      @RequestLine("POST /api/rest/entity/dataCable/{elid}/unblockFiber?sessionId={sessionId}")
       @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
       })
-   ApiResponse<UnblockConductorDataCableResponse> unblockConductorDataCableWithHttpInfo(@Param("elid") String elid, UnblockConductorDataCableRequestData body, @QueryMap(encoded=true) UnblockConductorDataCableQueryParams queryParams);
+   ApiResponse<UnblockFiberDataCableResponse> unblockFiberDataCableWithHttpInfo(@Param("elid") String elid, UnblockFiberDataCableRequestData body, @QueryMap(encoded=true) UnblockFiberDataCableQueryParams queryParams);
 
 
    /**
    * A convenience class for generating query parameters for the
-   * <code>unblockConductorDataCable</code> method in a fluent style.
+   * <code>unblockFiberDataCable</code> method in a fluent style.
    */
-  public static class UnblockConductorDataCableQueryParams extends HashMap<String, Object> {
-    public UnblockConductorDataCableQueryParams sessionId(final String value) {
+  public static class UnblockFiberDataCableQueryParams extends HashMap<String, Object> {
+    public UnblockFiberDataCableQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

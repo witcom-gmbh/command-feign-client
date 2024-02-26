@@ -6,8 +6,6 @@ import com.fntsoftware.businessgateway.entities.ApiResponse;
 
 import com.fntsoftware.businessgateway.entities.AddToTopzoneCampusRequestData;
 import com.fntsoftware.businessgateway.entities.AddToTopzoneCampusResponse;
-import com.fntsoftware.businessgateway.entities.CampusAttachmentsRequestData;
-import com.fntsoftware.businessgateway.entities.CampusAttachmentsResponseData;
 import com.fntsoftware.businessgateway.entities.CampusBuildingsRequestData;
 import com.fntsoftware.businessgateway.entities.CampusBuildingsResponseData;
 import com.fntsoftware.businessgateway.entities.CampusContractsRequestData;
@@ -26,12 +24,8 @@ import com.fntsoftware.businessgateway.entities.CampusPersonGroupsRequestData;
 import com.fntsoftware.businessgateway.entities.CampusPersonGroupsResponseData;
 import com.fntsoftware.businessgateway.entities.CampusPersonsRequestData;
 import com.fntsoftware.businessgateway.entities.CampusPersonsResponseData;
-import com.fntsoftware.businessgateway.entities.CampusPostalAddressesRequestData;
-import com.fntsoftware.businessgateway.entities.CampusPostalAddressesResponseData;
 import com.fntsoftware.businessgateway.entities.CampusQueryRequest;
 import com.fntsoftware.businessgateway.entities.CampusQueryResponse;
-import com.fntsoftware.businessgateway.entities.CampusSitesRequestData;
-import com.fntsoftware.businessgateway.entities.CampusSitesResponseData;
 import com.fntsoftware.businessgateway.entities.CampusSystemAttributesRequest;
 import com.fntsoftware.businessgateway.entities.CampusSystemAttributesResponse;
 import com.fntsoftware.businessgateway.entities.CampusTopzonesRequestData;
@@ -51,7 +45,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-31T11:10:37.320689708Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
 public interface CampusApi extends ApiClient.Api {
 
 
@@ -139,95 +133,6 @@ public interface CampusApi extends ApiClient.Api {
    */
   public static class AddToTopzoneCampusQueryParams extends HashMap<String, Object> {
     public AddToTopzoneCampusQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Get relations to Attachments entities
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return CampusAttachmentsResponseData
-   */
-  @RequestLine("POST /api/rest/entity/campus/{elid}/Attachments?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  CampusAttachmentsResponseData campusAttachments(@Param("sessionId") String sessionId, @Param("elid") String elid, CampusAttachmentsRequestData body);
-
-  /**
-   * Get relations to Attachments entities
-   * Similar to <code>campusAttachments</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/campus/{elid}/Attachments?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<CampusAttachmentsResponseData> campusAttachmentsWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, CampusAttachmentsRequestData body);
-
-
-  /**
-   * Get relations to Attachments entities
-   * 
-   * Note, this is equivalent to the other <code>campusAttachments</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link CampusAttachmentsQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return CampusAttachmentsResponseData
-   */
-  @RequestLine("POST /api/rest/entity/campus/{elid}/Attachments?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  CampusAttachmentsResponseData campusAttachments(@Param("elid") String elid, CampusAttachmentsRequestData body, @QueryMap(encoded=true) CampusAttachmentsQueryParams queryParams);
-
-  /**
-  * Get relations to Attachments entities
-  * 
-  * Note, this is equivalent to the other <code>campusAttachments</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return CampusAttachmentsResponseData
-      */
-      @RequestLine("POST /api/rest/entity/campus/{elid}/Attachments?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<CampusAttachmentsResponseData> campusAttachmentsWithHttpInfo(@Param("elid") String elid, CampusAttachmentsRequestData body, @QueryMap(encoded=true) CampusAttachmentsQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>campusAttachments</code> method in a fluent style.
-   */
-  public static class CampusAttachmentsQueryParams extends HashMap<String, Object> {
-    public CampusAttachmentsQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -1035,95 +940,6 @@ public interface CampusApi extends ApiClient.Api {
   }
 
   /**
-   * Get relations to Postal address entities
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return CampusPostalAddressesResponseData
-   */
-  @RequestLine("POST /api/rest/entity/campus/{elid}/PostalAddresses?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  CampusPostalAddressesResponseData campusPostalAddresses(@Param("sessionId") String sessionId, @Param("elid") String elid, CampusPostalAddressesRequestData body);
-
-  /**
-   * Get relations to Postal address entities
-   * Similar to <code>campusPostalAddresses</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/campus/{elid}/PostalAddresses?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<CampusPostalAddressesResponseData> campusPostalAddressesWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, CampusPostalAddressesRequestData body);
-
-
-  /**
-   * Get relations to Postal address entities
-   * 
-   * Note, this is equivalent to the other <code>campusPostalAddresses</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link CampusPostalAddressesQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return CampusPostalAddressesResponseData
-   */
-  @RequestLine("POST /api/rest/entity/campus/{elid}/PostalAddresses?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  CampusPostalAddressesResponseData campusPostalAddresses(@Param("elid") String elid, CampusPostalAddressesRequestData body, @QueryMap(encoded=true) CampusPostalAddressesQueryParams queryParams);
-
-  /**
-  * Get relations to Postal address entities
-  * 
-  * Note, this is equivalent to the other <code>campusPostalAddresses</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return CampusPostalAddressesResponseData
-      */
-      @RequestLine("POST /api/rest/entity/campus/{elid}/PostalAddresses?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<CampusPostalAddressesResponseData> campusPostalAddressesWithHttpInfo(@Param("elid") String elid, CampusPostalAddressesRequestData body, @QueryMap(encoded=true) CampusPostalAddressesQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>campusPostalAddresses</code> method in a fluent style.
-   */
-  public static class CampusPostalAddressesQueryParams extends HashMap<String, Object> {
-    public CampusPostalAddressesQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
    * Basic query
    * Query for all basic target entity data
    * @param sessionId Session-ID (required)
@@ -1203,95 +1019,6 @@ public interface CampusApi extends ApiClient.Api {
    */
   public static class CampusQueryQueryParams extends HashMap<String, Object> {
     public CampusQueryQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Get relations to Site entities
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return CampusSitesResponseData
-   */
-  @RequestLine("POST /api/rest/entity/campus/{elid}/Sites?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  CampusSitesResponseData campusSites(@Param("sessionId") String sessionId, @Param("elid") String elid, CampusSitesRequestData body);
-
-  /**
-   * Get relations to Site entities
-   * Similar to <code>campusSites</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/campus/{elid}/Sites?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<CampusSitesResponseData> campusSitesWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, CampusSitesRequestData body);
-
-
-  /**
-   * Get relations to Site entities
-   * 
-   * Note, this is equivalent to the other <code>campusSites</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link CampusSitesQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return CampusSitesResponseData
-   */
-  @RequestLine("POST /api/rest/entity/campus/{elid}/Sites?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  CampusSitesResponseData campusSites(@Param("elid") String elid, CampusSitesRequestData body, @QueryMap(encoded=true) CampusSitesQueryParams queryParams);
-
-  /**
-  * Get relations to Site entities
-  * 
-  * Note, this is equivalent to the other <code>campusSites</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return CampusSitesResponseData
-      */
-      @RequestLine("POST /api/rest/entity/campus/{elid}/Sites?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<CampusSitesResponseData> campusSitesWithHttpInfo(@Param("elid") String elid, CampusSitesRequestData body, @QueryMap(encoded=true) CampusSitesQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>campusSites</code> method in a fluent style.
-   */
-  public static class CampusSitesQueryParams extends HashMap<String, Object> {
-    public CampusSitesQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

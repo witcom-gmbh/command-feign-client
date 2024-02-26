@@ -26,8 +26,6 @@ import com.fntsoftware.businessgateway.entities.FailoverClusterQueryRequest;
 import com.fntsoftware.businessgateway.entities.FailoverClusterQueryResponse;
 import com.fntsoftware.businessgateway.entities.FailoverClusterResourceGroupsRequestData;
 import com.fntsoftware.businessgateway.entities.FailoverClusterResourceGroupsResponseData;
-import com.fntsoftware.businessgateway.entities.FailoverClusterServersBaseRequestData;
-import com.fntsoftware.businessgateway.entities.FailoverClusterServersBaseResponseData;
 import com.fntsoftware.businessgateway.entities.FailoverClusterServersRequestData;
 import com.fntsoftware.businessgateway.entities.FailoverClusterServersResponseData;
 import com.fntsoftware.businessgateway.entities.FailoverClusterSystemAttributesRequest;
@@ -45,7 +43,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-31T11:10:37.320689708Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
 public interface FailoverClusterApi extends ApiClient.Api {
 
 
@@ -1104,95 +1102,6 @@ public interface FailoverClusterApi extends ApiClient.Api {
    */
   public static class FailoverClusterServersQueryParams extends HashMap<String, Object> {
     public FailoverClusterServersQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Get relations to Server (base) entities
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return FailoverClusterServersBaseResponseData
-   */
-  @RequestLine("POST /api/rest/entity/failoverCluster/{elid}/ServersBase?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  FailoverClusterServersBaseResponseData failoverClusterServersBase(@Param("sessionId") String sessionId, @Param("elid") String elid, FailoverClusterServersBaseRequestData body);
-
-  /**
-   * Get relations to Server (base) entities
-   * Similar to <code>failoverClusterServersBase</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/failoverCluster/{elid}/ServersBase?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<FailoverClusterServersBaseResponseData> failoverClusterServersBaseWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, FailoverClusterServersBaseRequestData body);
-
-
-  /**
-   * Get relations to Server (base) entities
-   * 
-   * Note, this is equivalent to the other <code>failoverClusterServersBase</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link FailoverClusterServersBaseQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return FailoverClusterServersBaseResponseData
-   */
-  @RequestLine("POST /api/rest/entity/failoverCluster/{elid}/ServersBase?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  FailoverClusterServersBaseResponseData failoverClusterServersBase(@Param("elid") String elid, FailoverClusterServersBaseRequestData body, @QueryMap(encoded=true) FailoverClusterServersBaseQueryParams queryParams);
-
-  /**
-  * Get relations to Server (base) entities
-  * 
-  * Note, this is equivalent to the other <code>failoverClusterServersBase</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return FailoverClusterServersBaseResponseData
-      */
-      @RequestLine("POST /api/rest/entity/failoverCluster/{elid}/ServersBase?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<FailoverClusterServersBaseResponseData> failoverClusterServersBaseWithHttpInfo(@Param("elid") String elid, FailoverClusterServersBaseRequestData body, @QueryMap(encoded=true) FailoverClusterServersBaseQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>failoverClusterServersBase</code> method in a fluent style.
-   */
-  public static class FailoverClusterServersBaseQueryParams extends HashMap<String, Object> {
-    public FailoverClusterServersBaseQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

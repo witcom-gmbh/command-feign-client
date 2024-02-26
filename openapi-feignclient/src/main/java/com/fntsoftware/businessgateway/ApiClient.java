@@ -26,14 +26,14 @@ import com.fntsoftware.businessgateway.auth.ApiKeyAuth;
 import com.fntsoftware.businessgateway.ApiResponseDecoder;
 
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-31T11:10:37.320689708Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
 public class ApiClient {
   private static final Logger log = Logger.getLogger(ApiClient.class.getName());
 
   public interface Api {}
 
   protected ObjectMapper objectMapper;
-  private String basePath = "https://rmdb.dev.witcom.services/axis";
+  private String basePath = "https://localhost:8080/axis";
   private Map<String, RequestInterceptor> apiAuthorizations;
   private Feign.Builder feignBuilder;
 

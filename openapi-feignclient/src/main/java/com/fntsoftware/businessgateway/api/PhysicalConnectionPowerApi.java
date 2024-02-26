@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-31T11:10:37.320689708Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
 public interface PhysicalConnectionPowerApi extends ApiClient.Api {
 
 
@@ -202,7 +202,7 @@ public interface PhysicalConnectionPowerApi extends ApiClient.Api {
   }
 
   /**
-   * Query Physical connection (current)
+   * Query Physical connection (power)
    * 
    * @param sessionId Session-ID (required)
    * @param elid  (required)
@@ -217,7 +217,7 @@ public interface PhysicalConnectionPowerApi extends ApiClient.Api {
   PhysicalConnectionPowerPhysicalConnectionPowerResponse physicalConnectionPowerPhysicalConnectionPower(@Param("sessionId") String sessionId, @Param("elid") String elid, PhysicalConnectionPowerPhysicalConnectionPowerRequest body);
 
   /**
-   * Query Physical connection (current)
+   * Query Physical connection (power)
    * Similar to <code>physicalConnectionPowerPhysicalConnectionPower</code> but it also returns the http response headers .
    * 
    * @param sessionId Session-ID (required)
@@ -234,7 +234,7 @@ public interface PhysicalConnectionPowerApi extends ApiClient.Api {
 
 
   /**
-   * Query Physical connection (current)
+   * Query Physical connection (power)
    * 
    * Note, this is equivalent to the other <code>physicalConnectionPowerPhysicalConnectionPower</code> method,
    * but with the query parameters collected into a single Map parameter. This
@@ -258,7 +258,7 @@ public interface PhysicalConnectionPowerApi extends ApiClient.Api {
   PhysicalConnectionPowerPhysicalConnectionPowerResponse physicalConnectionPowerPhysicalConnectionPower(@Param("elid") String elid, PhysicalConnectionPowerPhysicalConnectionPowerRequest body, @QueryMap(encoded=true) PhysicalConnectionPowerPhysicalConnectionPowerQueryParams queryParams);
 
   /**
-  * Query Physical connection (current)
+  * Query Physical connection (power)
   * 
   * Note, this is equivalent to the other <code>physicalConnectionPowerPhysicalConnectionPower</code> that receives the query parameters as a map,
   * but this one also exposes the Http response headers

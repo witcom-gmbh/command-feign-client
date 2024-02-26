@@ -26,8 +26,6 @@ import com.fntsoftware.businessgateway.entities.ServiceTelcoUnroutedPathCustomPo
 import com.fntsoftware.businessgateway.entities.ServiceTelcoUnroutedPathCustomPowerCablesResponseData;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoUnroutedPathDevicesAllRequestData;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoUnroutedPathDevicesAllResponseData;
-import com.fntsoftware.businessgateway.entities.ServiceTelcoUnroutedPathEndZoneRequestData;
-import com.fntsoftware.businessgateway.entities.ServiceTelcoUnroutedPathEndZoneResponseData;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoUnroutedPathFrameContractsRequestData;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoUnroutedPathFrameContractsResponseData;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoUnroutedPathHigherLevelServicesRequestData;
@@ -58,8 +56,6 @@ import com.fntsoftware.businessgateway.entities.ServiceTelcoUnroutedPathServiceT
 import com.fntsoftware.businessgateway.entities.ServiceTelcoUnroutedPathServiceTypeDefinitionResponseData;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoUnroutedPathServicesTelcoRequestData;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoUnroutedPathServicesTelcoResponseData;
-import com.fntsoftware.businessgateway.entities.ServiceTelcoUnroutedPathStartZoneRequestData;
-import com.fntsoftware.businessgateway.entities.ServiceTelcoUnroutedPathStartZoneResponseData;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoUnroutedPathSuccessorsRequestData;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoUnroutedPathSuccessorsResponseData;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoUnroutedPathSystemAttributesRequest;
@@ -77,7 +73,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-31T11:10:37.320689708Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
 public interface ServiceTelcoUnroutedPathApi extends ApiClient.Api {
 
 
@@ -1051,95 +1047,6 @@ public interface ServiceTelcoUnroutedPathApi extends ApiClient.Api {
    */
   public static class ServiceTelcoUnroutedPathDevicesAllQueryParams extends HashMap<String, Object> {
     public ServiceTelcoUnroutedPathDevicesAllQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Get relations to End zone entities
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return ServiceTelcoUnroutedPathEndZoneResponseData
-   */
-  @RequestLine("POST /api/rest/entity/serviceTelcoUnroutedPath/{elid}/EndZone?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ServiceTelcoUnroutedPathEndZoneResponseData serviceTelcoUnroutedPathEndZone(@Param("sessionId") String sessionId, @Param("elid") String elid, ServiceTelcoUnroutedPathEndZoneRequestData body);
-
-  /**
-   * Get relations to End zone entities
-   * Similar to <code>serviceTelcoUnroutedPathEndZone</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/serviceTelcoUnroutedPath/{elid}/EndZone?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<ServiceTelcoUnroutedPathEndZoneResponseData> serviceTelcoUnroutedPathEndZoneWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ServiceTelcoUnroutedPathEndZoneRequestData body);
-
-
-  /**
-   * Get relations to End zone entities
-   * 
-   * Note, this is equivalent to the other <code>serviceTelcoUnroutedPathEndZone</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link ServiceTelcoUnroutedPathEndZoneQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return ServiceTelcoUnroutedPathEndZoneResponseData
-   */
-  @RequestLine("POST /api/rest/entity/serviceTelcoUnroutedPath/{elid}/EndZone?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  ServiceTelcoUnroutedPathEndZoneResponseData serviceTelcoUnroutedPathEndZone(@Param("elid") String elid, ServiceTelcoUnroutedPathEndZoneRequestData body, @QueryMap(encoded=true) ServiceTelcoUnroutedPathEndZoneQueryParams queryParams);
-
-  /**
-  * Get relations to End zone entities
-  * 
-  * Note, this is equivalent to the other <code>serviceTelcoUnroutedPathEndZone</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return ServiceTelcoUnroutedPathEndZoneResponseData
-      */
-      @RequestLine("POST /api/rest/entity/serviceTelcoUnroutedPath/{elid}/EndZone?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<ServiceTelcoUnroutedPathEndZoneResponseData> serviceTelcoUnroutedPathEndZoneWithHttpInfo(@Param("elid") String elid, ServiceTelcoUnroutedPathEndZoneRequestData body, @QueryMap(encoded=true) ServiceTelcoUnroutedPathEndZoneQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>serviceTelcoUnroutedPathEndZone</code> method in a fluent style.
-   */
-  public static class ServiceTelcoUnroutedPathEndZoneQueryParams extends HashMap<String, Object> {
-    public ServiceTelcoUnroutedPathEndZoneQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -2471,95 +2378,6 @@ public interface ServiceTelcoUnroutedPathApi extends ApiClient.Api {
    */
   public static class ServiceTelcoUnroutedPathServicesTelcoQueryParams extends HashMap<String, Object> {
     public ServiceTelcoUnroutedPathServicesTelcoQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Get relations to Start zone entities
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return ServiceTelcoUnroutedPathStartZoneResponseData
-   */
-  @RequestLine("POST /api/rest/entity/serviceTelcoUnroutedPath/{elid}/StartZone?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ServiceTelcoUnroutedPathStartZoneResponseData serviceTelcoUnroutedPathStartZone(@Param("sessionId") String sessionId, @Param("elid") String elid, ServiceTelcoUnroutedPathStartZoneRequestData body);
-
-  /**
-   * Get relations to Start zone entities
-   * Similar to <code>serviceTelcoUnroutedPathStartZone</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/serviceTelcoUnroutedPath/{elid}/StartZone?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<ServiceTelcoUnroutedPathStartZoneResponseData> serviceTelcoUnroutedPathStartZoneWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ServiceTelcoUnroutedPathStartZoneRequestData body);
-
-
-  /**
-   * Get relations to Start zone entities
-   * 
-   * Note, this is equivalent to the other <code>serviceTelcoUnroutedPathStartZone</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link ServiceTelcoUnroutedPathStartZoneQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return ServiceTelcoUnroutedPathStartZoneResponseData
-   */
-  @RequestLine("POST /api/rest/entity/serviceTelcoUnroutedPath/{elid}/StartZone?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  ServiceTelcoUnroutedPathStartZoneResponseData serviceTelcoUnroutedPathStartZone(@Param("elid") String elid, ServiceTelcoUnroutedPathStartZoneRequestData body, @QueryMap(encoded=true) ServiceTelcoUnroutedPathStartZoneQueryParams queryParams);
-
-  /**
-  * Get relations to Start zone entities
-  * 
-  * Note, this is equivalent to the other <code>serviceTelcoUnroutedPathStartZone</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return ServiceTelcoUnroutedPathStartZoneResponseData
-      */
-      @RequestLine("POST /api/rest/entity/serviceTelcoUnroutedPath/{elid}/StartZone?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<ServiceTelcoUnroutedPathStartZoneResponseData> serviceTelcoUnroutedPathStartZoneWithHttpInfo(@Param("elid") String elid, ServiceTelcoUnroutedPathStartZoneRequestData body, @QueryMap(encoded=true) ServiceTelcoUnroutedPathStartZoneQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>serviceTelcoUnroutedPathStartZone</code> method in a fluent style.
-   */
-  public static class ServiceTelcoUnroutedPathStartZoneQueryParams extends HashMap<String, Object> {
-    public ServiceTelcoUnroutedPathStartZoneQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

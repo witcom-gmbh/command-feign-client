@@ -6,12 +6,16 @@ import com.fntsoftware.businessgateway.entities.ApiResponse;
 
 import com.fntsoftware.businessgateway.entities.CreateCustomL2CpeSegmentRequestData;
 import com.fntsoftware.businessgateway.entities.CreateCustomL2CpeSegmentResponse;
+import com.fntsoftware.businessgateway.entities.CustomL2CpeSegmentCVlanRequestData;
+import com.fntsoftware.businessgateway.entities.CustomL2CpeSegmentCVlanResponseData;
 import com.fntsoftware.businessgateway.entities.CustomL2CpeSegmentChassisRequestData;
 import com.fntsoftware.businessgateway.entities.CustomL2CpeSegmentChassisResponseData;
 import com.fntsoftware.businessgateway.entities.CustomL2CpeSegmentIpv4NetworkRequestData;
 import com.fntsoftware.businessgateway.entities.CustomL2CpeSegmentIpv4NetworkResponseData;
 import com.fntsoftware.businessgateway.entities.CustomL2CpeSegmentQueryRequest;
 import com.fntsoftware.businessgateway.entities.CustomL2CpeSegmentQueryResponse;
+import com.fntsoftware.businessgateway.entities.CustomL2CpeSegmentSVlanRequestData;
+import com.fntsoftware.businessgateway.entities.CustomL2CpeSegmentSVlanResponseData;
 import com.fntsoftware.businessgateway.entities.CustomL2CpeSegmentSystemAttributesRequest;
 import com.fntsoftware.businessgateway.entities.CustomL2CpeSegmentSystemAttributesResponse;
 import com.fntsoftware.businessgateway.entities.CustomL2CpeSegmentVlanRequestData;
@@ -29,7 +33,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-31T11:10:37.320689708Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
 public interface CustomL2CpeSegmentApi extends ApiClient.Api {
 
 
@@ -113,6 +117,95 @@ public interface CustomL2CpeSegmentApi extends ApiClient.Api {
    */
   public static class CreateCustomL2CpeSegmentQueryParams extends HashMap<String, Object> {
     public CreateCustomL2CpeSegmentQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to C-VLAN entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return CustomL2CpeSegmentCVlanResponseData
+   */
+  @RequestLine("POST /api/rest/entity/custom/l2CpeSegment/{elid}/CVlan?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  CustomL2CpeSegmentCVlanResponseData customL2CpeSegmentCVlan(@Param("sessionId") String sessionId, @Param("elid") String elid, CustomL2CpeSegmentCVlanRequestData body);
+
+  /**
+   * Get relations to C-VLAN entities
+   * Similar to <code>customL2CpeSegmentCVlan</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/custom/l2CpeSegment/{elid}/CVlan?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<CustomL2CpeSegmentCVlanResponseData> customL2CpeSegmentCVlanWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, CustomL2CpeSegmentCVlanRequestData body);
+
+
+  /**
+   * Get relations to C-VLAN entities
+   * 
+   * Note, this is equivalent to the other <code>customL2CpeSegmentCVlan</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link CustomL2CpeSegmentCVlanQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return CustomL2CpeSegmentCVlanResponseData
+   */
+  @RequestLine("POST /api/rest/entity/custom/l2CpeSegment/{elid}/CVlan?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  CustomL2CpeSegmentCVlanResponseData customL2CpeSegmentCVlan(@Param("elid") String elid, CustomL2CpeSegmentCVlanRequestData body, @QueryMap(encoded=true) CustomL2CpeSegmentCVlanQueryParams queryParams);
+
+  /**
+  * Get relations to C-VLAN entities
+  * 
+  * Note, this is equivalent to the other <code>customL2CpeSegmentCVlan</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return CustomL2CpeSegmentCVlanResponseData
+      */
+      @RequestLine("POST /api/rest/entity/custom/l2CpeSegment/{elid}/CVlan?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<CustomL2CpeSegmentCVlanResponseData> customL2CpeSegmentCVlanWithHttpInfo(@Param("elid") String elid, CustomL2CpeSegmentCVlanRequestData body, @QueryMap(encoded=true) CustomL2CpeSegmentCVlanQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>customL2CpeSegmentCVlan</code> method in a fluent style.
+   */
+  public static class CustomL2CpeSegmentCVlanQueryParams extends HashMap<String, Object> {
+    public CustomL2CpeSegmentCVlanQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -376,6 +469,95 @@ public interface CustomL2CpeSegmentApi extends ApiClient.Api {
    */
   public static class CustomL2CpeSegmentQueryQueryParams extends HashMap<String, Object> {
     public CustomL2CpeSegmentQueryQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to S-VLAN entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return CustomL2CpeSegmentSVlanResponseData
+   */
+  @RequestLine("POST /api/rest/entity/custom/l2CpeSegment/{elid}/SVlan?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  CustomL2CpeSegmentSVlanResponseData customL2CpeSegmentSVlan(@Param("sessionId") String sessionId, @Param("elid") String elid, CustomL2CpeSegmentSVlanRequestData body);
+
+  /**
+   * Get relations to S-VLAN entities
+   * Similar to <code>customL2CpeSegmentSVlan</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/custom/l2CpeSegment/{elid}/SVlan?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<CustomL2CpeSegmentSVlanResponseData> customL2CpeSegmentSVlanWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, CustomL2CpeSegmentSVlanRequestData body);
+
+
+  /**
+   * Get relations to S-VLAN entities
+   * 
+   * Note, this is equivalent to the other <code>customL2CpeSegmentSVlan</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link CustomL2CpeSegmentSVlanQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return CustomL2CpeSegmentSVlanResponseData
+   */
+  @RequestLine("POST /api/rest/entity/custom/l2CpeSegment/{elid}/SVlan?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  CustomL2CpeSegmentSVlanResponseData customL2CpeSegmentSVlan(@Param("elid") String elid, CustomL2CpeSegmentSVlanRequestData body, @QueryMap(encoded=true) CustomL2CpeSegmentSVlanQueryParams queryParams);
+
+  /**
+  * Get relations to S-VLAN entities
+  * 
+  * Note, this is equivalent to the other <code>customL2CpeSegmentSVlan</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return CustomL2CpeSegmentSVlanResponseData
+      */
+      @RequestLine("POST /api/rest/entity/custom/l2CpeSegment/{elid}/SVlan?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<CustomL2CpeSegmentSVlanResponseData> customL2CpeSegmentSVlanWithHttpInfo(@Param("elid") String elid, CustomL2CpeSegmentSVlanRequestData body, @QueryMap(encoded=true) CustomL2CpeSegmentSVlanQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>customL2CpeSegmentSVlan</code> method in a fluent style.
+   */
+  public static class CustomL2CpeSegmentSVlanQueryParams extends HashMap<String, Object> {
+    public CustomL2CpeSegmentSVlanQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

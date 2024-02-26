@@ -12,8 +12,6 @@ import com.fntsoftware.businessgateway.entities.DeleteRoomRequestData;
 import com.fntsoftware.businessgateway.entities.DeleteRoomResponse;
 import com.fntsoftware.businessgateway.entities.RenameRoomRequestData;
 import com.fntsoftware.businessgateway.entities.RenameRoomResponse;
-import com.fntsoftware.businessgateway.entities.RoomAttachmentsRequestData;
-import com.fntsoftware.businessgateway.entities.RoomAttachmentsResponseData;
 import com.fntsoftware.businessgateway.entities.RoomContractsRequestData;
 import com.fntsoftware.businessgateway.entities.RoomContractsResponseData;
 import com.fntsoftware.businessgateway.entities.RoomCustomLocksRequestData;
@@ -36,12 +34,8 @@ import com.fntsoftware.businessgateway.entities.RoomPersonGroupsRequestData;
 import com.fntsoftware.businessgateway.entities.RoomPersonGroupsResponseData;
 import com.fntsoftware.businessgateway.entities.RoomPersonsRequestData;
 import com.fntsoftware.businessgateway.entities.RoomPersonsResponseData;
-import com.fntsoftware.businessgateway.entities.RoomPostalAddressesRequestData;
-import com.fntsoftware.businessgateway.entities.RoomPostalAddressesResponseData;
 import com.fntsoftware.businessgateway.entities.RoomQueryRequest;
 import com.fntsoftware.businessgateway.entities.RoomQueryResponse;
-import com.fntsoftware.businessgateway.entities.RoomSitesRequestData;
-import com.fntsoftware.businessgateway.entities.RoomSitesResponseData;
 import com.fntsoftware.businessgateway.entities.RoomSystemAttributesRequest;
 import com.fntsoftware.businessgateway.entities.RoomSystemAttributesResponse;
 import com.fntsoftware.businessgateway.entities.RoomTopzonesRequestData;
@@ -57,7 +51,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-31T11:10:37.320689708Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
 public interface RoomApi extends ApiClient.Api {
 
 
@@ -408,95 +402,6 @@ public interface RoomApi extends ApiClient.Api {
    */
   public static class RenameRoomQueryParams extends HashMap<String, Object> {
     public RenameRoomQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Get relations to Attachments entities
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return RoomAttachmentsResponseData
-   */
-  @RequestLine("POST /api/rest/entity/room/{elid}/Attachments?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  RoomAttachmentsResponseData roomAttachments(@Param("sessionId") String sessionId, @Param("elid") String elid, RoomAttachmentsRequestData body);
-
-  /**
-   * Get relations to Attachments entities
-   * Similar to <code>roomAttachments</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/room/{elid}/Attachments?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<RoomAttachmentsResponseData> roomAttachmentsWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, RoomAttachmentsRequestData body);
-
-
-  /**
-   * Get relations to Attachments entities
-   * 
-   * Note, this is equivalent to the other <code>roomAttachments</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link RoomAttachmentsQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return RoomAttachmentsResponseData
-   */
-  @RequestLine("POST /api/rest/entity/room/{elid}/Attachments?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  RoomAttachmentsResponseData roomAttachments(@Param("elid") String elid, RoomAttachmentsRequestData body, @QueryMap(encoded=true) RoomAttachmentsQueryParams queryParams);
-
-  /**
-  * Get relations to Attachments entities
-  * 
-  * Note, this is equivalent to the other <code>roomAttachments</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return RoomAttachmentsResponseData
-      */
-      @RequestLine("POST /api/rest/entity/room/{elid}/Attachments?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<RoomAttachmentsResponseData> roomAttachmentsWithHttpInfo(@Param("elid") String elid, RoomAttachmentsRequestData body, @QueryMap(encoded=true) RoomAttachmentsQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>roomAttachments</code> method in a fluent style.
-   */
-  public static class RoomAttachmentsQueryParams extends HashMap<String, Object> {
-    public RoomAttachmentsQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -1482,95 +1387,6 @@ public interface RoomApi extends ApiClient.Api {
   }
 
   /**
-   * Get relations to Postal address entities
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return RoomPostalAddressesResponseData
-   */
-  @RequestLine("POST /api/rest/entity/room/{elid}/PostalAddresses?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  RoomPostalAddressesResponseData roomPostalAddresses(@Param("sessionId") String sessionId, @Param("elid") String elid, RoomPostalAddressesRequestData body);
-
-  /**
-   * Get relations to Postal address entities
-   * Similar to <code>roomPostalAddresses</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/room/{elid}/PostalAddresses?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<RoomPostalAddressesResponseData> roomPostalAddressesWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, RoomPostalAddressesRequestData body);
-
-
-  /**
-   * Get relations to Postal address entities
-   * 
-   * Note, this is equivalent to the other <code>roomPostalAddresses</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link RoomPostalAddressesQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return RoomPostalAddressesResponseData
-   */
-  @RequestLine("POST /api/rest/entity/room/{elid}/PostalAddresses?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  RoomPostalAddressesResponseData roomPostalAddresses(@Param("elid") String elid, RoomPostalAddressesRequestData body, @QueryMap(encoded=true) RoomPostalAddressesQueryParams queryParams);
-
-  /**
-  * Get relations to Postal address entities
-  * 
-  * Note, this is equivalent to the other <code>roomPostalAddresses</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return RoomPostalAddressesResponseData
-      */
-      @RequestLine("POST /api/rest/entity/room/{elid}/PostalAddresses?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<RoomPostalAddressesResponseData> roomPostalAddressesWithHttpInfo(@Param("elid") String elid, RoomPostalAddressesRequestData body, @QueryMap(encoded=true) RoomPostalAddressesQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>roomPostalAddresses</code> method in a fluent style.
-   */
-  public static class RoomPostalAddressesQueryParams extends HashMap<String, Object> {
-    public RoomPostalAddressesQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
    * Basic query
    * Query for all basic target entity data
    * @param sessionId Session-ID (required)
@@ -1650,95 +1466,6 @@ public interface RoomApi extends ApiClient.Api {
    */
   public static class RoomQueryQueryParams extends HashMap<String, Object> {
     public RoomQueryQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Get relations to Site entities
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return RoomSitesResponseData
-   */
-  @RequestLine("POST /api/rest/entity/room/{elid}/Sites?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  RoomSitesResponseData roomSites(@Param("sessionId") String sessionId, @Param("elid") String elid, RoomSitesRequestData body);
-
-  /**
-   * Get relations to Site entities
-   * Similar to <code>roomSites</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/room/{elid}/Sites?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<RoomSitesResponseData> roomSitesWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, RoomSitesRequestData body);
-
-
-  /**
-   * Get relations to Site entities
-   * 
-   * Note, this is equivalent to the other <code>roomSites</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link RoomSitesQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return RoomSitesResponseData
-   */
-  @RequestLine("POST /api/rest/entity/room/{elid}/Sites?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  RoomSitesResponseData roomSites(@Param("elid") String elid, RoomSitesRequestData body, @QueryMap(encoded=true) RoomSitesQueryParams queryParams);
-
-  /**
-  * Get relations to Site entities
-  * 
-  * Note, this is equivalent to the other <code>roomSites</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return RoomSitesResponseData
-      */
-      @RequestLine("POST /api/rest/entity/room/{elid}/Sites?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<RoomSitesResponseData> roomSitesWithHttpInfo(@Param("elid") String elid, RoomSitesRequestData body, @QueryMap(encoded=true) RoomSitesQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>roomSites</code> method in a fluent style.
-   */
-  public static class RoomSitesQueryParams extends HashMap<String, Object> {
-    public RoomSitesQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

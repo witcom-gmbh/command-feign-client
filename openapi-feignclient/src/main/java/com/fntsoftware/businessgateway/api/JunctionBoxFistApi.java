@@ -28,20 +28,12 @@ import com.fntsoftware.businessgateway.entities.JunctionBoxFistDataCablesRequest
 import com.fntsoftware.businessgateway.entities.JunctionBoxFistDataCablesResponseData;
 import com.fntsoftware.businessgateway.entities.JunctionBoxFistDeviceMasterJunctionBoxFistRequestData;
 import com.fntsoftware.businessgateway.entities.JunctionBoxFistDeviceMasterJunctionBoxFistResponseData;
-import com.fntsoftware.businessgateway.entities.JunctionBoxFistDuctDataRequest;
-import com.fntsoftware.businessgateway.entities.JunctionBoxFistDuctDataResponse;
-import com.fntsoftware.businessgateway.entities.JunctionBoxFistDuctsRequestData;
-import com.fntsoftware.businessgateway.entities.JunctionBoxFistDuctsResponseData;
 import com.fntsoftware.businessgateway.entities.JunctionBoxFistFrameContractsRequestData;
 import com.fntsoftware.businessgateway.entities.JunctionBoxFistFrameContractsResponseData;
-import com.fntsoftware.businessgateway.entities.JunctionBoxFistInheritedGeoCoordinatesRequest;
-import com.fntsoftware.businessgateway.entities.JunctionBoxFistInheritedGeoCoordinatesResponse;
 import com.fntsoftware.businessgateway.entities.JunctionBoxFistLocationRequest;
 import com.fntsoftware.businessgateway.entities.JunctionBoxFistLocationResponse;
 import com.fntsoftware.businessgateway.entities.JunctionBoxFistMaintenanceContractsRequestData;
 import com.fntsoftware.businessgateway.entities.JunctionBoxFistMaintenanceContractsResponseData;
-import com.fntsoftware.businessgateway.entities.JunctionBoxFistMultiDuctsRequestData;
-import com.fntsoftware.businessgateway.entities.JunctionBoxFistMultiDuctsResponseData;
 import com.fntsoftware.businessgateway.entities.JunctionBoxFistNodeRequestData;
 import com.fntsoftware.businessgateway.entities.JunctionBoxFistNodeResponseData;
 import com.fntsoftware.businessgateway.entities.JunctionBoxFistOperatingSystemInstallationRequestData;
@@ -52,8 +44,6 @@ import com.fntsoftware.businessgateway.entities.JunctionBoxFistPersonGroupsReque
 import com.fntsoftware.businessgateway.entities.JunctionBoxFistPersonGroupsResponseData;
 import com.fntsoftware.businessgateway.entities.JunctionBoxFistPersonsRequestData;
 import com.fntsoftware.businessgateway.entities.JunctionBoxFistPersonsResponseData;
-import com.fntsoftware.businessgateway.entities.JunctionBoxFistQueryExtendedGeoCoordinatesRequest;
-import com.fntsoftware.businessgateway.entities.JunctionBoxFistQueryExtendedGeoCoordinatesResponse;
 import com.fntsoftware.businessgateway.entities.JunctionBoxFistQueryExtendedRequest;
 import com.fntsoftware.businessgateway.entities.JunctionBoxFistQueryExtendedResponse;
 import com.fntsoftware.businessgateway.entities.JunctionBoxFistQueryExtendedScrollFirstRequest;
@@ -62,10 +52,6 @@ import com.fntsoftware.businessgateway.entities.JunctionBoxFistQueryExtendedScro
 import com.fntsoftware.businessgateway.entities.JunctionBoxFistQueryExtendedScrollMoreResponse;
 import com.fntsoftware.businessgateway.entities.JunctionBoxFistQueryRequest;
 import com.fntsoftware.businessgateway.entities.JunctionBoxFistQueryResponse;
-import com.fntsoftware.businessgateway.entities.JunctionBoxFistServicesRequest;
-import com.fntsoftware.businessgateway.entities.JunctionBoxFistServicesResponse;
-import com.fntsoftware.businessgateway.entities.JunctionBoxFistSitesRequestData;
-import com.fntsoftware.businessgateway.entities.JunctionBoxFistSitesResponseData;
 import com.fntsoftware.businessgateway.entities.JunctionBoxFistSwitchCabinetRequestData;
 import com.fntsoftware.businessgateway.entities.JunctionBoxFistSwitchCabinetResponseData;
 import com.fntsoftware.businessgateway.entities.JunctionBoxFistSystemAttributesRequest;
@@ -112,8 +98,6 @@ import com.fntsoftware.businessgateway.entities.RemoveCableJunctionBoxFistReques
 import com.fntsoftware.businessgateway.entities.RemoveCableJunctionBoxFistResponse;
 import com.fntsoftware.businessgateway.entities.RemoveFiberFromCassetteJunctionBoxFistRequestData;
 import com.fntsoftware.businessgateway.entities.RemoveFiberFromCassetteJunctionBoxFistResponse;
-import com.fntsoftware.businessgateway.entities.ReplaceObjectJunctionBoxFistRequestData;
-import com.fntsoftware.businessgateway.entities.ReplaceObjectJunctionBoxFistResponse;
 import com.fntsoftware.businessgateway.entities.SpliceFiber1To1JunctionBoxFistRequestData;
 import com.fntsoftware.businessgateway.entities.SpliceFiber1To1JunctionBoxFistResponse;
 import com.fntsoftware.businessgateway.entities.SpliceFibersJunctionBoxFistRequestData;
@@ -133,7 +117,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-31T11:10:37.320689708Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
 public interface JunctionBoxFistApi extends ApiClient.Api {
 
 
@@ -1198,184 +1182,6 @@ public interface JunctionBoxFistApi extends ApiClient.Api {
   }
 
   /**
-   * Query duct data
-   * Query associated ducts and multipipes
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return JunctionBoxFistDuctDataResponse
-   */
-  @RequestLine("POST /api/rest/entity/junctionBoxFist/{elid}/DuctData?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  JunctionBoxFistDuctDataResponse junctionBoxFistDuctData(@Param("sessionId") String sessionId, @Param("elid") String elid, JunctionBoxFistDuctDataRequest body);
-
-  /**
-   * Query duct data
-   * Similar to <code>junctionBoxFistDuctData</code> but it also returns the http response headers .
-   * Query associated ducts and multipipes
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/junctionBoxFist/{elid}/DuctData?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<JunctionBoxFistDuctDataResponse> junctionBoxFistDuctDataWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, JunctionBoxFistDuctDataRequest body);
-
-
-  /**
-   * Query duct data
-   * Query associated ducts and multipipes
-   * Note, this is equivalent to the other <code>junctionBoxFistDuctData</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link JunctionBoxFistDuctDataQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return JunctionBoxFistDuctDataResponse
-   */
-  @RequestLine("POST /api/rest/entity/junctionBoxFist/{elid}/DuctData?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  JunctionBoxFistDuctDataResponse junctionBoxFistDuctData(@Param("elid") String elid, JunctionBoxFistDuctDataRequest body, @QueryMap(encoded=true) JunctionBoxFistDuctDataQueryParams queryParams);
-
-  /**
-  * Query duct data
-  * Query associated ducts and multipipes
-  * Note, this is equivalent to the other <code>junctionBoxFistDuctData</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return JunctionBoxFistDuctDataResponse
-      */
-      @RequestLine("POST /api/rest/entity/junctionBoxFist/{elid}/DuctData?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<JunctionBoxFistDuctDataResponse> junctionBoxFistDuctDataWithHttpInfo(@Param("elid") String elid, JunctionBoxFistDuctDataRequest body, @QueryMap(encoded=true) JunctionBoxFistDuctDataQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>junctionBoxFistDuctData</code> method in a fluent style.
-   */
-  public static class JunctionBoxFistDuctDataQueryParams extends HashMap<String, Object> {
-    public JunctionBoxFistDuctDataQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Get relations to Duct entities
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return JunctionBoxFistDuctsResponseData
-   */
-  @RequestLine("POST /api/rest/entity/junctionBoxFist/{elid}/Ducts?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  JunctionBoxFistDuctsResponseData junctionBoxFistDucts(@Param("sessionId") String sessionId, @Param("elid") String elid, JunctionBoxFistDuctsRequestData body);
-
-  /**
-   * Get relations to Duct entities
-   * Similar to <code>junctionBoxFistDucts</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/junctionBoxFist/{elid}/Ducts?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<JunctionBoxFistDuctsResponseData> junctionBoxFistDuctsWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, JunctionBoxFistDuctsRequestData body);
-
-
-  /**
-   * Get relations to Duct entities
-   * 
-   * Note, this is equivalent to the other <code>junctionBoxFistDucts</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link JunctionBoxFistDuctsQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return JunctionBoxFistDuctsResponseData
-   */
-  @RequestLine("POST /api/rest/entity/junctionBoxFist/{elid}/Ducts?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  JunctionBoxFistDuctsResponseData junctionBoxFistDucts(@Param("elid") String elid, JunctionBoxFistDuctsRequestData body, @QueryMap(encoded=true) JunctionBoxFistDuctsQueryParams queryParams);
-
-  /**
-  * Get relations to Duct entities
-  * 
-  * Note, this is equivalent to the other <code>junctionBoxFistDucts</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return JunctionBoxFistDuctsResponseData
-      */
-      @RequestLine("POST /api/rest/entity/junctionBoxFist/{elid}/Ducts?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<JunctionBoxFistDuctsResponseData> junctionBoxFistDuctsWithHttpInfo(@Param("elid") String elid, JunctionBoxFistDuctsRequestData body, @QueryMap(encoded=true) JunctionBoxFistDuctsQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>junctionBoxFistDucts</code> method in a fluent style.
-   */
-  public static class JunctionBoxFistDuctsQueryParams extends HashMap<String, Object> {
-    public JunctionBoxFistDuctsQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
    * Get relations to Frame contract entities
    * 
    * @param sessionId Session-ID (required)
@@ -1459,91 +1265,6 @@ public interface JunctionBoxFistApi extends ApiClient.Api {
    */
   public static class JunctionBoxFistFrameContractsQueryParams extends HashMap<String, Object> {
     public JunctionBoxFistFrameContractsQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Query inherited coordinates
-   * Query the own coordinates of an object or inherit them from parents
-   * @param sessionId Session-ID (required)
-   * @param body  (required)
-   * @return JunctionBoxFistInheritedGeoCoordinatesResponse
-   */
-  @RequestLine("POST /api/rest/entity/junctionBoxFist/inheritedGeoCoordinates?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  JunctionBoxFistInheritedGeoCoordinatesResponse junctionBoxFistInheritedGeoCoordinates(@Param("sessionId") String sessionId, JunctionBoxFistInheritedGeoCoordinatesRequest body);
-
-  /**
-   * Query inherited coordinates
-   * Similar to <code>junctionBoxFistInheritedGeoCoordinates</code> but it also returns the http response headers .
-   * Query the own coordinates of an object or inherit them from parents
-   * @param sessionId Session-ID (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/junctionBoxFist/inheritedGeoCoordinates?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<JunctionBoxFistInheritedGeoCoordinatesResponse> junctionBoxFistInheritedGeoCoordinatesWithHttpInfo(@Param("sessionId") String sessionId, JunctionBoxFistInheritedGeoCoordinatesRequest body);
-
-
-  /**
-   * Query inherited coordinates
-   * Query the own coordinates of an object or inherit them from parents
-   * Note, this is equivalent to the other <code>junctionBoxFistInheritedGeoCoordinates</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link JunctionBoxFistInheritedGeoCoordinatesQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return JunctionBoxFistInheritedGeoCoordinatesResponse
-   */
-  @RequestLine("POST /api/rest/entity/junctionBoxFist/inheritedGeoCoordinates?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  JunctionBoxFistInheritedGeoCoordinatesResponse junctionBoxFistInheritedGeoCoordinates(JunctionBoxFistInheritedGeoCoordinatesRequest body, @QueryMap(encoded=true) JunctionBoxFistInheritedGeoCoordinatesQueryParams queryParams);
-
-  /**
-  * Query inherited coordinates
-  * Query the own coordinates of an object or inherit them from parents
-  * Note, this is equivalent to the other <code>junctionBoxFistInheritedGeoCoordinates</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return JunctionBoxFistInheritedGeoCoordinatesResponse
-      */
-      @RequestLine("POST /api/rest/entity/junctionBoxFist/inheritedGeoCoordinates?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<JunctionBoxFistInheritedGeoCoordinatesResponse> junctionBoxFistInheritedGeoCoordinatesWithHttpInfo(JunctionBoxFistInheritedGeoCoordinatesRequest body, @QueryMap(encoded=true) JunctionBoxFistInheritedGeoCoordinatesQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>junctionBoxFistInheritedGeoCoordinates</code> method in a fluent style.
-   */
-  public static class JunctionBoxFistInheritedGeoCoordinatesQueryParams extends HashMap<String, Object> {
-    public JunctionBoxFistInheritedGeoCoordinatesQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -1722,95 +1443,6 @@ public interface JunctionBoxFistApi extends ApiClient.Api {
    */
   public static class JunctionBoxFistMaintenanceContractsQueryParams extends HashMap<String, Object> {
     public JunctionBoxFistMaintenanceContractsQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Get relations to Multiducts entities
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return JunctionBoxFistMultiDuctsResponseData
-   */
-  @RequestLine("POST /api/rest/entity/junctionBoxFist/{elid}/MultiDucts?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  JunctionBoxFistMultiDuctsResponseData junctionBoxFistMultiDucts(@Param("sessionId") String sessionId, @Param("elid") String elid, JunctionBoxFistMultiDuctsRequestData body);
-
-  /**
-   * Get relations to Multiducts entities
-   * Similar to <code>junctionBoxFistMultiDucts</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/junctionBoxFist/{elid}/MultiDucts?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<JunctionBoxFistMultiDuctsResponseData> junctionBoxFistMultiDuctsWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, JunctionBoxFistMultiDuctsRequestData body);
-
-
-  /**
-   * Get relations to Multiducts entities
-   * 
-   * Note, this is equivalent to the other <code>junctionBoxFistMultiDucts</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link JunctionBoxFistMultiDuctsQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return JunctionBoxFistMultiDuctsResponseData
-   */
-  @RequestLine("POST /api/rest/entity/junctionBoxFist/{elid}/MultiDucts?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  JunctionBoxFistMultiDuctsResponseData junctionBoxFistMultiDucts(@Param("elid") String elid, JunctionBoxFistMultiDuctsRequestData body, @QueryMap(encoded=true) JunctionBoxFistMultiDuctsQueryParams queryParams);
-
-  /**
-  * Get relations to Multiducts entities
-  * 
-  * Note, this is equivalent to the other <code>junctionBoxFistMultiDucts</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return JunctionBoxFistMultiDuctsResponseData
-      */
-      @RequestLine("POST /api/rest/entity/junctionBoxFist/{elid}/MultiDucts?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<JunctionBoxFistMultiDuctsResponseData> junctionBoxFistMultiDuctsWithHttpInfo(@Param("elid") String elid, JunctionBoxFistMultiDuctsRequestData body, @QueryMap(encoded=true) JunctionBoxFistMultiDuctsQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>junctionBoxFistMultiDucts</code> method in a fluent style.
-   */
-  public static class JunctionBoxFistMultiDuctsQueryParams extends HashMap<String, Object> {
-    public JunctionBoxFistMultiDuctsQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -2432,91 +2064,6 @@ public interface JunctionBoxFistApi extends ApiClient.Api {
   }
 
   /**
-   * Extended geo coordinates
-   * 
-   * @param sessionId Session-ID (required)
-   * @param body  (required)
-   * @return JunctionBoxFistQueryExtendedGeoCoordinatesResponse
-   */
-  @RequestLine("POST /api/rest/entity/junctionBoxFist/queryExtendedGeoCoordinates?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  JunctionBoxFistQueryExtendedGeoCoordinatesResponse junctionBoxFistQueryExtendedGeoCoordinates(@Param("sessionId") String sessionId, JunctionBoxFistQueryExtendedGeoCoordinatesRequest body);
-
-  /**
-   * Extended geo coordinates
-   * Similar to <code>junctionBoxFistQueryExtendedGeoCoordinates</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/junctionBoxFist/queryExtendedGeoCoordinates?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<JunctionBoxFistQueryExtendedGeoCoordinatesResponse> junctionBoxFistQueryExtendedGeoCoordinatesWithHttpInfo(@Param("sessionId") String sessionId, JunctionBoxFistQueryExtendedGeoCoordinatesRequest body);
-
-
-  /**
-   * Extended geo coordinates
-   * 
-   * Note, this is equivalent to the other <code>junctionBoxFistQueryExtendedGeoCoordinates</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link JunctionBoxFistQueryExtendedGeoCoordinatesQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return JunctionBoxFistQueryExtendedGeoCoordinatesResponse
-   */
-  @RequestLine("POST /api/rest/entity/junctionBoxFist/queryExtendedGeoCoordinates?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  JunctionBoxFistQueryExtendedGeoCoordinatesResponse junctionBoxFistQueryExtendedGeoCoordinates(JunctionBoxFistQueryExtendedGeoCoordinatesRequest body, @QueryMap(encoded=true) JunctionBoxFistQueryExtendedGeoCoordinatesQueryParams queryParams);
-
-  /**
-  * Extended geo coordinates
-  * 
-  * Note, this is equivalent to the other <code>junctionBoxFistQueryExtendedGeoCoordinates</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return JunctionBoxFistQueryExtendedGeoCoordinatesResponse
-      */
-      @RequestLine("POST /api/rest/entity/junctionBoxFist/queryExtendedGeoCoordinates?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<JunctionBoxFistQueryExtendedGeoCoordinatesResponse> junctionBoxFistQueryExtendedGeoCoordinatesWithHttpInfo(JunctionBoxFistQueryExtendedGeoCoordinatesRequest body, @QueryMap(encoded=true) JunctionBoxFistQueryExtendedGeoCoordinatesQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>junctionBoxFistQueryExtendedGeoCoordinates</code> method in a fluent style.
-   */
-  public static class JunctionBoxFistQueryExtendedGeoCoordinatesQueryParams extends HashMap<String, Object> {
-    public JunctionBoxFistQueryExtendedGeoCoordinatesQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
    * Extended query scroll first
    * Queries linked master data and zone data. This query supports scrolling. Calls the query and returns the first results including the scroll-ID for the next call.
    * @param sessionId Session-ID (required)
@@ -2681,184 +2228,6 @@ public interface JunctionBoxFistApi extends ApiClient.Api {
    */
   public static class JunctionBoxFistQueryExtendedScrollMoreQueryParams extends HashMap<String, Object> {
     public JunctionBoxFistQueryExtendedScrollMoreQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Query device services 
-   * Query services for device 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return JunctionBoxFistServicesResponse
-   */
-  @RequestLine("POST /api/rest/entity/junctionBoxFist/{elid}/Services?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  JunctionBoxFistServicesResponse junctionBoxFistServices(@Param("sessionId") String sessionId, @Param("elid") String elid, JunctionBoxFistServicesRequest body);
-
-  /**
-   * Query device services 
-   * Similar to <code>junctionBoxFistServices</code> but it also returns the http response headers .
-   * Query services for device 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/junctionBoxFist/{elid}/Services?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<JunctionBoxFistServicesResponse> junctionBoxFistServicesWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, JunctionBoxFistServicesRequest body);
-
-
-  /**
-   * Query device services 
-   * Query services for device 
-   * Note, this is equivalent to the other <code>junctionBoxFistServices</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link JunctionBoxFistServicesQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return JunctionBoxFistServicesResponse
-   */
-  @RequestLine("POST /api/rest/entity/junctionBoxFist/{elid}/Services?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  JunctionBoxFistServicesResponse junctionBoxFistServices(@Param("elid") String elid, JunctionBoxFistServicesRequest body, @QueryMap(encoded=true) JunctionBoxFistServicesQueryParams queryParams);
-
-  /**
-  * Query device services 
-  * Query services for device 
-  * Note, this is equivalent to the other <code>junctionBoxFistServices</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return JunctionBoxFistServicesResponse
-      */
-      @RequestLine("POST /api/rest/entity/junctionBoxFist/{elid}/Services?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<JunctionBoxFistServicesResponse> junctionBoxFistServicesWithHttpInfo(@Param("elid") String elid, JunctionBoxFistServicesRequest body, @QueryMap(encoded=true) JunctionBoxFistServicesQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>junctionBoxFistServices</code> method in a fluent style.
-   */
-  public static class JunctionBoxFistServicesQueryParams extends HashMap<String, Object> {
-    public JunctionBoxFistServicesQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Get relations to Site entities
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return JunctionBoxFistSitesResponseData
-   */
-  @RequestLine("POST /api/rest/entity/junctionBoxFist/{elid}/Sites?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  JunctionBoxFistSitesResponseData junctionBoxFistSites(@Param("sessionId") String sessionId, @Param("elid") String elid, JunctionBoxFistSitesRequestData body);
-
-  /**
-   * Get relations to Site entities
-   * Similar to <code>junctionBoxFistSites</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/junctionBoxFist/{elid}/Sites?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<JunctionBoxFistSitesResponseData> junctionBoxFistSitesWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, JunctionBoxFistSitesRequestData body);
-
-
-  /**
-   * Get relations to Site entities
-   * 
-   * Note, this is equivalent to the other <code>junctionBoxFistSites</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link JunctionBoxFistSitesQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return JunctionBoxFistSitesResponseData
-   */
-  @RequestLine("POST /api/rest/entity/junctionBoxFist/{elid}/Sites?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  JunctionBoxFistSitesResponseData junctionBoxFistSites(@Param("elid") String elid, JunctionBoxFistSitesRequestData body, @QueryMap(encoded=true) JunctionBoxFistSitesQueryParams queryParams);
-
-  /**
-  * Get relations to Site entities
-  * 
-  * Note, this is equivalent to the other <code>junctionBoxFistSites</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return JunctionBoxFistSitesResponseData
-      */
-      @RequestLine("POST /api/rest/entity/junctionBoxFist/{elid}/Sites?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<JunctionBoxFistSitesResponseData> junctionBoxFistSitesWithHttpInfo(@Param("elid") String elid, JunctionBoxFistSitesRequestData body, @QueryMap(encoded=true) JunctionBoxFistSitesQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>junctionBoxFistSites</code> method in a fluent style.
-   */
-  public static class JunctionBoxFistSitesQueryParams extends HashMap<String, Object> {
-    public JunctionBoxFistSitesQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -4890,95 +4259,6 @@ public interface JunctionBoxFistApi extends ApiClient.Api {
    */
   public static class RemoveFiberFromCassetteJunctionBoxFistQueryParams extends HashMap<String, Object> {
     public RemoveFiberFromCassetteJunctionBoxFistQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Replace object
-   * Replace object
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return ReplaceObjectJunctionBoxFistResponse
-   */
-  @RequestLine("POST /api/rest/entity/junctionBoxFist/{elid}/replaceObject?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ReplaceObjectJunctionBoxFistResponse replaceObjectJunctionBoxFist(@Param("sessionId") String sessionId, @Param("elid") String elid, ReplaceObjectJunctionBoxFistRequestData body);
-
-  /**
-   * Replace object
-   * Similar to <code>replaceObjectJunctionBoxFist</code> but it also returns the http response headers .
-   * Replace object
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/junctionBoxFist/{elid}/replaceObject?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<ReplaceObjectJunctionBoxFistResponse> replaceObjectJunctionBoxFistWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ReplaceObjectJunctionBoxFistRequestData body);
-
-
-  /**
-   * Replace object
-   * Replace object
-   * Note, this is equivalent to the other <code>replaceObjectJunctionBoxFist</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link ReplaceObjectJunctionBoxFistQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return ReplaceObjectJunctionBoxFistResponse
-   */
-  @RequestLine("POST /api/rest/entity/junctionBoxFist/{elid}/replaceObject?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  ReplaceObjectJunctionBoxFistResponse replaceObjectJunctionBoxFist(@Param("elid") String elid, ReplaceObjectJunctionBoxFistRequestData body, @QueryMap(encoded=true) ReplaceObjectJunctionBoxFistQueryParams queryParams);
-
-  /**
-  * Replace object
-  * Replace object
-  * Note, this is equivalent to the other <code>replaceObjectJunctionBoxFist</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return ReplaceObjectJunctionBoxFistResponse
-      */
-      @RequestLine("POST /api/rest/entity/junctionBoxFist/{elid}/replaceObject?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<ReplaceObjectJunctionBoxFistResponse> replaceObjectJunctionBoxFistWithHttpInfo(@Param("elid") String elid, ReplaceObjectJunctionBoxFistRequestData body, @QueryMap(encoded=true) ReplaceObjectJunctionBoxFistQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>replaceObjectJunctionBoxFist</code> method in a fluent style.
-   */
-  public static class ReplaceObjectJunctionBoxFistQueryParams extends HashMap<String, Object> {
-    public ReplaceObjectJunctionBoxFistQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

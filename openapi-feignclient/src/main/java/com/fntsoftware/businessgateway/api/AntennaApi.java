@@ -8,16 +8,8 @@ import com.fntsoftware.businessgateway.entities.AntennaContractsRequestData;
 import com.fntsoftware.businessgateway.entities.AntennaContractsResponseData;
 import com.fntsoftware.businessgateway.entities.AntennaDeviceMasterRequestData;
 import com.fntsoftware.businessgateway.entities.AntennaDeviceMasterResponseData;
-import com.fntsoftware.businessgateway.entities.AntennaDuctDataRequest;
-import com.fntsoftware.businessgateway.entities.AntennaDuctDataResponse;
-import com.fntsoftware.businessgateway.entities.AntennaDuctsRequestData;
-import com.fntsoftware.businessgateway.entities.AntennaDuctsResponseData;
 import com.fntsoftware.businessgateway.entities.AntennaFrameContractsRequestData;
 import com.fntsoftware.businessgateway.entities.AntennaFrameContractsResponseData;
-import com.fntsoftware.businessgateway.entities.AntennaInheritedGeoCoordinatesRequest;
-import com.fntsoftware.businessgateway.entities.AntennaInheritedGeoCoordinatesResponse;
-import com.fntsoftware.businessgateway.entities.AntennaInstalledSubCardsRecursiveRequest;
-import com.fntsoftware.businessgateway.entities.AntennaInstalledSubCardsRecursiveResponse;
 import com.fntsoftware.businessgateway.entities.AntennaInstalledSubCardsRequest;
 import com.fntsoftware.businessgateway.entities.AntennaInstalledSubCardsResponse;
 import com.fntsoftware.businessgateway.entities.AntennaInterfacesRequestData;
@@ -36,8 +28,6 @@ import com.fntsoftware.businessgateway.entities.AntennaLogicalPortsRequestData;
 import com.fntsoftware.businessgateway.entities.AntennaLogicalPortsResponseData;
 import com.fntsoftware.businessgateway.entities.AntennaMaintenanceContractsRequestData;
 import com.fntsoftware.businessgateway.entities.AntennaMaintenanceContractsResponseData;
-import com.fntsoftware.businessgateway.entities.AntennaMultiDuctsRequestData;
-import com.fntsoftware.businessgateway.entities.AntennaMultiDuctsResponseData;
 import com.fntsoftware.businessgateway.entities.AntennaNetworksAndNetrangesRequest;
 import com.fntsoftware.businessgateway.entities.AntennaNetworksAndNetrangesResponse;
 import com.fntsoftware.businessgateway.entities.AntennaOperatingSystemInstallationRequestData;
@@ -48,16 +38,10 @@ import com.fntsoftware.businessgateway.entities.AntennaPersonGroupsRequestData;
 import com.fntsoftware.businessgateway.entities.AntennaPersonGroupsResponseData;
 import com.fntsoftware.businessgateway.entities.AntennaPersonsRequestData;
 import com.fntsoftware.businessgateway.entities.AntennaPersonsResponseData;
-import com.fntsoftware.businessgateway.entities.AntennaPhysicalPortsDataExtendedRequest;
-import com.fntsoftware.businessgateway.entities.AntennaPhysicalPortsDataExtendedResponse;
 import com.fntsoftware.businessgateway.entities.AntennaPhysicalPortsDataRequestData;
 import com.fntsoftware.businessgateway.entities.AntennaPhysicalPortsDataResponseData;
-import com.fntsoftware.businessgateway.entities.AntennaPhysicalPortsPowerExtendedRequest;
-import com.fntsoftware.businessgateway.entities.AntennaPhysicalPortsPowerExtendedResponse;
-import com.fntsoftware.businessgateway.entities.AntennaPhysicalPortsPowerRequestData;
-import com.fntsoftware.businessgateway.entities.AntennaPhysicalPortsPowerResponseData;
-import com.fntsoftware.businessgateway.entities.AntennaQueryExtendedGeoCoordinatesRequest;
-import com.fntsoftware.businessgateway.entities.AntennaQueryExtendedGeoCoordinatesResponse;
+import com.fntsoftware.businessgateway.entities.AntennaPhysicalPortsPowerRequest;
+import com.fntsoftware.businessgateway.entities.AntennaPhysicalPortsPowerResponse;
 import com.fntsoftware.businessgateway.entities.AntennaQueryExtendedRequest;
 import com.fntsoftware.businessgateway.entities.AntennaQueryExtendedResponse;
 import com.fntsoftware.businessgateway.entities.AntennaQueryExtendedScrollFirstRequest;
@@ -66,10 +50,6 @@ import com.fntsoftware.businessgateway.entities.AntennaQueryExtendedScrollMoreRe
 import com.fntsoftware.businessgateway.entities.AntennaQueryExtendedScrollMoreResponse;
 import com.fntsoftware.businessgateway.entities.AntennaQueryRequest;
 import com.fntsoftware.businessgateway.entities.AntennaQueryResponse;
-import com.fntsoftware.businessgateway.entities.AntennaServicesRequest;
-import com.fntsoftware.businessgateway.entities.AntennaServicesResponse;
-import com.fntsoftware.businessgateway.entities.AntennaSitesRequestData;
-import com.fntsoftware.businessgateway.entities.AntennaSitesResponseData;
 import com.fntsoftware.businessgateway.entities.AntennaSlotRequestData;
 import com.fntsoftware.businessgateway.entities.AntennaSlotResponseData;
 import com.fntsoftware.businessgateway.entities.AntennaSwitchCabinetRequestData;
@@ -106,8 +86,6 @@ import com.fntsoftware.businessgateway.entities.PlaceInWarehouseAntennaRequestDa
 import com.fntsoftware.businessgateway.entities.PlaceInWarehouseAntennaResponse;
 import com.fntsoftware.businessgateway.entities.PlaceInZoneAntennaRequestData;
 import com.fntsoftware.businessgateway.entities.PlaceInZoneAntennaResponse;
-import com.fntsoftware.businessgateway.entities.ReplaceObjectAntennaRequestData;
-import com.fntsoftware.businessgateway.entities.ReplaceObjectAntennaResponse;
 import com.fntsoftware.businessgateway.entities.UpdateAntennaRequestData;
 import com.fntsoftware.businessgateway.entities.UpdateAntennaResponse;
 import com.fntsoftware.businessgateway.entities.UpdateSystemAttributesAntennaRequestData;
@@ -119,7 +97,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-31T11:10:37.320689708Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
 public interface AntennaApi extends ApiClient.Api {
 
 
@@ -302,184 +280,6 @@ public interface AntennaApi extends ApiClient.Api {
   }
 
   /**
-   * Query duct data
-   * Query associated ducts and multipipes
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return AntennaDuctDataResponse
-   */
-  @RequestLine("POST /api/rest/entity/antenna/{elid}/DuctData?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  AntennaDuctDataResponse antennaDuctData(@Param("sessionId") String sessionId, @Param("elid") String elid, AntennaDuctDataRequest body);
-
-  /**
-   * Query duct data
-   * Similar to <code>antennaDuctData</code> but it also returns the http response headers .
-   * Query associated ducts and multipipes
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/antenna/{elid}/DuctData?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<AntennaDuctDataResponse> antennaDuctDataWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, AntennaDuctDataRequest body);
-
-
-  /**
-   * Query duct data
-   * Query associated ducts and multipipes
-   * Note, this is equivalent to the other <code>antennaDuctData</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link AntennaDuctDataQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return AntennaDuctDataResponse
-   */
-  @RequestLine("POST /api/rest/entity/antenna/{elid}/DuctData?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  AntennaDuctDataResponse antennaDuctData(@Param("elid") String elid, AntennaDuctDataRequest body, @QueryMap(encoded=true) AntennaDuctDataQueryParams queryParams);
-
-  /**
-  * Query duct data
-  * Query associated ducts and multipipes
-  * Note, this is equivalent to the other <code>antennaDuctData</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return AntennaDuctDataResponse
-      */
-      @RequestLine("POST /api/rest/entity/antenna/{elid}/DuctData?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<AntennaDuctDataResponse> antennaDuctDataWithHttpInfo(@Param("elid") String elid, AntennaDuctDataRequest body, @QueryMap(encoded=true) AntennaDuctDataQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>antennaDuctData</code> method in a fluent style.
-   */
-  public static class AntennaDuctDataQueryParams extends HashMap<String, Object> {
-    public AntennaDuctDataQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Get relations to Duct entities
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return AntennaDuctsResponseData
-   */
-  @RequestLine("POST /api/rest/entity/antenna/{elid}/Ducts?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  AntennaDuctsResponseData antennaDucts(@Param("sessionId") String sessionId, @Param("elid") String elid, AntennaDuctsRequestData body);
-
-  /**
-   * Get relations to Duct entities
-   * Similar to <code>antennaDucts</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/antenna/{elid}/Ducts?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<AntennaDuctsResponseData> antennaDuctsWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, AntennaDuctsRequestData body);
-
-
-  /**
-   * Get relations to Duct entities
-   * 
-   * Note, this is equivalent to the other <code>antennaDucts</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link AntennaDuctsQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return AntennaDuctsResponseData
-   */
-  @RequestLine("POST /api/rest/entity/antenna/{elid}/Ducts?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  AntennaDuctsResponseData antennaDucts(@Param("elid") String elid, AntennaDuctsRequestData body, @QueryMap(encoded=true) AntennaDuctsQueryParams queryParams);
-
-  /**
-  * Get relations to Duct entities
-  * 
-  * Note, this is equivalent to the other <code>antennaDucts</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return AntennaDuctsResponseData
-      */
-      @RequestLine("POST /api/rest/entity/antenna/{elid}/Ducts?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<AntennaDuctsResponseData> antennaDuctsWithHttpInfo(@Param("elid") String elid, AntennaDuctsRequestData body, @QueryMap(encoded=true) AntennaDuctsQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>antennaDucts</code> method in a fluent style.
-   */
-  public static class AntennaDuctsQueryParams extends HashMap<String, Object> {
-    public AntennaDuctsQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
    * Get relations to Frame contract entities
    * 
    * @param sessionId Session-ID (required)
@@ -569,91 +369,6 @@ public interface AntennaApi extends ApiClient.Api {
   }
 
   /**
-   * Query inherited coordinates
-   * Query the own coordinates of an object or inherit them from parents
-   * @param sessionId Session-ID (required)
-   * @param body  (required)
-   * @return AntennaInheritedGeoCoordinatesResponse
-   */
-  @RequestLine("POST /api/rest/entity/antenna/inheritedGeoCoordinates?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  AntennaInheritedGeoCoordinatesResponse antennaInheritedGeoCoordinates(@Param("sessionId") String sessionId, AntennaInheritedGeoCoordinatesRequest body);
-
-  /**
-   * Query inherited coordinates
-   * Similar to <code>antennaInheritedGeoCoordinates</code> but it also returns the http response headers .
-   * Query the own coordinates of an object or inherit them from parents
-   * @param sessionId Session-ID (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/antenna/inheritedGeoCoordinates?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<AntennaInheritedGeoCoordinatesResponse> antennaInheritedGeoCoordinatesWithHttpInfo(@Param("sessionId") String sessionId, AntennaInheritedGeoCoordinatesRequest body);
-
-
-  /**
-   * Query inherited coordinates
-   * Query the own coordinates of an object or inherit them from parents
-   * Note, this is equivalent to the other <code>antennaInheritedGeoCoordinates</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link AntennaInheritedGeoCoordinatesQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return AntennaInheritedGeoCoordinatesResponse
-   */
-  @RequestLine("POST /api/rest/entity/antenna/inheritedGeoCoordinates?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  AntennaInheritedGeoCoordinatesResponse antennaInheritedGeoCoordinates(AntennaInheritedGeoCoordinatesRequest body, @QueryMap(encoded=true) AntennaInheritedGeoCoordinatesQueryParams queryParams);
-
-  /**
-  * Query inherited coordinates
-  * Query the own coordinates of an object or inherit them from parents
-  * Note, this is equivalent to the other <code>antennaInheritedGeoCoordinates</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return AntennaInheritedGeoCoordinatesResponse
-      */
-      @RequestLine("POST /api/rest/entity/antenna/inheritedGeoCoordinates?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<AntennaInheritedGeoCoordinatesResponse> antennaInheritedGeoCoordinatesWithHttpInfo(AntennaInheritedGeoCoordinatesRequest body, @QueryMap(encoded=true) AntennaInheritedGeoCoordinatesQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>antennaInheritedGeoCoordinates</code> method in a fluent style.
-   */
-  public static class AntennaInheritedGeoCoordinatesQueryParams extends HashMap<String, Object> {
-    public AntennaInheritedGeoCoordinatesQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
    * Query installed subcards
    * Queries installed subcards. Only direct subcards will be returned. Free slot positions will not be returned.
    * @param sessionId Session-ID (required)
@@ -737,95 +452,6 @@ public interface AntennaApi extends ApiClient.Api {
    */
   public static class AntennaInstalledSubCardsQueryParams extends HashMap<String, Object> {
     public AntennaInstalledSubCardsQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Query installed sub-cards recursively
-   * Queries installed sub-cards from a device. Free slot positions are not supplied.
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return AntennaInstalledSubCardsRecursiveResponse
-   */
-  @RequestLine("POST /api/rest/entity/antenna/{elid}/InstalledSubCardsRecursive?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  AntennaInstalledSubCardsRecursiveResponse antennaInstalledSubCardsRecursive(@Param("sessionId") String sessionId, @Param("elid") String elid, AntennaInstalledSubCardsRecursiveRequest body);
-
-  /**
-   * Query installed sub-cards recursively
-   * Similar to <code>antennaInstalledSubCardsRecursive</code> but it also returns the http response headers .
-   * Queries installed sub-cards from a device. Free slot positions are not supplied.
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/antenna/{elid}/InstalledSubCardsRecursive?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<AntennaInstalledSubCardsRecursiveResponse> antennaInstalledSubCardsRecursiveWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, AntennaInstalledSubCardsRecursiveRequest body);
-
-
-  /**
-   * Query installed sub-cards recursively
-   * Queries installed sub-cards from a device. Free slot positions are not supplied.
-   * Note, this is equivalent to the other <code>antennaInstalledSubCardsRecursive</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link AntennaInstalledSubCardsRecursiveQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return AntennaInstalledSubCardsRecursiveResponse
-   */
-  @RequestLine("POST /api/rest/entity/antenna/{elid}/InstalledSubCardsRecursive?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  AntennaInstalledSubCardsRecursiveResponse antennaInstalledSubCardsRecursive(@Param("elid") String elid, AntennaInstalledSubCardsRecursiveRequest body, @QueryMap(encoded=true) AntennaInstalledSubCardsRecursiveQueryParams queryParams);
-
-  /**
-  * Query installed sub-cards recursively
-  * Queries installed sub-cards from a device. Free slot positions are not supplied.
-  * Note, this is equivalent to the other <code>antennaInstalledSubCardsRecursive</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return AntennaInstalledSubCardsRecursiveResponse
-      */
-      @RequestLine("POST /api/rest/entity/antenna/{elid}/InstalledSubCardsRecursive?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<AntennaInstalledSubCardsRecursiveResponse> antennaInstalledSubCardsRecursiveWithHttpInfo(@Param("elid") String elid, AntennaInstalledSubCardsRecursiveRequest body, @QueryMap(encoded=true) AntennaInstalledSubCardsRecursiveQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>antennaInstalledSubCardsRecursive</code> method in a fluent style.
-   */
-  public static class AntennaInstalledSubCardsRecursiveQueryParams extends HashMap<String, Object> {
-    public AntennaInstalledSubCardsRecursiveQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -1544,95 +1170,6 @@ public interface AntennaApi extends ApiClient.Api {
   }
 
   /**
-   * Get relations to Multiducts entities
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return AntennaMultiDuctsResponseData
-   */
-  @RequestLine("POST /api/rest/entity/antenna/{elid}/MultiDucts?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  AntennaMultiDuctsResponseData antennaMultiDucts(@Param("sessionId") String sessionId, @Param("elid") String elid, AntennaMultiDuctsRequestData body);
-
-  /**
-   * Get relations to Multiducts entities
-   * Similar to <code>antennaMultiDucts</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/antenna/{elid}/MultiDucts?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<AntennaMultiDuctsResponseData> antennaMultiDuctsWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, AntennaMultiDuctsRequestData body);
-
-
-  /**
-   * Get relations to Multiducts entities
-   * 
-   * Note, this is equivalent to the other <code>antennaMultiDucts</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link AntennaMultiDuctsQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return AntennaMultiDuctsResponseData
-   */
-  @RequestLine("POST /api/rest/entity/antenna/{elid}/MultiDucts?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  AntennaMultiDuctsResponseData antennaMultiDucts(@Param("elid") String elid, AntennaMultiDuctsRequestData body, @QueryMap(encoded=true) AntennaMultiDuctsQueryParams queryParams);
-
-  /**
-  * Get relations to Multiducts entities
-  * 
-  * Note, this is equivalent to the other <code>antennaMultiDucts</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return AntennaMultiDuctsResponseData
-      */
-      @RequestLine("POST /api/rest/entity/antenna/{elid}/MultiDucts?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<AntennaMultiDuctsResponseData> antennaMultiDuctsWithHttpInfo(@Param("elid") String elid, AntennaMultiDuctsRequestData body, @QueryMap(encoded=true) AntennaMultiDuctsQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>antennaMultiDucts</code> method in a fluent style.
-   */
-  public static class AntennaMultiDuctsQueryParams extends HashMap<String, Object> {
-    public AntennaMultiDuctsQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
    * Nets / Net ranges
    * Query for fetching all basic target entity data.
    * @param sessionId Session-ID (required)
@@ -2167,113 +1704,24 @@ public interface AntennaApi extends ApiClient.Api {
   }
 
   /**
-   * Query physical ports data extended
+   * Query Power ports
    * Query for fetching all basic target entity data.
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
-   * @return AntennaPhysicalPortsDataExtendedResponse
-   */
-  @RequestLine("POST /api/rest/entity/antenna/{elid}/PhysicalPortsDataExtended?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  AntennaPhysicalPortsDataExtendedResponse antennaPhysicalPortsDataExtended(@Param("sessionId") String sessionId, @Param("elid") String elid, AntennaPhysicalPortsDataExtendedRequest body);
-
-  /**
-   * Query physical ports data extended
-   * Similar to <code>antennaPhysicalPortsDataExtended</code> but it also returns the http response headers .
-   * Query for fetching all basic target entity data.
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/antenna/{elid}/PhysicalPortsDataExtended?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<AntennaPhysicalPortsDataExtendedResponse> antennaPhysicalPortsDataExtendedWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, AntennaPhysicalPortsDataExtendedRequest body);
-
-
-  /**
-   * Query physical ports data extended
-   * Query for fetching all basic target entity data.
-   * Note, this is equivalent to the other <code>antennaPhysicalPortsDataExtended</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link AntennaPhysicalPortsDataExtendedQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return AntennaPhysicalPortsDataExtendedResponse
-   */
-  @RequestLine("POST /api/rest/entity/antenna/{elid}/PhysicalPortsDataExtended?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  AntennaPhysicalPortsDataExtendedResponse antennaPhysicalPortsDataExtended(@Param("elid") String elid, AntennaPhysicalPortsDataExtendedRequest body, @QueryMap(encoded=true) AntennaPhysicalPortsDataExtendedQueryParams queryParams);
-
-  /**
-  * Query physical ports data extended
-  * Query for fetching all basic target entity data.
-  * Note, this is equivalent to the other <code>antennaPhysicalPortsDataExtended</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return AntennaPhysicalPortsDataExtendedResponse
-      */
-      @RequestLine("POST /api/rest/entity/antenna/{elid}/PhysicalPortsDataExtended?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<AntennaPhysicalPortsDataExtendedResponse> antennaPhysicalPortsDataExtendedWithHttpInfo(@Param("elid") String elid, AntennaPhysicalPortsDataExtendedRequest body, @QueryMap(encoded=true) AntennaPhysicalPortsDataExtendedQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>antennaPhysicalPortsDataExtended</code> method in a fluent style.
-   */
-  public static class AntennaPhysicalPortsDataExtendedQueryParams extends HashMap<String, Object> {
-    public AntennaPhysicalPortsDataExtendedQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Get relations to Physical port (power) entities
-   * For more information call the basic query of the power port entity
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return AntennaPhysicalPortsPowerResponseData
+   * @return AntennaPhysicalPortsPowerResponse
    */
   @RequestLine("POST /api/rest/entity/antenna/{elid}/PhysicalPortsPower?sessionId={sessionId}")
   @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  AntennaPhysicalPortsPowerResponseData antennaPhysicalPortsPower(@Param("sessionId") String sessionId, @Param("elid") String elid, AntennaPhysicalPortsPowerRequestData body);
+  AntennaPhysicalPortsPowerResponse antennaPhysicalPortsPower(@Param("sessionId") String sessionId, @Param("elid") String elid, AntennaPhysicalPortsPowerRequest body);
 
   /**
-   * Get relations to Physical port (power) entities
+   * Query Power ports
    * Similar to <code>antennaPhysicalPortsPower</code> but it also returns the http response headers .
-   * For more information call the basic query of the power port entity
+   * Query for fetching all basic target entity data.
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
@@ -2284,12 +1732,12 @@ public interface AntennaApi extends ApiClient.Api {
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  ApiResponse<AntennaPhysicalPortsPowerResponseData> antennaPhysicalPortsPowerWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, AntennaPhysicalPortsPowerRequestData body);
+  ApiResponse<AntennaPhysicalPortsPowerResponse> antennaPhysicalPortsPowerWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, AntennaPhysicalPortsPowerRequest body);
 
 
   /**
-   * Get relations to Physical port (power) entities
-   * For more information call the basic query of the power port entity
+   * Query Power ports
+   * Query for fetching all basic target entity data.
    * Note, this is equivalent to the other <code>antennaPhysicalPortsPower</code> method,
    * but with the query parameters collected into a single Map parameter. This
    * is convenient for services with optional query parameters, especially when
@@ -2302,18 +1750,18 @@ public interface AntennaApi extends ApiClient.Api {
    *   <ul>
    *   <li>sessionId - Session-ID (required)</li>
    *   </ul>
-   * @return AntennaPhysicalPortsPowerResponseData
+   * @return AntennaPhysicalPortsPowerResponse
    */
   @RequestLine("POST /api/rest/entity/antenna/{elid}/PhysicalPortsPower?sessionId={sessionId}")
   @Headers({
   "Content-Type: application/json",
   "Accept: application/json",
   })
-  AntennaPhysicalPortsPowerResponseData antennaPhysicalPortsPower(@Param("elid") String elid, AntennaPhysicalPortsPowerRequestData body, @QueryMap(encoded=true) AntennaPhysicalPortsPowerQueryParams queryParams);
+  AntennaPhysicalPortsPowerResponse antennaPhysicalPortsPower(@Param("elid") String elid, AntennaPhysicalPortsPowerRequest body, @QueryMap(encoded=true) AntennaPhysicalPortsPowerQueryParams queryParams);
 
   /**
-  * Get relations to Physical port (power) entities
-  * For more information call the basic query of the power port entity
+  * Query Power ports
+  * Query for fetching all basic target entity data.
   * Note, this is equivalent to the other <code>antennaPhysicalPortsPower</code> that receives the query parameters as a map,
   * but this one also exposes the Http response headers
               * @param elid  (required)
@@ -2323,14 +1771,14 @@ public interface AntennaApi extends ApiClient.Api {
       *   <ul>
           *   <li>sessionId - Session-ID (required)</li>
       *   </ul>
-          * @return AntennaPhysicalPortsPowerResponseData
+          * @return AntennaPhysicalPortsPowerResponse
       */
       @RequestLine("POST /api/rest/entity/antenna/{elid}/PhysicalPortsPower?sessionId={sessionId}")
       @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
       })
-   ApiResponse<AntennaPhysicalPortsPowerResponseData> antennaPhysicalPortsPowerWithHttpInfo(@Param("elid") String elid, AntennaPhysicalPortsPowerRequestData body, @QueryMap(encoded=true) AntennaPhysicalPortsPowerQueryParams queryParams);
+   ApiResponse<AntennaPhysicalPortsPowerResponse> antennaPhysicalPortsPowerWithHttpInfo(@Param("elid") String elid, AntennaPhysicalPortsPowerRequest body, @QueryMap(encoded=true) AntennaPhysicalPortsPowerQueryParams queryParams);
 
 
    /**
@@ -2339,95 +1787,6 @@ public interface AntennaApi extends ApiClient.Api {
    */
   public static class AntennaPhysicalPortsPowerQueryParams extends HashMap<String, Object> {
     public AntennaPhysicalPortsPowerQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Query Power ports
-   * Query for fetching all basic target entity data.
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return AntennaPhysicalPortsPowerExtendedResponse
-   */
-  @RequestLine("POST /api/rest/entity/antenna/{elid}/PhysicalPortsPowerExtended?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  AntennaPhysicalPortsPowerExtendedResponse antennaPhysicalPortsPowerExtended(@Param("sessionId") String sessionId, @Param("elid") String elid, AntennaPhysicalPortsPowerExtendedRequest body);
-
-  /**
-   * Query Power ports
-   * Similar to <code>antennaPhysicalPortsPowerExtended</code> but it also returns the http response headers .
-   * Query for fetching all basic target entity data.
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/antenna/{elid}/PhysicalPortsPowerExtended?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<AntennaPhysicalPortsPowerExtendedResponse> antennaPhysicalPortsPowerExtendedWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, AntennaPhysicalPortsPowerExtendedRequest body);
-
-
-  /**
-   * Query Power ports
-   * Query for fetching all basic target entity data.
-   * Note, this is equivalent to the other <code>antennaPhysicalPortsPowerExtended</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link AntennaPhysicalPortsPowerExtendedQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return AntennaPhysicalPortsPowerExtendedResponse
-   */
-  @RequestLine("POST /api/rest/entity/antenna/{elid}/PhysicalPortsPowerExtended?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  AntennaPhysicalPortsPowerExtendedResponse antennaPhysicalPortsPowerExtended(@Param("elid") String elid, AntennaPhysicalPortsPowerExtendedRequest body, @QueryMap(encoded=true) AntennaPhysicalPortsPowerExtendedQueryParams queryParams);
-
-  /**
-  * Query Power ports
-  * Query for fetching all basic target entity data.
-  * Note, this is equivalent to the other <code>antennaPhysicalPortsPowerExtended</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return AntennaPhysicalPortsPowerExtendedResponse
-      */
-      @RequestLine("POST /api/rest/entity/antenna/{elid}/PhysicalPortsPowerExtended?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<AntennaPhysicalPortsPowerExtendedResponse> antennaPhysicalPortsPowerExtendedWithHttpInfo(@Param("elid") String elid, AntennaPhysicalPortsPowerExtendedRequest body, @QueryMap(encoded=true) AntennaPhysicalPortsPowerExtendedQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>antennaPhysicalPortsPowerExtended</code> method in a fluent style.
-   */
-  public static class AntennaPhysicalPortsPowerExtendedQueryParams extends HashMap<String, Object> {
-    public AntennaPhysicalPortsPowerExtendedQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -2604,91 +1963,6 @@ public interface AntennaApi extends ApiClient.Api {
   }
 
   /**
-   * Extended geo coordinates
-   * 
-   * @param sessionId Session-ID (required)
-   * @param body  (required)
-   * @return AntennaQueryExtendedGeoCoordinatesResponse
-   */
-  @RequestLine("POST /api/rest/entity/antenna/queryExtendedGeoCoordinates?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  AntennaQueryExtendedGeoCoordinatesResponse antennaQueryExtendedGeoCoordinates(@Param("sessionId") String sessionId, AntennaQueryExtendedGeoCoordinatesRequest body);
-
-  /**
-   * Extended geo coordinates
-   * Similar to <code>antennaQueryExtendedGeoCoordinates</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/antenna/queryExtendedGeoCoordinates?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<AntennaQueryExtendedGeoCoordinatesResponse> antennaQueryExtendedGeoCoordinatesWithHttpInfo(@Param("sessionId") String sessionId, AntennaQueryExtendedGeoCoordinatesRequest body);
-
-
-  /**
-   * Extended geo coordinates
-   * 
-   * Note, this is equivalent to the other <code>antennaQueryExtendedGeoCoordinates</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link AntennaQueryExtendedGeoCoordinatesQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return AntennaQueryExtendedGeoCoordinatesResponse
-   */
-  @RequestLine("POST /api/rest/entity/antenna/queryExtendedGeoCoordinates?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  AntennaQueryExtendedGeoCoordinatesResponse antennaQueryExtendedGeoCoordinates(AntennaQueryExtendedGeoCoordinatesRequest body, @QueryMap(encoded=true) AntennaQueryExtendedGeoCoordinatesQueryParams queryParams);
-
-  /**
-  * Extended geo coordinates
-  * 
-  * Note, this is equivalent to the other <code>antennaQueryExtendedGeoCoordinates</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return AntennaQueryExtendedGeoCoordinatesResponse
-      */
-      @RequestLine("POST /api/rest/entity/antenna/queryExtendedGeoCoordinates?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<AntennaQueryExtendedGeoCoordinatesResponse> antennaQueryExtendedGeoCoordinatesWithHttpInfo(AntennaQueryExtendedGeoCoordinatesRequest body, @QueryMap(encoded=true) AntennaQueryExtendedGeoCoordinatesQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>antennaQueryExtendedGeoCoordinates</code> method in a fluent style.
-   */
-  public static class AntennaQueryExtendedGeoCoordinatesQueryParams extends HashMap<String, Object> {
-    public AntennaQueryExtendedGeoCoordinatesQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
    * Extended query scroll first
    * Queries linked master data and zone data. This query supports scrolling. Calls the query and returns the first results including the scroll-ID for the next call.
    * @param sessionId Session-ID (required)
@@ -2853,184 +2127,6 @@ public interface AntennaApi extends ApiClient.Api {
    */
   public static class AntennaQueryExtendedScrollMoreQueryParams extends HashMap<String, Object> {
     public AntennaQueryExtendedScrollMoreQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Query device services 
-   * Query services for device 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return AntennaServicesResponse
-   */
-  @RequestLine("POST /api/rest/entity/antenna/{elid}/Services?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  AntennaServicesResponse antennaServices(@Param("sessionId") String sessionId, @Param("elid") String elid, AntennaServicesRequest body);
-
-  /**
-   * Query device services 
-   * Similar to <code>antennaServices</code> but it also returns the http response headers .
-   * Query services for device 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/antenna/{elid}/Services?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<AntennaServicesResponse> antennaServicesWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, AntennaServicesRequest body);
-
-
-  /**
-   * Query device services 
-   * Query services for device 
-   * Note, this is equivalent to the other <code>antennaServices</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link AntennaServicesQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return AntennaServicesResponse
-   */
-  @RequestLine("POST /api/rest/entity/antenna/{elid}/Services?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  AntennaServicesResponse antennaServices(@Param("elid") String elid, AntennaServicesRequest body, @QueryMap(encoded=true) AntennaServicesQueryParams queryParams);
-
-  /**
-  * Query device services 
-  * Query services for device 
-  * Note, this is equivalent to the other <code>antennaServices</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return AntennaServicesResponse
-      */
-      @RequestLine("POST /api/rest/entity/antenna/{elid}/Services?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<AntennaServicesResponse> antennaServicesWithHttpInfo(@Param("elid") String elid, AntennaServicesRequest body, @QueryMap(encoded=true) AntennaServicesQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>antennaServices</code> method in a fluent style.
-   */
-  public static class AntennaServicesQueryParams extends HashMap<String, Object> {
-    public AntennaServicesQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Get relations to Site entities
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return AntennaSitesResponseData
-   */
-  @RequestLine("POST /api/rest/entity/antenna/{elid}/Sites?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  AntennaSitesResponseData antennaSites(@Param("sessionId") String sessionId, @Param("elid") String elid, AntennaSitesRequestData body);
-
-  /**
-   * Get relations to Site entities
-   * Similar to <code>antennaSites</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/antenna/{elid}/Sites?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<AntennaSitesResponseData> antennaSitesWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, AntennaSitesRequestData body);
-
-
-  /**
-   * Get relations to Site entities
-   * 
-   * Note, this is equivalent to the other <code>antennaSites</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link AntennaSitesQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return AntennaSitesResponseData
-   */
-  @RequestLine("POST /api/rest/entity/antenna/{elid}/Sites?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  AntennaSitesResponseData antennaSites(@Param("elid") String elid, AntennaSitesRequestData body, @QueryMap(encoded=true) AntennaSitesQueryParams queryParams);
-
-  /**
-  * Get relations to Site entities
-  * 
-  * Note, this is equivalent to the other <code>antennaSites</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return AntennaSitesResponseData
-      */
-      @RequestLine("POST /api/rest/entity/antenna/{elid}/Sites?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<AntennaSitesResponseData> antennaSitesWithHttpInfo(@Param("elid") String elid, AntennaSitesRequestData body, @QueryMap(encoded=true) AntennaSitesQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>antennaSites</code> method in a fluent style.
-   */
-  public static class AntennaSitesQueryParams extends HashMap<String, Object> {
-    public AntennaSitesQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -4617,95 +3713,6 @@ public interface AntennaApi extends ApiClient.Api {
    */
   public static class PlaceInZoneAntennaQueryParams extends HashMap<String, Object> {
     public PlaceInZoneAntennaQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Replace object
-   * Replace object
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return ReplaceObjectAntennaResponse
-   */
-  @RequestLine("POST /api/rest/entity/antenna/{elid}/replaceObject?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ReplaceObjectAntennaResponse replaceObjectAntenna(@Param("sessionId") String sessionId, @Param("elid") String elid, ReplaceObjectAntennaRequestData body);
-
-  /**
-   * Replace object
-   * Similar to <code>replaceObjectAntenna</code> but it also returns the http response headers .
-   * Replace object
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/antenna/{elid}/replaceObject?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<ReplaceObjectAntennaResponse> replaceObjectAntennaWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ReplaceObjectAntennaRequestData body);
-
-
-  /**
-   * Replace object
-   * Replace object
-   * Note, this is equivalent to the other <code>replaceObjectAntenna</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link ReplaceObjectAntennaQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return ReplaceObjectAntennaResponse
-   */
-  @RequestLine("POST /api/rest/entity/antenna/{elid}/replaceObject?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  ReplaceObjectAntennaResponse replaceObjectAntenna(@Param("elid") String elid, ReplaceObjectAntennaRequestData body, @QueryMap(encoded=true) ReplaceObjectAntennaQueryParams queryParams);
-
-  /**
-  * Replace object
-  * Replace object
-  * Note, this is equivalent to the other <code>replaceObjectAntenna</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return ReplaceObjectAntennaResponse
-      */
-      @RequestLine("POST /api/rest/entity/antenna/{elid}/replaceObject?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<ReplaceObjectAntennaResponse> replaceObjectAntennaWithHttpInfo(@Param("elid") String elid, ReplaceObjectAntennaRequestData body, @QueryMap(encoded=true) ReplaceObjectAntennaQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>replaceObjectAntenna</code> method in a fluent style.
-   */
-  public static class ReplaceObjectAntennaQueryParams extends HashMap<String, Object> {
-    public ReplaceObjectAntennaQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

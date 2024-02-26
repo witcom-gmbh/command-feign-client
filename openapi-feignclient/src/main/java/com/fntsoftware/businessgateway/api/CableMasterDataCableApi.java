@@ -6,8 +6,6 @@ import com.fntsoftware.businessgateway.entities.ApiResponse;
 
 import com.fntsoftware.businessgateway.entities.CableMasterDataCableDataCablesRequestData;
 import com.fntsoftware.businessgateway.entities.CableMasterDataCableDataCablesResponseData;
-import com.fntsoftware.businessgateway.entities.CableMasterDataCableQueryConductorMasterRequest;
-import com.fntsoftware.businessgateway.entities.CableMasterDataCableQueryConductorMasterResponse;
 import com.fntsoftware.businessgateway.entities.CableMasterDataCableQueryRequest;
 import com.fntsoftware.businessgateway.entities.CableMasterDataCableQueryResponse;
 import com.fntsoftware.businessgateway.entities.CableMasterDataCableSystemAttributesRequest;
@@ -27,7 +25,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-31T11:10:37.320689708Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
 public interface CableMasterDataCableApi extends ApiClient.Api {
 
 
@@ -200,91 +198,6 @@ public interface CableMasterDataCableApi extends ApiClient.Api {
    */
   public static class CableMasterDataCableQueryQueryParams extends HashMap<String, Object> {
     public CableMasterDataCableQueryQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Query conductors (master data)
-   * Query cable conductors (master data)
-   * @param sessionId Session-ID (required)
-   * @param body  (required)
-   * @return CableMasterDataCableQueryConductorMasterResponse
-   */
-  @RequestLine("POST /api/rest/entity/cableMasterDataCable/queryConductorMaster?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  CableMasterDataCableQueryConductorMasterResponse cableMasterDataCableQueryConductorMaster(@Param("sessionId") String sessionId, CableMasterDataCableQueryConductorMasterRequest body);
-
-  /**
-   * Query conductors (master data)
-   * Similar to <code>cableMasterDataCableQueryConductorMaster</code> but it also returns the http response headers .
-   * Query cable conductors (master data)
-   * @param sessionId Session-ID (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/cableMasterDataCable/queryConductorMaster?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<CableMasterDataCableQueryConductorMasterResponse> cableMasterDataCableQueryConductorMasterWithHttpInfo(@Param("sessionId") String sessionId, CableMasterDataCableQueryConductorMasterRequest body);
-
-
-  /**
-   * Query conductors (master data)
-   * Query cable conductors (master data)
-   * Note, this is equivalent to the other <code>cableMasterDataCableQueryConductorMaster</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link CableMasterDataCableQueryConductorMasterQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return CableMasterDataCableQueryConductorMasterResponse
-   */
-  @RequestLine("POST /api/rest/entity/cableMasterDataCable/queryConductorMaster?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  CableMasterDataCableQueryConductorMasterResponse cableMasterDataCableQueryConductorMaster(CableMasterDataCableQueryConductorMasterRequest body, @QueryMap(encoded=true) CableMasterDataCableQueryConductorMasterQueryParams queryParams);
-
-  /**
-  * Query conductors (master data)
-  * Query cable conductors (master data)
-  * Note, this is equivalent to the other <code>cableMasterDataCableQueryConductorMaster</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return CableMasterDataCableQueryConductorMasterResponse
-      */
-      @RequestLine("POST /api/rest/entity/cableMasterDataCable/queryConductorMaster?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<CableMasterDataCableQueryConductorMasterResponse> cableMasterDataCableQueryConductorMasterWithHttpInfo(CableMasterDataCableQueryConductorMasterRequest body, @QueryMap(encoded=true) CableMasterDataCableQueryConductorMasterQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>cableMasterDataCableQueryConductorMaster</code> method in a fluent style.
-   */
-  public static class CableMasterDataCableQueryConductorMasterQueryParams extends HashMap<String, Object> {
-    public CableMasterDataCableQueryConductorMasterQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

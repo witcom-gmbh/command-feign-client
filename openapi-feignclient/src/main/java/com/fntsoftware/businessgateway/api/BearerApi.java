@@ -10,12 +10,8 @@ import com.fntsoftware.businessgateway.entities.BearerBandwidthForPacketDataServ
 import com.fntsoftware.businessgateway.entities.BearerBandwidthForPacketDataServiceResponse;
 import com.fntsoftware.businessgateway.entities.BearerContractsRequestData;
 import com.fntsoftware.businessgateway.entities.BearerContractsResponseData;
-import com.fntsoftware.businessgateway.entities.BearerEndZoneRequestData;
-import com.fntsoftware.businessgateway.entities.BearerEndZoneResponseData;
 import com.fntsoftware.businessgateway.entities.BearerFrameContractsRequestData;
 import com.fntsoftware.businessgateway.entities.BearerFrameContractsResponseData;
-import com.fntsoftware.businessgateway.entities.BearerHardwareRequest;
-import com.fntsoftware.businessgateway.entities.BearerHardwareResponse;
 import com.fntsoftware.businessgateway.entities.BearerHigherLevelServicesRequestData;
 import com.fntsoftware.businessgateway.entities.BearerHigherLevelServicesResponseData;
 import com.fntsoftware.businessgateway.entities.BearerLogicalPortsEndRequestData;
@@ -40,8 +36,6 @@ import com.fntsoftware.businessgateway.entities.BearerRoutesRequestData;
 import com.fntsoftware.businessgateway.entities.BearerRoutesResponseData;
 import com.fntsoftware.businessgateway.entities.BearerServiceTypeDefinitionRequestData;
 import com.fntsoftware.businessgateway.entities.BearerServiceTypeDefinitionResponseData;
-import com.fntsoftware.businessgateway.entities.BearerStartZoneRequestData;
-import com.fntsoftware.businessgateway.entities.BearerStartZoneResponseData;
 import com.fntsoftware.businessgateway.entities.BearerStructuresForSpecialServicesRequest;
 import com.fntsoftware.businessgateway.entities.BearerStructuresForSpecialServicesResponse;
 import com.fntsoftware.businessgateway.entities.BearerStructuresRequest;
@@ -50,18 +44,12 @@ import com.fntsoftware.businessgateway.entities.BearerSuccessorsRequestData;
 import com.fntsoftware.businessgateway.entities.BearerSuccessorsResponseData;
 import com.fntsoftware.businessgateway.entities.BearerSystemAttributesRequest;
 import com.fntsoftware.businessgateway.entities.BearerSystemAttributesResponse;
-import com.fntsoftware.businessgateway.entities.ChangeServiceTypeBearerRequestData;
-import com.fntsoftware.businessgateway.entities.ChangeServiceTypeBearerResponse;
 import com.fntsoftware.businessgateway.entities.CreateBearerRequestData;
 import com.fntsoftware.businessgateway.entities.CreateBearerResponse;
 import com.fntsoftware.businessgateway.entities.CreateImaBearerRequestData;
 import com.fntsoftware.businessgateway.entities.CreateImaBearerResponse;
 import com.fntsoftware.businessgateway.entities.DeleteBearerRequestData;
 import com.fntsoftware.businessgateway.entities.DeleteBearerResponse;
-import com.fntsoftware.businessgateway.entities.LoopInNetNodeBearerRequestData;
-import com.fntsoftware.businessgateway.entities.LoopInNetNodeBearerResponse;
-import com.fntsoftware.businessgateway.entities.LoopOutNetNodeBearerRequestData;
-import com.fntsoftware.businessgateway.entities.LoopOutNetNodeBearerResponse;
 import com.fntsoftware.businessgateway.entities.UpdateAsiBearerRequestData;
 import com.fntsoftware.businessgateway.entities.UpdateAsiBearerResponse;
 import com.fntsoftware.businessgateway.entities.UpdateBearerRequestData;
@@ -81,7 +69,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-01-31T11:10:37.320689708Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
 public interface BearerApi extends ApiClient.Api {
 
 
@@ -353,95 +341,6 @@ public interface BearerApi extends ApiClient.Api {
   }
 
   /**
-   * Get relations to End zone entities
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return BearerEndZoneResponseData
-   */
-  @RequestLine("POST /api/rest/entity/bearer/{elid}/EndZone?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  BearerEndZoneResponseData bearerEndZone(@Param("sessionId") String sessionId, @Param("elid") String elid, BearerEndZoneRequestData body);
-
-  /**
-   * Get relations to End zone entities
-   * Similar to <code>bearerEndZone</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/bearer/{elid}/EndZone?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<BearerEndZoneResponseData> bearerEndZoneWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, BearerEndZoneRequestData body);
-
-
-  /**
-   * Get relations to End zone entities
-   * 
-   * Note, this is equivalent to the other <code>bearerEndZone</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link BearerEndZoneQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return BearerEndZoneResponseData
-   */
-  @RequestLine("POST /api/rest/entity/bearer/{elid}/EndZone?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  BearerEndZoneResponseData bearerEndZone(@Param("elid") String elid, BearerEndZoneRequestData body, @QueryMap(encoded=true) BearerEndZoneQueryParams queryParams);
-
-  /**
-  * Get relations to End zone entities
-  * 
-  * Note, this is equivalent to the other <code>bearerEndZone</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return BearerEndZoneResponseData
-      */
-      @RequestLine("POST /api/rest/entity/bearer/{elid}/EndZone?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<BearerEndZoneResponseData> bearerEndZoneWithHttpInfo(@Param("elid") String elid, BearerEndZoneRequestData body, @QueryMap(encoded=true) BearerEndZoneQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>bearerEndZone</code> method in a fluent style.
-   */
-  public static class BearerEndZoneQueryParams extends HashMap<String, Object> {
-    public BearerEndZoneQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
    * Get relations to Frame contract entities
    * 
    * @param sessionId Session-ID (required)
@@ -525,95 +424,6 @@ public interface BearerApi extends ApiClient.Api {
    */
   public static class BearerFrameContractsQueryParams extends HashMap<String, Object> {
     public BearerFrameContractsQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Hardware query
-   * Supplies the hardware that belongs to the selected bearer
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return BearerHardwareResponse
-   */
-  @RequestLine("POST /api/rest/entity/bearer/{elid}/Hardware?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  BearerHardwareResponse bearerHardware(@Param("sessionId") String sessionId, @Param("elid") String elid, BearerHardwareRequest body);
-
-  /**
-   * Hardware query
-   * Similar to <code>bearerHardware</code> but it also returns the http response headers .
-   * Supplies the hardware that belongs to the selected bearer
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/bearer/{elid}/Hardware?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<BearerHardwareResponse> bearerHardwareWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, BearerHardwareRequest body);
-
-
-  /**
-   * Hardware query
-   * Supplies the hardware that belongs to the selected bearer
-   * Note, this is equivalent to the other <code>bearerHardware</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link BearerHardwareQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return BearerHardwareResponse
-   */
-  @RequestLine("POST /api/rest/entity/bearer/{elid}/Hardware?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  BearerHardwareResponse bearerHardware(@Param("elid") String elid, BearerHardwareRequest body, @QueryMap(encoded=true) BearerHardwareQueryParams queryParams);
-
-  /**
-  * Hardware query
-  * Supplies the hardware that belongs to the selected bearer
-  * Note, this is equivalent to the other <code>bearerHardware</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return BearerHardwareResponse
-      */
-      @RequestLine("POST /api/rest/entity/bearer/{elid}/Hardware?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<BearerHardwareResponse> bearerHardwareWithHttpInfo(@Param("elid") String elid, BearerHardwareRequest body, @QueryMap(encoded=true) BearerHardwareQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>bearerHardware</code> method in a fluent style.
-   */
-  public static class BearerHardwareQueryParams extends HashMap<String, Object> {
-    public BearerHardwareQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -1684,95 +1494,6 @@ public interface BearerApi extends ApiClient.Api {
   }
 
   /**
-   * Get relations to Start zone entities
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return BearerStartZoneResponseData
-   */
-  @RequestLine("POST /api/rest/entity/bearer/{elid}/StartZone?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  BearerStartZoneResponseData bearerStartZone(@Param("sessionId") String sessionId, @Param("elid") String elid, BearerStartZoneRequestData body);
-
-  /**
-   * Get relations to Start zone entities
-   * Similar to <code>bearerStartZone</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/bearer/{elid}/StartZone?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<BearerStartZoneResponseData> bearerStartZoneWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, BearerStartZoneRequestData body);
-
-
-  /**
-   * Get relations to Start zone entities
-   * 
-   * Note, this is equivalent to the other <code>bearerStartZone</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link BearerStartZoneQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return BearerStartZoneResponseData
-   */
-  @RequestLine("POST /api/rest/entity/bearer/{elid}/StartZone?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  BearerStartZoneResponseData bearerStartZone(@Param("elid") String elid, BearerStartZoneRequestData body, @QueryMap(encoded=true) BearerStartZoneQueryParams queryParams);
-
-  /**
-  * Get relations to Start zone entities
-  * 
-  * Note, this is equivalent to the other <code>bearerStartZone</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return BearerStartZoneResponseData
-      */
-      @RequestLine("POST /api/rest/entity/bearer/{elid}/StartZone?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<BearerStartZoneResponseData> bearerStartZoneWithHttpInfo(@Param("elid") String elid, BearerStartZoneRequestData body, @QueryMap(encoded=true) BearerStartZoneQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>bearerStartZone</code> method in a fluent style.
-   */
-  public static class BearerStartZoneQueryParams extends HashMap<String, Object> {
-    public BearerStartZoneQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
    * Query structures
    * Queries the structures from one object
    * @param sessionId Session-ID (required)
@@ -2129,95 +1850,6 @@ public interface BearerApi extends ApiClient.Api {
   }
 
   /**
-   * Service type replacement
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return ChangeServiceTypeBearerResponse
-   */
-  @RequestLine("POST /api/rest/entity/bearer/{elid}/changeServiceType?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ChangeServiceTypeBearerResponse changeServiceTypeBearer(@Param("sessionId") String sessionId, @Param("elid") String elid, ChangeServiceTypeBearerRequestData body);
-
-  /**
-   * Service type replacement
-   * Similar to <code>changeServiceTypeBearer</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/bearer/{elid}/changeServiceType?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<ChangeServiceTypeBearerResponse> changeServiceTypeBearerWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ChangeServiceTypeBearerRequestData body);
-
-
-  /**
-   * Service type replacement
-   * 
-   * Note, this is equivalent to the other <code>changeServiceTypeBearer</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link ChangeServiceTypeBearerQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return ChangeServiceTypeBearerResponse
-   */
-  @RequestLine("POST /api/rest/entity/bearer/{elid}/changeServiceType?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  ChangeServiceTypeBearerResponse changeServiceTypeBearer(@Param("elid") String elid, ChangeServiceTypeBearerRequestData body, @QueryMap(encoded=true) ChangeServiceTypeBearerQueryParams queryParams);
-
-  /**
-  * Service type replacement
-  * 
-  * Note, this is equivalent to the other <code>changeServiceTypeBearer</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return ChangeServiceTypeBearerResponse
-      */
-      @RequestLine("POST /api/rest/entity/bearer/{elid}/changeServiceType?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<ChangeServiceTypeBearerResponse> changeServiceTypeBearerWithHttpInfo(@Param("elid") String elid, ChangeServiceTypeBearerRequestData body, @QueryMap(encoded=true) ChangeServiceTypeBearerQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>changeServiceTypeBearer</code> method in a fluent style.
-   */
-  public static class ChangeServiceTypeBearerQueryParams extends HashMap<String, Object> {
-    public ChangeServiceTypeBearerQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
    * Create
    * Creates a bearer. This operation can be used for all transmission technologies except IMA. If the ID is not passed, it will be generated automatically by the system.
    * @param sessionId Session-ID (required)
@@ -2471,180 +2103,6 @@ public interface BearerApi extends ApiClient.Api {
    */
   public static class DeleteBearerQueryParams extends HashMap<String, Object> {
     public DeleteBearerQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Loop-in net nodes
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return LoopInNetNodeBearerResponse
-   */
-  @RequestLine("POST /api/rest/entity/bearer/{elid}/loopInNetNode?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  LoopInNetNodeBearerResponse loopInNetNodeBearer(@Param("sessionId") String sessionId, @Param("elid") String elid, LoopInNetNodeBearerRequestData body);
-
-  /**
-   * Loop-in net nodes
-   * Similar to <code>loopInNetNodeBearer</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/bearer/{elid}/loopInNetNode?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<LoopInNetNodeBearerResponse> loopInNetNodeBearerWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, LoopInNetNodeBearerRequestData body);
-
-
-  /**
-   * Loop-in net nodes
-   * 
-   * Note, this is equivalent to the other <code>loopInNetNodeBearer</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link LoopInNetNodeBearerQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return LoopInNetNodeBearerResponse
-   */
-  @RequestLine("POST /api/rest/entity/bearer/{elid}/loopInNetNode?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  LoopInNetNodeBearerResponse loopInNetNodeBearer(@Param("elid") String elid, LoopInNetNodeBearerRequestData body, @QueryMap(encoded=true) LoopInNetNodeBearerQueryParams queryParams);
-
-  /**
-  * Loop-in net nodes
-  * 
-  * Note, this is equivalent to the other <code>loopInNetNodeBearer</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return LoopInNetNodeBearerResponse
-      */
-      @RequestLine("POST /api/rest/entity/bearer/{elid}/loopInNetNode?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<LoopInNetNodeBearerResponse> loopInNetNodeBearerWithHttpInfo(@Param("elid") String elid, LoopInNetNodeBearerRequestData body, @QueryMap(encoded=true) LoopInNetNodeBearerQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>loopInNetNodeBearer</code> method in a fluent style.
-   */
-  public static class LoopInNetNodeBearerQueryParams extends HashMap<String, Object> {
-    public LoopInNetNodeBearerQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Loop-out net nodes
-   * 
-   * @param sessionId Session-ID (required)
-   * @param body  (required)
-   * @return LoopOutNetNodeBearerResponse
-   */
-  @RequestLine("POST /api/rest/entity/bearer/loopOutNetNode?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  LoopOutNetNodeBearerResponse loopOutNetNodeBearer(@Param("sessionId") String sessionId, LoopOutNetNodeBearerRequestData body);
-
-  /**
-   * Loop-out net nodes
-   * Similar to <code>loopOutNetNodeBearer</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/bearer/loopOutNetNode?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<LoopOutNetNodeBearerResponse> loopOutNetNodeBearerWithHttpInfo(@Param("sessionId") String sessionId, LoopOutNetNodeBearerRequestData body);
-
-
-  /**
-   * Loop-out net nodes
-   * 
-   * Note, this is equivalent to the other <code>loopOutNetNodeBearer</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link LoopOutNetNodeBearerQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return LoopOutNetNodeBearerResponse
-   */
-  @RequestLine("POST /api/rest/entity/bearer/loopOutNetNode?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  LoopOutNetNodeBearerResponse loopOutNetNodeBearer(LoopOutNetNodeBearerRequestData body, @QueryMap(encoded=true) LoopOutNetNodeBearerQueryParams queryParams);
-
-  /**
-  * Loop-out net nodes
-  * 
-  * Note, this is equivalent to the other <code>loopOutNetNodeBearer</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return LoopOutNetNodeBearerResponse
-      */
-      @RequestLine("POST /api/rest/entity/bearer/loopOutNetNode?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<LoopOutNetNodeBearerResponse> loopOutNetNodeBearerWithHttpInfo(LoopOutNetNodeBearerRequestData body, @QueryMap(encoded=true) LoopOutNetNodeBearerQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>loopOutNetNodeBearer</code> method in a fluent style.
-   */
-  public static class LoopOutNetNodeBearerQueryParams extends HashMap<String, Object> {
-    public LoopOutNetNodeBearerQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
