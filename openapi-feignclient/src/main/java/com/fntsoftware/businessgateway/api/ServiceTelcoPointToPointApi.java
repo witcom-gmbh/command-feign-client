@@ -28,6 +28,8 @@ import com.fntsoftware.businessgateway.entities.ServiceTelcoPointToPointCustomPo
 import com.fntsoftware.businessgateway.entities.ServiceTelcoPointToPointCustomPowerCablesResponseData;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoPointToPointDevicesAllRequestData;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoPointToPointDevicesAllResponseData;
+import com.fntsoftware.businessgateway.entities.ServiceTelcoPointToPointEndZoneRequestData;
+import com.fntsoftware.businessgateway.entities.ServiceTelcoPointToPointEndZoneResponseData;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoPointToPointFrameContractsRequestData;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoPointToPointFrameContractsResponseData;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoPointToPointHigherLevelServicesRequestData;
@@ -60,6 +62,8 @@ import com.fntsoftware.businessgateway.entities.ServiceTelcoPointToPointSpareRou
 import com.fntsoftware.businessgateway.entities.ServiceTelcoPointToPointSpareRouteCircuitSwitchedResponseData;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoPointToPointSpareRoutePacketDataRequestData;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoPointToPointSpareRoutePacketDataResponseData;
+import com.fntsoftware.businessgateway.entities.ServiceTelcoPointToPointStartZoneRequestData;
+import com.fntsoftware.businessgateway.entities.ServiceTelcoPointToPointStartZoneResponseData;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoPointToPointStructuresRequest;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoPointToPointStructuresResponse;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoPointToPointSuccessorsRequestData;
@@ -81,7 +85,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-04T13:31:32.601557352Z[Etc/UTC]")
 public interface ServiceTelcoPointToPointApi extends ApiClient.Api {
 
 
@@ -1140,6 +1144,95 @@ public interface ServiceTelcoPointToPointApi extends ApiClient.Api {
    */
   public static class ServiceTelcoPointToPointDevicesAllQueryParams extends HashMap<String, Object> {
     public ServiceTelcoPointToPointDevicesAllQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to End zone entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return ServiceTelcoPointToPointEndZoneResponseData
+   */
+  @RequestLine("POST /api/rest/entity/serviceTelcoPointToPoint/{elid}/EndZone?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ServiceTelcoPointToPointEndZoneResponseData serviceTelcoPointToPointEndZone(@Param("sessionId") String sessionId, @Param("elid") String elid, ServiceTelcoPointToPointEndZoneRequestData body);
+
+  /**
+   * Get relations to End zone entities
+   * Similar to <code>serviceTelcoPointToPointEndZone</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/serviceTelcoPointToPoint/{elid}/EndZone?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<ServiceTelcoPointToPointEndZoneResponseData> serviceTelcoPointToPointEndZoneWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ServiceTelcoPointToPointEndZoneRequestData body);
+
+
+  /**
+   * Get relations to End zone entities
+   * 
+   * Note, this is equivalent to the other <code>serviceTelcoPointToPointEndZone</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link ServiceTelcoPointToPointEndZoneQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return ServiceTelcoPointToPointEndZoneResponseData
+   */
+  @RequestLine("POST /api/rest/entity/serviceTelcoPointToPoint/{elid}/EndZone?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  ServiceTelcoPointToPointEndZoneResponseData serviceTelcoPointToPointEndZone(@Param("elid") String elid, ServiceTelcoPointToPointEndZoneRequestData body, @QueryMap(encoded=true) ServiceTelcoPointToPointEndZoneQueryParams queryParams);
+
+  /**
+  * Get relations to End zone entities
+  * 
+  * Note, this is equivalent to the other <code>serviceTelcoPointToPointEndZone</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return ServiceTelcoPointToPointEndZoneResponseData
+      */
+      @RequestLine("POST /api/rest/entity/serviceTelcoPointToPoint/{elid}/EndZone?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<ServiceTelcoPointToPointEndZoneResponseData> serviceTelcoPointToPointEndZoneWithHttpInfo(@Param("elid") String elid, ServiceTelcoPointToPointEndZoneRequestData body, @QueryMap(encoded=true) ServiceTelcoPointToPointEndZoneQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>serviceTelcoPointToPointEndZone</code> method in a fluent style.
+   */
+  public static class ServiceTelcoPointToPointEndZoneQueryParams extends HashMap<String, Object> {
+    public ServiceTelcoPointToPointEndZoneQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -2560,6 +2653,95 @@ public interface ServiceTelcoPointToPointApi extends ApiClient.Api {
    */
   public static class ServiceTelcoPointToPointSpareRoutePacketDataQueryParams extends HashMap<String, Object> {
     public ServiceTelcoPointToPointSpareRoutePacketDataQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Start zone entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return ServiceTelcoPointToPointStartZoneResponseData
+   */
+  @RequestLine("POST /api/rest/entity/serviceTelcoPointToPoint/{elid}/StartZone?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ServiceTelcoPointToPointStartZoneResponseData serviceTelcoPointToPointStartZone(@Param("sessionId") String sessionId, @Param("elid") String elid, ServiceTelcoPointToPointStartZoneRequestData body);
+
+  /**
+   * Get relations to Start zone entities
+   * Similar to <code>serviceTelcoPointToPointStartZone</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/serviceTelcoPointToPoint/{elid}/StartZone?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<ServiceTelcoPointToPointStartZoneResponseData> serviceTelcoPointToPointStartZoneWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ServiceTelcoPointToPointStartZoneRequestData body);
+
+
+  /**
+   * Get relations to Start zone entities
+   * 
+   * Note, this is equivalent to the other <code>serviceTelcoPointToPointStartZone</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link ServiceTelcoPointToPointStartZoneQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return ServiceTelcoPointToPointStartZoneResponseData
+   */
+  @RequestLine("POST /api/rest/entity/serviceTelcoPointToPoint/{elid}/StartZone?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  ServiceTelcoPointToPointStartZoneResponseData serviceTelcoPointToPointStartZone(@Param("elid") String elid, ServiceTelcoPointToPointStartZoneRequestData body, @QueryMap(encoded=true) ServiceTelcoPointToPointStartZoneQueryParams queryParams);
+
+  /**
+  * Get relations to Start zone entities
+  * 
+  * Note, this is equivalent to the other <code>serviceTelcoPointToPointStartZone</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return ServiceTelcoPointToPointStartZoneResponseData
+      */
+      @RequestLine("POST /api/rest/entity/serviceTelcoPointToPoint/{elid}/StartZone?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<ServiceTelcoPointToPointStartZoneResponseData> serviceTelcoPointToPointStartZoneWithHttpInfo(@Param("elid") String elid, ServiceTelcoPointToPointStartZoneRequestData body, @QueryMap(encoded=true) ServiceTelcoPointToPointStartZoneQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>serviceTelcoPointToPointStartZone</code> method in a fluent style.
+   */
+  public static class ServiceTelcoPointToPointStartZoneQueryParams extends HashMap<String, Object> {
+    public ServiceTelcoPointToPointStartZoneQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

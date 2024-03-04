@@ -4,6 +4,10 @@ import com.fntsoftware.businessgateway.ApiClient;
 import com.fntsoftware.businessgateway.EncodingUtils;
 import com.fntsoftware.businessgateway.entities.ApiResponse;
 
+import com.fntsoftware.businessgateway.entities.CreateDuctTypeRequestData;
+import com.fntsoftware.businessgateway.entities.CreateDuctTypeResponse;
+import com.fntsoftware.businessgateway.entities.DeleteDuctTypeRequestData;
+import com.fntsoftware.businessgateway.entities.DeleteDuctTypeResponse;
 import com.fntsoftware.businessgateway.entities.DuctTypeContractsRequestData;
 import com.fntsoftware.businessgateway.entities.DuctTypeContractsResponseData;
 import com.fntsoftware.businessgateway.entities.DuctTypeFrameContractsRequestData;
@@ -20,6 +24,8 @@ import com.fntsoftware.businessgateway.entities.DuctTypeQueryRequest;
 import com.fntsoftware.businessgateway.entities.DuctTypeQueryResponse;
 import com.fntsoftware.businessgateway.entities.DuctTypeSystemAttributesRequest;
 import com.fntsoftware.businessgateway.entities.DuctTypeSystemAttributesResponse;
+import com.fntsoftware.businessgateway.entities.UpdateDuctTypeRequestData;
+import com.fntsoftware.businessgateway.entities.UpdateDuctTypeResponse;
 import com.fntsoftware.businessgateway.entities.UpdateSystemAttributesDuctTypeRequestData;
 import com.fntsoftware.businessgateway.entities.UpdateSystemAttributesDuctTypeResponse;
 
@@ -29,9 +35,183 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-04T13:31:32.601557352Z[Etc/UTC]")
 public interface DuctTypeApi extends ApiClient.Api {
 
+
+  /**
+   * Create
+   * Create Duct type
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return CreateDuctTypeResponse
+   */
+  @RequestLine("POST /api/rest/entity/ductType/create?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  CreateDuctTypeResponse createDuctType(@Param("sessionId") String sessionId, CreateDuctTypeRequestData body);
+
+  /**
+   * Create
+   * Similar to <code>createDuctType</code> but it also returns the http response headers .
+   * Create Duct type
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/ductType/create?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<CreateDuctTypeResponse> createDuctTypeWithHttpInfo(@Param("sessionId") String sessionId, CreateDuctTypeRequestData body);
+
+
+  /**
+   * Create
+   * Create Duct type
+   * Note, this is equivalent to the other <code>createDuctType</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link CreateDuctTypeQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return CreateDuctTypeResponse
+   */
+  @RequestLine("POST /api/rest/entity/ductType/create?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  CreateDuctTypeResponse createDuctType(CreateDuctTypeRequestData body, @QueryMap(encoded=true) CreateDuctTypeQueryParams queryParams);
+
+  /**
+  * Create
+  * Create Duct type
+  * Note, this is equivalent to the other <code>createDuctType</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return CreateDuctTypeResponse
+      */
+      @RequestLine("POST /api/rest/entity/ductType/create?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<CreateDuctTypeResponse> createDuctTypeWithHttpInfo(CreateDuctTypeRequestData body, @QueryMap(encoded=true) CreateDuctTypeQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>createDuctType</code> method in a fluent style.
+   */
+  public static class CreateDuctTypeQueryParams extends HashMap<String, Object> {
+    public CreateDuctTypeQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Delete
+   * Delete Duct type
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return DeleteDuctTypeResponse
+   */
+  @RequestLine("POST /api/rest/entity/ductType/{elid}/delete?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  DeleteDuctTypeResponse deleteDuctType(@Param("sessionId") String sessionId, @Param("elid") String elid, DeleteDuctTypeRequestData body);
+
+  /**
+   * Delete
+   * Similar to <code>deleteDuctType</code> but it also returns the http response headers .
+   * Delete Duct type
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/ductType/{elid}/delete?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<DeleteDuctTypeResponse> deleteDuctTypeWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, DeleteDuctTypeRequestData body);
+
+
+  /**
+   * Delete
+   * Delete Duct type
+   * Note, this is equivalent to the other <code>deleteDuctType</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link DeleteDuctTypeQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return DeleteDuctTypeResponse
+   */
+  @RequestLine("POST /api/rest/entity/ductType/{elid}/delete?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  DeleteDuctTypeResponse deleteDuctType(@Param("elid") String elid, DeleteDuctTypeRequestData body, @QueryMap(encoded=true) DeleteDuctTypeQueryParams queryParams);
+
+  /**
+  * Delete
+  * Delete Duct type
+  * Note, this is equivalent to the other <code>deleteDuctType</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return DeleteDuctTypeResponse
+      */
+      @RequestLine("POST /api/rest/entity/ductType/{elid}/delete?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<DeleteDuctTypeResponse> deleteDuctTypeWithHttpInfo(@Param("elid") String elid, DeleteDuctTypeRequestData body, @QueryMap(encoded=true) DeleteDuctTypeQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>deleteDuctType</code> method in a fluent style.
+   */
+  public static class DeleteDuctTypeQueryParams extends HashMap<String, Object> {
+    public DeleteDuctTypeQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
 
   /**
    * Get relations to Contract entities
@@ -736,6 +916,95 @@ public interface DuctTypeApi extends ApiClient.Api {
    */
   public static class DuctTypeSystemAttributesQueryParams extends HashMap<String, Object> {
     public DuctTypeSystemAttributesQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Modify
+   * Modify Duct type
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return UpdateDuctTypeResponse
+   */
+  @RequestLine("POST /api/rest/entity/ductType/{elid}/update?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  UpdateDuctTypeResponse updateDuctType(@Param("sessionId") String sessionId, @Param("elid") String elid, UpdateDuctTypeRequestData body);
+
+  /**
+   * Modify
+   * Similar to <code>updateDuctType</code> but it also returns the http response headers .
+   * Modify Duct type
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/ductType/{elid}/update?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<UpdateDuctTypeResponse> updateDuctTypeWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, UpdateDuctTypeRequestData body);
+
+
+  /**
+   * Modify
+   * Modify Duct type
+   * Note, this is equivalent to the other <code>updateDuctType</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link UpdateDuctTypeQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return UpdateDuctTypeResponse
+   */
+  @RequestLine("POST /api/rest/entity/ductType/{elid}/update?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  UpdateDuctTypeResponse updateDuctType(@Param("elid") String elid, UpdateDuctTypeRequestData body, @QueryMap(encoded=true) UpdateDuctTypeQueryParams queryParams);
+
+  /**
+  * Modify
+  * Modify Duct type
+  * Note, this is equivalent to the other <code>updateDuctType</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return UpdateDuctTypeResponse
+      */
+      @RequestLine("POST /api/rest/entity/ductType/{elid}/update?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<UpdateDuctTypeResponse> updateDuctTypeWithHttpInfo(@Param("elid") String elid, UpdateDuctTypeRequestData body, @QueryMap(encoded=true) UpdateDuctTypeQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>updateDuctType</code> method in a fluent style.
+   */
+  public static class UpdateDuctTypeQueryParams extends HashMap<String, Object> {
+    public UpdateDuctTypeQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

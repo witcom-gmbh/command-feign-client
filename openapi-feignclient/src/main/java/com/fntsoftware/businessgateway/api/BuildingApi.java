@@ -6,6 +6,8 @@ import com.fntsoftware.businessgateway.entities.ApiResponse;
 
 import com.fntsoftware.businessgateway.entities.AddToTopzoneBuildingRequestData;
 import com.fntsoftware.businessgateway.entities.AddToTopzoneBuildingResponse;
+import com.fntsoftware.businessgateway.entities.BuildingAttachmentsRequestData;
+import com.fntsoftware.businessgateway.entities.BuildingAttachmentsResponseData;
 import com.fntsoftware.businessgateway.entities.BuildingCampusRequestData;
 import com.fntsoftware.businessgateway.entities.BuildingCampusResponseData;
 import com.fntsoftware.businessgateway.entities.BuildingContractsRequestData;
@@ -26,8 +28,12 @@ import com.fntsoftware.businessgateway.entities.BuildingPersonGroupsRequestData;
 import com.fntsoftware.businessgateway.entities.BuildingPersonGroupsResponseData;
 import com.fntsoftware.businessgateway.entities.BuildingPersonsRequestData;
 import com.fntsoftware.businessgateway.entities.BuildingPersonsResponseData;
+import com.fntsoftware.businessgateway.entities.BuildingPostalAddressesRequestData;
+import com.fntsoftware.businessgateway.entities.BuildingPostalAddressesResponseData;
 import com.fntsoftware.businessgateway.entities.BuildingQueryRequest;
 import com.fntsoftware.businessgateway.entities.BuildingQueryResponse;
+import com.fntsoftware.businessgateway.entities.BuildingSitesRequestData;
+import com.fntsoftware.businessgateway.entities.BuildingSitesResponseData;
 import com.fntsoftware.businessgateway.entities.BuildingSystemAttributesRequest;
 import com.fntsoftware.businessgateway.entities.BuildingSystemAttributesResponse;
 import com.fntsoftware.businessgateway.entities.BuildingTopzonesRequestData;
@@ -47,7 +53,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-04T13:31:32.601557352Z[Etc/UTC]")
 public interface BuildingApi extends ApiClient.Api {
 
 
@@ -135,6 +141,95 @@ public interface BuildingApi extends ApiClient.Api {
    */
   public static class AddToTopzoneBuildingQueryParams extends HashMap<String, Object> {
     public AddToTopzoneBuildingQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Attachments entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return BuildingAttachmentsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/building/{elid}/Attachments?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  BuildingAttachmentsResponseData buildingAttachments(@Param("sessionId") String sessionId, @Param("elid") String elid, BuildingAttachmentsRequestData body);
+
+  /**
+   * Get relations to Attachments entities
+   * Similar to <code>buildingAttachments</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/building/{elid}/Attachments?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<BuildingAttachmentsResponseData> buildingAttachmentsWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, BuildingAttachmentsRequestData body);
+
+
+  /**
+   * Get relations to Attachments entities
+   * 
+   * Note, this is equivalent to the other <code>buildingAttachments</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link BuildingAttachmentsQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return BuildingAttachmentsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/building/{elid}/Attachments?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  BuildingAttachmentsResponseData buildingAttachments(@Param("elid") String elid, BuildingAttachmentsRequestData body, @QueryMap(encoded=true) BuildingAttachmentsQueryParams queryParams);
+
+  /**
+  * Get relations to Attachments entities
+  * 
+  * Note, this is equivalent to the other <code>buildingAttachments</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return BuildingAttachmentsResponseData
+      */
+      @RequestLine("POST /api/rest/entity/building/{elid}/Attachments?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<BuildingAttachmentsResponseData> buildingAttachmentsWithHttpInfo(@Param("elid") String elid, BuildingAttachmentsRequestData body, @QueryMap(encoded=true) BuildingAttachmentsQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>buildingAttachments</code> method in a fluent style.
+   */
+  public static class BuildingAttachmentsQueryParams extends HashMap<String, Object> {
+    public BuildingAttachmentsQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -1031,6 +1126,95 @@ public interface BuildingApi extends ApiClient.Api {
   }
 
   /**
+   * Get relations to Postal address entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return BuildingPostalAddressesResponseData
+   */
+  @RequestLine("POST /api/rest/entity/building/{elid}/PostalAddresses?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  BuildingPostalAddressesResponseData buildingPostalAddresses(@Param("sessionId") String sessionId, @Param("elid") String elid, BuildingPostalAddressesRequestData body);
+
+  /**
+   * Get relations to Postal address entities
+   * Similar to <code>buildingPostalAddresses</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/building/{elid}/PostalAddresses?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<BuildingPostalAddressesResponseData> buildingPostalAddressesWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, BuildingPostalAddressesRequestData body);
+
+
+  /**
+   * Get relations to Postal address entities
+   * 
+   * Note, this is equivalent to the other <code>buildingPostalAddresses</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link BuildingPostalAddressesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return BuildingPostalAddressesResponseData
+   */
+  @RequestLine("POST /api/rest/entity/building/{elid}/PostalAddresses?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  BuildingPostalAddressesResponseData buildingPostalAddresses(@Param("elid") String elid, BuildingPostalAddressesRequestData body, @QueryMap(encoded=true) BuildingPostalAddressesQueryParams queryParams);
+
+  /**
+  * Get relations to Postal address entities
+  * 
+  * Note, this is equivalent to the other <code>buildingPostalAddresses</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return BuildingPostalAddressesResponseData
+      */
+      @RequestLine("POST /api/rest/entity/building/{elid}/PostalAddresses?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<BuildingPostalAddressesResponseData> buildingPostalAddressesWithHttpInfo(@Param("elid") String elid, BuildingPostalAddressesRequestData body, @QueryMap(encoded=true) BuildingPostalAddressesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>buildingPostalAddresses</code> method in a fluent style.
+   */
+  public static class BuildingPostalAddressesQueryParams extends HashMap<String, Object> {
+    public BuildingPostalAddressesQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Basic query
    * Query for all basic target entity data
    * @param sessionId Session-ID (required)
@@ -1110,6 +1294,95 @@ public interface BuildingApi extends ApiClient.Api {
    */
   public static class BuildingQueryQueryParams extends HashMap<String, Object> {
     public BuildingQueryQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Site entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return BuildingSitesResponseData
+   */
+  @RequestLine("POST /api/rest/entity/building/{elid}/Sites?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  BuildingSitesResponseData buildingSites(@Param("sessionId") String sessionId, @Param("elid") String elid, BuildingSitesRequestData body);
+
+  /**
+   * Get relations to Site entities
+   * Similar to <code>buildingSites</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/building/{elid}/Sites?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<BuildingSitesResponseData> buildingSitesWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, BuildingSitesRequestData body);
+
+
+  /**
+   * Get relations to Site entities
+   * 
+   * Note, this is equivalent to the other <code>buildingSites</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link BuildingSitesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return BuildingSitesResponseData
+   */
+  @RequestLine("POST /api/rest/entity/building/{elid}/Sites?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  BuildingSitesResponseData buildingSites(@Param("elid") String elid, BuildingSitesRequestData body, @QueryMap(encoded=true) BuildingSitesQueryParams queryParams);
+
+  /**
+  * Get relations to Site entities
+  * 
+  * Note, this is equivalent to the other <code>buildingSites</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return BuildingSitesResponseData
+      */
+      @RequestLine("POST /api/rest/entity/building/{elid}/Sites?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<BuildingSitesResponseData> buildingSitesWithHttpInfo(@Param("elid") String elid, BuildingSitesRequestData body, @QueryMap(encoded=true) BuildingSitesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>buildingSites</code> method in a fluent style.
+   */
+  public static class BuildingSitesQueryParams extends HashMap<String, Object> {
+    public BuildingSitesQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

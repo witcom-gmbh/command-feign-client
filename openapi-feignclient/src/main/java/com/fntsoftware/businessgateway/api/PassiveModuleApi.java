@@ -20,8 +20,16 @@ import com.fntsoftware.businessgateway.entities.PassiveModuleContractsRequestDat
 import com.fntsoftware.businessgateway.entities.PassiveModuleContractsResponseData;
 import com.fntsoftware.businessgateway.entities.PassiveModuleDeviceMasterRequestData;
 import com.fntsoftware.businessgateway.entities.PassiveModuleDeviceMasterResponseData;
+import com.fntsoftware.businessgateway.entities.PassiveModuleDuctDataRequest;
+import com.fntsoftware.businessgateway.entities.PassiveModuleDuctDataResponse;
+import com.fntsoftware.businessgateway.entities.PassiveModuleDuctsRequestData;
+import com.fntsoftware.businessgateway.entities.PassiveModuleDuctsResponseData;
 import com.fntsoftware.businessgateway.entities.PassiveModuleFrameContractsRequestData;
 import com.fntsoftware.businessgateway.entities.PassiveModuleFrameContractsResponseData;
+import com.fntsoftware.businessgateway.entities.PassiveModuleInheritedGeoCoordinatesRequest;
+import com.fntsoftware.businessgateway.entities.PassiveModuleInheritedGeoCoordinatesResponse;
+import com.fntsoftware.businessgateway.entities.PassiveModuleInstalledSubCardsRecursiveRequest;
+import com.fntsoftware.businessgateway.entities.PassiveModuleInstalledSubCardsRecursiveResponse;
 import com.fntsoftware.businessgateway.entities.PassiveModuleInstalledSubCardsRequest;
 import com.fntsoftware.businessgateway.entities.PassiveModuleInstalledSubCardsResponse;
 import com.fntsoftware.businessgateway.entities.PassiveModuleInterfacesRequestData;
@@ -40,6 +48,8 @@ import com.fntsoftware.businessgateway.entities.PassiveModuleLogicalPortsRequest
 import com.fntsoftware.businessgateway.entities.PassiveModuleLogicalPortsResponseData;
 import com.fntsoftware.businessgateway.entities.PassiveModuleMaintenanceContractsRequestData;
 import com.fntsoftware.businessgateway.entities.PassiveModuleMaintenanceContractsResponseData;
+import com.fntsoftware.businessgateway.entities.PassiveModuleMultiDuctsRequestData;
+import com.fntsoftware.businessgateway.entities.PassiveModuleMultiDuctsResponseData;
 import com.fntsoftware.businessgateway.entities.PassiveModuleNetworksAndNetrangesRequest;
 import com.fntsoftware.businessgateway.entities.PassiveModuleNetworksAndNetrangesResponse;
 import com.fntsoftware.businessgateway.entities.PassiveModuleOperatingSystemInstallationRequestData;
@@ -50,10 +60,16 @@ import com.fntsoftware.businessgateway.entities.PassiveModulePersonGroupsRequest
 import com.fntsoftware.businessgateway.entities.PassiveModulePersonGroupsResponseData;
 import com.fntsoftware.businessgateway.entities.PassiveModulePersonsRequestData;
 import com.fntsoftware.businessgateway.entities.PassiveModulePersonsResponseData;
+import com.fntsoftware.businessgateway.entities.PassiveModulePhysicalPortsDataExtendedRequest;
+import com.fntsoftware.businessgateway.entities.PassiveModulePhysicalPortsDataExtendedResponse;
 import com.fntsoftware.businessgateway.entities.PassiveModulePhysicalPortsDataRequestData;
 import com.fntsoftware.businessgateway.entities.PassiveModulePhysicalPortsDataResponseData;
-import com.fntsoftware.businessgateway.entities.PassiveModulePhysicalPortsPowerRequest;
-import com.fntsoftware.businessgateway.entities.PassiveModulePhysicalPortsPowerResponse;
+import com.fntsoftware.businessgateway.entities.PassiveModulePhysicalPortsPowerExtendedRequest;
+import com.fntsoftware.businessgateway.entities.PassiveModulePhysicalPortsPowerExtendedResponse;
+import com.fntsoftware.businessgateway.entities.PassiveModulePhysicalPortsPowerRequestData;
+import com.fntsoftware.businessgateway.entities.PassiveModulePhysicalPortsPowerResponseData;
+import com.fntsoftware.businessgateway.entities.PassiveModuleQueryExtendedGeoCoordinatesRequest;
+import com.fntsoftware.businessgateway.entities.PassiveModuleQueryExtendedGeoCoordinatesResponse;
 import com.fntsoftware.businessgateway.entities.PassiveModuleQueryExtendedRequest;
 import com.fntsoftware.businessgateway.entities.PassiveModuleQueryExtendedResponse;
 import com.fntsoftware.businessgateway.entities.PassiveModuleQueryExtendedScrollFirstRequest;
@@ -62,6 +78,10 @@ import com.fntsoftware.businessgateway.entities.PassiveModuleQueryExtendedScroll
 import com.fntsoftware.businessgateway.entities.PassiveModuleQueryExtendedScrollMoreResponse;
 import com.fntsoftware.businessgateway.entities.PassiveModuleQueryRequest;
 import com.fntsoftware.businessgateway.entities.PassiveModuleQueryResponse;
+import com.fntsoftware.businessgateway.entities.PassiveModuleServicesRequest;
+import com.fntsoftware.businessgateway.entities.PassiveModuleServicesResponse;
+import com.fntsoftware.businessgateway.entities.PassiveModuleSitesRequestData;
+import com.fntsoftware.businessgateway.entities.PassiveModuleSitesResponseData;
 import com.fntsoftware.businessgateway.entities.PassiveModuleSlotRequestData;
 import com.fntsoftware.businessgateway.entities.PassiveModuleSlotResponseData;
 import com.fntsoftware.businessgateway.entities.PassiveModuleSwitchCabinetRequestData;
@@ -86,6 +106,8 @@ import com.fntsoftware.businessgateway.entities.PlaceInWarehousePassiveModuleReq
 import com.fntsoftware.businessgateway.entities.PlaceInWarehousePassiveModuleResponse;
 import com.fntsoftware.businessgateway.entities.PlaceInZonePassiveModuleRequestData;
 import com.fntsoftware.businessgateway.entities.PlaceInZonePassiveModuleResponse;
+import com.fntsoftware.businessgateway.entities.ReplaceObjectPassiveModuleRequestData;
+import com.fntsoftware.businessgateway.entities.ReplaceObjectPassiveModuleResponse;
 import com.fntsoftware.businessgateway.entities.UpdatePassiveModuleRequestData;
 import com.fntsoftware.businessgateway.entities.UpdatePassiveModuleResponse;
 import com.fntsoftware.businessgateway.entities.UpdateSystemAttributesPassiveModuleRequestData;
@@ -97,7 +119,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-04T13:31:32.601557352Z[Etc/UTC]")
 public interface PassiveModuleApi extends ApiClient.Api {
 
 
@@ -814,6 +836,184 @@ public interface PassiveModuleApi extends ApiClient.Api {
   }
 
   /**
+   * Query duct data
+   * Query associated ducts and multipipes
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return PassiveModuleDuctDataResponse
+   */
+  @RequestLine("POST /api/rest/entity/passiveModule/{elid}/DuctData?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  PassiveModuleDuctDataResponse passiveModuleDuctData(@Param("sessionId") String sessionId, @Param("elid") String elid, PassiveModuleDuctDataRequest body);
+
+  /**
+   * Query duct data
+   * Similar to <code>passiveModuleDuctData</code> but it also returns the http response headers .
+   * Query associated ducts and multipipes
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/passiveModule/{elid}/DuctData?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<PassiveModuleDuctDataResponse> passiveModuleDuctDataWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, PassiveModuleDuctDataRequest body);
+
+
+  /**
+   * Query duct data
+   * Query associated ducts and multipipes
+   * Note, this is equivalent to the other <code>passiveModuleDuctData</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link PassiveModuleDuctDataQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return PassiveModuleDuctDataResponse
+   */
+  @RequestLine("POST /api/rest/entity/passiveModule/{elid}/DuctData?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  PassiveModuleDuctDataResponse passiveModuleDuctData(@Param("elid") String elid, PassiveModuleDuctDataRequest body, @QueryMap(encoded=true) PassiveModuleDuctDataQueryParams queryParams);
+
+  /**
+  * Query duct data
+  * Query associated ducts and multipipes
+  * Note, this is equivalent to the other <code>passiveModuleDuctData</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return PassiveModuleDuctDataResponse
+      */
+      @RequestLine("POST /api/rest/entity/passiveModule/{elid}/DuctData?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<PassiveModuleDuctDataResponse> passiveModuleDuctDataWithHttpInfo(@Param("elid") String elid, PassiveModuleDuctDataRequest body, @QueryMap(encoded=true) PassiveModuleDuctDataQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>passiveModuleDuctData</code> method in a fluent style.
+   */
+  public static class PassiveModuleDuctDataQueryParams extends HashMap<String, Object> {
+    public PassiveModuleDuctDataQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Duct entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return PassiveModuleDuctsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/passiveModule/{elid}/Ducts?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  PassiveModuleDuctsResponseData passiveModuleDucts(@Param("sessionId") String sessionId, @Param("elid") String elid, PassiveModuleDuctsRequestData body);
+
+  /**
+   * Get relations to Duct entities
+   * Similar to <code>passiveModuleDucts</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/passiveModule/{elid}/Ducts?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<PassiveModuleDuctsResponseData> passiveModuleDuctsWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, PassiveModuleDuctsRequestData body);
+
+
+  /**
+   * Get relations to Duct entities
+   * 
+   * Note, this is equivalent to the other <code>passiveModuleDucts</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link PassiveModuleDuctsQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return PassiveModuleDuctsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/passiveModule/{elid}/Ducts?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  PassiveModuleDuctsResponseData passiveModuleDucts(@Param("elid") String elid, PassiveModuleDuctsRequestData body, @QueryMap(encoded=true) PassiveModuleDuctsQueryParams queryParams);
+
+  /**
+  * Get relations to Duct entities
+  * 
+  * Note, this is equivalent to the other <code>passiveModuleDucts</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return PassiveModuleDuctsResponseData
+      */
+      @RequestLine("POST /api/rest/entity/passiveModule/{elid}/Ducts?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<PassiveModuleDuctsResponseData> passiveModuleDuctsWithHttpInfo(@Param("elid") String elid, PassiveModuleDuctsRequestData body, @QueryMap(encoded=true) PassiveModuleDuctsQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>passiveModuleDucts</code> method in a fluent style.
+   */
+  public static class PassiveModuleDuctsQueryParams extends HashMap<String, Object> {
+    public PassiveModuleDuctsQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Get relations to Frame contract entities
    * 
    * @param sessionId Session-ID (required)
@@ -903,6 +1103,91 @@ public interface PassiveModuleApi extends ApiClient.Api {
   }
 
   /**
+   * Query inherited coordinates
+   * Query the own coordinates of an object or inherit them from parents
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return PassiveModuleInheritedGeoCoordinatesResponse
+   */
+  @RequestLine("POST /api/rest/entity/passiveModule/inheritedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  PassiveModuleInheritedGeoCoordinatesResponse passiveModuleInheritedGeoCoordinates(@Param("sessionId") String sessionId, PassiveModuleInheritedGeoCoordinatesRequest body);
+
+  /**
+   * Query inherited coordinates
+   * Similar to <code>passiveModuleInheritedGeoCoordinates</code> but it also returns the http response headers .
+   * Query the own coordinates of an object or inherit them from parents
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/passiveModule/inheritedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<PassiveModuleInheritedGeoCoordinatesResponse> passiveModuleInheritedGeoCoordinatesWithHttpInfo(@Param("sessionId") String sessionId, PassiveModuleInheritedGeoCoordinatesRequest body);
+
+
+  /**
+   * Query inherited coordinates
+   * Query the own coordinates of an object or inherit them from parents
+   * Note, this is equivalent to the other <code>passiveModuleInheritedGeoCoordinates</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link PassiveModuleInheritedGeoCoordinatesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return PassiveModuleInheritedGeoCoordinatesResponse
+   */
+  @RequestLine("POST /api/rest/entity/passiveModule/inheritedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  PassiveModuleInheritedGeoCoordinatesResponse passiveModuleInheritedGeoCoordinates(PassiveModuleInheritedGeoCoordinatesRequest body, @QueryMap(encoded=true) PassiveModuleInheritedGeoCoordinatesQueryParams queryParams);
+
+  /**
+  * Query inherited coordinates
+  * Query the own coordinates of an object or inherit them from parents
+  * Note, this is equivalent to the other <code>passiveModuleInheritedGeoCoordinates</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return PassiveModuleInheritedGeoCoordinatesResponse
+      */
+      @RequestLine("POST /api/rest/entity/passiveModule/inheritedGeoCoordinates?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<PassiveModuleInheritedGeoCoordinatesResponse> passiveModuleInheritedGeoCoordinatesWithHttpInfo(PassiveModuleInheritedGeoCoordinatesRequest body, @QueryMap(encoded=true) PassiveModuleInheritedGeoCoordinatesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>passiveModuleInheritedGeoCoordinates</code> method in a fluent style.
+   */
+  public static class PassiveModuleInheritedGeoCoordinatesQueryParams extends HashMap<String, Object> {
+    public PassiveModuleInheritedGeoCoordinatesQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Query installed subcards
    * Queries installed subcards. Only direct subcards will be returned. Free slot positions will not be returned.
    * @param sessionId Session-ID (required)
@@ -986,6 +1271,95 @@ public interface PassiveModuleApi extends ApiClient.Api {
    */
   public static class PassiveModuleInstalledSubCardsQueryParams extends HashMap<String, Object> {
     public PassiveModuleInstalledSubCardsQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Query installed sub-cards recursively
+   * Queries installed sub-cards from a device. Free slot positions are not supplied.
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return PassiveModuleInstalledSubCardsRecursiveResponse
+   */
+  @RequestLine("POST /api/rest/entity/passiveModule/{elid}/InstalledSubCardsRecursive?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  PassiveModuleInstalledSubCardsRecursiveResponse passiveModuleInstalledSubCardsRecursive(@Param("sessionId") String sessionId, @Param("elid") String elid, PassiveModuleInstalledSubCardsRecursiveRequest body);
+
+  /**
+   * Query installed sub-cards recursively
+   * Similar to <code>passiveModuleInstalledSubCardsRecursive</code> but it also returns the http response headers .
+   * Queries installed sub-cards from a device. Free slot positions are not supplied.
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/passiveModule/{elid}/InstalledSubCardsRecursive?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<PassiveModuleInstalledSubCardsRecursiveResponse> passiveModuleInstalledSubCardsRecursiveWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, PassiveModuleInstalledSubCardsRecursiveRequest body);
+
+
+  /**
+   * Query installed sub-cards recursively
+   * Queries installed sub-cards from a device. Free slot positions are not supplied.
+   * Note, this is equivalent to the other <code>passiveModuleInstalledSubCardsRecursive</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link PassiveModuleInstalledSubCardsRecursiveQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return PassiveModuleInstalledSubCardsRecursiveResponse
+   */
+  @RequestLine("POST /api/rest/entity/passiveModule/{elid}/InstalledSubCardsRecursive?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  PassiveModuleInstalledSubCardsRecursiveResponse passiveModuleInstalledSubCardsRecursive(@Param("elid") String elid, PassiveModuleInstalledSubCardsRecursiveRequest body, @QueryMap(encoded=true) PassiveModuleInstalledSubCardsRecursiveQueryParams queryParams);
+
+  /**
+  * Query installed sub-cards recursively
+  * Queries installed sub-cards from a device. Free slot positions are not supplied.
+  * Note, this is equivalent to the other <code>passiveModuleInstalledSubCardsRecursive</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return PassiveModuleInstalledSubCardsRecursiveResponse
+      */
+      @RequestLine("POST /api/rest/entity/passiveModule/{elid}/InstalledSubCardsRecursive?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<PassiveModuleInstalledSubCardsRecursiveResponse> passiveModuleInstalledSubCardsRecursiveWithHttpInfo(@Param("elid") String elid, PassiveModuleInstalledSubCardsRecursiveRequest body, @QueryMap(encoded=true) PassiveModuleInstalledSubCardsRecursiveQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>passiveModuleInstalledSubCardsRecursive</code> method in a fluent style.
+   */
+  public static class PassiveModuleInstalledSubCardsRecursiveQueryParams extends HashMap<String, Object> {
+    public PassiveModuleInstalledSubCardsRecursiveQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -1704,6 +2078,95 @@ public interface PassiveModuleApi extends ApiClient.Api {
   }
 
   /**
+   * Get relations to Multiducts entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return PassiveModuleMultiDuctsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/passiveModule/{elid}/MultiDucts?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  PassiveModuleMultiDuctsResponseData passiveModuleMultiDucts(@Param("sessionId") String sessionId, @Param("elid") String elid, PassiveModuleMultiDuctsRequestData body);
+
+  /**
+   * Get relations to Multiducts entities
+   * Similar to <code>passiveModuleMultiDucts</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/passiveModule/{elid}/MultiDucts?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<PassiveModuleMultiDuctsResponseData> passiveModuleMultiDuctsWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, PassiveModuleMultiDuctsRequestData body);
+
+
+  /**
+   * Get relations to Multiducts entities
+   * 
+   * Note, this is equivalent to the other <code>passiveModuleMultiDucts</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link PassiveModuleMultiDuctsQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return PassiveModuleMultiDuctsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/passiveModule/{elid}/MultiDucts?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  PassiveModuleMultiDuctsResponseData passiveModuleMultiDucts(@Param("elid") String elid, PassiveModuleMultiDuctsRequestData body, @QueryMap(encoded=true) PassiveModuleMultiDuctsQueryParams queryParams);
+
+  /**
+  * Get relations to Multiducts entities
+  * 
+  * Note, this is equivalent to the other <code>passiveModuleMultiDucts</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return PassiveModuleMultiDuctsResponseData
+      */
+      @RequestLine("POST /api/rest/entity/passiveModule/{elid}/MultiDucts?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<PassiveModuleMultiDuctsResponseData> passiveModuleMultiDuctsWithHttpInfo(@Param("elid") String elid, PassiveModuleMultiDuctsRequestData body, @QueryMap(encoded=true) PassiveModuleMultiDuctsQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>passiveModuleMultiDucts</code> method in a fluent style.
+   */
+  public static class PassiveModuleMultiDuctsQueryParams extends HashMap<String, Object> {
+    public PassiveModuleMultiDuctsQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Nets / Net ranges
    * Query for querying all basic target entity data
    * @param sessionId Session-ID (required)
@@ -2238,24 +2701,113 @@ public interface PassiveModuleApi extends ApiClient.Api {
   }
 
   /**
-   * Query Power ports
-   * Query for all basic target entity data
+   * Query physical ports data extended
+   * Query for fetching all basic target entity data.
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
-   * @return PassiveModulePhysicalPortsPowerResponse
+   * @return PassiveModulePhysicalPortsDataExtendedResponse
+   */
+  @RequestLine("POST /api/rest/entity/passiveModule/{elid}/PhysicalPortsDataExtended?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  PassiveModulePhysicalPortsDataExtendedResponse passiveModulePhysicalPortsDataExtended(@Param("sessionId") String sessionId, @Param("elid") String elid, PassiveModulePhysicalPortsDataExtendedRequest body);
+
+  /**
+   * Query physical ports data extended
+   * Similar to <code>passiveModulePhysicalPortsDataExtended</code> but it also returns the http response headers .
+   * Query for fetching all basic target entity data.
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/passiveModule/{elid}/PhysicalPortsDataExtended?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<PassiveModulePhysicalPortsDataExtendedResponse> passiveModulePhysicalPortsDataExtendedWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, PassiveModulePhysicalPortsDataExtendedRequest body);
+
+
+  /**
+   * Query physical ports data extended
+   * Query for fetching all basic target entity data.
+   * Note, this is equivalent to the other <code>passiveModulePhysicalPortsDataExtended</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link PassiveModulePhysicalPortsDataExtendedQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return PassiveModulePhysicalPortsDataExtendedResponse
+   */
+  @RequestLine("POST /api/rest/entity/passiveModule/{elid}/PhysicalPortsDataExtended?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  PassiveModulePhysicalPortsDataExtendedResponse passiveModulePhysicalPortsDataExtended(@Param("elid") String elid, PassiveModulePhysicalPortsDataExtendedRequest body, @QueryMap(encoded=true) PassiveModulePhysicalPortsDataExtendedQueryParams queryParams);
+
+  /**
+  * Query physical ports data extended
+  * Query for fetching all basic target entity data.
+  * Note, this is equivalent to the other <code>passiveModulePhysicalPortsDataExtended</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return PassiveModulePhysicalPortsDataExtendedResponse
+      */
+      @RequestLine("POST /api/rest/entity/passiveModule/{elid}/PhysicalPortsDataExtended?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<PassiveModulePhysicalPortsDataExtendedResponse> passiveModulePhysicalPortsDataExtendedWithHttpInfo(@Param("elid") String elid, PassiveModulePhysicalPortsDataExtendedRequest body, @QueryMap(encoded=true) PassiveModulePhysicalPortsDataExtendedQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>passiveModulePhysicalPortsDataExtended</code> method in a fluent style.
+   */
+  public static class PassiveModulePhysicalPortsDataExtendedQueryParams extends HashMap<String, Object> {
+    public PassiveModulePhysicalPortsDataExtendedQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Physical port (power) entities
+   * For more information call the basic query of the power port entity
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return PassiveModulePhysicalPortsPowerResponseData
    */
   @RequestLine("POST /api/rest/entity/passiveModule/{elid}/PhysicalPortsPower?sessionId={sessionId}")
   @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  PassiveModulePhysicalPortsPowerResponse passiveModulePhysicalPortsPower(@Param("sessionId") String sessionId, @Param("elid") String elid, PassiveModulePhysicalPortsPowerRequest body);
+  PassiveModulePhysicalPortsPowerResponseData passiveModulePhysicalPortsPower(@Param("sessionId") String sessionId, @Param("elid") String elid, PassiveModulePhysicalPortsPowerRequestData body);
 
   /**
-   * Query Power ports
+   * Get relations to Physical port (power) entities
    * Similar to <code>passiveModulePhysicalPortsPower</code> but it also returns the http response headers .
-   * Query for all basic target entity data
+   * For more information call the basic query of the power port entity
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
@@ -2266,12 +2818,12 @@ public interface PassiveModuleApi extends ApiClient.Api {
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  ApiResponse<PassiveModulePhysicalPortsPowerResponse> passiveModulePhysicalPortsPowerWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, PassiveModulePhysicalPortsPowerRequest body);
+  ApiResponse<PassiveModulePhysicalPortsPowerResponseData> passiveModulePhysicalPortsPowerWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, PassiveModulePhysicalPortsPowerRequestData body);
 
 
   /**
-   * Query Power ports
-   * Query for all basic target entity data
+   * Get relations to Physical port (power) entities
+   * For more information call the basic query of the power port entity
    * Note, this is equivalent to the other <code>passiveModulePhysicalPortsPower</code> method,
    * but with the query parameters collected into a single Map parameter. This
    * is convenient for services with optional query parameters, especially when
@@ -2284,18 +2836,18 @@ public interface PassiveModuleApi extends ApiClient.Api {
    *   <ul>
    *   <li>sessionId - Session-ID (required)</li>
    *   </ul>
-   * @return PassiveModulePhysicalPortsPowerResponse
+   * @return PassiveModulePhysicalPortsPowerResponseData
    */
   @RequestLine("POST /api/rest/entity/passiveModule/{elid}/PhysicalPortsPower?sessionId={sessionId}")
   @Headers({
   "Content-Type: application/json",
   "Accept: application/json",
   })
-  PassiveModulePhysicalPortsPowerResponse passiveModulePhysicalPortsPower(@Param("elid") String elid, PassiveModulePhysicalPortsPowerRequest body, @QueryMap(encoded=true) PassiveModulePhysicalPortsPowerQueryParams queryParams);
+  PassiveModulePhysicalPortsPowerResponseData passiveModulePhysicalPortsPower(@Param("elid") String elid, PassiveModulePhysicalPortsPowerRequestData body, @QueryMap(encoded=true) PassiveModulePhysicalPortsPowerQueryParams queryParams);
 
   /**
-  * Query Power ports
-  * Query for all basic target entity data
+  * Get relations to Physical port (power) entities
+  * For more information call the basic query of the power port entity
   * Note, this is equivalent to the other <code>passiveModulePhysicalPortsPower</code> that receives the query parameters as a map,
   * but this one also exposes the Http response headers
               * @param elid  (required)
@@ -2305,14 +2857,14 @@ public interface PassiveModuleApi extends ApiClient.Api {
       *   <ul>
           *   <li>sessionId - Session-ID (required)</li>
       *   </ul>
-          * @return PassiveModulePhysicalPortsPowerResponse
+          * @return PassiveModulePhysicalPortsPowerResponseData
       */
       @RequestLine("POST /api/rest/entity/passiveModule/{elid}/PhysicalPortsPower?sessionId={sessionId}")
       @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
       })
-   ApiResponse<PassiveModulePhysicalPortsPowerResponse> passiveModulePhysicalPortsPowerWithHttpInfo(@Param("elid") String elid, PassiveModulePhysicalPortsPowerRequest body, @QueryMap(encoded=true) PassiveModulePhysicalPortsPowerQueryParams queryParams);
+   ApiResponse<PassiveModulePhysicalPortsPowerResponseData> passiveModulePhysicalPortsPowerWithHttpInfo(@Param("elid") String elid, PassiveModulePhysicalPortsPowerRequestData body, @QueryMap(encoded=true) PassiveModulePhysicalPortsPowerQueryParams queryParams);
 
 
    /**
@@ -2321,6 +2873,95 @@ public interface PassiveModuleApi extends ApiClient.Api {
    */
   public static class PassiveModulePhysicalPortsPowerQueryParams extends HashMap<String, Object> {
     public PassiveModulePhysicalPortsPowerQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Query Power ports
+   * Query for fetching all basic target entity data.
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return PassiveModulePhysicalPortsPowerExtendedResponse
+   */
+  @RequestLine("POST /api/rest/entity/passiveModule/{elid}/PhysicalPortsPowerExtended?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  PassiveModulePhysicalPortsPowerExtendedResponse passiveModulePhysicalPortsPowerExtended(@Param("sessionId") String sessionId, @Param("elid") String elid, PassiveModulePhysicalPortsPowerExtendedRequest body);
+
+  /**
+   * Query Power ports
+   * Similar to <code>passiveModulePhysicalPortsPowerExtended</code> but it also returns the http response headers .
+   * Query for fetching all basic target entity data.
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/passiveModule/{elid}/PhysicalPortsPowerExtended?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<PassiveModulePhysicalPortsPowerExtendedResponse> passiveModulePhysicalPortsPowerExtendedWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, PassiveModulePhysicalPortsPowerExtendedRequest body);
+
+
+  /**
+   * Query Power ports
+   * Query for fetching all basic target entity data.
+   * Note, this is equivalent to the other <code>passiveModulePhysicalPortsPowerExtended</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link PassiveModulePhysicalPortsPowerExtendedQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return PassiveModulePhysicalPortsPowerExtendedResponse
+   */
+  @RequestLine("POST /api/rest/entity/passiveModule/{elid}/PhysicalPortsPowerExtended?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  PassiveModulePhysicalPortsPowerExtendedResponse passiveModulePhysicalPortsPowerExtended(@Param("elid") String elid, PassiveModulePhysicalPortsPowerExtendedRequest body, @QueryMap(encoded=true) PassiveModulePhysicalPortsPowerExtendedQueryParams queryParams);
+
+  /**
+  * Query Power ports
+  * Query for fetching all basic target entity data.
+  * Note, this is equivalent to the other <code>passiveModulePhysicalPortsPowerExtended</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return PassiveModulePhysicalPortsPowerExtendedResponse
+      */
+      @RequestLine("POST /api/rest/entity/passiveModule/{elid}/PhysicalPortsPowerExtended?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<PassiveModulePhysicalPortsPowerExtendedResponse> passiveModulePhysicalPortsPowerExtendedWithHttpInfo(@Param("elid") String elid, PassiveModulePhysicalPortsPowerExtendedRequest body, @QueryMap(encoded=true) PassiveModulePhysicalPortsPowerExtendedQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>passiveModulePhysicalPortsPowerExtended</code> method in a fluent style.
+   */
+  public static class PassiveModulePhysicalPortsPowerExtendedQueryParams extends HashMap<String, Object> {
+    public PassiveModulePhysicalPortsPowerExtendedQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -2497,6 +3138,91 @@ public interface PassiveModuleApi extends ApiClient.Api {
   }
 
   /**
+   * Extended geo coordinates
+   * 
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return PassiveModuleQueryExtendedGeoCoordinatesResponse
+   */
+  @RequestLine("POST /api/rest/entity/passiveModule/queryExtendedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  PassiveModuleQueryExtendedGeoCoordinatesResponse passiveModuleQueryExtendedGeoCoordinates(@Param("sessionId") String sessionId, PassiveModuleQueryExtendedGeoCoordinatesRequest body);
+
+  /**
+   * Extended geo coordinates
+   * Similar to <code>passiveModuleQueryExtendedGeoCoordinates</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/passiveModule/queryExtendedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<PassiveModuleQueryExtendedGeoCoordinatesResponse> passiveModuleQueryExtendedGeoCoordinatesWithHttpInfo(@Param("sessionId") String sessionId, PassiveModuleQueryExtendedGeoCoordinatesRequest body);
+
+
+  /**
+   * Extended geo coordinates
+   * 
+   * Note, this is equivalent to the other <code>passiveModuleQueryExtendedGeoCoordinates</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link PassiveModuleQueryExtendedGeoCoordinatesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return PassiveModuleQueryExtendedGeoCoordinatesResponse
+   */
+  @RequestLine("POST /api/rest/entity/passiveModule/queryExtendedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  PassiveModuleQueryExtendedGeoCoordinatesResponse passiveModuleQueryExtendedGeoCoordinates(PassiveModuleQueryExtendedGeoCoordinatesRequest body, @QueryMap(encoded=true) PassiveModuleQueryExtendedGeoCoordinatesQueryParams queryParams);
+
+  /**
+  * Extended geo coordinates
+  * 
+  * Note, this is equivalent to the other <code>passiveModuleQueryExtendedGeoCoordinates</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return PassiveModuleQueryExtendedGeoCoordinatesResponse
+      */
+      @RequestLine("POST /api/rest/entity/passiveModule/queryExtendedGeoCoordinates?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<PassiveModuleQueryExtendedGeoCoordinatesResponse> passiveModuleQueryExtendedGeoCoordinatesWithHttpInfo(PassiveModuleQueryExtendedGeoCoordinatesRequest body, @QueryMap(encoded=true) PassiveModuleQueryExtendedGeoCoordinatesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>passiveModuleQueryExtendedGeoCoordinates</code> method in a fluent style.
+   */
+  public static class PassiveModuleQueryExtendedGeoCoordinatesQueryParams extends HashMap<String, Object> {
+    public PassiveModuleQueryExtendedGeoCoordinatesQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Extended query scroll first
    * Queries linked master data and zone data. This query supports scrolling. Calls the query and returns the first results including the scroll-ID for the next call.
    * @param sessionId Session-ID (required)
@@ -2661,6 +3387,184 @@ public interface PassiveModuleApi extends ApiClient.Api {
    */
   public static class PassiveModuleQueryExtendedScrollMoreQueryParams extends HashMap<String, Object> {
     public PassiveModuleQueryExtendedScrollMoreQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Query device services 
+   * Query services for device 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return PassiveModuleServicesResponse
+   */
+  @RequestLine("POST /api/rest/entity/passiveModule/{elid}/Services?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  PassiveModuleServicesResponse passiveModuleServices(@Param("sessionId") String sessionId, @Param("elid") String elid, PassiveModuleServicesRequest body);
+
+  /**
+   * Query device services 
+   * Similar to <code>passiveModuleServices</code> but it also returns the http response headers .
+   * Query services for device 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/passiveModule/{elid}/Services?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<PassiveModuleServicesResponse> passiveModuleServicesWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, PassiveModuleServicesRequest body);
+
+
+  /**
+   * Query device services 
+   * Query services for device 
+   * Note, this is equivalent to the other <code>passiveModuleServices</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link PassiveModuleServicesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return PassiveModuleServicesResponse
+   */
+  @RequestLine("POST /api/rest/entity/passiveModule/{elid}/Services?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  PassiveModuleServicesResponse passiveModuleServices(@Param("elid") String elid, PassiveModuleServicesRequest body, @QueryMap(encoded=true) PassiveModuleServicesQueryParams queryParams);
+
+  /**
+  * Query device services 
+  * Query services for device 
+  * Note, this is equivalent to the other <code>passiveModuleServices</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return PassiveModuleServicesResponse
+      */
+      @RequestLine("POST /api/rest/entity/passiveModule/{elid}/Services?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<PassiveModuleServicesResponse> passiveModuleServicesWithHttpInfo(@Param("elid") String elid, PassiveModuleServicesRequest body, @QueryMap(encoded=true) PassiveModuleServicesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>passiveModuleServices</code> method in a fluent style.
+   */
+  public static class PassiveModuleServicesQueryParams extends HashMap<String, Object> {
+    public PassiveModuleServicesQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Site entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return PassiveModuleSitesResponseData
+   */
+  @RequestLine("POST /api/rest/entity/passiveModule/{elid}/Sites?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  PassiveModuleSitesResponseData passiveModuleSites(@Param("sessionId") String sessionId, @Param("elid") String elid, PassiveModuleSitesRequestData body);
+
+  /**
+   * Get relations to Site entities
+   * Similar to <code>passiveModuleSites</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/passiveModule/{elid}/Sites?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<PassiveModuleSitesResponseData> passiveModuleSitesWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, PassiveModuleSitesRequestData body);
+
+
+  /**
+   * Get relations to Site entities
+   * 
+   * Note, this is equivalent to the other <code>passiveModuleSites</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link PassiveModuleSitesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return PassiveModuleSitesResponseData
+   */
+  @RequestLine("POST /api/rest/entity/passiveModule/{elid}/Sites?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  PassiveModuleSitesResponseData passiveModuleSites(@Param("elid") String elid, PassiveModuleSitesRequestData body, @QueryMap(encoded=true) PassiveModuleSitesQueryParams queryParams);
+
+  /**
+  * Get relations to Site entities
+  * 
+  * Note, this is equivalent to the other <code>passiveModuleSites</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return PassiveModuleSitesResponseData
+      */
+      @RequestLine("POST /api/rest/entity/passiveModule/{elid}/Sites?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<PassiveModuleSitesResponseData> passiveModuleSitesWithHttpInfo(@Param("elid") String elid, PassiveModuleSitesRequestData body, @QueryMap(encoded=true) PassiveModuleSitesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>passiveModuleSites</code> method in a fluent style.
+   */
+  public static class PassiveModuleSitesQueryParams extends HashMap<String, Object> {
+    public PassiveModuleSitesQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -3713,6 +4617,95 @@ public interface PassiveModuleApi extends ApiClient.Api {
    */
   public static class PlaceInZonePassiveModuleQueryParams extends HashMap<String, Object> {
     public PlaceInZonePassiveModuleQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Replace object
+   * Replace object
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return ReplaceObjectPassiveModuleResponse
+   */
+  @RequestLine("POST /api/rest/entity/passiveModule/{elid}/replaceObject?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ReplaceObjectPassiveModuleResponse replaceObjectPassiveModule(@Param("sessionId") String sessionId, @Param("elid") String elid, ReplaceObjectPassiveModuleRequestData body);
+
+  /**
+   * Replace object
+   * Similar to <code>replaceObjectPassiveModule</code> but it also returns the http response headers .
+   * Replace object
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/passiveModule/{elid}/replaceObject?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<ReplaceObjectPassiveModuleResponse> replaceObjectPassiveModuleWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ReplaceObjectPassiveModuleRequestData body);
+
+
+  /**
+   * Replace object
+   * Replace object
+   * Note, this is equivalent to the other <code>replaceObjectPassiveModule</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link ReplaceObjectPassiveModuleQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return ReplaceObjectPassiveModuleResponse
+   */
+  @RequestLine("POST /api/rest/entity/passiveModule/{elid}/replaceObject?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  ReplaceObjectPassiveModuleResponse replaceObjectPassiveModule(@Param("elid") String elid, ReplaceObjectPassiveModuleRequestData body, @QueryMap(encoded=true) ReplaceObjectPassiveModuleQueryParams queryParams);
+
+  /**
+  * Replace object
+  * Replace object
+  * Note, this is equivalent to the other <code>replaceObjectPassiveModule</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return ReplaceObjectPassiveModuleResponse
+      */
+      @RequestLine("POST /api/rest/entity/passiveModule/{elid}/replaceObject?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<ReplaceObjectPassiveModuleResponse> replaceObjectPassiveModuleWithHttpInfo(@Param("elid") String elid, ReplaceObjectPassiveModuleRequestData body, @QueryMap(encoded=true) ReplaceObjectPassiveModuleQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>replaceObjectPassiveModule</code> method in a fluent style.
+   */
+  public static class ReplaceObjectPassiveModuleQueryParams extends HashMap<String, Object> {
+    public ReplaceObjectPassiveModuleQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

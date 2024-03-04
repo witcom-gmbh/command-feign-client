@@ -8,6 +8,10 @@ import com.fntsoftware.businessgateway.entities.PowerTerminalInstallationDetails
 import com.fntsoftware.businessgateway.entities.PowerTerminalInstallationDetailsResponse;
 import com.fntsoftware.businessgateway.entities.PowerTerminalPhysicalPortsPowerRequestData;
 import com.fntsoftware.businessgateway.entities.PowerTerminalPhysicalPortsPowerResponseData;
+import com.fntsoftware.businessgateway.entities.PowerTerminalPowerRailsRequestData;
+import com.fntsoftware.businessgateway.entities.PowerTerminalPowerRailsResponseData;
+import com.fntsoftware.businessgateway.entities.PowerTerminalQueryRequest;
+import com.fntsoftware.businessgateway.entities.PowerTerminalQueryResponse;
 import com.fntsoftware.businessgateway.entities.PowerTerminalSystemAttributesRequest;
 import com.fntsoftware.businessgateway.entities.PowerTerminalSystemAttributesResponse;
 import com.fntsoftware.businessgateway.entities.UpdateSystemAttributesPowerTerminalRequestData;
@@ -19,7 +23,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-04T13:31:32.601557352Z[Etc/UTC]")
 public interface PowerTerminalApi extends ApiClient.Api {
 
 
@@ -196,6 +200,180 @@ public interface PowerTerminalApi extends ApiClient.Api {
    */
   public static class PowerTerminalPhysicalPortsPowerQueryParams extends HashMap<String, Object> {
     public PowerTerminalPhysicalPortsPowerQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Power rail entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return PowerTerminalPowerRailsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/powerTerminal/{elid}/PowerRails?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  PowerTerminalPowerRailsResponseData powerTerminalPowerRails(@Param("sessionId") String sessionId, @Param("elid") String elid, PowerTerminalPowerRailsRequestData body);
+
+  /**
+   * Get relations to Power rail entities
+   * Similar to <code>powerTerminalPowerRails</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/powerTerminal/{elid}/PowerRails?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<PowerTerminalPowerRailsResponseData> powerTerminalPowerRailsWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, PowerTerminalPowerRailsRequestData body);
+
+
+  /**
+   * Get relations to Power rail entities
+   * 
+   * Note, this is equivalent to the other <code>powerTerminalPowerRails</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link PowerTerminalPowerRailsQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return PowerTerminalPowerRailsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/powerTerminal/{elid}/PowerRails?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  PowerTerminalPowerRailsResponseData powerTerminalPowerRails(@Param("elid") String elid, PowerTerminalPowerRailsRequestData body, @QueryMap(encoded=true) PowerTerminalPowerRailsQueryParams queryParams);
+
+  /**
+  * Get relations to Power rail entities
+  * 
+  * Note, this is equivalent to the other <code>powerTerminalPowerRails</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return PowerTerminalPowerRailsResponseData
+      */
+      @RequestLine("POST /api/rest/entity/powerTerminal/{elid}/PowerRails?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<PowerTerminalPowerRailsResponseData> powerTerminalPowerRailsWithHttpInfo(@Param("elid") String elid, PowerTerminalPowerRailsRequestData body, @QueryMap(encoded=true) PowerTerminalPowerRailsQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>powerTerminalPowerRails</code> method in a fluent style.
+   */
+  public static class PowerTerminalPowerRailsQueryParams extends HashMap<String, Object> {
+    public PowerTerminalPowerRailsQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Basic query
+   * Query for fetching all basic target entity data.
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return PowerTerminalQueryResponse
+   */
+  @RequestLine("POST /api/rest/entity/powerTerminal/query?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  PowerTerminalQueryResponse powerTerminalQuery(@Param("sessionId") String sessionId, PowerTerminalQueryRequest body);
+
+  /**
+   * Basic query
+   * Similar to <code>powerTerminalQuery</code> but it also returns the http response headers .
+   * Query for fetching all basic target entity data.
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/powerTerminal/query?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<PowerTerminalQueryResponse> powerTerminalQueryWithHttpInfo(@Param("sessionId") String sessionId, PowerTerminalQueryRequest body);
+
+
+  /**
+   * Basic query
+   * Query for fetching all basic target entity data.
+   * Note, this is equivalent to the other <code>powerTerminalQuery</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link PowerTerminalQueryQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return PowerTerminalQueryResponse
+   */
+  @RequestLine("POST /api/rest/entity/powerTerminal/query?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  PowerTerminalQueryResponse powerTerminalQuery(PowerTerminalQueryRequest body, @QueryMap(encoded=true) PowerTerminalQueryQueryParams queryParams);
+
+  /**
+  * Basic query
+  * Query for fetching all basic target entity data.
+  * Note, this is equivalent to the other <code>powerTerminalQuery</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return PowerTerminalQueryResponse
+      */
+      @RequestLine("POST /api/rest/entity/powerTerminal/query?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<PowerTerminalQueryResponse> powerTerminalQueryWithHttpInfo(PowerTerminalQueryRequest body, @QueryMap(encoded=true) PowerTerminalQueryQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>powerTerminalQuery</code> method in a fluent style.
+   */
+  public static class PowerTerminalQueryQueryParams extends HashMap<String, Object> {
+    public PowerTerminalQueryQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

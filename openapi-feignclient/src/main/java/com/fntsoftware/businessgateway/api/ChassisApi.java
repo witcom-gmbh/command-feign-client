@@ -12,8 +12,16 @@ import com.fntsoftware.businessgateway.entities.ChassisCustomL2CpeSegmentRequest
 import com.fntsoftware.businessgateway.entities.ChassisCustomL2CpeSegmentResponseData;
 import com.fntsoftware.businessgateway.entities.ChassisDeviceMasterRequestData;
 import com.fntsoftware.businessgateway.entities.ChassisDeviceMasterResponseData;
+import com.fntsoftware.businessgateway.entities.ChassisDuctDataRequest;
+import com.fntsoftware.businessgateway.entities.ChassisDuctDataResponse;
+import com.fntsoftware.businessgateway.entities.ChassisDuctsRequestData;
+import com.fntsoftware.businessgateway.entities.ChassisDuctsResponseData;
 import com.fntsoftware.businessgateway.entities.ChassisFrameContractsRequestData;
 import com.fntsoftware.businessgateway.entities.ChassisFrameContractsResponseData;
+import com.fntsoftware.businessgateway.entities.ChassisInheritedGeoCoordinatesRequest;
+import com.fntsoftware.businessgateway.entities.ChassisInheritedGeoCoordinatesResponse;
+import com.fntsoftware.businessgateway.entities.ChassisInstalledSubCardsRecursiveRequest;
+import com.fntsoftware.businessgateway.entities.ChassisInstalledSubCardsRecursiveResponse;
 import com.fntsoftware.businessgateway.entities.ChassisInstalledSubCardsRequest;
 import com.fntsoftware.businessgateway.entities.ChassisInstalledSubCardsResponse;
 import com.fntsoftware.businessgateway.entities.ChassisInterfacesRequestData;
@@ -32,6 +40,8 @@ import com.fntsoftware.businessgateway.entities.ChassisLogicalPortsRequestData;
 import com.fntsoftware.businessgateway.entities.ChassisLogicalPortsResponseData;
 import com.fntsoftware.businessgateway.entities.ChassisMaintenanceContractsRequestData;
 import com.fntsoftware.businessgateway.entities.ChassisMaintenanceContractsResponseData;
+import com.fntsoftware.businessgateway.entities.ChassisMultiDuctsRequestData;
+import com.fntsoftware.businessgateway.entities.ChassisMultiDuctsResponseData;
 import com.fntsoftware.businessgateway.entities.ChassisNetworksAndNetrangesRequest;
 import com.fntsoftware.businessgateway.entities.ChassisNetworksAndNetrangesResponse;
 import com.fntsoftware.businessgateway.entities.ChassisOperatingSystemInstallationRequestData;
@@ -42,10 +52,16 @@ import com.fntsoftware.businessgateway.entities.ChassisPersonGroupsRequestData;
 import com.fntsoftware.businessgateway.entities.ChassisPersonGroupsResponseData;
 import com.fntsoftware.businessgateway.entities.ChassisPersonsRequestData;
 import com.fntsoftware.businessgateway.entities.ChassisPersonsResponseData;
+import com.fntsoftware.businessgateway.entities.ChassisPhysicalPortsDataExtendedRequest;
+import com.fntsoftware.businessgateway.entities.ChassisPhysicalPortsDataExtendedResponse;
 import com.fntsoftware.businessgateway.entities.ChassisPhysicalPortsDataRequestData;
 import com.fntsoftware.businessgateway.entities.ChassisPhysicalPortsDataResponseData;
-import com.fntsoftware.businessgateway.entities.ChassisPhysicalPortsPowerRequest;
-import com.fntsoftware.businessgateway.entities.ChassisPhysicalPortsPowerResponse;
+import com.fntsoftware.businessgateway.entities.ChassisPhysicalPortsPowerExtendedRequest;
+import com.fntsoftware.businessgateway.entities.ChassisPhysicalPortsPowerExtendedResponse;
+import com.fntsoftware.businessgateway.entities.ChassisPhysicalPortsPowerRequestData;
+import com.fntsoftware.businessgateway.entities.ChassisPhysicalPortsPowerResponseData;
+import com.fntsoftware.businessgateway.entities.ChassisQueryExtendedGeoCoordinatesRequest;
+import com.fntsoftware.businessgateway.entities.ChassisQueryExtendedGeoCoordinatesResponse;
 import com.fntsoftware.businessgateway.entities.ChassisQueryExtendedRequest;
 import com.fntsoftware.businessgateway.entities.ChassisQueryExtendedResponse;
 import com.fntsoftware.businessgateway.entities.ChassisQueryExtendedScrollFirstRequest;
@@ -54,6 +70,10 @@ import com.fntsoftware.businessgateway.entities.ChassisQueryExtendedScrollMoreRe
 import com.fntsoftware.businessgateway.entities.ChassisQueryExtendedScrollMoreResponse;
 import com.fntsoftware.businessgateway.entities.ChassisQueryRequest;
 import com.fntsoftware.businessgateway.entities.ChassisQueryResponse;
+import com.fntsoftware.businessgateway.entities.ChassisServicesRequest;
+import com.fntsoftware.businessgateway.entities.ChassisServicesResponse;
+import com.fntsoftware.businessgateway.entities.ChassisSitesRequestData;
+import com.fntsoftware.businessgateway.entities.ChassisSitesResponseData;
 import com.fntsoftware.businessgateway.entities.ChassisSlotRequestData;
 import com.fntsoftware.businessgateway.entities.ChassisSlotResponseData;
 import com.fntsoftware.businessgateway.entities.ChassisSwitchCabinetRequestData;
@@ -88,6 +108,8 @@ import com.fntsoftware.businessgateway.entities.PlaceInWarehouseChassisRequestDa
 import com.fntsoftware.businessgateway.entities.PlaceInWarehouseChassisResponse;
 import com.fntsoftware.businessgateway.entities.PlaceInZoneChassisRequestData;
 import com.fntsoftware.businessgateway.entities.PlaceInZoneChassisResponse;
+import com.fntsoftware.businessgateway.entities.ReplaceObjectChassisRequestData;
+import com.fntsoftware.businessgateway.entities.ReplaceObjectChassisResponse;
 import com.fntsoftware.businessgateway.entities.UpdateChassisRequestData;
 import com.fntsoftware.businessgateway.entities.UpdateChassisResponse;
 import com.fntsoftware.businessgateway.entities.UpdateSystemAttributesChassisRequestData;
@@ -99,7 +121,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-04T13:31:32.601557352Z[Etc/UTC]")
 public interface ChassisApi extends ApiClient.Api {
 
 
@@ -460,6 +482,184 @@ public interface ChassisApi extends ApiClient.Api {
   }
 
   /**
+   * Query duct data
+   * Query associated ducts and multipipes
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return ChassisDuctDataResponse
+   */
+  @RequestLine("POST /api/rest/entity/chassis/{elid}/DuctData?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ChassisDuctDataResponse chassisDuctData(@Param("sessionId") String sessionId, @Param("elid") String elid, ChassisDuctDataRequest body);
+
+  /**
+   * Query duct data
+   * Similar to <code>chassisDuctData</code> but it also returns the http response headers .
+   * Query associated ducts and multipipes
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/chassis/{elid}/DuctData?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<ChassisDuctDataResponse> chassisDuctDataWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ChassisDuctDataRequest body);
+
+
+  /**
+   * Query duct data
+   * Query associated ducts and multipipes
+   * Note, this is equivalent to the other <code>chassisDuctData</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link ChassisDuctDataQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return ChassisDuctDataResponse
+   */
+  @RequestLine("POST /api/rest/entity/chassis/{elid}/DuctData?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  ChassisDuctDataResponse chassisDuctData(@Param("elid") String elid, ChassisDuctDataRequest body, @QueryMap(encoded=true) ChassisDuctDataQueryParams queryParams);
+
+  /**
+  * Query duct data
+  * Query associated ducts and multipipes
+  * Note, this is equivalent to the other <code>chassisDuctData</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return ChassisDuctDataResponse
+      */
+      @RequestLine("POST /api/rest/entity/chassis/{elid}/DuctData?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<ChassisDuctDataResponse> chassisDuctDataWithHttpInfo(@Param("elid") String elid, ChassisDuctDataRequest body, @QueryMap(encoded=true) ChassisDuctDataQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>chassisDuctData</code> method in a fluent style.
+   */
+  public static class ChassisDuctDataQueryParams extends HashMap<String, Object> {
+    public ChassisDuctDataQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Duct entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return ChassisDuctsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/chassis/{elid}/Ducts?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ChassisDuctsResponseData chassisDucts(@Param("sessionId") String sessionId, @Param("elid") String elid, ChassisDuctsRequestData body);
+
+  /**
+   * Get relations to Duct entities
+   * Similar to <code>chassisDucts</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/chassis/{elid}/Ducts?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<ChassisDuctsResponseData> chassisDuctsWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ChassisDuctsRequestData body);
+
+
+  /**
+   * Get relations to Duct entities
+   * 
+   * Note, this is equivalent to the other <code>chassisDucts</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link ChassisDuctsQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return ChassisDuctsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/chassis/{elid}/Ducts?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  ChassisDuctsResponseData chassisDucts(@Param("elid") String elid, ChassisDuctsRequestData body, @QueryMap(encoded=true) ChassisDuctsQueryParams queryParams);
+
+  /**
+  * Get relations to Duct entities
+  * 
+  * Note, this is equivalent to the other <code>chassisDucts</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return ChassisDuctsResponseData
+      */
+      @RequestLine("POST /api/rest/entity/chassis/{elid}/Ducts?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<ChassisDuctsResponseData> chassisDuctsWithHttpInfo(@Param("elid") String elid, ChassisDuctsRequestData body, @QueryMap(encoded=true) ChassisDuctsQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>chassisDucts</code> method in a fluent style.
+   */
+  public static class ChassisDuctsQueryParams extends HashMap<String, Object> {
+    public ChassisDuctsQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Get relations to Frame contract entities
    * 
    * @param sessionId Session-ID (required)
@@ -549,6 +749,91 @@ public interface ChassisApi extends ApiClient.Api {
   }
 
   /**
+   * Query inherited coordinates
+   * Query the own coordinates of an object or inherit them from parents
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return ChassisInheritedGeoCoordinatesResponse
+   */
+  @RequestLine("POST /api/rest/entity/chassis/inheritedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ChassisInheritedGeoCoordinatesResponse chassisInheritedGeoCoordinates(@Param("sessionId") String sessionId, ChassisInheritedGeoCoordinatesRequest body);
+
+  /**
+   * Query inherited coordinates
+   * Similar to <code>chassisInheritedGeoCoordinates</code> but it also returns the http response headers .
+   * Query the own coordinates of an object or inherit them from parents
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/chassis/inheritedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<ChassisInheritedGeoCoordinatesResponse> chassisInheritedGeoCoordinatesWithHttpInfo(@Param("sessionId") String sessionId, ChassisInheritedGeoCoordinatesRequest body);
+
+
+  /**
+   * Query inherited coordinates
+   * Query the own coordinates of an object or inherit them from parents
+   * Note, this is equivalent to the other <code>chassisInheritedGeoCoordinates</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link ChassisInheritedGeoCoordinatesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return ChassisInheritedGeoCoordinatesResponse
+   */
+  @RequestLine("POST /api/rest/entity/chassis/inheritedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  ChassisInheritedGeoCoordinatesResponse chassisInheritedGeoCoordinates(ChassisInheritedGeoCoordinatesRequest body, @QueryMap(encoded=true) ChassisInheritedGeoCoordinatesQueryParams queryParams);
+
+  /**
+  * Query inherited coordinates
+  * Query the own coordinates of an object or inherit them from parents
+  * Note, this is equivalent to the other <code>chassisInheritedGeoCoordinates</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return ChassisInheritedGeoCoordinatesResponse
+      */
+      @RequestLine("POST /api/rest/entity/chassis/inheritedGeoCoordinates?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<ChassisInheritedGeoCoordinatesResponse> chassisInheritedGeoCoordinatesWithHttpInfo(ChassisInheritedGeoCoordinatesRequest body, @QueryMap(encoded=true) ChassisInheritedGeoCoordinatesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>chassisInheritedGeoCoordinates</code> method in a fluent style.
+   */
+  public static class ChassisInheritedGeoCoordinatesQueryParams extends HashMap<String, Object> {
+    public ChassisInheritedGeoCoordinatesQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Query installed subcards
    * Queries installed subcards. Only direct subcards will be returned. Free slot positions will not be returned.
    * @param sessionId Session-ID (required)
@@ -632,6 +917,95 @@ public interface ChassisApi extends ApiClient.Api {
    */
   public static class ChassisInstalledSubCardsQueryParams extends HashMap<String, Object> {
     public ChassisInstalledSubCardsQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Query installed sub-cards recursively
+   * Queries installed sub-cards from a device. Free slot positions are not supplied.
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return ChassisInstalledSubCardsRecursiveResponse
+   */
+  @RequestLine("POST /api/rest/entity/chassis/{elid}/InstalledSubCardsRecursive?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ChassisInstalledSubCardsRecursiveResponse chassisInstalledSubCardsRecursive(@Param("sessionId") String sessionId, @Param("elid") String elid, ChassisInstalledSubCardsRecursiveRequest body);
+
+  /**
+   * Query installed sub-cards recursively
+   * Similar to <code>chassisInstalledSubCardsRecursive</code> but it also returns the http response headers .
+   * Queries installed sub-cards from a device. Free slot positions are not supplied.
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/chassis/{elid}/InstalledSubCardsRecursive?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<ChassisInstalledSubCardsRecursiveResponse> chassisInstalledSubCardsRecursiveWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ChassisInstalledSubCardsRecursiveRequest body);
+
+
+  /**
+   * Query installed sub-cards recursively
+   * Queries installed sub-cards from a device. Free slot positions are not supplied.
+   * Note, this is equivalent to the other <code>chassisInstalledSubCardsRecursive</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link ChassisInstalledSubCardsRecursiveQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return ChassisInstalledSubCardsRecursiveResponse
+   */
+  @RequestLine("POST /api/rest/entity/chassis/{elid}/InstalledSubCardsRecursive?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  ChassisInstalledSubCardsRecursiveResponse chassisInstalledSubCardsRecursive(@Param("elid") String elid, ChassisInstalledSubCardsRecursiveRequest body, @QueryMap(encoded=true) ChassisInstalledSubCardsRecursiveQueryParams queryParams);
+
+  /**
+  * Query installed sub-cards recursively
+  * Queries installed sub-cards from a device. Free slot positions are not supplied.
+  * Note, this is equivalent to the other <code>chassisInstalledSubCardsRecursive</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return ChassisInstalledSubCardsRecursiveResponse
+      */
+      @RequestLine("POST /api/rest/entity/chassis/{elid}/InstalledSubCardsRecursive?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<ChassisInstalledSubCardsRecursiveResponse> chassisInstalledSubCardsRecursiveWithHttpInfo(@Param("elid") String elid, ChassisInstalledSubCardsRecursiveRequest body, @QueryMap(encoded=true) ChassisInstalledSubCardsRecursiveQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>chassisInstalledSubCardsRecursive</code> method in a fluent style.
+   */
+  public static class ChassisInstalledSubCardsRecursiveQueryParams extends HashMap<String, Object> {
+    public ChassisInstalledSubCardsRecursiveQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -1350,6 +1724,95 @@ public interface ChassisApi extends ApiClient.Api {
   }
 
   /**
+   * Get relations to Multiducts entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return ChassisMultiDuctsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/chassis/{elid}/MultiDucts?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ChassisMultiDuctsResponseData chassisMultiDucts(@Param("sessionId") String sessionId, @Param("elid") String elid, ChassisMultiDuctsRequestData body);
+
+  /**
+   * Get relations to Multiducts entities
+   * Similar to <code>chassisMultiDucts</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/chassis/{elid}/MultiDucts?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<ChassisMultiDuctsResponseData> chassisMultiDuctsWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ChassisMultiDuctsRequestData body);
+
+
+  /**
+   * Get relations to Multiducts entities
+   * 
+   * Note, this is equivalent to the other <code>chassisMultiDucts</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link ChassisMultiDuctsQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return ChassisMultiDuctsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/chassis/{elid}/MultiDucts?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  ChassisMultiDuctsResponseData chassisMultiDucts(@Param("elid") String elid, ChassisMultiDuctsRequestData body, @QueryMap(encoded=true) ChassisMultiDuctsQueryParams queryParams);
+
+  /**
+  * Get relations to Multiducts entities
+  * 
+  * Note, this is equivalent to the other <code>chassisMultiDucts</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return ChassisMultiDuctsResponseData
+      */
+      @RequestLine("POST /api/rest/entity/chassis/{elid}/MultiDucts?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<ChassisMultiDuctsResponseData> chassisMultiDuctsWithHttpInfo(@Param("elid") String elid, ChassisMultiDuctsRequestData body, @QueryMap(encoded=true) ChassisMultiDuctsQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>chassisMultiDucts</code> method in a fluent style.
+   */
+  public static class ChassisMultiDuctsQueryParams extends HashMap<String, Object> {
+    public ChassisMultiDuctsQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Nets / Net ranges
    * Query for querying all basic target entity data
    * @param sessionId Session-ID (required)
@@ -1884,24 +2347,113 @@ public interface ChassisApi extends ApiClient.Api {
   }
 
   /**
-   * Query Power ports
-   * Query for all basic target entity data
+   * Query physical ports data extended
+   * Query for fetching all basic target entity data.
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
-   * @return ChassisPhysicalPortsPowerResponse
+   * @return ChassisPhysicalPortsDataExtendedResponse
+   */
+  @RequestLine("POST /api/rest/entity/chassis/{elid}/PhysicalPortsDataExtended?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ChassisPhysicalPortsDataExtendedResponse chassisPhysicalPortsDataExtended(@Param("sessionId") String sessionId, @Param("elid") String elid, ChassisPhysicalPortsDataExtendedRequest body);
+
+  /**
+   * Query physical ports data extended
+   * Similar to <code>chassisPhysicalPortsDataExtended</code> but it also returns the http response headers .
+   * Query for fetching all basic target entity data.
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/chassis/{elid}/PhysicalPortsDataExtended?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<ChassisPhysicalPortsDataExtendedResponse> chassisPhysicalPortsDataExtendedWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ChassisPhysicalPortsDataExtendedRequest body);
+
+
+  /**
+   * Query physical ports data extended
+   * Query for fetching all basic target entity data.
+   * Note, this is equivalent to the other <code>chassisPhysicalPortsDataExtended</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link ChassisPhysicalPortsDataExtendedQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return ChassisPhysicalPortsDataExtendedResponse
+   */
+  @RequestLine("POST /api/rest/entity/chassis/{elid}/PhysicalPortsDataExtended?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  ChassisPhysicalPortsDataExtendedResponse chassisPhysicalPortsDataExtended(@Param("elid") String elid, ChassisPhysicalPortsDataExtendedRequest body, @QueryMap(encoded=true) ChassisPhysicalPortsDataExtendedQueryParams queryParams);
+
+  /**
+  * Query physical ports data extended
+  * Query for fetching all basic target entity data.
+  * Note, this is equivalent to the other <code>chassisPhysicalPortsDataExtended</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return ChassisPhysicalPortsDataExtendedResponse
+      */
+      @RequestLine("POST /api/rest/entity/chassis/{elid}/PhysicalPortsDataExtended?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<ChassisPhysicalPortsDataExtendedResponse> chassisPhysicalPortsDataExtendedWithHttpInfo(@Param("elid") String elid, ChassisPhysicalPortsDataExtendedRequest body, @QueryMap(encoded=true) ChassisPhysicalPortsDataExtendedQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>chassisPhysicalPortsDataExtended</code> method in a fluent style.
+   */
+  public static class ChassisPhysicalPortsDataExtendedQueryParams extends HashMap<String, Object> {
+    public ChassisPhysicalPortsDataExtendedQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Physical port (power) entities
+   * For more information call the basic query of the power port entity
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return ChassisPhysicalPortsPowerResponseData
    */
   @RequestLine("POST /api/rest/entity/chassis/{elid}/PhysicalPortsPower?sessionId={sessionId}")
   @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  ChassisPhysicalPortsPowerResponse chassisPhysicalPortsPower(@Param("sessionId") String sessionId, @Param("elid") String elid, ChassisPhysicalPortsPowerRequest body);
+  ChassisPhysicalPortsPowerResponseData chassisPhysicalPortsPower(@Param("sessionId") String sessionId, @Param("elid") String elid, ChassisPhysicalPortsPowerRequestData body);
 
   /**
-   * Query Power ports
+   * Get relations to Physical port (power) entities
    * Similar to <code>chassisPhysicalPortsPower</code> but it also returns the http response headers .
-   * Query for all basic target entity data
+   * For more information call the basic query of the power port entity
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
@@ -1912,12 +2464,12 @@ public interface ChassisApi extends ApiClient.Api {
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  ApiResponse<ChassisPhysicalPortsPowerResponse> chassisPhysicalPortsPowerWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ChassisPhysicalPortsPowerRequest body);
+  ApiResponse<ChassisPhysicalPortsPowerResponseData> chassisPhysicalPortsPowerWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ChassisPhysicalPortsPowerRequestData body);
 
 
   /**
-   * Query Power ports
-   * Query for all basic target entity data
+   * Get relations to Physical port (power) entities
+   * For more information call the basic query of the power port entity
    * Note, this is equivalent to the other <code>chassisPhysicalPortsPower</code> method,
    * but with the query parameters collected into a single Map parameter. This
    * is convenient for services with optional query parameters, especially when
@@ -1930,18 +2482,18 @@ public interface ChassisApi extends ApiClient.Api {
    *   <ul>
    *   <li>sessionId - Session-ID (required)</li>
    *   </ul>
-   * @return ChassisPhysicalPortsPowerResponse
+   * @return ChassisPhysicalPortsPowerResponseData
    */
   @RequestLine("POST /api/rest/entity/chassis/{elid}/PhysicalPortsPower?sessionId={sessionId}")
   @Headers({
   "Content-Type: application/json",
   "Accept: application/json",
   })
-  ChassisPhysicalPortsPowerResponse chassisPhysicalPortsPower(@Param("elid") String elid, ChassisPhysicalPortsPowerRequest body, @QueryMap(encoded=true) ChassisPhysicalPortsPowerQueryParams queryParams);
+  ChassisPhysicalPortsPowerResponseData chassisPhysicalPortsPower(@Param("elid") String elid, ChassisPhysicalPortsPowerRequestData body, @QueryMap(encoded=true) ChassisPhysicalPortsPowerQueryParams queryParams);
 
   /**
-  * Query Power ports
-  * Query for all basic target entity data
+  * Get relations to Physical port (power) entities
+  * For more information call the basic query of the power port entity
   * Note, this is equivalent to the other <code>chassisPhysicalPortsPower</code> that receives the query parameters as a map,
   * but this one also exposes the Http response headers
               * @param elid  (required)
@@ -1951,14 +2503,14 @@ public interface ChassisApi extends ApiClient.Api {
       *   <ul>
           *   <li>sessionId - Session-ID (required)</li>
       *   </ul>
-          * @return ChassisPhysicalPortsPowerResponse
+          * @return ChassisPhysicalPortsPowerResponseData
       */
       @RequestLine("POST /api/rest/entity/chassis/{elid}/PhysicalPortsPower?sessionId={sessionId}")
       @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
       })
-   ApiResponse<ChassisPhysicalPortsPowerResponse> chassisPhysicalPortsPowerWithHttpInfo(@Param("elid") String elid, ChassisPhysicalPortsPowerRequest body, @QueryMap(encoded=true) ChassisPhysicalPortsPowerQueryParams queryParams);
+   ApiResponse<ChassisPhysicalPortsPowerResponseData> chassisPhysicalPortsPowerWithHttpInfo(@Param("elid") String elid, ChassisPhysicalPortsPowerRequestData body, @QueryMap(encoded=true) ChassisPhysicalPortsPowerQueryParams queryParams);
 
 
    /**
@@ -1967,6 +2519,95 @@ public interface ChassisApi extends ApiClient.Api {
    */
   public static class ChassisPhysicalPortsPowerQueryParams extends HashMap<String, Object> {
     public ChassisPhysicalPortsPowerQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Query Power ports
+   * Query for fetching all basic target entity data.
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return ChassisPhysicalPortsPowerExtendedResponse
+   */
+  @RequestLine("POST /api/rest/entity/chassis/{elid}/PhysicalPortsPowerExtended?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ChassisPhysicalPortsPowerExtendedResponse chassisPhysicalPortsPowerExtended(@Param("sessionId") String sessionId, @Param("elid") String elid, ChassisPhysicalPortsPowerExtendedRequest body);
+
+  /**
+   * Query Power ports
+   * Similar to <code>chassisPhysicalPortsPowerExtended</code> but it also returns the http response headers .
+   * Query for fetching all basic target entity data.
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/chassis/{elid}/PhysicalPortsPowerExtended?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<ChassisPhysicalPortsPowerExtendedResponse> chassisPhysicalPortsPowerExtendedWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ChassisPhysicalPortsPowerExtendedRequest body);
+
+
+  /**
+   * Query Power ports
+   * Query for fetching all basic target entity data.
+   * Note, this is equivalent to the other <code>chassisPhysicalPortsPowerExtended</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link ChassisPhysicalPortsPowerExtendedQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return ChassisPhysicalPortsPowerExtendedResponse
+   */
+  @RequestLine("POST /api/rest/entity/chassis/{elid}/PhysicalPortsPowerExtended?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  ChassisPhysicalPortsPowerExtendedResponse chassisPhysicalPortsPowerExtended(@Param("elid") String elid, ChassisPhysicalPortsPowerExtendedRequest body, @QueryMap(encoded=true) ChassisPhysicalPortsPowerExtendedQueryParams queryParams);
+
+  /**
+  * Query Power ports
+  * Query for fetching all basic target entity data.
+  * Note, this is equivalent to the other <code>chassisPhysicalPortsPowerExtended</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return ChassisPhysicalPortsPowerExtendedResponse
+      */
+      @RequestLine("POST /api/rest/entity/chassis/{elid}/PhysicalPortsPowerExtended?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<ChassisPhysicalPortsPowerExtendedResponse> chassisPhysicalPortsPowerExtendedWithHttpInfo(@Param("elid") String elid, ChassisPhysicalPortsPowerExtendedRequest body, @QueryMap(encoded=true) ChassisPhysicalPortsPowerExtendedQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>chassisPhysicalPortsPowerExtended</code> method in a fluent style.
+   */
+  public static class ChassisPhysicalPortsPowerExtendedQueryParams extends HashMap<String, Object> {
+    public ChassisPhysicalPortsPowerExtendedQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -2143,6 +2784,91 @@ public interface ChassisApi extends ApiClient.Api {
   }
 
   /**
+   * Extended geo coordinates
+   * 
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return ChassisQueryExtendedGeoCoordinatesResponse
+   */
+  @RequestLine("POST /api/rest/entity/chassis/queryExtendedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ChassisQueryExtendedGeoCoordinatesResponse chassisQueryExtendedGeoCoordinates(@Param("sessionId") String sessionId, ChassisQueryExtendedGeoCoordinatesRequest body);
+
+  /**
+   * Extended geo coordinates
+   * Similar to <code>chassisQueryExtendedGeoCoordinates</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/chassis/queryExtendedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<ChassisQueryExtendedGeoCoordinatesResponse> chassisQueryExtendedGeoCoordinatesWithHttpInfo(@Param("sessionId") String sessionId, ChassisQueryExtendedGeoCoordinatesRequest body);
+
+
+  /**
+   * Extended geo coordinates
+   * 
+   * Note, this is equivalent to the other <code>chassisQueryExtendedGeoCoordinates</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link ChassisQueryExtendedGeoCoordinatesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return ChassisQueryExtendedGeoCoordinatesResponse
+   */
+  @RequestLine("POST /api/rest/entity/chassis/queryExtendedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  ChassisQueryExtendedGeoCoordinatesResponse chassisQueryExtendedGeoCoordinates(ChassisQueryExtendedGeoCoordinatesRequest body, @QueryMap(encoded=true) ChassisQueryExtendedGeoCoordinatesQueryParams queryParams);
+
+  /**
+  * Extended geo coordinates
+  * 
+  * Note, this is equivalent to the other <code>chassisQueryExtendedGeoCoordinates</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return ChassisQueryExtendedGeoCoordinatesResponse
+      */
+      @RequestLine("POST /api/rest/entity/chassis/queryExtendedGeoCoordinates?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<ChassisQueryExtendedGeoCoordinatesResponse> chassisQueryExtendedGeoCoordinatesWithHttpInfo(ChassisQueryExtendedGeoCoordinatesRequest body, @QueryMap(encoded=true) ChassisQueryExtendedGeoCoordinatesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>chassisQueryExtendedGeoCoordinates</code> method in a fluent style.
+   */
+  public static class ChassisQueryExtendedGeoCoordinatesQueryParams extends HashMap<String, Object> {
+    public ChassisQueryExtendedGeoCoordinatesQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Extended query scroll first
    * Queries linked master data and zone data. This query supports scrolling. Calls the query and returns the first results including the scroll-ID for the next call.
    * @param sessionId Session-ID (required)
@@ -2307,6 +3033,184 @@ public interface ChassisApi extends ApiClient.Api {
    */
   public static class ChassisQueryExtendedScrollMoreQueryParams extends HashMap<String, Object> {
     public ChassisQueryExtendedScrollMoreQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Query device services 
+   * Query services for device 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return ChassisServicesResponse
+   */
+  @RequestLine("POST /api/rest/entity/chassis/{elid}/Services?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ChassisServicesResponse chassisServices(@Param("sessionId") String sessionId, @Param("elid") String elid, ChassisServicesRequest body);
+
+  /**
+   * Query device services 
+   * Similar to <code>chassisServices</code> but it also returns the http response headers .
+   * Query services for device 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/chassis/{elid}/Services?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<ChassisServicesResponse> chassisServicesWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ChassisServicesRequest body);
+
+
+  /**
+   * Query device services 
+   * Query services for device 
+   * Note, this is equivalent to the other <code>chassisServices</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link ChassisServicesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return ChassisServicesResponse
+   */
+  @RequestLine("POST /api/rest/entity/chassis/{elid}/Services?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  ChassisServicesResponse chassisServices(@Param("elid") String elid, ChassisServicesRequest body, @QueryMap(encoded=true) ChassisServicesQueryParams queryParams);
+
+  /**
+  * Query device services 
+  * Query services for device 
+  * Note, this is equivalent to the other <code>chassisServices</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return ChassisServicesResponse
+      */
+      @RequestLine("POST /api/rest/entity/chassis/{elid}/Services?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<ChassisServicesResponse> chassisServicesWithHttpInfo(@Param("elid") String elid, ChassisServicesRequest body, @QueryMap(encoded=true) ChassisServicesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>chassisServices</code> method in a fluent style.
+   */
+  public static class ChassisServicesQueryParams extends HashMap<String, Object> {
+    public ChassisServicesQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Site entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return ChassisSitesResponseData
+   */
+  @RequestLine("POST /api/rest/entity/chassis/{elid}/Sites?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ChassisSitesResponseData chassisSites(@Param("sessionId") String sessionId, @Param("elid") String elid, ChassisSitesRequestData body);
+
+  /**
+   * Get relations to Site entities
+   * Similar to <code>chassisSites</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/chassis/{elid}/Sites?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<ChassisSitesResponseData> chassisSitesWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ChassisSitesRequestData body);
+
+
+  /**
+   * Get relations to Site entities
+   * 
+   * Note, this is equivalent to the other <code>chassisSites</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link ChassisSitesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return ChassisSitesResponseData
+   */
+  @RequestLine("POST /api/rest/entity/chassis/{elid}/Sites?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  ChassisSitesResponseData chassisSites(@Param("elid") String elid, ChassisSitesRequestData body, @QueryMap(encoded=true) ChassisSitesQueryParams queryParams);
+
+  /**
+  * Get relations to Site entities
+  * 
+  * Note, this is equivalent to the other <code>chassisSites</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return ChassisSitesResponseData
+      */
+      @RequestLine("POST /api/rest/entity/chassis/{elid}/Sites?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<ChassisSitesResponseData> chassisSitesWithHttpInfo(@Param("elid") String elid, ChassisSitesRequestData body, @QueryMap(encoded=true) ChassisSitesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>chassisSites</code> method in a fluent style.
+   */
+  public static class ChassisSitesQueryParams extends HashMap<String, Object> {
+    public ChassisSitesQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -3804,6 +4708,95 @@ public interface ChassisApi extends ApiClient.Api {
    */
   public static class PlaceInZoneChassisQueryParams extends HashMap<String, Object> {
     public PlaceInZoneChassisQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Replace object
+   * Replace object
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return ReplaceObjectChassisResponse
+   */
+  @RequestLine("POST /api/rest/entity/chassis/{elid}/replaceObject?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ReplaceObjectChassisResponse replaceObjectChassis(@Param("sessionId") String sessionId, @Param("elid") String elid, ReplaceObjectChassisRequestData body);
+
+  /**
+   * Replace object
+   * Similar to <code>replaceObjectChassis</code> but it also returns the http response headers .
+   * Replace object
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/chassis/{elid}/replaceObject?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<ReplaceObjectChassisResponse> replaceObjectChassisWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ReplaceObjectChassisRequestData body);
+
+
+  /**
+   * Replace object
+   * Replace object
+   * Note, this is equivalent to the other <code>replaceObjectChassis</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link ReplaceObjectChassisQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return ReplaceObjectChassisResponse
+   */
+  @RequestLine("POST /api/rest/entity/chassis/{elid}/replaceObject?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  ReplaceObjectChassisResponse replaceObjectChassis(@Param("elid") String elid, ReplaceObjectChassisRequestData body, @QueryMap(encoded=true) ReplaceObjectChassisQueryParams queryParams);
+
+  /**
+  * Replace object
+  * Replace object
+  * Note, this is equivalent to the other <code>replaceObjectChassis</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return ReplaceObjectChassisResponse
+      */
+      @RequestLine("POST /api/rest/entity/chassis/{elid}/replaceObject?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<ReplaceObjectChassisResponse> replaceObjectChassisWithHttpInfo(@Param("elid") String elid, ReplaceObjectChassisRequestData body, @QueryMap(encoded=true) ReplaceObjectChassisQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>replaceObjectChassis</code> method in a fluent style.
+   */
+  public static class ReplaceObjectChassisQueryParams extends HashMap<String, Object> {
+    public ReplaceObjectChassisQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

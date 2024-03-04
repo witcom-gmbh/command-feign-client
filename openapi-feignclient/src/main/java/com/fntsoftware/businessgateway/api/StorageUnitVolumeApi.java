@@ -16,8 +16,8 @@ import com.fntsoftware.businessgateway.entities.StorageUnitVolume100037RequestDa
 import com.fntsoftware.businessgateway.entities.StorageUnitVolume100037ResponseData;
 import com.fntsoftware.businessgateway.entities.StorageUnitVolumeContractsRequestData;
 import com.fntsoftware.businessgateway.entities.StorageUnitVolumeContractsResponseData;
-import com.fntsoftware.businessgateway.entities.StorageUnitVolumeCustomServersRequestData;
-import com.fntsoftware.businessgateway.entities.StorageUnitVolumeCustomServersResponseData;
+import com.fntsoftware.businessgateway.entities.StorageUnitVolumeCustomServersBaseRequestData;
+import com.fntsoftware.businessgateway.entities.StorageUnitVolumeCustomServersBaseResponseData;
 import com.fntsoftware.businessgateway.entities.StorageUnitVolumeFileSystemsRequestData;
 import com.fntsoftware.businessgateway.entities.StorageUnitVolumeFileSystemsResponseData;
 import com.fntsoftware.businessgateway.entities.StorageUnitVolumeFrameContractsRequestData;
@@ -53,7 +53,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-04T13:31:32.601557352Z[Etc/UTC]")
 public interface StorageUnitVolumeApi extends ApiClient.Api {
 
 
@@ -588,44 +588,44 @@ public interface StorageUnitVolumeApi extends ApiClient.Api {
   }
 
   /**
-   * Get relations to Server entities
+   * Get relations to Server (base) entities
    * 
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
-   * @return StorageUnitVolumeCustomServersResponseData
+   * @return StorageUnitVolumeCustomServersBaseResponseData
    */
-  @RequestLine("POST /api/rest/entity/storageUnitVolume/{elid}/CustomServers?sessionId={sessionId}")
+  @RequestLine("POST /api/rest/entity/storageUnitVolume/{elid}/CustomServersBase?sessionId={sessionId}")
   @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  StorageUnitVolumeCustomServersResponseData storageUnitVolumeCustomServers(@Param("sessionId") String sessionId, @Param("elid") String elid, StorageUnitVolumeCustomServersRequestData body);
+  StorageUnitVolumeCustomServersBaseResponseData storageUnitVolumeCustomServersBase(@Param("sessionId") String sessionId, @Param("elid") String elid, StorageUnitVolumeCustomServersBaseRequestData body);
 
   /**
-   * Get relations to Server entities
-   * Similar to <code>storageUnitVolumeCustomServers</code> but it also returns the http response headers .
+   * Get relations to Server (base) entities
+   * Similar to <code>storageUnitVolumeCustomServersBase</code> but it also returns the http response headers .
    * 
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
    * @return A ApiResponse that wraps the response boyd and the http headers.
    */
-  @RequestLine("POST /api/rest/entity/storageUnitVolume/{elid}/CustomServers?sessionId={sessionId}")
+  @RequestLine("POST /api/rest/entity/storageUnitVolume/{elid}/CustomServersBase?sessionId={sessionId}")
   @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  ApiResponse<StorageUnitVolumeCustomServersResponseData> storageUnitVolumeCustomServersWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, StorageUnitVolumeCustomServersRequestData body);
+  ApiResponse<StorageUnitVolumeCustomServersBaseResponseData> storageUnitVolumeCustomServersBaseWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, StorageUnitVolumeCustomServersBaseRequestData body);
 
 
   /**
-   * Get relations to Server entities
+   * Get relations to Server (base) entities
    * 
-   * Note, this is equivalent to the other <code>storageUnitVolumeCustomServers</code> method,
+   * Note, this is equivalent to the other <code>storageUnitVolumeCustomServersBase</code> method,
    * but with the query parameters collected into a single Map parameter. This
    * is convenient for services with optional query parameters, especially when
-   * used with the {@link StorageUnitVolumeCustomServersQueryParams} class that allows for
+   * used with the {@link StorageUnitVolumeCustomServersBaseQueryParams} class that allows for
    * building up this map in a fluent style.
    * @param elid  (required)
    * @param body  (required)
@@ -634,19 +634,19 @@ public interface StorageUnitVolumeApi extends ApiClient.Api {
    *   <ul>
    *   <li>sessionId - Session-ID (required)</li>
    *   </ul>
-   * @return StorageUnitVolumeCustomServersResponseData
+   * @return StorageUnitVolumeCustomServersBaseResponseData
    */
-  @RequestLine("POST /api/rest/entity/storageUnitVolume/{elid}/CustomServers?sessionId={sessionId}")
+  @RequestLine("POST /api/rest/entity/storageUnitVolume/{elid}/CustomServersBase?sessionId={sessionId}")
   @Headers({
   "Content-Type: application/json",
   "Accept: application/json",
   })
-  StorageUnitVolumeCustomServersResponseData storageUnitVolumeCustomServers(@Param("elid") String elid, StorageUnitVolumeCustomServersRequestData body, @QueryMap(encoded=true) StorageUnitVolumeCustomServersQueryParams queryParams);
+  StorageUnitVolumeCustomServersBaseResponseData storageUnitVolumeCustomServersBase(@Param("elid") String elid, StorageUnitVolumeCustomServersBaseRequestData body, @QueryMap(encoded=true) StorageUnitVolumeCustomServersBaseQueryParams queryParams);
 
   /**
-  * Get relations to Server entities
+  * Get relations to Server (base) entities
   * 
-  * Note, this is equivalent to the other <code>storageUnitVolumeCustomServers</code> that receives the query parameters as a map,
+  * Note, this is equivalent to the other <code>storageUnitVolumeCustomServersBase</code> that receives the query parameters as a map,
   * but this one also exposes the Http response headers
               * @param elid  (required)
               * @param body  (required)
@@ -655,22 +655,22 @@ public interface StorageUnitVolumeApi extends ApiClient.Api {
       *   <ul>
           *   <li>sessionId - Session-ID (required)</li>
       *   </ul>
-          * @return StorageUnitVolumeCustomServersResponseData
+          * @return StorageUnitVolumeCustomServersBaseResponseData
       */
-      @RequestLine("POST /api/rest/entity/storageUnitVolume/{elid}/CustomServers?sessionId={sessionId}")
+      @RequestLine("POST /api/rest/entity/storageUnitVolume/{elid}/CustomServersBase?sessionId={sessionId}")
       @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
       })
-   ApiResponse<StorageUnitVolumeCustomServersResponseData> storageUnitVolumeCustomServersWithHttpInfo(@Param("elid") String elid, StorageUnitVolumeCustomServersRequestData body, @QueryMap(encoded=true) StorageUnitVolumeCustomServersQueryParams queryParams);
+   ApiResponse<StorageUnitVolumeCustomServersBaseResponseData> storageUnitVolumeCustomServersBaseWithHttpInfo(@Param("elid") String elid, StorageUnitVolumeCustomServersBaseRequestData body, @QueryMap(encoded=true) StorageUnitVolumeCustomServersBaseQueryParams queryParams);
 
 
    /**
    * A convenience class for generating query parameters for the
-   * <code>storageUnitVolumeCustomServers</code> method in a fluent style.
+   * <code>storageUnitVolumeCustomServersBase</code> method in a fluent style.
    */
-  public static class StorageUnitVolumeCustomServersQueryParams extends HashMap<String, Object> {
-    public StorageUnitVolumeCustomServersQueryParams sessionId(final String value) {
+  public static class StorageUnitVolumeCustomServersBaseQueryParams extends HashMap<String, Object> {
+    public StorageUnitVolumeCustomServersBaseQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

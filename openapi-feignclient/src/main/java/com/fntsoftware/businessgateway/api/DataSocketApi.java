@@ -10,8 +10,16 @@ import com.fntsoftware.businessgateway.entities.DataSocketContractsRequestData;
 import com.fntsoftware.businessgateway.entities.DataSocketContractsResponseData;
 import com.fntsoftware.businessgateway.entities.DataSocketDeviceMasterRequestData;
 import com.fntsoftware.businessgateway.entities.DataSocketDeviceMasterResponseData;
+import com.fntsoftware.businessgateway.entities.DataSocketDuctDataRequest;
+import com.fntsoftware.businessgateway.entities.DataSocketDuctDataResponse;
+import com.fntsoftware.businessgateway.entities.DataSocketDuctsRequestData;
+import com.fntsoftware.businessgateway.entities.DataSocketDuctsResponseData;
 import com.fntsoftware.businessgateway.entities.DataSocketFrameContractsRequestData;
 import com.fntsoftware.businessgateway.entities.DataSocketFrameContractsResponseData;
+import com.fntsoftware.businessgateway.entities.DataSocketInheritedGeoCoordinatesRequest;
+import com.fntsoftware.businessgateway.entities.DataSocketInheritedGeoCoordinatesResponse;
+import com.fntsoftware.businessgateway.entities.DataSocketInstalledSubCardsRecursiveRequest;
+import com.fntsoftware.businessgateway.entities.DataSocketInstalledSubCardsRecursiveResponse;
 import com.fntsoftware.businessgateway.entities.DataSocketInstalledSubCardsRequest;
 import com.fntsoftware.businessgateway.entities.DataSocketInstalledSubCardsResponse;
 import com.fntsoftware.businessgateway.entities.DataSocketInterfacesRequestData;
@@ -30,6 +38,8 @@ import com.fntsoftware.businessgateway.entities.DataSocketLogicalPortsRequestDat
 import com.fntsoftware.businessgateway.entities.DataSocketLogicalPortsResponseData;
 import com.fntsoftware.businessgateway.entities.DataSocketMaintenanceContractsRequestData;
 import com.fntsoftware.businessgateway.entities.DataSocketMaintenanceContractsResponseData;
+import com.fntsoftware.businessgateway.entities.DataSocketMultiDuctsRequestData;
+import com.fntsoftware.businessgateway.entities.DataSocketMultiDuctsResponseData;
 import com.fntsoftware.businessgateway.entities.DataSocketNetworksAndNetrangesRequest;
 import com.fntsoftware.businessgateway.entities.DataSocketNetworksAndNetrangesResponse;
 import com.fntsoftware.businessgateway.entities.DataSocketOperatingSystemInstallationRequestData;
@@ -40,10 +50,16 @@ import com.fntsoftware.businessgateway.entities.DataSocketPersonGroupsRequestDat
 import com.fntsoftware.businessgateway.entities.DataSocketPersonGroupsResponseData;
 import com.fntsoftware.businessgateway.entities.DataSocketPersonsRequestData;
 import com.fntsoftware.businessgateway.entities.DataSocketPersonsResponseData;
+import com.fntsoftware.businessgateway.entities.DataSocketPhysicalPortsDataExtendedRequest;
+import com.fntsoftware.businessgateway.entities.DataSocketPhysicalPortsDataExtendedResponse;
 import com.fntsoftware.businessgateway.entities.DataSocketPhysicalPortsDataRequestData;
 import com.fntsoftware.businessgateway.entities.DataSocketPhysicalPortsDataResponseData;
-import com.fntsoftware.businessgateway.entities.DataSocketPhysicalPortsPowerRequest;
-import com.fntsoftware.businessgateway.entities.DataSocketPhysicalPortsPowerResponse;
+import com.fntsoftware.businessgateway.entities.DataSocketPhysicalPortsPowerExtendedRequest;
+import com.fntsoftware.businessgateway.entities.DataSocketPhysicalPortsPowerExtendedResponse;
+import com.fntsoftware.businessgateway.entities.DataSocketPhysicalPortsPowerRequestData;
+import com.fntsoftware.businessgateway.entities.DataSocketPhysicalPortsPowerResponseData;
+import com.fntsoftware.businessgateway.entities.DataSocketQueryExtendedGeoCoordinatesRequest;
+import com.fntsoftware.businessgateway.entities.DataSocketQueryExtendedGeoCoordinatesResponse;
 import com.fntsoftware.businessgateway.entities.DataSocketQueryExtendedRequest;
 import com.fntsoftware.businessgateway.entities.DataSocketQueryExtendedResponse;
 import com.fntsoftware.businessgateway.entities.DataSocketQueryExtendedScrollFirstRequest;
@@ -52,6 +68,10 @@ import com.fntsoftware.businessgateway.entities.DataSocketQueryExtendedScrollMor
 import com.fntsoftware.businessgateway.entities.DataSocketQueryExtendedScrollMoreResponse;
 import com.fntsoftware.businessgateway.entities.DataSocketQueryRequest;
 import com.fntsoftware.businessgateway.entities.DataSocketQueryResponse;
+import com.fntsoftware.businessgateway.entities.DataSocketServicesRequest;
+import com.fntsoftware.businessgateway.entities.DataSocketServicesResponse;
+import com.fntsoftware.businessgateway.entities.DataSocketSitesRequestData;
+import com.fntsoftware.businessgateway.entities.DataSocketSitesResponseData;
 import com.fntsoftware.businessgateway.entities.DataSocketSlotRequestData;
 import com.fntsoftware.businessgateway.entities.DataSocketSlotResponseData;
 import com.fntsoftware.businessgateway.entities.DataSocketSwitchCabinetRequestData;
@@ -86,6 +106,8 @@ import com.fntsoftware.businessgateway.entities.PlaceInWarehouseDataSocketReques
 import com.fntsoftware.businessgateway.entities.PlaceInWarehouseDataSocketResponse;
 import com.fntsoftware.businessgateway.entities.PlaceInZoneDataSocketRequestData;
 import com.fntsoftware.businessgateway.entities.PlaceInZoneDataSocketResponse;
+import com.fntsoftware.businessgateway.entities.ReplaceObjectDataSocketRequestData;
+import com.fntsoftware.businessgateway.entities.ReplaceObjectDataSocketResponse;
 import com.fntsoftware.businessgateway.entities.UpdateDataSocketRequestData;
 import com.fntsoftware.businessgateway.entities.UpdateDataSocketResponse;
 import com.fntsoftware.businessgateway.entities.UpdateSystemAttributesDataSocketRequestData;
@@ -97,7 +119,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-04T13:31:32.601557352Z[Etc/UTC]")
 public interface DataSocketApi extends ApiClient.Api {
 
 
@@ -369,6 +391,184 @@ public interface DataSocketApi extends ApiClient.Api {
   }
 
   /**
+   * Query duct data
+   * Query associated ducts and multipipes
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return DataSocketDuctDataResponse
+   */
+  @RequestLine("POST /api/rest/entity/dataSocket/{elid}/DuctData?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  DataSocketDuctDataResponse dataSocketDuctData(@Param("sessionId") String sessionId, @Param("elid") String elid, DataSocketDuctDataRequest body);
+
+  /**
+   * Query duct data
+   * Similar to <code>dataSocketDuctData</code> but it also returns the http response headers .
+   * Query associated ducts and multipipes
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/dataSocket/{elid}/DuctData?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<DataSocketDuctDataResponse> dataSocketDuctDataWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, DataSocketDuctDataRequest body);
+
+
+  /**
+   * Query duct data
+   * Query associated ducts and multipipes
+   * Note, this is equivalent to the other <code>dataSocketDuctData</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link DataSocketDuctDataQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return DataSocketDuctDataResponse
+   */
+  @RequestLine("POST /api/rest/entity/dataSocket/{elid}/DuctData?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  DataSocketDuctDataResponse dataSocketDuctData(@Param("elid") String elid, DataSocketDuctDataRequest body, @QueryMap(encoded=true) DataSocketDuctDataQueryParams queryParams);
+
+  /**
+  * Query duct data
+  * Query associated ducts and multipipes
+  * Note, this is equivalent to the other <code>dataSocketDuctData</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return DataSocketDuctDataResponse
+      */
+      @RequestLine("POST /api/rest/entity/dataSocket/{elid}/DuctData?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<DataSocketDuctDataResponse> dataSocketDuctDataWithHttpInfo(@Param("elid") String elid, DataSocketDuctDataRequest body, @QueryMap(encoded=true) DataSocketDuctDataQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>dataSocketDuctData</code> method in a fluent style.
+   */
+  public static class DataSocketDuctDataQueryParams extends HashMap<String, Object> {
+    public DataSocketDuctDataQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Duct entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return DataSocketDuctsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/dataSocket/{elid}/Ducts?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  DataSocketDuctsResponseData dataSocketDucts(@Param("sessionId") String sessionId, @Param("elid") String elid, DataSocketDuctsRequestData body);
+
+  /**
+   * Get relations to Duct entities
+   * Similar to <code>dataSocketDucts</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/dataSocket/{elid}/Ducts?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<DataSocketDuctsResponseData> dataSocketDuctsWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, DataSocketDuctsRequestData body);
+
+
+  /**
+   * Get relations to Duct entities
+   * 
+   * Note, this is equivalent to the other <code>dataSocketDucts</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link DataSocketDuctsQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return DataSocketDuctsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/dataSocket/{elid}/Ducts?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  DataSocketDuctsResponseData dataSocketDucts(@Param("elid") String elid, DataSocketDuctsRequestData body, @QueryMap(encoded=true) DataSocketDuctsQueryParams queryParams);
+
+  /**
+  * Get relations to Duct entities
+  * 
+  * Note, this is equivalent to the other <code>dataSocketDucts</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return DataSocketDuctsResponseData
+      */
+      @RequestLine("POST /api/rest/entity/dataSocket/{elid}/Ducts?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<DataSocketDuctsResponseData> dataSocketDuctsWithHttpInfo(@Param("elid") String elid, DataSocketDuctsRequestData body, @QueryMap(encoded=true) DataSocketDuctsQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>dataSocketDucts</code> method in a fluent style.
+   */
+  public static class DataSocketDuctsQueryParams extends HashMap<String, Object> {
+    public DataSocketDuctsQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Get relations to Frame contract entities
    * 
    * @param sessionId Session-ID (required)
@@ -458,6 +658,91 @@ public interface DataSocketApi extends ApiClient.Api {
   }
 
   /**
+   * Query inherited coordinates
+   * Query the own coordinates of an object or inherit them from parents
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return DataSocketInheritedGeoCoordinatesResponse
+   */
+  @RequestLine("POST /api/rest/entity/dataSocket/inheritedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  DataSocketInheritedGeoCoordinatesResponse dataSocketInheritedGeoCoordinates(@Param("sessionId") String sessionId, DataSocketInheritedGeoCoordinatesRequest body);
+
+  /**
+   * Query inherited coordinates
+   * Similar to <code>dataSocketInheritedGeoCoordinates</code> but it also returns the http response headers .
+   * Query the own coordinates of an object or inherit them from parents
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/dataSocket/inheritedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<DataSocketInheritedGeoCoordinatesResponse> dataSocketInheritedGeoCoordinatesWithHttpInfo(@Param("sessionId") String sessionId, DataSocketInheritedGeoCoordinatesRequest body);
+
+
+  /**
+   * Query inherited coordinates
+   * Query the own coordinates of an object or inherit them from parents
+   * Note, this is equivalent to the other <code>dataSocketInheritedGeoCoordinates</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link DataSocketInheritedGeoCoordinatesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return DataSocketInheritedGeoCoordinatesResponse
+   */
+  @RequestLine("POST /api/rest/entity/dataSocket/inheritedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  DataSocketInheritedGeoCoordinatesResponse dataSocketInheritedGeoCoordinates(DataSocketInheritedGeoCoordinatesRequest body, @QueryMap(encoded=true) DataSocketInheritedGeoCoordinatesQueryParams queryParams);
+
+  /**
+  * Query inherited coordinates
+  * Query the own coordinates of an object or inherit them from parents
+  * Note, this is equivalent to the other <code>dataSocketInheritedGeoCoordinates</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return DataSocketInheritedGeoCoordinatesResponse
+      */
+      @RequestLine("POST /api/rest/entity/dataSocket/inheritedGeoCoordinates?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<DataSocketInheritedGeoCoordinatesResponse> dataSocketInheritedGeoCoordinatesWithHttpInfo(DataSocketInheritedGeoCoordinatesRequest body, @QueryMap(encoded=true) DataSocketInheritedGeoCoordinatesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>dataSocketInheritedGeoCoordinates</code> method in a fluent style.
+   */
+  public static class DataSocketInheritedGeoCoordinatesQueryParams extends HashMap<String, Object> {
+    public DataSocketInheritedGeoCoordinatesQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Query installed subcards
    * Queries installed subcards. Only direct subcards will be returned. Free slot positions will not be returned.
    * @param sessionId Session-ID (required)
@@ -541,6 +826,95 @@ public interface DataSocketApi extends ApiClient.Api {
    */
   public static class DataSocketInstalledSubCardsQueryParams extends HashMap<String, Object> {
     public DataSocketInstalledSubCardsQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Query installed sub-cards recursively
+   * Queries installed sub-cards from a device. Free slot positions are not supplied.
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return DataSocketInstalledSubCardsRecursiveResponse
+   */
+  @RequestLine("POST /api/rest/entity/dataSocket/{elid}/InstalledSubCardsRecursive?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  DataSocketInstalledSubCardsRecursiveResponse dataSocketInstalledSubCardsRecursive(@Param("sessionId") String sessionId, @Param("elid") String elid, DataSocketInstalledSubCardsRecursiveRequest body);
+
+  /**
+   * Query installed sub-cards recursively
+   * Similar to <code>dataSocketInstalledSubCardsRecursive</code> but it also returns the http response headers .
+   * Queries installed sub-cards from a device. Free slot positions are not supplied.
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/dataSocket/{elid}/InstalledSubCardsRecursive?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<DataSocketInstalledSubCardsRecursiveResponse> dataSocketInstalledSubCardsRecursiveWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, DataSocketInstalledSubCardsRecursiveRequest body);
+
+
+  /**
+   * Query installed sub-cards recursively
+   * Queries installed sub-cards from a device. Free slot positions are not supplied.
+   * Note, this is equivalent to the other <code>dataSocketInstalledSubCardsRecursive</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link DataSocketInstalledSubCardsRecursiveQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return DataSocketInstalledSubCardsRecursiveResponse
+   */
+  @RequestLine("POST /api/rest/entity/dataSocket/{elid}/InstalledSubCardsRecursive?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  DataSocketInstalledSubCardsRecursiveResponse dataSocketInstalledSubCardsRecursive(@Param("elid") String elid, DataSocketInstalledSubCardsRecursiveRequest body, @QueryMap(encoded=true) DataSocketInstalledSubCardsRecursiveQueryParams queryParams);
+
+  /**
+  * Query installed sub-cards recursively
+  * Queries installed sub-cards from a device. Free slot positions are not supplied.
+  * Note, this is equivalent to the other <code>dataSocketInstalledSubCardsRecursive</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return DataSocketInstalledSubCardsRecursiveResponse
+      */
+      @RequestLine("POST /api/rest/entity/dataSocket/{elid}/InstalledSubCardsRecursive?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<DataSocketInstalledSubCardsRecursiveResponse> dataSocketInstalledSubCardsRecursiveWithHttpInfo(@Param("elid") String elid, DataSocketInstalledSubCardsRecursiveRequest body, @QueryMap(encoded=true) DataSocketInstalledSubCardsRecursiveQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>dataSocketInstalledSubCardsRecursive</code> method in a fluent style.
+   */
+  public static class DataSocketInstalledSubCardsRecursiveQueryParams extends HashMap<String, Object> {
+    public DataSocketInstalledSubCardsRecursiveQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -1259,6 +1633,95 @@ public interface DataSocketApi extends ApiClient.Api {
   }
 
   /**
+   * Get relations to Multiducts entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return DataSocketMultiDuctsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/dataSocket/{elid}/MultiDucts?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  DataSocketMultiDuctsResponseData dataSocketMultiDucts(@Param("sessionId") String sessionId, @Param("elid") String elid, DataSocketMultiDuctsRequestData body);
+
+  /**
+   * Get relations to Multiducts entities
+   * Similar to <code>dataSocketMultiDucts</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/dataSocket/{elid}/MultiDucts?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<DataSocketMultiDuctsResponseData> dataSocketMultiDuctsWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, DataSocketMultiDuctsRequestData body);
+
+
+  /**
+   * Get relations to Multiducts entities
+   * 
+   * Note, this is equivalent to the other <code>dataSocketMultiDucts</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link DataSocketMultiDuctsQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return DataSocketMultiDuctsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/dataSocket/{elid}/MultiDucts?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  DataSocketMultiDuctsResponseData dataSocketMultiDucts(@Param("elid") String elid, DataSocketMultiDuctsRequestData body, @QueryMap(encoded=true) DataSocketMultiDuctsQueryParams queryParams);
+
+  /**
+  * Get relations to Multiducts entities
+  * 
+  * Note, this is equivalent to the other <code>dataSocketMultiDucts</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return DataSocketMultiDuctsResponseData
+      */
+      @RequestLine("POST /api/rest/entity/dataSocket/{elid}/MultiDucts?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<DataSocketMultiDuctsResponseData> dataSocketMultiDuctsWithHttpInfo(@Param("elid") String elid, DataSocketMultiDuctsRequestData body, @QueryMap(encoded=true) DataSocketMultiDuctsQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>dataSocketMultiDucts</code> method in a fluent style.
+   */
+  public static class DataSocketMultiDuctsQueryParams extends HashMap<String, Object> {
+    public DataSocketMultiDuctsQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Nets / Net ranges
    * Query for querying all basic target entity data
    * @param sessionId Session-ID (required)
@@ -1793,24 +2256,113 @@ public interface DataSocketApi extends ApiClient.Api {
   }
 
   /**
-   * Query Power ports
-   * Query for all basic target entity data
+   * Query physical ports data extended
+   * Query for fetching all basic target entity data.
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
-   * @return DataSocketPhysicalPortsPowerResponse
+   * @return DataSocketPhysicalPortsDataExtendedResponse
+   */
+  @RequestLine("POST /api/rest/entity/dataSocket/{elid}/PhysicalPortsDataExtended?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  DataSocketPhysicalPortsDataExtendedResponse dataSocketPhysicalPortsDataExtended(@Param("sessionId") String sessionId, @Param("elid") String elid, DataSocketPhysicalPortsDataExtendedRequest body);
+
+  /**
+   * Query physical ports data extended
+   * Similar to <code>dataSocketPhysicalPortsDataExtended</code> but it also returns the http response headers .
+   * Query for fetching all basic target entity data.
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/dataSocket/{elid}/PhysicalPortsDataExtended?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<DataSocketPhysicalPortsDataExtendedResponse> dataSocketPhysicalPortsDataExtendedWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, DataSocketPhysicalPortsDataExtendedRequest body);
+
+
+  /**
+   * Query physical ports data extended
+   * Query for fetching all basic target entity data.
+   * Note, this is equivalent to the other <code>dataSocketPhysicalPortsDataExtended</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link DataSocketPhysicalPortsDataExtendedQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return DataSocketPhysicalPortsDataExtendedResponse
+   */
+  @RequestLine("POST /api/rest/entity/dataSocket/{elid}/PhysicalPortsDataExtended?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  DataSocketPhysicalPortsDataExtendedResponse dataSocketPhysicalPortsDataExtended(@Param("elid") String elid, DataSocketPhysicalPortsDataExtendedRequest body, @QueryMap(encoded=true) DataSocketPhysicalPortsDataExtendedQueryParams queryParams);
+
+  /**
+  * Query physical ports data extended
+  * Query for fetching all basic target entity data.
+  * Note, this is equivalent to the other <code>dataSocketPhysicalPortsDataExtended</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return DataSocketPhysicalPortsDataExtendedResponse
+      */
+      @RequestLine("POST /api/rest/entity/dataSocket/{elid}/PhysicalPortsDataExtended?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<DataSocketPhysicalPortsDataExtendedResponse> dataSocketPhysicalPortsDataExtendedWithHttpInfo(@Param("elid") String elid, DataSocketPhysicalPortsDataExtendedRequest body, @QueryMap(encoded=true) DataSocketPhysicalPortsDataExtendedQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>dataSocketPhysicalPortsDataExtended</code> method in a fluent style.
+   */
+  public static class DataSocketPhysicalPortsDataExtendedQueryParams extends HashMap<String, Object> {
+    public DataSocketPhysicalPortsDataExtendedQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Physical port (power) entities
+   * For more information call the basic query of the power port entity
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return DataSocketPhysicalPortsPowerResponseData
    */
   @RequestLine("POST /api/rest/entity/dataSocket/{elid}/PhysicalPortsPower?sessionId={sessionId}")
   @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  DataSocketPhysicalPortsPowerResponse dataSocketPhysicalPortsPower(@Param("sessionId") String sessionId, @Param("elid") String elid, DataSocketPhysicalPortsPowerRequest body);
+  DataSocketPhysicalPortsPowerResponseData dataSocketPhysicalPortsPower(@Param("sessionId") String sessionId, @Param("elid") String elid, DataSocketPhysicalPortsPowerRequestData body);
 
   /**
-   * Query Power ports
+   * Get relations to Physical port (power) entities
    * Similar to <code>dataSocketPhysicalPortsPower</code> but it also returns the http response headers .
-   * Query for all basic target entity data
+   * For more information call the basic query of the power port entity
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
@@ -1821,12 +2373,12 @@ public interface DataSocketApi extends ApiClient.Api {
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  ApiResponse<DataSocketPhysicalPortsPowerResponse> dataSocketPhysicalPortsPowerWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, DataSocketPhysicalPortsPowerRequest body);
+  ApiResponse<DataSocketPhysicalPortsPowerResponseData> dataSocketPhysicalPortsPowerWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, DataSocketPhysicalPortsPowerRequestData body);
 
 
   /**
-   * Query Power ports
-   * Query for all basic target entity data
+   * Get relations to Physical port (power) entities
+   * For more information call the basic query of the power port entity
    * Note, this is equivalent to the other <code>dataSocketPhysicalPortsPower</code> method,
    * but with the query parameters collected into a single Map parameter. This
    * is convenient for services with optional query parameters, especially when
@@ -1839,18 +2391,18 @@ public interface DataSocketApi extends ApiClient.Api {
    *   <ul>
    *   <li>sessionId - Session-ID (required)</li>
    *   </ul>
-   * @return DataSocketPhysicalPortsPowerResponse
+   * @return DataSocketPhysicalPortsPowerResponseData
    */
   @RequestLine("POST /api/rest/entity/dataSocket/{elid}/PhysicalPortsPower?sessionId={sessionId}")
   @Headers({
   "Content-Type: application/json",
   "Accept: application/json",
   })
-  DataSocketPhysicalPortsPowerResponse dataSocketPhysicalPortsPower(@Param("elid") String elid, DataSocketPhysicalPortsPowerRequest body, @QueryMap(encoded=true) DataSocketPhysicalPortsPowerQueryParams queryParams);
+  DataSocketPhysicalPortsPowerResponseData dataSocketPhysicalPortsPower(@Param("elid") String elid, DataSocketPhysicalPortsPowerRequestData body, @QueryMap(encoded=true) DataSocketPhysicalPortsPowerQueryParams queryParams);
 
   /**
-  * Query Power ports
-  * Query for all basic target entity data
+  * Get relations to Physical port (power) entities
+  * For more information call the basic query of the power port entity
   * Note, this is equivalent to the other <code>dataSocketPhysicalPortsPower</code> that receives the query parameters as a map,
   * but this one also exposes the Http response headers
               * @param elid  (required)
@@ -1860,14 +2412,14 @@ public interface DataSocketApi extends ApiClient.Api {
       *   <ul>
           *   <li>sessionId - Session-ID (required)</li>
       *   </ul>
-          * @return DataSocketPhysicalPortsPowerResponse
+          * @return DataSocketPhysicalPortsPowerResponseData
       */
       @RequestLine("POST /api/rest/entity/dataSocket/{elid}/PhysicalPortsPower?sessionId={sessionId}")
       @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
       })
-   ApiResponse<DataSocketPhysicalPortsPowerResponse> dataSocketPhysicalPortsPowerWithHttpInfo(@Param("elid") String elid, DataSocketPhysicalPortsPowerRequest body, @QueryMap(encoded=true) DataSocketPhysicalPortsPowerQueryParams queryParams);
+   ApiResponse<DataSocketPhysicalPortsPowerResponseData> dataSocketPhysicalPortsPowerWithHttpInfo(@Param("elid") String elid, DataSocketPhysicalPortsPowerRequestData body, @QueryMap(encoded=true) DataSocketPhysicalPortsPowerQueryParams queryParams);
 
 
    /**
@@ -1876,6 +2428,95 @@ public interface DataSocketApi extends ApiClient.Api {
    */
   public static class DataSocketPhysicalPortsPowerQueryParams extends HashMap<String, Object> {
     public DataSocketPhysicalPortsPowerQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Query Power ports
+   * Query for fetching all basic target entity data.
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return DataSocketPhysicalPortsPowerExtendedResponse
+   */
+  @RequestLine("POST /api/rest/entity/dataSocket/{elid}/PhysicalPortsPowerExtended?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  DataSocketPhysicalPortsPowerExtendedResponse dataSocketPhysicalPortsPowerExtended(@Param("sessionId") String sessionId, @Param("elid") String elid, DataSocketPhysicalPortsPowerExtendedRequest body);
+
+  /**
+   * Query Power ports
+   * Similar to <code>dataSocketPhysicalPortsPowerExtended</code> but it also returns the http response headers .
+   * Query for fetching all basic target entity data.
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/dataSocket/{elid}/PhysicalPortsPowerExtended?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<DataSocketPhysicalPortsPowerExtendedResponse> dataSocketPhysicalPortsPowerExtendedWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, DataSocketPhysicalPortsPowerExtendedRequest body);
+
+
+  /**
+   * Query Power ports
+   * Query for fetching all basic target entity data.
+   * Note, this is equivalent to the other <code>dataSocketPhysicalPortsPowerExtended</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link DataSocketPhysicalPortsPowerExtendedQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return DataSocketPhysicalPortsPowerExtendedResponse
+   */
+  @RequestLine("POST /api/rest/entity/dataSocket/{elid}/PhysicalPortsPowerExtended?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  DataSocketPhysicalPortsPowerExtendedResponse dataSocketPhysicalPortsPowerExtended(@Param("elid") String elid, DataSocketPhysicalPortsPowerExtendedRequest body, @QueryMap(encoded=true) DataSocketPhysicalPortsPowerExtendedQueryParams queryParams);
+
+  /**
+  * Query Power ports
+  * Query for fetching all basic target entity data.
+  * Note, this is equivalent to the other <code>dataSocketPhysicalPortsPowerExtended</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return DataSocketPhysicalPortsPowerExtendedResponse
+      */
+      @RequestLine("POST /api/rest/entity/dataSocket/{elid}/PhysicalPortsPowerExtended?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<DataSocketPhysicalPortsPowerExtendedResponse> dataSocketPhysicalPortsPowerExtendedWithHttpInfo(@Param("elid") String elid, DataSocketPhysicalPortsPowerExtendedRequest body, @QueryMap(encoded=true) DataSocketPhysicalPortsPowerExtendedQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>dataSocketPhysicalPortsPowerExtended</code> method in a fluent style.
+   */
+  public static class DataSocketPhysicalPortsPowerExtendedQueryParams extends HashMap<String, Object> {
+    public DataSocketPhysicalPortsPowerExtendedQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -2052,6 +2693,91 @@ public interface DataSocketApi extends ApiClient.Api {
   }
 
   /**
+   * Extended geo coordinates
+   * 
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return DataSocketQueryExtendedGeoCoordinatesResponse
+   */
+  @RequestLine("POST /api/rest/entity/dataSocket/queryExtendedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  DataSocketQueryExtendedGeoCoordinatesResponse dataSocketQueryExtendedGeoCoordinates(@Param("sessionId") String sessionId, DataSocketQueryExtendedGeoCoordinatesRequest body);
+
+  /**
+   * Extended geo coordinates
+   * Similar to <code>dataSocketQueryExtendedGeoCoordinates</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/dataSocket/queryExtendedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<DataSocketQueryExtendedGeoCoordinatesResponse> dataSocketQueryExtendedGeoCoordinatesWithHttpInfo(@Param("sessionId") String sessionId, DataSocketQueryExtendedGeoCoordinatesRequest body);
+
+
+  /**
+   * Extended geo coordinates
+   * 
+   * Note, this is equivalent to the other <code>dataSocketQueryExtendedGeoCoordinates</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link DataSocketQueryExtendedGeoCoordinatesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return DataSocketQueryExtendedGeoCoordinatesResponse
+   */
+  @RequestLine("POST /api/rest/entity/dataSocket/queryExtendedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  DataSocketQueryExtendedGeoCoordinatesResponse dataSocketQueryExtendedGeoCoordinates(DataSocketQueryExtendedGeoCoordinatesRequest body, @QueryMap(encoded=true) DataSocketQueryExtendedGeoCoordinatesQueryParams queryParams);
+
+  /**
+  * Extended geo coordinates
+  * 
+  * Note, this is equivalent to the other <code>dataSocketQueryExtendedGeoCoordinates</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return DataSocketQueryExtendedGeoCoordinatesResponse
+      */
+      @RequestLine("POST /api/rest/entity/dataSocket/queryExtendedGeoCoordinates?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<DataSocketQueryExtendedGeoCoordinatesResponse> dataSocketQueryExtendedGeoCoordinatesWithHttpInfo(DataSocketQueryExtendedGeoCoordinatesRequest body, @QueryMap(encoded=true) DataSocketQueryExtendedGeoCoordinatesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>dataSocketQueryExtendedGeoCoordinates</code> method in a fluent style.
+   */
+  public static class DataSocketQueryExtendedGeoCoordinatesQueryParams extends HashMap<String, Object> {
+    public DataSocketQueryExtendedGeoCoordinatesQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Extended query scroll first
    * Queries linked master data and zone data. This query supports scrolling. Calls the query and returns the first results including the scroll-ID for the next call.
    * @param sessionId Session-ID (required)
@@ -2216,6 +2942,184 @@ public interface DataSocketApi extends ApiClient.Api {
    */
   public static class DataSocketQueryExtendedScrollMoreQueryParams extends HashMap<String, Object> {
     public DataSocketQueryExtendedScrollMoreQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Query device services 
+   * Query services for device 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return DataSocketServicesResponse
+   */
+  @RequestLine("POST /api/rest/entity/dataSocket/{elid}/Services?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  DataSocketServicesResponse dataSocketServices(@Param("sessionId") String sessionId, @Param("elid") String elid, DataSocketServicesRequest body);
+
+  /**
+   * Query device services 
+   * Similar to <code>dataSocketServices</code> but it also returns the http response headers .
+   * Query services for device 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/dataSocket/{elid}/Services?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<DataSocketServicesResponse> dataSocketServicesWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, DataSocketServicesRequest body);
+
+
+  /**
+   * Query device services 
+   * Query services for device 
+   * Note, this is equivalent to the other <code>dataSocketServices</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link DataSocketServicesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return DataSocketServicesResponse
+   */
+  @RequestLine("POST /api/rest/entity/dataSocket/{elid}/Services?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  DataSocketServicesResponse dataSocketServices(@Param("elid") String elid, DataSocketServicesRequest body, @QueryMap(encoded=true) DataSocketServicesQueryParams queryParams);
+
+  /**
+  * Query device services 
+  * Query services for device 
+  * Note, this is equivalent to the other <code>dataSocketServices</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return DataSocketServicesResponse
+      */
+      @RequestLine("POST /api/rest/entity/dataSocket/{elid}/Services?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<DataSocketServicesResponse> dataSocketServicesWithHttpInfo(@Param("elid") String elid, DataSocketServicesRequest body, @QueryMap(encoded=true) DataSocketServicesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>dataSocketServices</code> method in a fluent style.
+   */
+  public static class DataSocketServicesQueryParams extends HashMap<String, Object> {
+    public DataSocketServicesQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Site entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return DataSocketSitesResponseData
+   */
+  @RequestLine("POST /api/rest/entity/dataSocket/{elid}/Sites?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  DataSocketSitesResponseData dataSocketSites(@Param("sessionId") String sessionId, @Param("elid") String elid, DataSocketSitesRequestData body);
+
+  /**
+   * Get relations to Site entities
+   * Similar to <code>dataSocketSites</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/dataSocket/{elid}/Sites?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<DataSocketSitesResponseData> dataSocketSitesWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, DataSocketSitesRequestData body);
+
+
+  /**
+   * Get relations to Site entities
+   * 
+   * Note, this is equivalent to the other <code>dataSocketSites</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link DataSocketSitesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return DataSocketSitesResponseData
+   */
+  @RequestLine("POST /api/rest/entity/dataSocket/{elid}/Sites?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  DataSocketSitesResponseData dataSocketSites(@Param("elid") String elid, DataSocketSitesRequestData body, @QueryMap(encoded=true) DataSocketSitesQueryParams queryParams);
+
+  /**
+  * Get relations to Site entities
+  * 
+  * Note, this is equivalent to the other <code>dataSocketSites</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return DataSocketSitesResponseData
+      */
+      @RequestLine("POST /api/rest/entity/dataSocket/{elid}/Sites?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<DataSocketSitesResponseData> dataSocketSitesWithHttpInfo(@Param("elid") String elid, DataSocketSitesRequestData body, @QueryMap(encoded=true) DataSocketSitesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>dataSocketSites</code> method in a fluent style.
+   */
+  public static class DataSocketSitesQueryParams extends HashMap<String, Object> {
+    public DataSocketSitesQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -3713,6 +4617,95 @@ public interface DataSocketApi extends ApiClient.Api {
    */
   public static class PlaceInZoneDataSocketQueryParams extends HashMap<String, Object> {
     public PlaceInZoneDataSocketQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Replace object
+   * Replace object
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return ReplaceObjectDataSocketResponse
+   */
+  @RequestLine("POST /api/rest/entity/dataSocket/{elid}/replaceObject?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ReplaceObjectDataSocketResponse replaceObjectDataSocket(@Param("sessionId") String sessionId, @Param("elid") String elid, ReplaceObjectDataSocketRequestData body);
+
+  /**
+   * Replace object
+   * Similar to <code>replaceObjectDataSocket</code> but it also returns the http response headers .
+   * Replace object
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/dataSocket/{elid}/replaceObject?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<ReplaceObjectDataSocketResponse> replaceObjectDataSocketWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ReplaceObjectDataSocketRequestData body);
+
+
+  /**
+   * Replace object
+   * Replace object
+   * Note, this is equivalent to the other <code>replaceObjectDataSocket</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link ReplaceObjectDataSocketQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return ReplaceObjectDataSocketResponse
+   */
+  @RequestLine("POST /api/rest/entity/dataSocket/{elid}/replaceObject?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  ReplaceObjectDataSocketResponse replaceObjectDataSocket(@Param("elid") String elid, ReplaceObjectDataSocketRequestData body, @QueryMap(encoded=true) ReplaceObjectDataSocketQueryParams queryParams);
+
+  /**
+  * Replace object
+  * Replace object
+  * Note, this is equivalent to the other <code>replaceObjectDataSocket</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return ReplaceObjectDataSocketResponse
+      */
+      @RequestLine("POST /api/rest/entity/dataSocket/{elid}/replaceObject?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<ReplaceObjectDataSocketResponse> replaceObjectDataSocketWithHttpInfo(@Param("elid") String elid, ReplaceObjectDataSocketRequestData body, @QueryMap(encoded=true) ReplaceObjectDataSocketQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>replaceObjectDataSocket</code> method in a fluent style.
+   */
+  public static class ReplaceObjectDataSocketQueryParams extends HashMap<String, Object> {
+    public ReplaceObjectDataSocketQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

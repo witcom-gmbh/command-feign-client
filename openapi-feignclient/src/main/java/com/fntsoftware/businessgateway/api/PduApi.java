@@ -20,8 +20,16 @@ import com.fntsoftware.businessgateway.entities.PduContractsRequestData;
 import com.fntsoftware.businessgateway.entities.PduContractsResponseData;
 import com.fntsoftware.businessgateway.entities.PduDeviceMasterRequestData;
 import com.fntsoftware.businessgateway.entities.PduDeviceMasterResponseData;
+import com.fntsoftware.businessgateway.entities.PduDuctDataRequest;
+import com.fntsoftware.businessgateway.entities.PduDuctDataResponse;
+import com.fntsoftware.businessgateway.entities.PduDuctsRequestData;
+import com.fntsoftware.businessgateway.entities.PduDuctsResponseData;
 import com.fntsoftware.businessgateway.entities.PduFrameContractsRequestData;
 import com.fntsoftware.businessgateway.entities.PduFrameContractsResponseData;
+import com.fntsoftware.businessgateway.entities.PduInheritedGeoCoordinatesRequest;
+import com.fntsoftware.businessgateway.entities.PduInheritedGeoCoordinatesResponse;
+import com.fntsoftware.businessgateway.entities.PduInstalledSubCardsRecursiveRequest;
+import com.fntsoftware.businessgateway.entities.PduInstalledSubCardsRecursiveResponse;
 import com.fntsoftware.businessgateway.entities.PduInstalledSubCardsRequest;
 import com.fntsoftware.businessgateway.entities.PduInstalledSubCardsResponse;
 import com.fntsoftware.businessgateway.entities.PduInterfacesRequestData;
@@ -40,6 +48,8 @@ import com.fntsoftware.businessgateway.entities.PduLogicalPortsRequestData;
 import com.fntsoftware.businessgateway.entities.PduLogicalPortsResponseData;
 import com.fntsoftware.businessgateway.entities.PduMaintenanceContractsRequestData;
 import com.fntsoftware.businessgateway.entities.PduMaintenanceContractsResponseData;
+import com.fntsoftware.businessgateway.entities.PduMultiDuctsRequestData;
+import com.fntsoftware.businessgateway.entities.PduMultiDuctsResponseData;
 import com.fntsoftware.businessgateway.entities.PduNetworksAndNetrangesRequest;
 import com.fntsoftware.businessgateway.entities.PduNetworksAndNetrangesResponse;
 import com.fntsoftware.businessgateway.entities.PduOperatingSystemInstallationRequestData;
@@ -50,10 +60,16 @@ import com.fntsoftware.businessgateway.entities.PduPersonGroupsRequestData;
 import com.fntsoftware.businessgateway.entities.PduPersonGroupsResponseData;
 import com.fntsoftware.businessgateway.entities.PduPersonsRequestData;
 import com.fntsoftware.businessgateway.entities.PduPersonsResponseData;
+import com.fntsoftware.businessgateway.entities.PduPhysicalPortsDataExtendedRequest;
+import com.fntsoftware.businessgateway.entities.PduPhysicalPortsDataExtendedResponse;
 import com.fntsoftware.businessgateway.entities.PduPhysicalPortsDataRequestData;
 import com.fntsoftware.businessgateway.entities.PduPhysicalPortsDataResponseData;
-import com.fntsoftware.businessgateway.entities.PduPhysicalPortsPowerRequest;
-import com.fntsoftware.businessgateway.entities.PduPhysicalPortsPowerResponse;
+import com.fntsoftware.businessgateway.entities.PduPhysicalPortsPowerExtendedRequest;
+import com.fntsoftware.businessgateway.entities.PduPhysicalPortsPowerExtendedResponse;
+import com.fntsoftware.businessgateway.entities.PduPhysicalPortsPowerRequestData;
+import com.fntsoftware.businessgateway.entities.PduPhysicalPortsPowerResponseData;
+import com.fntsoftware.businessgateway.entities.PduQueryExtendedGeoCoordinatesRequest;
+import com.fntsoftware.businessgateway.entities.PduQueryExtendedGeoCoordinatesResponse;
 import com.fntsoftware.businessgateway.entities.PduQueryExtendedRequest;
 import com.fntsoftware.businessgateway.entities.PduQueryExtendedResponse;
 import com.fntsoftware.businessgateway.entities.PduQueryExtendedScrollFirstRequest;
@@ -62,6 +78,10 @@ import com.fntsoftware.businessgateway.entities.PduQueryExtendedScrollMoreReques
 import com.fntsoftware.businessgateway.entities.PduQueryExtendedScrollMoreResponse;
 import com.fntsoftware.businessgateway.entities.PduQueryRequest;
 import com.fntsoftware.businessgateway.entities.PduQueryResponse;
+import com.fntsoftware.businessgateway.entities.PduServicesRequest;
+import com.fntsoftware.businessgateway.entities.PduServicesResponse;
+import com.fntsoftware.businessgateway.entities.PduSitesRequestData;
+import com.fntsoftware.businessgateway.entities.PduSitesResponseData;
 import com.fntsoftware.businessgateway.entities.PduSlotRequestData;
 import com.fntsoftware.businessgateway.entities.PduSlotResponseData;
 import com.fntsoftware.businessgateway.entities.PduSwitchCabinetRequestData;
@@ -86,6 +106,8 @@ import com.fntsoftware.businessgateway.entities.PlaceInWarehousePduRequestData;
 import com.fntsoftware.businessgateway.entities.PlaceInWarehousePduResponse;
 import com.fntsoftware.businessgateway.entities.PlaceInZonePduRequestData;
 import com.fntsoftware.businessgateway.entities.PlaceInZonePduResponse;
+import com.fntsoftware.businessgateway.entities.ReplaceObjectPduRequestData;
+import com.fntsoftware.businessgateway.entities.ReplaceObjectPduResponse;
 import com.fntsoftware.businessgateway.entities.UpdatePduRequestData;
 import com.fntsoftware.businessgateway.entities.UpdatePduResponse;
 import com.fntsoftware.businessgateway.entities.UpdateSystemAttributesPduRequestData;
@@ -97,7 +119,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-04T13:31:32.601557352Z[Etc/UTC]")
 public interface PduApi extends ApiClient.Api {
 
 
@@ -814,6 +836,184 @@ public interface PduApi extends ApiClient.Api {
   }
 
   /**
+   * Query duct data
+   * Query associated ducts and multipipes
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return PduDuctDataResponse
+   */
+  @RequestLine("POST /api/rest/entity/pdu/{elid}/DuctData?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  PduDuctDataResponse pduDuctData(@Param("sessionId") String sessionId, @Param("elid") String elid, PduDuctDataRequest body);
+
+  /**
+   * Query duct data
+   * Similar to <code>pduDuctData</code> but it also returns the http response headers .
+   * Query associated ducts and multipipes
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/pdu/{elid}/DuctData?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<PduDuctDataResponse> pduDuctDataWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, PduDuctDataRequest body);
+
+
+  /**
+   * Query duct data
+   * Query associated ducts and multipipes
+   * Note, this is equivalent to the other <code>pduDuctData</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link PduDuctDataQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return PduDuctDataResponse
+   */
+  @RequestLine("POST /api/rest/entity/pdu/{elid}/DuctData?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  PduDuctDataResponse pduDuctData(@Param("elid") String elid, PduDuctDataRequest body, @QueryMap(encoded=true) PduDuctDataQueryParams queryParams);
+
+  /**
+  * Query duct data
+  * Query associated ducts and multipipes
+  * Note, this is equivalent to the other <code>pduDuctData</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return PduDuctDataResponse
+      */
+      @RequestLine("POST /api/rest/entity/pdu/{elid}/DuctData?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<PduDuctDataResponse> pduDuctDataWithHttpInfo(@Param("elid") String elid, PduDuctDataRequest body, @QueryMap(encoded=true) PduDuctDataQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>pduDuctData</code> method in a fluent style.
+   */
+  public static class PduDuctDataQueryParams extends HashMap<String, Object> {
+    public PduDuctDataQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Duct entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return PduDuctsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/pdu/{elid}/Ducts?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  PduDuctsResponseData pduDucts(@Param("sessionId") String sessionId, @Param("elid") String elid, PduDuctsRequestData body);
+
+  /**
+   * Get relations to Duct entities
+   * Similar to <code>pduDucts</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/pdu/{elid}/Ducts?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<PduDuctsResponseData> pduDuctsWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, PduDuctsRequestData body);
+
+
+  /**
+   * Get relations to Duct entities
+   * 
+   * Note, this is equivalent to the other <code>pduDucts</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link PduDuctsQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return PduDuctsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/pdu/{elid}/Ducts?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  PduDuctsResponseData pduDucts(@Param("elid") String elid, PduDuctsRequestData body, @QueryMap(encoded=true) PduDuctsQueryParams queryParams);
+
+  /**
+  * Get relations to Duct entities
+  * 
+  * Note, this is equivalent to the other <code>pduDucts</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return PduDuctsResponseData
+      */
+      @RequestLine("POST /api/rest/entity/pdu/{elid}/Ducts?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<PduDuctsResponseData> pduDuctsWithHttpInfo(@Param("elid") String elid, PduDuctsRequestData body, @QueryMap(encoded=true) PduDuctsQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>pduDucts</code> method in a fluent style.
+   */
+  public static class PduDuctsQueryParams extends HashMap<String, Object> {
+    public PduDuctsQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Get relations to Frame contract entities
    * 
    * @param sessionId Session-ID (required)
@@ -903,6 +1103,91 @@ public interface PduApi extends ApiClient.Api {
   }
 
   /**
+   * Query inherited coordinates
+   * Query the own coordinates of an object or inherit them from parents
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return PduInheritedGeoCoordinatesResponse
+   */
+  @RequestLine("POST /api/rest/entity/pdu/inheritedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  PduInheritedGeoCoordinatesResponse pduInheritedGeoCoordinates(@Param("sessionId") String sessionId, PduInheritedGeoCoordinatesRequest body);
+
+  /**
+   * Query inherited coordinates
+   * Similar to <code>pduInheritedGeoCoordinates</code> but it also returns the http response headers .
+   * Query the own coordinates of an object or inherit them from parents
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/pdu/inheritedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<PduInheritedGeoCoordinatesResponse> pduInheritedGeoCoordinatesWithHttpInfo(@Param("sessionId") String sessionId, PduInheritedGeoCoordinatesRequest body);
+
+
+  /**
+   * Query inherited coordinates
+   * Query the own coordinates of an object or inherit them from parents
+   * Note, this is equivalent to the other <code>pduInheritedGeoCoordinates</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link PduInheritedGeoCoordinatesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return PduInheritedGeoCoordinatesResponse
+   */
+  @RequestLine("POST /api/rest/entity/pdu/inheritedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  PduInheritedGeoCoordinatesResponse pduInheritedGeoCoordinates(PduInheritedGeoCoordinatesRequest body, @QueryMap(encoded=true) PduInheritedGeoCoordinatesQueryParams queryParams);
+
+  /**
+  * Query inherited coordinates
+  * Query the own coordinates of an object or inherit them from parents
+  * Note, this is equivalent to the other <code>pduInheritedGeoCoordinates</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return PduInheritedGeoCoordinatesResponse
+      */
+      @RequestLine("POST /api/rest/entity/pdu/inheritedGeoCoordinates?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<PduInheritedGeoCoordinatesResponse> pduInheritedGeoCoordinatesWithHttpInfo(PduInheritedGeoCoordinatesRequest body, @QueryMap(encoded=true) PduInheritedGeoCoordinatesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>pduInheritedGeoCoordinates</code> method in a fluent style.
+   */
+  public static class PduInheritedGeoCoordinatesQueryParams extends HashMap<String, Object> {
+    public PduInheritedGeoCoordinatesQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Query installed subcards
    * Queries installed subcards. Only direct subcards will be returned. Free slot positions will not be returned.
    * @param sessionId Session-ID (required)
@@ -986,6 +1271,95 @@ public interface PduApi extends ApiClient.Api {
    */
   public static class PduInstalledSubCardsQueryParams extends HashMap<String, Object> {
     public PduInstalledSubCardsQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Query installed sub-cards recursively
+   * Queries installed sub-cards from a device. Free slot positions are not supplied.
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return PduInstalledSubCardsRecursiveResponse
+   */
+  @RequestLine("POST /api/rest/entity/pdu/{elid}/InstalledSubCardsRecursive?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  PduInstalledSubCardsRecursiveResponse pduInstalledSubCardsRecursive(@Param("sessionId") String sessionId, @Param("elid") String elid, PduInstalledSubCardsRecursiveRequest body);
+
+  /**
+   * Query installed sub-cards recursively
+   * Similar to <code>pduInstalledSubCardsRecursive</code> but it also returns the http response headers .
+   * Queries installed sub-cards from a device. Free slot positions are not supplied.
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/pdu/{elid}/InstalledSubCardsRecursive?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<PduInstalledSubCardsRecursiveResponse> pduInstalledSubCardsRecursiveWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, PduInstalledSubCardsRecursiveRequest body);
+
+
+  /**
+   * Query installed sub-cards recursively
+   * Queries installed sub-cards from a device. Free slot positions are not supplied.
+   * Note, this is equivalent to the other <code>pduInstalledSubCardsRecursive</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link PduInstalledSubCardsRecursiveQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return PduInstalledSubCardsRecursiveResponse
+   */
+  @RequestLine("POST /api/rest/entity/pdu/{elid}/InstalledSubCardsRecursive?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  PduInstalledSubCardsRecursiveResponse pduInstalledSubCardsRecursive(@Param("elid") String elid, PduInstalledSubCardsRecursiveRequest body, @QueryMap(encoded=true) PduInstalledSubCardsRecursiveQueryParams queryParams);
+
+  /**
+  * Query installed sub-cards recursively
+  * Queries installed sub-cards from a device. Free slot positions are not supplied.
+  * Note, this is equivalent to the other <code>pduInstalledSubCardsRecursive</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return PduInstalledSubCardsRecursiveResponse
+      */
+      @RequestLine("POST /api/rest/entity/pdu/{elid}/InstalledSubCardsRecursive?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<PduInstalledSubCardsRecursiveResponse> pduInstalledSubCardsRecursiveWithHttpInfo(@Param("elid") String elid, PduInstalledSubCardsRecursiveRequest body, @QueryMap(encoded=true) PduInstalledSubCardsRecursiveQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>pduInstalledSubCardsRecursive</code> method in a fluent style.
+   */
+  public static class PduInstalledSubCardsRecursiveQueryParams extends HashMap<String, Object> {
+    public PduInstalledSubCardsRecursiveQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -1704,6 +2078,95 @@ public interface PduApi extends ApiClient.Api {
   }
 
   /**
+   * Get relations to Multiducts entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return PduMultiDuctsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/pdu/{elid}/MultiDucts?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  PduMultiDuctsResponseData pduMultiDucts(@Param("sessionId") String sessionId, @Param("elid") String elid, PduMultiDuctsRequestData body);
+
+  /**
+   * Get relations to Multiducts entities
+   * Similar to <code>pduMultiDucts</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/pdu/{elid}/MultiDucts?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<PduMultiDuctsResponseData> pduMultiDuctsWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, PduMultiDuctsRequestData body);
+
+
+  /**
+   * Get relations to Multiducts entities
+   * 
+   * Note, this is equivalent to the other <code>pduMultiDucts</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link PduMultiDuctsQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return PduMultiDuctsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/pdu/{elid}/MultiDucts?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  PduMultiDuctsResponseData pduMultiDucts(@Param("elid") String elid, PduMultiDuctsRequestData body, @QueryMap(encoded=true) PduMultiDuctsQueryParams queryParams);
+
+  /**
+  * Get relations to Multiducts entities
+  * 
+  * Note, this is equivalent to the other <code>pduMultiDucts</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return PduMultiDuctsResponseData
+      */
+      @RequestLine("POST /api/rest/entity/pdu/{elid}/MultiDucts?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<PduMultiDuctsResponseData> pduMultiDuctsWithHttpInfo(@Param("elid") String elid, PduMultiDuctsRequestData body, @QueryMap(encoded=true) PduMultiDuctsQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>pduMultiDucts</code> method in a fluent style.
+   */
+  public static class PduMultiDuctsQueryParams extends HashMap<String, Object> {
+    public PduMultiDuctsQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Nets / Net ranges
    * Query for querying all basic target entity data
    * @param sessionId Session-ID (required)
@@ -2238,24 +2701,113 @@ public interface PduApi extends ApiClient.Api {
   }
 
   /**
-   * Query Power ports
-   * Query for querying all basic target entity data
+   * Query physical ports data extended
+   * Query for fetching all basic target entity data.
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
-   * @return PduPhysicalPortsPowerResponse
+   * @return PduPhysicalPortsDataExtendedResponse
+   */
+  @RequestLine("POST /api/rest/entity/pdu/{elid}/PhysicalPortsDataExtended?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  PduPhysicalPortsDataExtendedResponse pduPhysicalPortsDataExtended(@Param("sessionId") String sessionId, @Param("elid") String elid, PduPhysicalPortsDataExtendedRequest body);
+
+  /**
+   * Query physical ports data extended
+   * Similar to <code>pduPhysicalPortsDataExtended</code> but it also returns the http response headers .
+   * Query for fetching all basic target entity data.
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/pdu/{elid}/PhysicalPortsDataExtended?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<PduPhysicalPortsDataExtendedResponse> pduPhysicalPortsDataExtendedWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, PduPhysicalPortsDataExtendedRequest body);
+
+
+  /**
+   * Query physical ports data extended
+   * Query for fetching all basic target entity data.
+   * Note, this is equivalent to the other <code>pduPhysicalPortsDataExtended</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link PduPhysicalPortsDataExtendedQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return PduPhysicalPortsDataExtendedResponse
+   */
+  @RequestLine("POST /api/rest/entity/pdu/{elid}/PhysicalPortsDataExtended?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  PduPhysicalPortsDataExtendedResponse pduPhysicalPortsDataExtended(@Param("elid") String elid, PduPhysicalPortsDataExtendedRequest body, @QueryMap(encoded=true) PduPhysicalPortsDataExtendedQueryParams queryParams);
+
+  /**
+  * Query physical ports data extended
+  * Query for fetching all basic target entity data.
+  * Note, this is equivalent to the other <code>pduPhysicalPortsDataExtended</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return PduPhysicalPortsDataExtendedResponse
+      */
+      @RequestLine("POST /api/rest/entity/pdu/{elid}/PhysicalPortsDataExtended?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<PduPhysicalPortsDataExtendedResponse> pduPhysicalPortsDataExtendedWithHttpInfo(@Param("elid") String elid, PduPhysicalPortsDataExtendedRequest body, @QueryMap(encoded=true) PduPhysicalPortsDataExtendedQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>pduPhysicalPortsDataExtended</code> method in a fluent style.
+   */
+  public static class PduPhysicalPortsDataExtendedQueryParams extends HashMap<String, Object> {
+    public PduPhysicalPortsDataExtendedQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Physical port (power) entities
+   * For more information call the basic query of the power port entity
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return PduPhysicalPortsPowerResponseData
    */
   @RequestLine("POST /api/rest/entity/pdu/{elid}/PhysicalPortsPower?sessionId={sessionId}")
   @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  PduPhysicalPortsPowerResponse pduPhysicalPortsPower(@Param("sessionId") String sessionId, @Param("elid") String elid, PduPhysicalPortsPowerRequest body);
+  PduPhysicalPortsPowerResponseData pduPhysicalPortsPower(@Param("sessionId") String sessionId, @Param("elid") String elid, PduPhysicalPortsPowerRequestData body);
 
   /**
-   * Query Power ports
+   * Get relations to Physical port (power) entities
    * Similar to <code>pduPhysicalPortsPower</code> but it also returns the http response headers .
-   * Query for querying all basic target entity data
+   * For more information call the basic query of the power port entity
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
@@ -2266,12 +2818,12 @@ public interface PduApi extends ApiClient.Api {
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  ApiResponse<PduPhysicalPortsPowerResponse> pduPhysicalPortsPowerWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, PduPhysicalPortsPowerRequest body);
+  ApiResponse<PduPhysicalPortsPowerResponseData> pduPhysicalPortsPowerWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, PduPhysicalPortsPowerRequestData body);
 
 
   /**
-   * Query Power ports
-   * Query for querying all basic target entity data
+   * Get relations to Physical port (power) entities
+   * For more information call the basic query of the power port entity
    * Note, this is equivalent to the other <code>pduPhysicalPortsPower</code> method,
    * but with the query parameters collected into a single Map parameter. This
    * is convenient for services with optional query parameters, especially when
@@ -2284,18 +2836,18 @@ public interface PduApi extends ApiClient.Api {
    *   <ul>
    *   <li>sessionId - Session-ID (required)</li>
    *   </ul>
-   * @return PduPhysicalPortsPowerResponse
+   * @return PduPhysicalPortsPowerResponseData
    */
   @RequestLine("POST /api/rest/entity/pdu/{elid}/PhysicalPortsPower?sessionId={sessionId}")
   @Headers({
   "Content-Type: application/json",
   "Accept: application/json",
   })
-  PduPhysicalPortsPowerResponse pduPhysicalPortsPower(@Param("elid") String elid, PduPhysicalPortsPowerRequest body, @QueryMap(encoded=true) PduPhysicalPortsPowerQueryParams queryParams);
+  PduPhysicalPortsPowerResponseData pduPhysicalPortsPower(@Param("elid") String elid, PduPhysicalPortsPowerRequestData body, @QueryMap(encoded=true) PduPhysicalPortsPowerQueryParams queryParams);
 
   /**
-  * Query Power ports
-  * Query for querying all basic target entity data
+  * Get relations to Physical port (power) entities
+  * For more information call the basic query of the power port entity
   * Note, this is equivalent to the other <code>pduPhysicalPortsPower</code> that receives the query parameters as a map,
   * but this one also exposes the Http response headers
               * @param elid  (required)
@@ -2305,14 +2857,14 @@ public interface PduApi extends ApiClient.Api {
       *   <ul>
           *   <li>sessionId - Session-ID (required)</li>
       *   </ul>
-          * @return PduPhysicalPortsPowerResponse
+          * @return PduPhysicalPortsPowerResponseData
       */
       @RequestLine("POST /api/rest/entity/pdu/{elid}/PhysicalPortsPower?sessionId={sessionId}")
       @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
       })
-   ApiResponse<PduPhysicalPortsPowerResponse> pduPhysicalPortsPowerWithHttpInfo(@Param("elid") String elid, PduPhysicalPortsPowerRequest body, @QueryMap(encoded=true) PduPhysicalPortsPowerQueryParams queryParams);
+   ApiResponse<PduPhysicalPortsPowerResponseData> pduPhysicalPortsPowerWithHttpInfo(@Param("elid") String elid, PduPhysicalPortsPowerRequestData body, @QueryMap(encoded=true) PduPhysicalPortsPowerQueryParams queryParams);
 
 
    /**
@@ -2321,6 +2873,95 @@ public interface PduApi extends ApiClient.Api {
    */
   public static class PduPhysicalPortsPowerQueryParams extends HashMap<String, Object> {
     public PduPhysicalPortsPowerQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Query Power ports
+   * Query for fetching all basic target entity data.
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return PduPhysicalPortsPowerExtendedResponse
+   */
+  @RequestLine("POST /api/rest/entity/pdu/{elid}/PhysicalPortsPowerExtended?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  PduPhysicalPortsPowerExtendedResponse pduPhysicalPortsPowerExtended(@Param("sessionId") String sessionId, @Param("elid") String elid, PduPhysicalPortsPowerExtendedRequest body);
+
+  /**
+   * Query Power ports
+   * Similar to <code>pduPhysicalPortsPowerExtended</code> but it also returns the http response headers .
+   * Query for fetching all basic target entity data.
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/pdu/{elid}/PhysicalPortsPowerExtended?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<PduPhysicalPortsPowerExtendedResponse> pduPhysicalPortsPowerExtendedWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, PduPhysicalPortsPowerExtendedRequest body);
+
+
+  /**
+   * Query Power ports
+   * Query for fetching all basic target entity data.
+   * Note, this is equivalent to the other <code>pduPhysicalPortsPowerExtended</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link PduPhysicalPortsPowerExtendedQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return PduPhysicalPortsPowerExtendedResponse
+   */
+  @RequestLine("POST /api/rest/entity/pdu/{elid}/PhysicalPortsPowerExtended?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  PduPhysicalPortsPowerExtendedResponse pduPhysicalPortsPowerExtended(@Param("elid") String elid, PduPhysicalPortsPowerExtendedRequest body, @QueryMap(encoded=true) PduPhysicalPortsPowerExtendedQueryParams queryParams);
+
+  /**
+  * Query Power ports
+  * Query for fetching all basic target entity data.
+  * Note, this is equivalent to the other <code>pduPhysicalPortsPowerExtended</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return PduPhysicalPortsPowerExtendedResponse
+      */
+      @RequestLine("POST /api/rest/entity/pdu/{elid}/PhysicalPortsPowerExtended?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<PduPhysicalPortsPowerExtendedResponse> pduPhysicalPortsPowerExtendedWithHttpInfo(@Param("elid") String elid, PduPhysicalPortsPowerExtendedRequest body, @QueryMap(encoded=true) PduPhysicalPortsPowerExtendedQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>pduPhysicalPortsPowerExtended</code> method in a fluent style.
+   */
+  public static class PduPhysicalPortsPowerExtendedQueryParams extends HashMap<String, Object> {
+    public PduPhysicalPortsPowerExtendedQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -2497,6 +3138,91 @@ public interface PduApi extends ApiClient.Api {
   }
 
   /**
+   * Extended geo coordinates
+   * 
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return PduQueryExtendedGeoCoordinatesResponse
+   */
+  @RequestLine("POST /api/rest/entity/pdu/queryExtendedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  PduQueryExtendedGeoCoordinatesResponse pduQueryExtendedGeoCoordinates(@Param("sessionId") String sessionId, PduQueryExtendedGeoCoordinatesRequest body);
+
+  /**
+   * Extended geo coordinates
+   * Similar to <code>pduQueryExtendedGeoCoordinates</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/pdu/queryExtendedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<PduQueryExtendedGeoCoordinatesResponse> pduQueryExtendedGeoCoordinatesWithHttpInfo(@Param("sessionId") String sessionId, PduQueryExtendedGeoCoordinatesRequest body);
+
+
+  /**
+   * Extended geo coordinates
+   * 
+   * Note, this is equivalent to the other <code>pduQueryExtendedGeoCoordinates</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link PduQueryExtendedGeoCoordinatesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return PduQueryExtendedGeoCoordinatesResponse
+   */
+  @RequestLine("POST /api/rest/entity/pdu/queryExtendedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  PduQueryExtendedGeoCoordinatesResponse pduQueryExtendedGeoCoordinates(PduQueryExtendedGeoCoordinatesRequest body, @QueryMap(encoded=true) PduQueryExtendedGeoCoordinatesQueryParams queryParams);
+
+  /**
+  * Extended geo coordinates
+  * 
+  * Note, this is equivalent to the other <code>pduQueryExtendedGeoCoordinates</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return PduQueryExtendedGeoCoordinatesResponse
+      */
+      @RequestLine("POST /api/rest/entity/pdu/queryExtendedGeoCoordinates?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<PduQueryExtendedGeoCoordinatesResponse> pduQueryExtendedGeoCoordinatesWithHttpInfo(PduQueryExtendedGeoCoordinatesRequest body, @QueryMap(encoded=true) PduQueryExtendedGeoCoordinatesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>pduQueryExtendedGeoCoordinates</code> method in a fluent style.
+   */
+  public static class PduQueryExtendedGeoCoordinatesQueryParams extends HashMap<String, Object> {
+    public PduQueryExtendedGeoCoordinatesQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Extended query scroll first
    * Queries linked master data and zone data. This query supports scrolling. Calls the query and returns the first results including the scroll-ID for the next call.
    * @param sessionId Session-ID (required)
@@ -2661,6 +3387,184 @@ public interface PduApi extends ApiClient.Api {
    */
   public static class PduQueryExtendedScrollMoreQueryParams extends HashMap<String, Object> {
     public PduQueryExtendedScrollMoreQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Query device services 
+   * Query services for device 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return PduServicesResponse
+   */
+  @RequestLine("POST /api/rest/entity/pdu/{elid}/Services?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  PduServicesResponse pduServices(@Param("sessionId") String sessionId, @Param("elid") String elid, PduServicesRequest body);
+
+  /**
+   * Query device services 
+   * Similar to <code>pduServices</code> but it also returns the http response headers .
+   * Query services for device 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/pdu/{elid}/Services?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<PduServicesResponse> pduServicesWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, PduServicesRequest body);
+
+
+  /**
+   * Query device services 
+   * Query services for device 
+   * Note, this is equivalent to the other <code>pduServices</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link PduServicesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return PduServicesResponse
+   */
+  @RequestLine("POST /api/rest/entity/pdu/{elid}/Services?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  PduServicesResponse pduServices(@Param("elid") String elid, PduServicesRequest body, @QueryMap(encoded=true) PduServicesQueryParams queryParams);
+
+  /**
+  * Query device services 
+  * Query services for device 
+  * Note, this is equivalent to the other <code>pduServices</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return PduServicesResponse
+      */
+      @RequestLine("POST /api/rest/entity/pdu/{elid}/Services?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<PduServicesResponse> pduServicesWithHttpInfo(@Param("elid") String elid, PduServicesRequest body, @QueryMap(encoded=true) PduServicesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>pduServices</code> method in a fluent style.
+   */
+  public static class PduServicesQueryParams extends HashMap<String, Object> {
+    public PduServicesQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Site entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return PduSitesResponseData
+   */
+  @RequestLine("POST /api/rest/entity/pdu/{elid}/Sites?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  PduSitesResponseData pduSites(@Param("sessionId") String sessionId, @Param("elid") String elid, PduSitesRequestData body);
+
+  /**
+   * Get relations to Site entities
+   * Similar to <code>pduSites</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/pdu/{elid}/Sites?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<PduSitesResponseData> pduSitesWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, PduSitesRequestData body);
+
+
+  /**
+   * Get relations to Site entities
+   * 
+   * Note, this is equivalent to the other <code>pduSites</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link PduSitesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return PduSitesResponseData
+   */
+  @RequestLine("POST /api/rest/entity/pdu/{elid}/Sites?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  PduSitesResponseData pduSites(@Param("elid") String elid, PduSitesRequestData body, @QueryMap(encoded=true) PduSitesQueryParams queryParams);
+
+  /**
+  * Get relations to Site entities
+  * 
+  * Note, this is equivalent to the other <code>pduSites</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return PduSitesResponseData
+      */
+      @RequestLine("POST /api/rest/entity/pdu/{elid}/Sites?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<PduSitesResponseData> pduSitesWithHttpInfo(@Param("elid") String elid, PduSitesRequestData body, @QueryMap(encoded=true) PduSitesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>pduSites</code> method in a fluent style.
+   */
+  public static class PduSitesQueryParams extends HashMap<String, Object> {
+    public PduSitesQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -3713,6 +4617,95 @@ public interface PduApi extends ApiClient.Api {
    */
   public static class PlaceInZonePduQueryParams extends HashMap<String, Object> {
     public PlaceInZonePduQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Replace object
+   * Replace object
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return ReplaceObjectPduResponse
+   */
+  @RequestLine("POST /api/rest/entity/pdu/{elid}/replaceObject?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ReplaceObjectPduResponse replaceObjectPdu(@Param("sessionId") String sessionId, @Param("elid") String elid, ReplaceObjectPduRequestData body);
+
+  /**
+   * Replace object
+   * Similar to <code>replaceObjectPdu</code> but it also returns the http response headers .
+   * Replace object
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/pdu/{elid}/replaceObject?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<ReplaceObjectPduResponse> replaceObjectPduWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ReplaceObjectPduRequestData body);
+
+
+  /**
+   * Replace object
+   * Replace object
+   * Note, this is equivalent to the other <code>replaceObjectPdu</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link ReplaceObjectPduQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return ReplaceObjectPduResponse
+   */
+  @RequestLine("POST /api/rest/entity/pdu/{elid}/replaceObject?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  ReplaceObjectPduResponse replaceObjectPdu(@Param("elid") String elid, ReplaceObjectPduRequestData body, @QueryMap(encoded=true) ReplaceObjectPduQueryParams queryParams);
+
+  /**
+  * Replace object
+  * Replace object
+  * Note, this is equivalent to the other <code>replaceObjectPdu</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return ReplaceObjectPduResponse
+      */
+      @RequestLine("POST /api/rest/entity/pdu/{elid}/replaceObject?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<ReplaceObjectPduResponse> replaceObjectPduWithHttpInfo(@Param("elid") String elid, ReplaceObjectPduRequestData body, @QueryMap(encoded=true) ReplaceObjectPduQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>replaceObjectPdu</code> method in a fluent style.
+   */
+  public static class ReplaceObjectPduQueryParams extends HashMap<String, Object> {
+    public ReplaceObjectPduQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

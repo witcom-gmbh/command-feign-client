@@ -8,10 +8,10 @@ import com.fntsoftware.businessgateway.entities.CreateCustomIpaccessSvcRequestDa
 import com.fntsoftware.businessgateway.entities.CreateCustomIpaccessSvcResponse;
 import com.fntsoftware.businessgateway.entities.CustomIpaccessSvcContractRequestData;
 import com.fntsoftware.businessgateway.entities.CustomIpaccessSvcContractResponseData;
-import com.fntsoftware.businessgateway.entities.CustomIpaccessSvcCustomIpAccessChildChildRequestData;
-import com.fntsoftware.businessgateway.entities.CustomIpaccessSvcCustomIpAccessChildChildResponseData;
-import com.fntsoftware.businessgateway.entities.CustomIpaccessSvcCustomIpAccessChildParentRequestData;
-import com.fntsoftware.businessgateway.entities.CustomIpaccessSvcCustomIpAccessChildParentResponseData;
+import com.fntsoftware.businessgateway.entities.CustomIpaccessSvcCustomIpAccessChildRequestData;
+import com.fntsoftware.businessgateway.entities.CustomIpaccessSvcCustomIpAccessChildResponseData;
+import com.fntsoftware.businessgateway.entities.CustomIpaccessSvcCustomIpAccessParentRequestData;
+import com.fntsoftware.businessgateway.entities.CustomIpaccessSvcCustomIpAccessParentResponseData;
 import com.fntsoftware.businessgateway.entities.CustomIpaccessSvcInterfacesRequestData;
 import com.fntsoftware.businessgateway.entities.CustomIpaccessSvcInterfacesResponseData;
 import com.fntsoftware.businessgateway.entities.CustomIpaccessSvcIpv4NetworksRequestData;
@@ -43,7 +43,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-04T13:31:32.601557352Z[Etc/UTC]")
 public interface CustomIpaccessSvcApi extends ApiClient.Api {
 
 
@@ -227,39 +227,39 @@ public interface CustomIpaccessSvcApi extends ApiClient.Api {
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
-   * @return CustomIpaccessSvcCustomIpAccessChildChildResponseData
+   * @return CustomIpaccessSvcCustomIpAccessChildResponseData
    */
-  @RequestLine("POST /api/rest/entity/custom/ipaccessSvc/{elid}/CustomIpAccessChildChild?sessionId={sessionId}")
+  @RequestLine("POST /api/rest/entity/custom/ipaccessSvc/{elid}/CustomIpAccessChild?sessionId={sessionId}")
   @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  CustomIpaccessSvcCustomIpAccessChildChildResponseData customIpaccessSvcCustomIpAccessChildChild(@Param("sessionId") String sessionId, @Param("elid") String elid, CustomIpaccessSvcCustomIpAccessChildChildRequestData body);
+  CustomIpaccessSvcCustomIpAccessChildResponseData customIpaccessSvcCustomIpAccessChild(@Param("sessionId") String sessionId, @Param("elid") String elid, CustomIpaccessSvcCustomIpAccessChildRequestData body);
 
   /**
    * Get relations to Belongs to entities
-   * Similar to <code>customIpaccessSvcCustomIpAccessChildChild</code> but it also returns the http response headers .
+   * Similar to <code>customIpaccessSvcCustomIpAccessChild</code> but it also returns the http response headers .
    * 
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
    * @return A ApiResponse that wraps the response boyd and the http headers.
    */
-  @RequestLine("POST /api/rest/entity/custom/ipaccessSvc/{elid}/CustomIpAccessChildChild?sessionId={sessionId}")
+  @RequestLine("POST /api/rest/entity/custom/ipaccessSvc/{elid}/CustomIpAccessChild?sessionId={sessionId}")
   @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  ApiResponse<CustomIpaccessSvcCustomIpAccessChildChildResponseData> customIpaccessSvcCustomIpAccessChildChildWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, CustomIpaccessSvcCustomIpAccessChildChildRequestData body);
+  ApiResponse<CustomIpaccessSvcCustomIpAccessChildResponseData> customIpaccessSvcCustomIpAccessChildWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, CustomIpaccessSvcCustomIpAccessChildRequestData body);
 
 
   /**
    * Get relations to Belongs to entities
    * 
-   * Note, this is equivalent to the other <code>customIpaccessSvcCustomIpAccessChildChild</code> method,
+   * Note, this is equivalent to the other <code>customIpaccessSvcCustomIpAccessChild</code> method,
    * but with the query parameters collected into a single Map parameter. This
    * is convenient for services with optional query parameters, especially when
-   * used with the {@link CustomIpaccessSvcCustomIpAccessChildChildQueryParams} class that allows for
+   * used with the {@link CustomIpaccessSvcCustomIpAccessChildQueryParams} class that allows for
    * building up this map in a fluent style.
    * @param elid  (required)
    * @param body  (required)
@@ -268,19 +268,19 @@ public interface CustomIpaccessSvcApi extends ApiClient.Api {
    *   <ul>
    *   <li>sessionId - Session-ID (required)</li>
    *   </ul>
-   * @return CustomIpaccessSvcCustomIpAccessChildChildResponseData
+   * @return CustomIpaccessSvcCustomIpAccessChildResponseData
    */
-  @RequestLine("POST /api/rest/entity/custom/ipaccessSvc/{elid}/CustomIpAccessChildChild?sessionId={sessionId}")
+  @RequestLine("POST /api/rest/entity/custom/ipaccessSvc/{elid}/CustomIpAccessChild?sessionId={sessionId}")
   @Headers({
   "Content-Type: application/json",
   "Accept: application/json",
   })
-  CustomIpaccessSvcCustomIpAccessChildChildResponseData customIpaccessSvcCustomIpAccessChildChild(@Param("elid") String elid, CustomIpaccessSvcCustomIpAccessChildChildRequestData body, @QueryMap(encoded=true) CustomIpaccessSvcCustomIpAccessChildChildQueryParams queryParams);
+  CustomIpaccessSvcCustomIpAccessChildResponseData customIpaccessSvcCustomIpAccessChild(@Param("elid") String elid, CustomIpaccessSvcCustomIpAccessChildRequestData body, @QueryMap(encoded=true) CustomIpaccessSvcCustomIpAccessChildQueryParams queryParams);
 
   /**
   * Get relations to Belongs to entities
   * 
-  * Note, this is equivalent to the other <code>customIpaccessSvcCustomIpAccessChildChild</code> that receives the query parameters as a map,
+  * Note, this is equivalent to the other <code>customIpaccessSvcCustomIpAccessChild</code> that receives the query parameters as a map,
   * but this one also exposes the Http response headers
               * @param elid  (required)
               * @param body  (required)
@@ -289,22 +289,22 @@ public interface CustomIpaccessSvcApi extends ApiClient.Api {
       *   <ul>
           *   <li>sessionId - Session-ID (required)</li>
       *   </ul>
-          * @return CustomIpaccessSvcCustomIpAccessChildChildResponseData
+          * @return CustomIpaccessSvcCustomIpAccessChildResponseData
       */
-      @RequestLine("POST /api/rest/entity/custom/ipaccessSvc/{elid}/CustomIpAccessChildChild?sessionId={sessionId}")
+      @RequestLine("POST /api/rest/entity/custom/ipaccessSvc/{elid}/CustomIpAccessChild?sessionId={sessionId}")
       @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
       })
-   ApiResponse<CustomIpaccessSvcCustomIpAccessChildChildResponseData> customIpaccessSvcCustomIpAccessChildChildWithHttpInfo(@Param("elid") String elid, CustomIpaccessSvcCustomIpAccessChildChildRequestData body, @QueryMap(encoded=true) CustomIpaccessSvcCustomIpAccessChildChildQueryParams queryParams);
+   ApiResponse<CustomIpaccessSvcCustomIpAccessChildResponseData> customIpaccessSvcCustomIpAccessChildWithHttpInfo(@Param("elid") String elid, CustomIpaccessSvcCustomIpAccessChildRequestData body, @QueryMap(encoded=true) CustomIpaccessSvcCustomIpAccessChildQueryParams queryParams);
 
 
    /**
    * A convenience class for generating query parameters for the
-   * <code>customIpaccessSvcCustomIpAccessChildChild</code> method in a fluent style.
+   * <code>customIpaccessSvcCustomIpAccessChild</code> method in a fluent style.
    */
-  public static class CustomIpaccessSvcCustomIpAccessChildChildQueryParams extends HashMap<String, Object> {
-    public CustomIpaccessSvcCustomIpAccessChildChildQueryParams sessionId(final String value) {
+  public static class CustomIpaccessSvcCustomIpAccessChildQueryParams extends HashMap<String, Object> {
+    public CustomIpaccessSvcCustomIpAccessChildQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -316,39 +316,39 @@ public interface CustomIpaccessSvcApi extends ApiClient.Api {
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
-   * @return CustomIpaccessSvcCustomIpAccessChildParentResponseData
+   * @return CustomIpaccessSvcCustomIpAccessParentResponseData
    */
-  @RequestLine("POST /api/rest/entity/custom/ipaccessSvc/{elid}/CustomIpAccessChildParent?sessionId={sessionId}")
+  @RequestLine("POST /api/rest/entity/custom/ipaccessSvc/{elid}/CustomIpAccessParent?sessionId={sessionId}")
   @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  CustomIpaccessSvcCustomIpAccessChildParentResponseData customIpaccessSvcCustomIpAccessChildParent(@Param("sessionId") String sessionId, @Param("elid") String elid, CustomIpaccessSvcCustomIpAccessChildParentRequestData body);
+  CustomIpaccessSvcCustomIpAccessParentResponseData customIpaccessSvcCustomIpAccessParent(@Param("sessionId") String sessionId, @Param("elid") String elid, CustomIpaccessSvcCustomIpAccessParentRequestData body);
 
   /**
    * Get relations to Redundancy for entities
-   * Similar to <code>customIpaccessSvcCustomIpAccessChildParent</code> but it also returns the http response headers .
+   * Similar to <code>customIpaccessSvcCustomIpAccessParent</code> but it also returns the http response headers .
    * 
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
    * @return A ApiResponse that wraps the response boyd and the http headers.
    */
-  @RequestLine("POST /api/rest/entity/custom/ipaccessSvc/{elid}/CustomIpAccessChildParent?sessionId={sessionId}")
+  @RequestLine("POST /api/rest/entity/custom/ipaccessSvc/{elid}/CustomIpAccessParent?sessionId={sessionId}")
   @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  ApiResponse<CustomIpaccessSvcCustomIpAccessChildParentResponseData> customIpaccessSvcCustomIpAccessChildParentWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, CustomIpaccessSvcCustomIpAccessChildParentRequestData body);
+  ApiResponse<CustomIpaccessSvcCustomIpAccessParentResponseData> customIpaccessSvcCustomIpAccessParentWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, CustomIpaccessSvcCustomIpAccessParentRequestData body);
 
 
   /**
    * Get relations to Redundancy for entities
    * 
-   * Note, this is equivalent to the other <code>customIpaccessSvcCustomIpAccessChildParent</code> method,
+   * Note, this is equivalent to the other <code>customIpaccessSvcCustomIpAccessParent</code> method,
    * but with the query parameters collected into a single Map parameter. This
    * is convenient for services with optional query parameters, especially when
-   * used with the {@link CustomIpaccessSvcCustomIpAccessChildParentQueryParams} class that allows for
+   * used with the {@link CustomIpaccessSvcCustomIpAccessParentQueryParams} class that allows for
    * building up this map in a fluent style.
    * @param elid  (required)
    * @param body  (required)
@@ -357,19 +357,19 @@ public interface CustomIpaccessSvcApi extends ApiClient.Api {
    *   <ul>
    *   <li>sessionId - Session-ID (required)</li>
    *   </ul>
-   * @return CustomIpaccessSvcCustomIpAccessChildParentResponseData
+   * @return CustomIpaccessSvcCustomIpAccessParentResponseData
    */
-  @RequestLine("POST /api/rest/entity/custom/ipaccessSvc/{elid}/CustomIpAccessChildParent?sessionId={sessionId}")
+  @RequestLine("POST /api/rest/entity/custom/ipaccessSvc/{elid}/CustomIpAccessParent?sessionId={sessionId}")
   @Headers({
   "Content-Type: application/json",
   "Accept: application/json",
   })
-  CustomIpaccessSvcCustomIpAccessChildParentResponseData customIpaccessSvcCustomIpAccessChildParent(@Param("elid") String elid, CustomIpaccessSvcCustomIpAccessChildParentRequestData body, @QueryMap(encoded=true) CustomIpaccessSvcCustomIpAccessChildParentQueryParams queryParams);
+  CustomIpaccessSvcCustomIpAccessParentResponseData customIpaccessSvcCustomIpAccessParent(@Param("elid") String elid, CustomIpaccessSvcCustomIpAccessParentRequestData body, @QueryMap(encoded=true) CustomIpaccessSvcCustomIpAccessParentQueryParams queryParams);
 
   /**
   * Get relations to Redundancy for entities
   * 
-  * Note, this is equivalent to the other <code>customIpaccessSvcCustomIpAccessChildParent</code> that receives the query parameters as a map,
+  * Note, this is equivalent to the other <code>customIpaccessSvcCustomIpAccessParent</code> that receives the query parameters as a map,
   * but this one also exposes the Http response headers
               * @param elid  (required)
               * @param body  (required)
@@ -378,22 +378,22 @@ public interface CustomIpaccessSvcApi extends ApiClient.Api {
       *   <ul>
           *   <li>sessionId - Session-ID (required)</li>
       *   </ul>
-          * @return CustomIpaccessSvcCustomIpAccessChildParentResponseData
+          * @return CustomIpaccessSvcCustomIpAccessParentResponseData
       */
-      @RequestLine("POST /api/rest/entity/custom/ipaccessSvc/{elid}/CustomIpAccessChildParent?sessionId={sessionId}")
+      @RequestLine("POST /api/rest/entity/custom/ipaccessSvc/{elid}/CustomIpAccessParent?sessionId={sessionId}")
       @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
       })
-   ApiResponse<CustomIpaccessSvcCustomIpAccessChildParentResponseData> customIpaccessSvcCustomIpAccessChildParentWithHttpInfo(@Param("elid") String elid, CustomIpaccessSvcCustomIpAccessChildParentRequestData body, @QueryMap(encoded=true) CustomIpaccessSvcCustomIpAccessChildParentQueryParams queryParams);
+   ApiResponse<CustomIpaccessSvcCustomIpAccessParentResponseData> customIpaccessSvcCustomIpAccessParentWithHttpInfo(@Param("elid") String elid, CustomIpaccessSvcCustomIpAccessParentRequestData body, @QueryMap(encoded=true) CustomIpaccessSvcCustomIpAccessParentQueryParams queryParams);
 
 
    /**
    * A convenience class for generating query parameters for the
-   * <code>customIpaccessSvcCustomIpAccessChildParent</code> method in a fluent style.
+   * <code>customIpaccessSvcCustomIpAccessParent</code> method in a fluent style.
    */
-  public static class CustomIpaccessSvcCustomIpAccessChildParentQueryParams extends HashMap<String, Object> {
-    public CustomIpaccessSvcCustomIpAccessChildParentQueryParams sessionId(final String value) {
+  public static class CustomIpaccessSvcCustomIpAccessParentQueryParams extends HashMap<String, Object> {
+    public CustomIpaccessSvcCustomIpAccessParentQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

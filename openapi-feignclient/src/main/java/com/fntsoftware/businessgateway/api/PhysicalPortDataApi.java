@@ -18,8 +18,14 @@ import com.fntsoftware.businessgateway.entities.PhysicalPortDataIpv4AddressesReq
 import com.fntsoftware.businessgateway.entities.PhysicalPortDataIpv4AddressesResponseData;
 import com.fntsoftware.businessgateway.entities.PhysicalPortDataLogicalPortRequestData;
 import com.fntsoftware.businessgateway.entities.PhysicalPortDataLogicalPortResponseData;
+import com.fntsoftware.businessgateway.entities.PhysicalPortDataParentDeviceRequestData;
+import com.fntsoftware.businessgateway.entities.PhysicalPortDataParentDeviceResponseData;
+import com.fntsoftware.businessgateway.entities.PhysicalPortDataPhysicalConnectionDataRequestData;
+import com.fntsoftware.businessgateway.entities.PhysicalPortDataPhysicalConnectionDataResponseData;
 import com.fntsoftware.businessgateway.entities.PhysicalPortDataQueryRequest;
 import com.fntsoftware.businessgateway.entities.PhysicalPortDataQueryResponse;
+import com.fntsoftware.businessgateway.entities.PhysicalPortDataSignalTraceEndRequest;
+import com.fntsoftware.businessgateway.entities.PhysicalPortDataSignalTraceEndResponse;
 import com.fntsoftware.businessgateway.entities.PhysicalPortDataVlansRequest;
 import com.fntsoftware.businessgateway.entities.PhysicalPortDataVlansResponse;
 import com.fntsoftware.businessgateway.entities.ReservePortPhysicalPortDataRequestData;
@@ -34,7 +40,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-04T13:31:32.601557352Z[Etc/UTC]")
 public interface PhysicalPortDataApi extends ApiClient.Api {
 
 
@@ -662,6 +668,184 @@ public interface PhysicalPortDataApi extends ApiClient.Api {
   }
 
   /**
+   * Get relations to Parent device entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param portIdentifier  (required)
+   * @param body  (required)
+   * @return PhysicalPortDataParentDeviceResponseData
+   */
+  @RequestLine("POST /api/rest/entity/physicalPortData/{portIdentifier}/ParentDevice?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  PhysicalPortDataParentDeviceResponseData physicalPortDataParentDevice(@Param("sessionId") String sessionId, @Param("portIdentifier") String portIdentifier, PhysicalPortDataParentDeviceRequestData body);
+
+  /**
+   * Get relations to Parent device entities
+   * Similar to <code>physicalPortDataParentDevice</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param portIdentifier  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/physicalPortData/{portIdentifier}/ParentDevice?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<PhysicalPortDataParentDeviceResponseData> physicalPortDataParentDeviceWithHttpInfo(@Param("sessionId") String sessionId, @Param("portIdentifier") String portIdentifier, PhysicalPortDataParentDeviceRequestData body);
+
+
+  /**
+   * Get relations to Parent device entities
+   * 
+   * Note, this is equivalent to the other <code>physicalPortDataParentDevice</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link PhysicalPortDataParentDeviceQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param portIdentifier  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return PhysicalPortDataParentDeviceResponseData
+   */
+  @RequestLine("POST /api/rest/entity/physicalPortData/{portIdentifier}/ParentDevice?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  PhysicalPortDataParentDeviceResponseData physicalPortDataParentDevice(@Param("portIdentifier") String portIdentifier, PhysicalPortDataParentDeviceRequestData body, @QueryMap(encoded=true) PhysicalPortDataParentDeviceQueryParams queryParams);
+
+  /**
+  * Get relations to Parent device entities
+  * 
+  * Note, this is equivalent to the other <code>physicalPortDataParentDevice</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param portIdentifier  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return PhysicalPortDataParentDeviceResponseData
+      */
+      @RequestLine("POST /api/rest/entity/physicalPortData/{portIdentifier}/ParentDevice?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<PhysicalPortDataParentDeviceResponseData> physicalPortDataParentDeviceWithHttpInfo(@Param("portIdentifier") String portIdentifier, PhysicalPortDataParentDeviceRequestData body, @QueryMap(encoded=true) PhysicalPortDataParentDeviceQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>physicalPortDataParentDevice</code> method in a fluent style.
+   */
+  public static class PhysicalPortDataParentDeviceQueryParams extends HashMap<String, Object> {
+    public PhysicalPortDataParentDeviceQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Physical connection (data) entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param portIdentifier  (required)
+   * @param body  (required)
+   * @return PhysicalPortDataPhysicalConnectionDataResponseData
+   */
+  @RequestLine("POST /api/rest/entity/physicalPortData/{portIdentifier}/PhysicalConnectionData?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  PhysicalPortDataPhysicalConnectionDataResponseData physicalPortDataPhysicalConnectionData(@Param("sessionId") String sessionId, @Param("portIdentifier") String portIdentifier, PhysicalPortDataPhysicalConnectionDataRequestData body);
+
+  /**
+   * Get relations to Physical connection (data) entities
+   * Similar to <code>physicalPortDataPhysicalConnectionData</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param portIdentifier  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/physicalPortData/{portIdentifier}/PhysicalConnectionData?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<PhysicalPortDataPhysicalConnectionDataResponseData> physicalPortDataPhysicalConnectionDataWithHttpInfo(@Param("sessionId") String sessionId, @Param("portIdentifier") String portIdentifier, PhysicalPortDataPhysicalConnectionDataRequestData body);
+
+
+  /**
+   * Get relations to Physical connection (data) entities
+   * 
+   * Note, this is equivalent to the other <code>physicalPortDataPhysicalConnectionData</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link PhysicalPortDataPhysicalConnectionDataQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param portIdentifier  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return PhysicalPortDataPhysicalConnectionDataResponseData
+   */
+  @RequestLine("POST /api/rest/entity/physicalPortData/{portIdentifier}/PhysicalConnectionData?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  PhysicalPortDataPhysicalConnectionDataResponseData physicalPortDataPhysicalConnectionData(@Param("portIdentifier") String portIdentifier, PhysicalPortDataPhysicalConnectionDataRequestData body, @QueryMap(encoded=true) PhysicalPortDataPhysicalConnectionDataQueryParams queryParams);
+
+  /**
+  * Get relations to Physical connection (data) entities
+  * 
+  * Note, this is equivalent to the other <code>physicalPortDataPhysicalConnectionData</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param portIdentifier  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return PhysicalPortDataPhysicalConnectionDataResponseData
+      */
+      @RequestLine("POST /api/rest/entity/physicalPortData/{portIdentifier}/PhysicalConnectionData?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<PhysicalPortDataPhysicalConnectionDataResponseData> physicalPortDataPhysicalConnectionDataWithHttpInfo(@Param("portIdentifier") String portIdentifier, PhysicalPortDataPhysicalConnectionDataRequestData body, @QueryMap(encoded=true) PhysicalPortDataPhysicalConnectionDataQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>physicalPortDataPhysicalConnectionData</code> method in a fluent style.
+   */
+  public static class PhysicalPortDataPhysicalConnectionDataQueryParams extends HashMap<String, Object> {
+    public PhysicalPortDataPhysicalConnectionDataQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Basic query
    * Queries port data for a device. Either the device ID, the device ELID or the port identifier has to be specified as a restriction.
    * @param sessionId Session-ID (required)
@@ -741,6 +925,95 @@ public interface PhysicalPortDataApi extends ApiClient.Api {
    */
   public static class PhysicalPortDataQueryQueryParams extends HashMap<String, Object> {
     public PhysicalPortDataQueryQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * End port of the signal tracing
+   * 
+   * @param sessionId Session-ID (required)
+   * @param portIdentifier  (required)
+   * @param body  (required)
+   * @return PhysicalPortDataSignalTraceEndResponse
+   */
+  @RequestLine("POST /api/rest/entity/physicalPortData/{portIdentifier}/SignalTraceEnd?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  PhysicalPortDataSignalTraceEndResponse physicalPortDataSignalTraceEnd(@Param("sessionId") String sessionId, @Param("portIdentifier") String portIdentifier, PhysicalPortDataSignalTraceEndRequest body);
+
+  /**
+   * End port of the signal tracing
+   * Similar to <code>physicalPortDataSignalTraceEnd</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param portIdentifier  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/physicalPortData/{portIdentifier}/SignalTraceEnd?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<PhysicalPortDataSignalTraceEndResponse> physicalPortDataSignalTraceEndWithHttpInfo(@Param("sessionId") String sessionId, @Param("portIdentifier") String portIdentifier, PhysicalPortDataSignalTraceEndRequest body);
+
+
+  /**
+   * End port of the signal tracing
+   * 
+   * Note, this is equivalent to the other <code>physicalPortDataSignalTraceEnd</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link PhysicalPortDataSignalTraceEndQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param portIdentifier  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return PhysicalPortDataSignalTraceEndResponse
+   */
+  @RequestLine("POST /api/rest/entity/physicalPortData/{portIdentifier}/SignalTraceEnd?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  PhysicalPortDataSignalTraceEndResponse physicalPortDataSignalTraceEnd(@Param("portIdentifier") String portIdentifier, PhysicalPortDataSignalTraceEndRequest body, @QueryMap(encoded=true) PhysicalPortDataSignalTraceEndQueryParams queryParams);
+
+  /**
+  * End port of the signal tracing
+  * 
+  * Note, this is equivalent to the other <code>physicalPortDataSignalTraceEnd</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param portIdentifier  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return PhysicalPortDataSignalTraceEndResponse
+      */
+      @RequestLine("POST /api/rest/entity/physicalPortData/{portIdentifier}/SignalTraceEnd?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<PhysicalPortDataSignalTraceEndResponse> physicalPortDataSignalTraceEndWithHttpInfo(@Param("portIdentifier") String portIdentifier, PhysicalPortDataSignalTraceEndRequest body, @QueryMap(encoded=true) PhysicalPortDataSignalTraceEndQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>physicalPortDataSignalTraceEnd</code> method in a fluent style.
+   */
+  public static class PhysicalPortDataSignalTraceEndQueryParams extends HashMap<String, Object> {
+    public PhysicalPortDataSignalTraceEndQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

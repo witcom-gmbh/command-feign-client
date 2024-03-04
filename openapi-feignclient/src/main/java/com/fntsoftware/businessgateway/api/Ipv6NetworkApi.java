@@ -18,6 +18,8 @@ import com.fntsoftware.businessgateway.entities.Ipv6NetworkDomainRequestData;
 import com.fntsoftware.businessgateway.entities.Ipv6NetworkDomainResponseData;
 import com.fntsoftware.businessgateway.entities.Ipv6NetworkFrameContractsRequestData;
 import com.fntsoftware.businessgateway.entities.Ipv6NetworkFrameContractsResponseData;
+import com.fntsoftware.businessgateway.entities.Ipv6NetworkFreeNetRequest;
+import com.fntsoftware.businessgateway.entities.Ipv6NetworkFreeNetResponse;
 import com.fntsoftware.businessgateway.entities.Ipv6NetworkGatewayRequestData;
 import com.fntsoftware.businessgateway.entities.Ipv6NetworkGatewayResponseData;
 import com.fntsoftware.businessgateway.entities.Ipv6NetworkIpv4NetworksRequestData;
@@ -36,6 +38,8 @@ import com.fntsoftware.businessgateway.entities.Ipv6NetworkObjectsRequest;
 import com.fntsoftware.businessgateway.entities.Ipv6NetworkObjectsResponse;
 import com.fntsoftware.businessgateway.entities.Ipv6NetworkOrganizationsRequestData;
 import com.fntsoftware.businessgateway.entities.Ipv6NetworkOrganizationsResponseData;
+import com.fntsoftware.businessgateway.entities.Ipv6NetworkParentNetworkRequestData;
+import com.fntsoftware.businessgateway.entities.Ipv6NetworkParentNetworkResponseData;
 import com.fntsoftware.businessgateway.entities.Ipv6NetworkPersonGroupsRequestData;
 import com.fntsoftware.businessgateway.entities.Ipv6NetworkPersonGroupsResponseData;
 import com.fntsoftware.businessgateway.entities.Ipv6NetworkPersonsRequestData;
@@ -44,6 +48,8 @@ import com.fntsoftware.businessgateway.entities.Ipv6NetworkPhysicalPortsDataRequ
 import com.fntsoftware.businessgateway.entities.Ipv6NetworkPhysicalPortsDataResponseData;
 import com.fntsoftware.businessgateway.entities.Ipv6NetworkQueryRequest;
 import com.fntsoftware.businessgateway.entities.Ipv6NetworkQueryResponse;
+import com.fntsoftware.businessgateway.entities.Ipv6NetworkSubNetworksRequestData;
+import com.fntsoftware.businessgateway.entities.Ipv6NetworkSubNetworksResponseData;
 import com.fntsoftware.businessgateway.entities.Ipv6NetworkSystemAttributesRequest;
 import com.fntsoftware.businessgateway.entities.Ipv6NetworkSystemAttributesResponse;
 import com.fntsoftware.businessgateway.entities.Ipv6NetworkVlanRequestData;
@@ -61,7 +67,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-04T13:31:32.601557352Z[Etc/UTC]")
 public interface Ipv6NetworkApi extends ApiClient.Api {
 
 
@@ -679,6 +685,91 @@ public interface Ipv6NetworkApi extends ApiClient.Api {
    */
   public static class Ipv6NetworkFrameContractsQueryParams extends HashMap<String, Object> {
     public Ipv6NetworkFrameContractsQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Query Query free nets
+   * Query of the Query free nets
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return Ipv6NetworkFreeNetResponse
+   */
+  @RequestLine("POST /api/rest/entity/ipv6Network/freeNet?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  Ipv6NetworkFreeNetResponse ipv6NetworkFreeNet(@Param("sessionId") String sessionId, Ipv6NetworkFreeNetRequest body);
+
+  /**
+   * Query Query free nets
+   * Similar to <code>ipv6NetworkFreeNet</code> but it also returns the http response headers .
+   * Query of the Query free nets
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/ipv6Network/freeNet?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<Ipv6NetworkFreeNetResponse> ipv6NetworkFreeNetWithHttpInfo(@Param("sessionId") String sessionId, Ipv6NetworkFreeNetRequest body);
+
+
+  /**
+   * Query Query free nets
+   * Query of the Query free nets
+   * Note, this is equivalent to the other <code>ipv6NetworkFreeNet</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link Ipv6NetworkFreeNetQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return Ipv6NetworkFreeNetResponse
+   */
+  @RequestLine("POST /api/rest/entity/ipv6Network/freeNet?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  Ipv6NetworkFreeNetResponse ipv6NetworkFreeNet(Ipv6NetworkFreeNetRequest body, @QueryMap(encoded=true) Ipv6NetworkFreeNetQueryParams queryParams);
+
+  /**
+  * Query Query free nets
+  * Query of the Query free nets
+  * Note, this is equivalent to the other <code>ipv6NetworkFreeNet</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return Ipv6NetworkFreeNetResponse
+      */
+      @RequestLine("POST /api/rest/entity/ipv6Network/freeNet?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<Ipv6NetworkFreeNetResponse> ipv6NetworkFreeNetWithHttpInfo(Ipv6NetworkFreeNetRequest body, @QueryMap(encoded=true) Ipv6NetworkFreeNetQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>ipv6NetworkFreeNet</code> method in a fluent style.
+   */
+  public static class Ipv6NetworkFreeNetQueryParams extends HashMap<String, Object> {
+    public Ipv6NetworkFreeNetQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -1486,6 +1577,95 @@ public interface Ipv6NetworkApi extends ApiClient.Api {
   }
 
   /**
+   * Get relations to Higher-level IP network entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return Ipv6NetworkParentNetworkResponseData
+   */
+  @RequestLine("POST /api/rest/entity/ipv6Network/{elid}/ParentNetwork?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  Ipv6NetworkParentNetworkResponseData ipv6NetworkParentNetwork(@Param("sessionId") String sessionId, @Param("elid") String elid, Ipv6NetworkParentNetworkRequestData body);
+
+  /**
+   * Get relations to Higher-level IP network entities
+   * Similar to <code>ipv6NetworkParentNetwork</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/ipv6Network/{elid}/ParentNetwork?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<Ipv6NetworkParentNetworkResponseData> ipv6NetworkParentNetworkWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, Ipv6NetworkParentNetworkRequestData body);
+
+
+  /**
+   * Get relations to Higher-level IP network entities
+   * 
+   * Note, this is equivalent to the other <code>ipv6NetworkParentNetwork</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link Ipv6NetworkParentNetworkQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return Ipv6NetworkParentNetworkResponseData
+   */
+  @RequestLine("POST /api/rest/entity/ipv6Network/{elid}/ParentNetwork?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  Ipv6NetworkParentNetworkResponseData ipv6NetworkParentNetwork(@Param("elid") String elid, Ipv6NetworkParentNetworkRequestData body, @QueryMap(encoded=true) Ipv6NetworkParentNetworkQueryParams queryParams);
+
+  /**
+  * Get relations to Higher-level IP network entities
+  * 
+  * Note, this is equivalent to the other <code>ipv6NetworkParentNetwork</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return Ipv6NetworkParentNetworkResponseData
+      */
+      @RequestLine("POST /api/rest/entity/ipv6Network/{elid}/ParentNetwork?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<Ipv6NetworkParentNetworkResponseData> ipv6NetworkParentNetworkWithHttpInfo(@Param("elid") String elid, Ipv6NetworkParentNetworkRequestData body, @QueryMap(encoded=true) Ipv6NetworkParentNetworkQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>ipv6NetworkParentNetwork</code> method in a fluent style.
+   */
+  public static class Ipv6NetworkParentNetworkQueryParams extends HashMap<String, Object> {
+    public Ipv6NetworkParentNetworkQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Get relations to Person group entities
    * 
    * @param sessionId Session-ID (required)
@@ -1832,6 +2012,95 @@ public interface Ipv6NetworkApi extends ApiClient.Api {
    */
   public static class Ipv6NetworkQueryQueryParams extends HashMap<String, Object> {
     public Ipv6NetworkQueryQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Lower-level IP network entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return Ipv6NetworkSubNetworksResponseData
+   */
+  @RequestLine("POST /api/rest/entity/ipv6Network/{elid}/SubNetworks?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  Ipv6NetworkSubNetworksResponseData ipv6NetworkSubNetworks(@Param("sessionId") String sessionId, @Param("elid") String elid, Ipv6NetworkSubNetworksRequestData body);
+
+  /**
+   * Get relations to Lower-level IP network entities
+   * Similar to <code>ipv6NetworkSubNetworks</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/ipv6Network/{elid}/SubNetworks?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<Ipv6NetworkSubNetworksResponseData> ipv6NetworkSubNetworksWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, Ipv6NetworkSubNetworksRequestData body);
+
+
+  /**
+   * Get relations to Lower-level IP network entities
+   * 
+   * Note, this is equivalent to the other <code>ipv6NetworkSubNetworks</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link Ipv6NetworkSubNetworksQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return Ipv6NetworkSubNetworksResponseData
+   */
+  @RequestLine("POST /api/rest/entity/ipv6Network/{elid}/SubNetworks?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  Ipv6NetworkSubNetworksResponseData ipv6NetworkSubNetworks(@Param("elid") String elid, Ipv6NetworkSubNetworksRequestData body, @QueryMap(encoded=true) Ipv6NetworkSubNetworksQueryParams queryParams);
+
+  /**
+  * Get relations to Lower-level IP network entities
+  * 
+  * Note, this is equivalent to the other <code>ipv6NetworkSubNetworks</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return Ipv6NetworkSubNetworksResponseData
+      */
+      @RequestLine("POST /api/rest/entity/ipv6Network/{elid}/SubNetworks?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<Ipv6NetworkSubNetworksResponseData> ipv6NetworkSubNetworksWithHttpInfo(@Param("elid") String elid, Ipv6NetworkSubNetworksRequestData body, @QueryMap(encoded=true) Ipv6NetworkSubNetworksQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>ipv6NetworkSubNetworks</code> method in a fluent style.
+   */
+  public static class Ipv6NetworkSubNetworksQueryParams extends HashMap<String, Object> {
+    public Ipv6NetworkSubNetworksQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

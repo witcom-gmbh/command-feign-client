@@ -20,8 +20,14 @@ import com.fntsoftware.businessgateway.entities.Ipv4NetworkDomainRequestData;
 import com.fntsoftware.businessgateway.entities.Ipv4NetworkDomainResponseData;
 import com.fntsoftware.businessgateway.entities.Ipv4NetworkFrameContractsRequestData;
 import com.fntsoftware.businessgateway.entities.Ipv4NetworkFrameContractsResponseData;
+import com.fntsoftware.businessgateway.entities.Ipv4NetworkFreeNetRequest;
+import com.fntsoftware.businessgateway.entities.Ipv4NetworkFreeNetResponse;
 import com.fntsoftware.businessgateway.entities.Ipv4NetworkGatewayRequestData;
 import com.fntsoftware.businessgateway.entities.Ipv4NetworkGatewayResponseData;
+import com.fntsoftware.businessgateway.entities.Ipv4NetworkIpv4NetrangesRequestData;
+import com.fntsoftware.businessgateway.entities.Ipv4NetworkIpv4NetrangesResponseData;
+import com.fntsoftware.businessgateway.entities.Ipv4NetworkIpv6NetworksRequestData;
+import com.fntsoftware.businessgateway.entities.Ipv4NetworkIpv6NetworksResponseData;
 import com.fntsoftware.businessgateway.entities.Ipv4NetworkMaintenanceContractsRequestData;
 import com.fntsoftware.businessgateway.entities.Ipv4NetworkMaintenanceContractsResponseData;
 import com.fntsoftware.businessgateway.entities.Ipv4NetworkNetMandatorRequestData;
@@ -32,16 +38,18 @@ import com.fntsoftware.businessgateway.entities.Ipv4NetworkObjectsRequest;
 import com.fntsoftware.businessgateway.entities.Ipv4NetworkObjectsResponse;
 import com.fntsoftware.businessgateway.entities.Ipv4NetworkOrganizationsRequestData;
 import com.fntsoftware.businessgateway.entities.Ipv4NetworkOrganizationsResponseData;
+import com.fntsoftware.businessgateway.entities.Ipv4NetworkParentNetworkRequestData;
+import com.fntsoftware.businessgateway.entities.Ipv4NetworkParentNetworkResponseData;
 import com.fntsoftware.businessgateway.entities.Ipv4NetworkPersonGroupsRequestData;
 import com.fntsoftware.businessgateway.entities.Ipv4NetworkPersonGroupsResponseData;
 import com.fntsoftware.businessgateway.entities.Ipv4NetworkPersonsRequestData;
 import com.fntsoftware.businessgateway.entities.Ipv4NetworkPersonsResponseData;
 import com.fntsoftware.businessgateway.entities.Ipv4NetworkQueryRequest;
 import com.fntsoftware.businessgateway.entities.Ipv4NetworkQueryResponse;
+import com.fntsoftware.businessgateway.entities.Ipv4NetworkSubNetworksRequestData;
+import com.fntsoftware.businessgateway.entities.Ipv4NetworkSubNetworksResponseData;
 import com.fntsoftware.businessgateway.entities.Ipv4NetworkSystemAttributesRequest;
 import com.fntsoftware.businessgateway.entities.Ipv4NetworkSystemAttributesResponse;
-import com.fntsoftware.businessgateway.entities.Ipv4NetworkVirtualClientsRequestData;
-import com.fntsoftware.businessgateway.entities.Ipv4NetworkVirtualClientsResponseData;
 import com.fntsoftware.businessgateway.entities.Ipv4NetworkVirtualNasServersRequestData;
 import com.fntsoftware.businessgateway.entities.Ipv4NetworkVirtualNasServersResponseData;
 import com.fntsoftware.businessgateway.entities.Ipv4NetworkVirtualSwitchesRequestData;
@@ -59,7 +67,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-04T13:31:32.601557352Z[Etc/UTC]")
 public interface Ipv4NetworkApi extends ApiClient.Api {
 
 
@@ -772,6 +780,91 @@ public interface Ipv4NetworkApi extends ApiClient.Api {
   }
 
   /**
+   * Query Query free nets
+   * Query of the Query free nets
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return Ipv4NetworkFreeNetResponse
+   */
+  @RequestLine("POST /api/rest/entity/ipv4Network/freeNet?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  Ipv4NetworkFreeNetResponse ipv4NetworkFreeNet(@Param("sessionId") String sessionId, Ipv4NetworkFreeNetRequest body);
+
+  /**
+   * Query Query free nets
+   * Similar to <code>ipv4NetworkFreeNet</code> but it also returns the http response headers .
+   * Query of the Query free nets
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/ipv4Network/freeNet?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<Ipv4NetworkFreeNetResponse> ipv4NetworkFreeNetWithHttpInfo(@Param("sessionId") String sessionId, Ipv4NetworkFreeNetRequest body);
+
+
+  /**
+   * Query Query free nets
+   * Query of the Query free nets
+   * Note, this is equivalent to the other <code>ipv4NetworkFreeNet</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link Ipv4NetworkFreeNetQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return Ipv4NetworkFreeNetResponse
+   */
+  @RequestLine("POST /api/rest/entity/ipv4Network/freeNet?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  Ipv4NetworkFreeNetResponse ipv4NetworkFreeNet(Ipv4NetworkFreeNetRequest body, @QueryMap(encoded=true) Ipv4NetworkFreeNetQueryParams queryParams);
+
+  /**
+  * Query Query free nets
+  * Query of the Query free nets
+  * Note, this is equivalent to the other <code>ipv4NetworkFreeNet</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return Ipv4NetworkFreeNetResponse
+      */
+      @RequestLine("POST /api/rest/entity/ipv4Network/freeNet?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<Ipv4NetworkFreeNetResponse> ipv4NetworkFreeNetWithHttpInfo(Ipv4NetworkFreeNetRequest body, @QueryMap(encoded=true) Ipv4NetworkFreeNetQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>ipv4NetworkFreeNet</code> method in a fluent style.
+   */
+  public static class Ipv4NetworkFreeNetQueryParams extends HashMap<String, Object> {
+    public Ipv4NetworkFreeNetQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Get relations to IP gateway entities
    * 
    * @param sessionId Session-ID (required)
@@ -855,6 +948,184 @@ public interface Ipv4NetworkApi extends ApiClient.Api {
    */
   public static class Ipv4NetworkGatewayQueryParams extends HashMap<String, Object> {
     public Ipv4NetworkGatewayQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to IPv4 netrange entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return Ipv4NetworkIpv4NetrangesResponseData
+   */
+  @RequestLine("POST /api/rest/entity/ipv4Network/{elid}/Ipv4Netranges?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  Ipv4NetworkIpv4NetrangesResponseData ipv4NetworkIpv4Netranges(@Param("sessionId") String sessionId, @Param("elid") String elid, Ipv4NetworkIpv4NetrangesRequestData body);
+
+  /**
+   * Get relations to IPv4 netrange entities
+   * Similar to <code>ipv4NetworkIpv4Netranges</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/ipv4Network/{elid}/Ipv4Netranges?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<Ipv4NetworkIpv4NetrangesResponseData> ipv4NetworkIpv4NetrangesWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, Ipv4NetworkIpv4NetrangesRequestData body);
+
+
+  /**
+   * Get relations to IPv4 netrange entities
+   * 
+   * Note, this is equivalent to the other <code>ipv4NetworkIpv4Netranges</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link Ipv4NetworkIpv4NetrangesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return Ipv4NetworkIpv4NetrangesResponseData
+   */
+  @RequestLine("POST /api/rest/entity/ipv4Network/{elid}/Ipv4Netranges?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  Ipv4NetworkIpv4NetrangesResponseData ipv4NetworkIpv4Netranges(@Param("elid") String elid, Ipv4NetworkIpv4NetrangesRequestData body, @QueryMap(encoded=true) Ipv4NetworkIpv4NetrangesQueryParams queryParams);
+
+  /**
+  * Get relations to IPv4 netrange entities
+  * 
+  * Note, this is equivalent to the other <code>ipv4NetworkIpv4Netranges</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return Ipv4NetworkIpv4NetrangesResponseData
+      */
+      @RequestLine("POST /api/rest/entity/ipv4Network/{elid}/Ipv4Netranges?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<Ipv4NetworkIpv4NetrangesResponseData> ipv4NetworkIpv4NetrangesWithHttpInfo(@Param("elid") String elid, Ipv4NetworkIpv4NetrangesRequestData body, @QueryMap(encoded=true) Ipv4NetworkIpv4NetrangesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>ipv4NetworkIpv4Netranges</code> method in a fluent style.
+   */
+  public static class Ipv4NetworkIpv4NetrangesQueryParams extends HashMap<String, Object> {
+    public Ipv4NetworkIpv4NetrangesQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to IPv6 network entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return Ipv4NetworkIpv6NetworksResponseData
+   */
+  @RequestLine("POST /api/rest/entity/ipv4Network/{elid}/Ipv6Networks?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  Ipv4NetworkIpv6NetworksResponseData ipv4NetworkIpv6Networks(@Param("sessionId") String sessionId, @Param("elid") String elid, Ipv4NetworkIpv6NetworksRequestData body);
+
+  /**
+   * Get relations to IPv6 network entities
+   * Similar to <code>ipv4NetworkIpv6Networks</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/ipv4Network/{elid}/Ipv6Networks?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<Ipv4NetworkIpv6NetworksResponseData> ipv4NetworkIpv6NetworksWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, Ipv4NetworkIpv6NetworksRequestData body);
+
+
+  /**
+   * Get relations to IPv6 network entities
+   * 
+   * Note, this is equivalent to the other <code>ipv4NetworkIpv6Networks</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link Ipv4NetworkIpv6NetworksQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return Ipv4NetworkIpv6NetworksResponseData
+   */
+  @RequestLine("POST /api/rest/entity/ipv4Network/{elid}/Ipv6Networks?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  Ipv4NetworkIpv6NetworksResponseData ipv4NetworkIpv6Networks(@Param("elid") String elid, Ipv4NetworkIpv6NetworksRequestData body, @QueryMap(encoded=true) Ipv4NetworkIpv6NetworksQueryParams queryParams);
+
+  /**
+  * Get relations to IPv6 network entities
+  * 
+  * Note, this is equivalent to the other <code>ipv4NetworkIpv6Networks</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return Ipv4NetworkIpv6NetworksResponseData
+      */
+      @RequestLine("POST /api/rest/entity/ipv4Network/{elid}/Ipv6Networks?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<Ipv4NetworkIpv6NetworksResponseData> ipv4NetworkIpv6NetworksWithHttpInfo(@Param("elid") String elid, Ipv4NetworkIpv6NetworksRequestData body, @QueryMap(encoded=true) Ipv4NetworkIpv6NetworksQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>ipv4NetworkIpv6Networks</code> method in a fluent style.
+   */
+  public static class Ipv4NetworkIpv6NetworksQueryParams extends HashMap<String, Object> {
+    public Ipv4NetworkIpv6NetworksQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -1306,6 +1577,95 @@ public interface Ipv4NetworkApi extends ApiClient.Api {
   }
 
   /**
+   * Get relations to Higher-level IP network entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return Ipv4NetworkParentNetworkResponseData
+   */
+  @RequestLine("POST /api/rest/entity/ipv4Network/{elid}/ParentNetwork?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  Ipv4NetworkParentNetworkResponseData ipv4NetworkParentNetwork(@Param("sessionId") String sessionId, @Param("elid") String elid, Ipv4NetworkParentNetworkRequestData body);
+
+  /**
+   * Get relations to Higher-level IP network entities
+   * Similar to <code>ipv4NetworkParentNetwork</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/ipv4Network/{elid}/ParentNetwork?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<Ipv4NetworkParentNetworkResponseData> ipv4NetworkParentNetworkWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, Ipv4NetworkParentNetworkRequestData body);
+
+
+  /**
+   * Get relations to Higher-level IP network entities
+   * 
+   * Note, this is equivalent to the other <code>ipv4NetworkParentNetwork</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link Ipv4NetworkParentNetworkQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return Ipv4NetworkParentNetworkResponseData
+   */
+  @RequestLine("POST /api/rest/entity/ipv4Network/{elid}/ParentNetwork?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  Ipv4NetworkParentNetworkResponseData ipv4NetworkParentNetwork(@Param("elid") String elid, Ipv4NetworkParentNetworkRequestData body, @QueryMap(encoded=true) Ipv4NetworkParentNetworkQueryParams queryParams);
+
+  /**
+  * Get relations to Higher-level IP network entities
+  * 
+  * Note, this is equivalent to the other <code>ipv4NetworkParentNetwork</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return Ipv4NetworkParentNetworkResponseData
+      */
+      @RequestLine("POST /api/rest/entity/ipv4Network/{elid}/ParentNetwork?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<Ipv4NetworkParentNetworkResponseData> ipv4NetworkParentNetworkWithHttpInfo(@Param("elid") String elid, Ipv4NetworkParentNetworkRequestData body, @QueryMap(encoded=true) Ipv4NetworkParentNetworkQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>ipv4NetworkParentNetwork</code> method in a fluent style.
+   */
+  public static class Ipv4NetworkParentNetworkQueryParams extends HashMap<String, Object> {
+    public Ipv4NetworkParentNetworkQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Get relations to Person group entities
    * 
    * @param sessionId Session-ID (required)
@@ -1569,6 +1929,95 @@ public interface Ipv4NetworkApi extends ApiClient.Api {
   }
 
   /**
+   * Get relations to Lower-level IP network entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return Ipv4NetworkSubNetworksResponseData
+   */
+  @RequestLine("POST /api/rest/entity/ipv4Network/{elid}/SubNetworks?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  Ipv4NetworkSubNetworksResponseData ipv4NetworkSubNetworks(@Param("sessionId") String sessionId, @Param("elid") String elid, Ipv4NetworkSubNetworksRequestData body);
+
+  /**
+   * Get relations to Lower-level IP network entities
+   * Similar to <code>ipv4NetworkSubNetworks</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/ipv4Network/{elid}/SubNetworks?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<Ipv4NetworkSubNetworksResponseData> ipv4NetworkSubNetworksWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, Ipv4NetworkSubNetworksRequestData body);
+
+
+  /**
+   * Get relations to Lower-level IP network entities
+   * 
+   * Note, this is equivalent to the other <code>ipv4NetworkSubNetworks</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link Ipv4NetworkSubNetworksQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return Ipv4NetworkSubNetworksResponseData
+   */
+  @RequestLine("POST /api/rest/entity/ipv4Network/{elid}/SubNetworks?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  Ipv4NetworkSubNetworksResponseData ipv4NetworkSubNetworks(@Param("elid") String elid, Ipv4NetworkSubNetworksRequestData body, @QueryMap(encoded=true) Ipv4NetworkSubNetworksQueryParams queryParams);
+
+  /**
+  * Get relations to Lower-level IP network entities
+  * 
+  * Note, this is equivalent to the other <code>ipv4NetworkSubNetworks</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return Ipv4NetworkSubNetworksResponseData
+      */
+      @RequestLine("POST /api/rest/entity/ipv4Network/{elid}/SubNetworks?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<Ipv4NetworkSubNetworksResponseData> ipv4NetworkSubNetworksWithHttpInfo(@Param("elid") String elid, Ipv4NetworkSubNetworksRequestData body, @QueryMap(encoded=true) Ipv4NetworkSubNetworksQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>ipv4NetworkSubNetworks</code> method in a fluent style.
+   */
+  public static class Ipv4NetworkSubNetworksQueryParams extends HashMap<String, Object> {
+    public Ipv4NetworkSubNetworksQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Query system attributes
    * Query for all system attributes
    * @param sessionId Session-ID (required)
@@ -1652,95 +2101,6 @@ public interface Ipv4NetworkApi extends ApiClient.Api {
    */
   public static class Ipv4NetworkSystemAttributesQueryParams extends HashMap<String, Object> {
     public Ipv4NetworkSystemAttributesQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Get relations to Virtual client entities
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return Ipv4NetworkVirtualClientsResponseData
-   */
-  @RequestLine("POST /api/rest/entity/ipv4Network/{elid}/VirtualClients?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  Ipv4NetworkVirtualClientsResponseData ipv4NetworkVirtualClients(@Param("sessionId") String sessionId, @Param("elid") String elid, Ipv4NetworkVirtualClientsRequestData body);
-
-  /**
-   * Get relations to Virtual client entities
-   * Similar to <code>ipv4NetworkVirtualClients</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/ipv4Network/{elid}/VirtualClients?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<Ipv4NetworkVirtualClientsResponseData> ipv4NetworkVirtualClientsWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, Ipv4NetworkVirtualClientsRequestData body);
-
-
-  /**
-   * Get relations to Virtual client entities
-   * 
-   * Note, this is equivalent to the other <code>ipv4NetworkVirtualClients</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link Ipv4NetworkVirtualClientsQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return Ipv4NetworkVirtualClientsResponseData
-   */
-  @RequestLine("POST /api/rest/entity/ipv4Network/{elid}/VirtualClients?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  Ipv4NetworkVirtualClientsResponseData ipv4NetworkVirtualClients(@Param("elid") String elid, Ipv4NetworkVirtualClientsRequestData body, @QueryMap(encoded=true) Ipv4NetworkVirtualClientsQueryParams queryParams);
-
-  /**
-  * Get relations to Virtual client entities
-  * 
-  * Note, this is equivalent to the other <code>ipv4NetworkVirtualClients</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return Ipv4NetworkVirtualClientsResponseData
-      */
-      @RequestLine("POST /api/rest/entity/ipv4Network/{elid}/VirtualClients?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<Ipv4NetworkVirtualClientsResponseData> ipv4NetworkVirtualClientsWithHttpInfo(@Param("elid") String elid, Ipv4NetworkVirtualClientsRequestData body, @QueryMap(encoded=true) Ipv4NetworkVirtualClientsQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>ipv4NetworkVirtualClients</code> method in a fluent style.
-   */
-  public static class Ipv4NetworkVirtualClientsQueryParams extends HashMap<String, Object> {
-    public Ipv4NetworkVirtualClientsQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

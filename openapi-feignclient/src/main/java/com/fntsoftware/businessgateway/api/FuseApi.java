@@ -12,6 +12,8 @@ import com.fntsoftware.businessgateway.entities.FuseInstallationDetailsRequest;
 import com.fntsoftware.businessgateway.entities.FuseInstallationDetailsResponse;
 import com.fntsoftware.businessgateway.entities.FusePhysicalPortsPowerRequestData;
 import com.fntsoftware.businessgateway.entities.FusePhysicalPortsPowerResponseData;
+import com.fntsoftware.businessgateway.entities.FusePowerRailsRequestData;
+import com.fntsoftware.businessgateway.entities.FusePowerRailsResponseData;
 import com.fntsoftware.businessgateway.entities.FuseQueryRequest;
 import com.fntsoftware.businessgateway.entities.FuseQueryResponse;
 import com.fntsoftware.businessgateway.entities.FuseSystemAttributesRequest;
@@ -25,7 +27,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-04T13:31:32.601557352Z[Etc/UTC]")
 public interface FuseApi extends ApiClient.Api {
 
 
@@ -380,6 +382,95 @@ public interface FuseApi extends ApiClient.Api {
    */
   public static class FusePhysicalPortsPowerQueryParams extends HashMap<String, Object> {
     public FusePhysicalPortsPowerQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Power rail entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return FusePowerRailsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/fuse/{elid}/PowerRails?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  FusePowerRailsResponseData fusePowerRails(@Param("sessionId") String sessionId, @Param("elid") String elid, FusePowerRailsRequestData body);
+
+  /**
+   * Get relations to Power rail entities
+   * Similar to <code>fusePowerRails</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/fuse/{elid}/PowerRails?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<FusePowerRailsResponseData> fusePowerRailsWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, FusePowerRailsRequestData body);
+
+
+  /**
+   * Get relations to Power rail entities
+   * 
+   * Note, this is equivalent to the other <code>fusePowerRails</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link FusePowerRailsQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return FusePowerRailsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/fuse/{elid}/PowerRails?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  FusePowerRailsResponseData fusePowerRails(@Param("elid") String elid, FusePowerRailsRequestData body, @QueryMap(encoded=true) FusePowerRailsQueryParams queryParams);
+
+  /**
+  * Get relations to Power rail entities
+  * 
+  * Note, this is equivalent to the other <code>fusePowerRails</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return FusePowerRailsResponseData
+      */
+      @RequestLine("POST /api/rest/entity/fuse/{elid}/PowerRails?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<FusePowerRailsResponseData> fusePowerRailsWithHttpInfo(@Param("elid") String elid, FusePowerRailsRequestData body, @QueryMap(encoded=true) FusePowerRailsQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>fusePowerRails</code> method in a fluent style.
+   */
+  public static class FusePowerRailsQueryParams extends HashMap<String, Object> {
+    public FusePowerRailsQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

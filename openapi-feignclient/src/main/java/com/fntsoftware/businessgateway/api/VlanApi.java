@@ -38,8 +38,6 @@ import com.fntsoftware.businessgateway.entities.VlanQueryRequest;
 import com.fntsoftware.businessgateway.entities.VlanQueryResponse;
 import com.fntsoftware.businessgateway.entities.VlanSystemAttributesRequest;
 import com.fntsoftware.businessgateway.entities.VlanSystemAttributesResponse;
-import com.fntsoftware.businessgateway.entities.VlanVirtualClientsRequestData;
-import com.fntsoftware.businessgateway.entities.VlanVirtualClientsResponseData;
 import com.fntsoftware.businessgateway.entities.VlanVirtualNasServersRequestData;
 import com.fntsoftware.businessgateway.entities.VlanVirtualNasServersResponseData;
 import com.fntsoftware.businessgateway.entities.VlanVirtualServersRequestData;
@@ -59,7 +57,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-04T13:31:32.601557352Z[Etc/UTC]")
 public interface VlanApi extends ApiClient.Api {
 
 
@@ -1567,95 +1565,6 @@ public interface VlanApi extends ApiClient.Api {
    */
   public static class VlanSystemAttributesQueryParams extends HashMap<String, Object> {
     public VlanSystemAttributesQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Get relations to Virtual client entities
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return VlanVirtualClientsResponseData
-   */
-  @RequestLine("POST /api/rest/entity/vlan/{elid}/VirtualClients?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  VlanVirtualClientsResponseData vlanVirtualClients(@Param("sessionId") String sessionId, @Param("elid") String elid, VlanVirtualClientsRequestData body);
-
-  /**
-   * Get relations to Virtual client entities
-   * Similar to <code>vlanVirtualClients</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/vlan/{elid}/VirtualClients?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<VlanVirtualClientsResponseData> vlanVirtualClientsWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, VlanVirtualClientsRequestData body);
-
-
-  /**
-   * Get relations to Virtual client entities
-   * 
-   * Note, this is equivalent to the other <code>vlanVirtualClients</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link VlanVirtualClientsQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return VlanVirtualClientsResponseData
-   */
-  @RequestLine("POST /api/rest/entity/vlan/{elid}/VirtualClients?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  VlanVirtualClientsResponseData vlanVirtualClients(@Param("elid") String elid, VlanVirtualClientsRequestData body, @QueryMap(encoded=true) VlanVirtualClientsQueryParams queryParams);
-
-  /**
-  * Get relations to Virtual client entities
-  * 
-  * Note, this is equivalent to the other <code>vlanVirtualClients</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return VlanVirtualClientsResponseData
-      */
-      @RequestLine("POST /api/rest/entity/vlan/{elid}/VirtualClients?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<VlanVirtualClientsResponseData> vlanVirtualClientsWithHttpInfo(@Param("elid") String elid, VlanVirtualClientsRequestData body, @QueryMap(encoded=true) VlanVirtualClientsQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>vlanVirtualClients</code> method in a fluent style.
-   */
-  public static class VlanVirtualClientsQueryParams extends HashMap<String, Object> {
-    public VlanVirtualClientsQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

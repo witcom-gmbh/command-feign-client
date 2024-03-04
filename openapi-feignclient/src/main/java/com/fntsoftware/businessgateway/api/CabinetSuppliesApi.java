@@ -8,8 +8,16 @@ import com.fntsoftware.businessgateway.entities.CabinetSuppliesContractsRequestD
 import com.fntsoftware.businessgateway.entities.CabinetSuppliesContractsResponseData;
 import com.fntsoftware.businessgateway.entities.CabinetSuppliesDeviceMasterRequestData;
 import com.fntsoftware.businessgateway.entities.CabinetSuppliesDeviceMasterResponseData;
+import com.fntsoftware.businessgateway.entities.CabinetSuppliesDuctDataRequest;
+import com.fntsoftware.businessgateway.entities.CabinetSuppliesDuctDataResponse;
+import com.fntsoftware.businessgateway.entities.CabinetSuppliesDuctsRequestData;
+import com.fntsoftware.businessgateway.entities.CabinetSuppliesDuctsResponseData;
 import com.fntsoftware.businessgateway.entities.CabinetSuppliesFrameContractsRequestData;
 import com.fntsoftware.businessgateway.entities.CabinetSuppliesFrameContractsResponseData;
+import com.fntsoftware.businessgateway.entities.CabinetSuppliesInheritedGeoCoordinatesRequest;
+import com.fntsoftware.businessgateway.entities.CabinetSuppliesInheritedGeoCoordinatesResponse;
+import com.fntsoftware.businessgateway.entities.CabinetSuppliesInstalledSubCardsRecursiveRequest;
+import com.fntsoftware.businessgateway.entities.CabinetSuppliesInstalledSubCardsRecursiveResponse;
 import com.fntsoftware.businessgateway.entities.CabinetSuppliesInstalledSubCardsRequest;
 import com.fntsoftware.businessgateway.entities.CabinetSuppliesInstalledSubCardsResponse;
 import com.fntsoftware.businessgateway.entities.CabinetSuppliesLocationRequest;
@@ -18,16 +26,24 @@ import com.fntsoftware.businessgateway.entities.CabinetSuppliesLogicalPortsReque
 import com.fntsoftware.businessgateway.entities.CabinetSuppliesLogicalPortsResponseData;
 import com.fntsoftware.businessgateway.entities.CabinetSuppliesMaintenanceContractsRequestData;
 import com.fntsoftware.businessgateway.entities.CabinetSuppliesMaintenanceContractsResponseData;
+import com.fntsoftware.businessgateway.entities.CabinetSuppliesMultiDuctsRequestData;
+import com.fntsoftware.businessgateway.entities.CabinetSuppliesMultiDuctsResponseData;
 import com.fntsoftware.businessgateway.entities.CabinetSuppliesOrganizationsRequestData;
 import com.fntsoftware.businessgateway.entities.CabinetSuppliesOrganizationsResponseData;
 import com.fntsoftware.businessgateway.entities.CabinetSuppliesPersonGroupsRequestData;
 import com.fntsoftware.businessgateway.entities.CabinetSuppliesPersonGroupsResponseData;
 import com.fntsoftware.businessgateway.entities.CabinetSuppliesPersonsRequestData;
 import com.fntsoftware.businessgateway.entities.CabinetSuppliesPersonsResponseData;
+import com.fntsoftware.businessgateway.entities.CabinetSuppliesPhysicalPortsDataExtendedRequest;
+import com.fntsoftware.businessgateway.entities.CabinetSuppliesPhysicalPortsDataExtendedResponse;
 import com.fntsoftware.businessgateway.entities.CabinetSuppliesPhysicalPortsDataRequestData;
 import com.fntsoftware.businessgateway.entities.CabinetSuppliesPhysicalPortsDataResponseData;
-import com.fntsoftware.businessgateway.entities.CabinetSuppliesPhysicalPortsPowerRequest;
-import com.fntsoftware.businessgateway.entities.CabinetSuppliesPhysicalPortsPowerResponse;
+import com.fntsoftware.businessgateway.entities.CabinetSuppliesPhysicalPortsPowerExtendedRequest;
+import com.fntsoftware.businessgateway.entities.CabinetSuppliesPhysicalPortsPowerExtendedResponse;
+import com.fntsoftware.businessgateway.entities.CabinetSuppliesPhysicalPortsPowerRequestData;
+import com.fntsoftware.businessgateway.entities.CabinetSuppliesPhysicalPortsPowerResponseData;
+import com.fntsoftware.businessgateway.entities.CabinetSuppliesQueryExtendedGeoCoordinatesRequest;
+import com.fntsoftware.businessgateway.entities.CabinetSuppliesQueryExtendedGeoCoordinatesResponse;
 import com.fntsoftware.businessgateway.entities.CabinetSuppliesQueryExtendedRequest;
 import com.fntsoftware.businessgateway.entities.CabinetSuppliesQueryExtendedResponse;
 import com.fntsoftware.businessgateway.entities.CabinetSuppliesQueryExtendedScrollFirstRequest;
@@ -36,6 +52,10 @@ import com.fntsoftware.businessgateway.entities.CabinetSuppliesQueryExtendedScro
 import com.fntsoftware.businessgateway.entities.CabinetSuppliesQueryExtendedScrollMoreResponse;
 import com.fntsoftware.businessgateway.entities.CabinetSuppliesQueryRequest;
 import com.fntsoftware.businessgateway.entities.CabinetSuppliesQueryResponse;
+import com.fntsoftware.businessgateway.entities.CabinetSuppliesServicesRequest;
+import com.fntsoftware.businessgateway.entities.CabinetSuppliesServicesResponse;
+import com.fntsoftware.businessgateway.entities.CabinetSuppliesSitesRequestData;
+import com.fntsoftware.businessgateway.entities.CabinetSuppliesSitesResponseData;
 import com.fntsoftware.businessgateway.entities.CabinetSuppliesSlotRequestData;
 import com.fntsoftware.businessgateway.entities.CabinetSuppliesSlotResponseData;
 import com.fntsoftware.businessgateway.entities.CabinetSuppliesSwitchCabinetRequestData;
@@ -68,6 +88,8 @@ import com.fntsoftware.businessgateway.entities.PlaceInWarehouseCabinetSuppliesR
 import com.fntsoftware.businessgateway.entities.PlaceInWarehouseCabinetSuppliesResponse;
 import com.fntsoftware.businessgateway.entities.PlaceInZoneCabinetSuppliesRequestData;
 import com.fntsoftware.businessgateway.entities.PlaceInZoneCabinetSuppliesResponse;
+import com.fntsoftware.businessgateway.entities.ReplaceObjectCabinetSuppliesRequestData;
+import com.fntsoftware.businessgateway.entities.ReplaceObjectCabinetSuppliesResponse;
 import com.fntsoftware.businessgateway.entities.UpdateCabinetSuppliesRequestData;
 import com.fntsoftware.businessgateway.entities.UpdateCabinetSuppliesResponse;
 import com.fntsoftware.businessgateway.entities.UpdateSystemAttributesCabinetSuppliesRequestData;
@@ -79,7 +101,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-04T13:31:32.601557352Z[Etc/UTC]")
 public interface CabinetSuppliesApi extends ApiClient.Api {
 
 
@@ -262,6 +284,184 @@ public interface CabinetSuppliesApi extends ApiClient.Api {
   }
 
   /**
+   * Query duct data
+   * Query associated ducts and multipipes
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return CabinetSuppliesDuctDataResponse
+   */
+  @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/DuctData?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  CabinetSuppliesDuctDataResponse cabinetSuppliesDuctData(@Param("sessionId") String sessionId, @Param("elid") String elid, CabinetSuppliesDuctDataRequest body);
+
+  /**
+   * Query duct data
+   * Similar to <code>cabinetSuppliesDuctData</code> but it also returns the http response headers .
+   * Query associated ducts and multipipes
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/DuctData?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<CabinetSuppliesDuctDataResponse> cabinetSuppliesDuctDataWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, CabinetSuppliesDuctDataRequest body);
+
+
+  /**
+   * Query duct data
+   * Query associated ducts and multipipes
+   * Note, this is equivalent to the other <code>cabinetSuppliesDuctData</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link CabinetSuppliesDuctDataQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return CabinetSuppliesDuctDataResponse
+   */
+  @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/DuctData?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  CabinetSuppliesDuctDataResponse cabinetSuppliesDuctData(@Param("elid") String elid, CabinetSuppliesDuctDataRequest body, @QueryMap(encoded=true) CabinetSuppliesDuctDataQueryParams queryParams);
+
+  /**
+  * Query duct data
+  * Query associated ducts and multipipes
+  * Note, this is equivalent to the other <code>cabinetSuppliesDuctData</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return CabinetSuppliesDuctDataResponse
+      */
+      @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/DuctData?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<CabinetSuppliesDuctDataResponse> cabinetSuppliesDuctDataWithHttpInfo(@Param("elid") String elid, CabinetSuppliesDuctDataRequest body, @QueryMap(encoded=true) CabinetSuppliesDuctDataQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>cabinetSuppliesDuctData</code> method in a fluent style.
+   */
+  public static class CabinetSuppliesDuctDataQueryParams extends HashMap<String, Object> {
+    public CabinetSuppliesDuctDataQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Duct entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return CabinetSuppliesDuctsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/Ducts?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  CabinetSuppliesDuctsResponseData cabinetSuppliesDucts(@Param("sessionId") String sessionId, @Param("elid") String elid, CabinetSuppliesDuctsRequestData body);
+
+  /**
+   * Get relations to Duct entities
+   * Similar to <code>cabinetSuppliesDucts</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/Ducts?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<CabinetSuppliesDuctsResponseData> cabinetSuppliesDuctsWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, CabinetSuppliesDuctsRequestData body);
+
+
+  /**
+   * Get relations to Duct entities
+   * 
+   * Note, this is equivalent to the other <code>cabinetSuppliesDucts</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link CabinetSuppliesDuctsQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return CabinetSuppliesDuctsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/Ducts?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  CabinetSuppliesDuctsResponseData cabinetSuppliesDucts(@Param("elid") String elid, CabinetSuppliesDuctsRequestData body, @QueryMap(encoded=true) CabinetSuppliesDuctsQueryParams queryParams);
+
+  /**
+  * Get relations to Duct entities
+  * 
+  * Note, this is equivalent to the other <code>cabinetSuppliesDucts</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return CabinetSuppliesDuctsResponseData
+      */
+      @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/Ducts?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<CabinetSuppliesDuctsResponseData> cabinetSuppliesDuctsWithHttpInfo(@Param("elid") String elid, CabinetSuppliesDuctsRequestData body, @QueryMap(encoded=true) CabinetSuppliesDuctsQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>cabinetSuppliesDucts</code> method in a fluent style.
+   */
+  public static class CabinetSuppliesDuctsQueryParams extends HashMap<String, Object> {
+    public CabinetSuppliesDuctsQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Get relations to Frame contract entities
    * 
    * @param sessionId Session-ID (required)
@@ -351,6 +551,91 @@ public interface CabinetSuppliesApi extends ApiClient.Api {
   }
 
   /**
+   * Query inherited coordinates
+   * Query the own coordinates of an object or inherit them from parents
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return CabinetSuppliesInheritedGeoCoordinatesResponse
+   */
+  @RequestLine("POST /api/rest/entity/cabinetSupplies/inheritedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  CabinetSuppliesInheritedGeoCoordinatesResponse cabinetSuppliesInheritedGeoCoordinates(@Param("sessionId") String sessionId, CabinetSuppliesInheritedGeoCoordinatesRequest body);
+
+  /**
+   * Query inherited coordinates
+   * Similar to <code>cabinetSuppliesInheritedGeoCoordinates</code> but it also returns the http response headers .
+   * Query the own coordinates of an object or inherit them from parents
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/cabinetSupplies/inheritedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<CabinetSuppliesInheritedGeoCoordinatesResponse> cabinetSuppliesInheritedGeoCoordinatesWithHttpInfo(@Param("sessionId") String sessionId, CabinetSuppliesInheritedGeoCoordinatesRequest body);
+
+
+  /**
+   * Query inherited coordinates
+   * Query the own coordinates of an object or inherit them from parents
+   * Note, this is equivalent to the other <code>cabinetSuppliesInheritedGeoCoordinates</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link CabinetSuppliesInheritedGeoCoordinatesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return CabinetSuppliesInheritedGeoCoordinatesResponse
+   */
+  @RequestLine("POST /api/rest/entity/cabinetSupplies/inheritedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  CabinetSuppliesInheritedGeoCoordinatesResponse cabinetSuppliesInheritedGeoCoordinates(CabinetSuppliesInheritedGeoCoordinatesRequest body, @QueryMap(encoded=true) CabinetSuppliesInheritedGeoCoordinatesQueryParams queryParams);
+
+  /**
+  * Query inherited coordinates
+  * Query the own coordinates of an object or inherit them from parents
+  * Note, this is equivalent to the other <code>cabinetSuppliesInheritedGeoCoordinates</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return CabinetSuppliesInheritedGeoCoordinatesResponse
+      */
+      @RequestLine("POST /api/rest/entity/cabinetSupplies/inheritedGeoCoordinates?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<CabinetSuppliesInheritedGeoCoordinatesResponse> cabinetSuppliesInheritedGeoCoordinatesWithHttpInfo(CabinetSuppliesInheritedGeoCoordinatesRequest body, @QueryMap(encoded=true) CabinetSuppliesInheritedGeoCoordinatesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>cabinetSuppliesInheritedGeoCoordinates</code> method in a fluent style.
+   */
+  public static class CabinetSuppliesInheritedGeoCoordinatesQueryParams extends HashMap<String, Object> {
+    public CabinetSuppliesInheritedGeoCoordinatesQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Query installed subcards
    * Queries installed subcards of a device. Only direct subcards will be returned. Free slot positions will not be returned.
    * @param sessionId Session-ID (required)
@@ -434,6 +719,95 @@ public interface CabinetSuppliesApi extends ApiClient.Api {
    */
   public static class CabinetSuppliesInstalledSubCardsQueryParams extends HashMap<String, Object> {
     public CabinetSuppliesInstalledSubCardsQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Query installed sub-cards recursively
+   * Queries installed sub-cards from a device. Free slot positions are not supplied.
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return CabinetSuppliesInstalledSubCardsRecursiveResponse
+   */
+  @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/InstalledSubCardsRecursive?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  CabinetSuppliesInstalledSubCardsRecursiveResponse cabinetSuppliesInstalledSubCardsRecursive(@Param("sessionId") String sessionId, @Param("elid") String elid, CabinetSuppliesInstalledSubCardsRecursiveRequest body);
+
+  /**
+   * Query installed sub-cards recursively
+   * Similar to <code>cabinetSuppliesInstalledSubCardsRecursive</code> but it also returns the http response headers .
+   * Queries installed sub-cards from a device. Free slot positions are not supplied.
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/InstalledSubCardsRecursive?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<CabinetSuppliesInstalledSubCardsRecursiveResponse> cabinetSuppliesInstalledSubCardsRecursiveWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, CabinetSuppliesInstalledSubCardsRecursiveRequest body);
+
+
+  /**
+   * Query installed sub-cards recursively
+   * Queries installed sub-cards from a device. Free slot positions are not supplied.
+   * Note, this is equivalent to the other <code>cabinetSuppliesInstalledSubCardsRecursive</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link CabinetSuppliesInstalledSubCardsRecursiveQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return CabinetSuppliesInstalledSubCardsRecursiveResponse
+   */
+  @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/InstalledSubCardsRecursive?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  CabinetSuppliesInstalledSubCardsRecursiveResponse cabinetSuppliesInstalledSubCardsRecursive(@Param("elid") String elid, CabinetSuppliesInstalledSubCardsRecursiveRequest body, @QueryMap(encoded=true) CabinetSuppliesInstalledSubCardsRecursiveQueryParams queryParams);
+
+  /**
+  * Query installed sub-cards recursively
+  * Queries installed sub-cards from a device. Free slot positions are not supplied.
+  * Note, this is equivalent to the other <code>cabinetSuppliesInstalledSubCardsRecursive</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return CabinetSuppliesInstalledSubCardsRecursiveResponse
+      */
+      @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/InstalledSubCardsRecursive?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<CabinetSuppliesInstalledSubCardsRecursiveResponse> cabinetSuppliesInstalledSubCardsRecursiveWithHttpInfo(@Param("elid") String elid, CabinetSuppliesInstalledSubCardsRecursiveRequest body, @QueryMap(encoded=true) CabinetSuppliesInstalledSubCardsRecursiveQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>cabinetSuppliesInstalledSubCardsRecursive</code> method in a fluent style.
+   */
+  public static class CabinetSuppliesInstalledSubCardsRecursiveQueryParams extends HashMap<String, Object> {
+    public CabinetSuppliesInstalledSubCardsRecursiveQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -701,6 +1075,95 @@ public interface CabinetSuppliesApi extends ApiClient.Api {
    */
   public static class CabinetSuppliesMaintenanceContractsQueryParams extends HashMap<String, Object> {
     public CabinetSuppliesMaintenanceContractsQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Multiducts entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return CabinetSuppliesMultiDuctsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/MultiDucts?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  CabinetSuppliesMultiDuctsResponseData cabinetSuppliesMultiDucts(@Param("sessionId") String sessionId, @Param("elid") String elid, CabinetSuppliesMultiDuctsRequestData body);
+
+  /**
+   * Get relations to Multiducts entities
+   * Similar to <code>cabinetSuppliesMultiDucts</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/MultiDucts?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<CabinetSuppliesMultiDuctsResponseData> cabinetSuppliesMultiDuctsWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, CabinetSuppliesMultiDuctsRequestData body);
+
+
+  /**
+   * Get relations to Multiducts entities
+   * 
+   * Note, this is equivalent to the other <code>cabinetSuppliesMultiDucts</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link CabinetSuppliesMultiDuctsQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return CabinetSuppliesMultiDuctsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/MultiDucts?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  CabinetSuppliesMultiDuctsResponseData cabinetSuppliesMultiDucts(@Param("elid") String elid, CabinetSuppliesMultiDuctsRequestData body, @QueryMap(encoded=true) CabinetSuppliesMultiDuctsQueryParams queryParams);
+
+  /**
+  * Get relations to Multiducts entities
+  * 
+  * Note, this is equivalent to the other <code>cabinetSuppliesMultiDucts</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return CabinetSuppliesMultiDuctsResponseData
+      */
+      @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/MultiDucts?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<CabinetSuppliesMultiDuctsResponseData> cabinetSuppliesMultiDuctsWithHttpInfo(@Param("elid") String elid, CabinetSuppliesMultiDuctsRequestData body, @QueryMap(encoded=true) CabinetSuppliesMultiDuctsQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>cabinetSuppliesMultiDucts</code> method in a fluent style.
+   */
+  public static class CabinetSuppliesMultiDuctsQueryParams extends HashMap<String, Object> {
+    public CabinetSuppliesMultiDuctsQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -1063,24 +1526,113 @@ public interface CabinetSuppliesApi extends ApiClient.Api {
   }
 
   /**
-   * Query Power ports
-   * Query for querying all basic target entity data
+   * Query physical ports data extended
+   * Query for fetching all basic target entity data.
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
-   * @return CabinetSuppliesPhysicalPortsPowerResponse
+   * @return CabinetSuppliesPhysicalPortsDataExtendedResponse
+   */
+  @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/PhysicalPortsDataExtended?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  CabinetSuppliesPhysicalPortsDataExtendedResponse cabinetSuppliesPhysicalPortsDataExtended(@Param("sessionId") String sessionId, @Param("elid") String elid, CabinetSuppliesPhysicalPortsDataExtendedRequest body);
+
+  /**
+   * Query physical ports data extended
+   * Similar to <code>cabinetSuppliesPhysicalPortsDataExtended</code> but it also returns the http response headers .
+   * Query for fetching all basic target entity data.
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/PhysicalPortsDataExtended?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<CabinetSuppliesPhysicalPortsDataExtendedResponse> cabinetSuppliesPhysicalPortsDataExtendedWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, CabinetSuppliesPhysicalPortsDataExtendedRequest body);
+
+
+  /**
+   * Query physical ports data extended
+   * Query for fetching all basic target entity data.
+   * Note, this is equivalent to the other <code>cabinetSuppliesPhysicalPortsDataExtended</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link CabinetSuppliesPhysicalPortsDataExtendedQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return CabinetSuppliesPhysicalPortsDataExtendedResponse
+   */
+  @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/PhysicalPortsDataExtended?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  CabinetSuppliesPhysicalPortsDataExtendedResponse cabinetSuppliesPhysicalPortsDataExtended(@Param("elid") String elid, CabinetSuppliesPhysicalPortsDataExtendedRequest body, @QueryMap(encoded=true) CabinetSuppliesPhysicalPortsDataExtendedQueryParams queryParams);
+
+  /**
+  * Query physical ports data extended
+  * Query for fetching all basic target entity data.
+  * Note, this is equivalent to the other <code>cabinetSuppliesPhysicalPortsDataExtended</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return CabinetSuppliesPhysicalPortsDataExtendedResponse
+      */
+      @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/PhysicalPortsDataExtended?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<CabinetSuppliesPhysicalPortsDataExtendedResponse> cabinetSuppliesPhysicalPortsDataExtendedWithHttpInfo(@Param("elid") String elid, CabinetSuppliesPhysicalPortsDataExtendedRequest body, @QueryMap(encoded=true) CabinetSuppliesPhysicalPortsDataExtendedQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>cabinetSuppliesPhysicalPortsDataExtended</code> method in a fluent style.
+   */
+  public static class CabinetSuppliesPhysicalPortsDataExtendedQueryParams extends HashMap<String, Object> {
+    public CabinetSuppliesPhysicalPortsDataExtendedQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Physical port (power) entities
+   * For more information call the basic query of the power port entity
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return CabinetSuppliesPhysicalPortsPowerResponseData
    */
   @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/PhysicalPortsPower?sessionId={sessionId}")
   @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  CabinetSuppliesPhysicalPortsPowerResponse cabinetSuppliesPhysicalPortsPower(@Param("sessionId") String sessionId, @Param("elid") String elid, CabinetSuppliesPhysicalPortsPowerRequest body);
+  CabinetSuppliesPhysicalPortsPowerResponseData cabinetSuppliesPhysicalPortsPower(@Param("sessionId") String sessionId, @Param("elid") String elid, CabinetSuppliesPhysicalPortsPowerRequestData body);
 
   /**
-   * Query Power ports
+   * Get relations to Physical port (power) entities
    * Similar to <code>cabinetSuppliesPhysicalPortsPower</code> but it also returns the http response headers .
-   * Query for querying all basic target entity data
+   * For more information call the basic query of the power port entity
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
@@ -1091,12 +1643,12 @@ public interface CabinetSuppliesApi extends ApiClient.Api {
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  ApiResponse<CabinetSuppliesPhysicalPortsPowerResponse> cabinetSuppliesPhysicalPortsPowerWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, CabinetSuppliesPhysicalPortsPowerRequest body);
+  ApiResponse<CabinetSuppliesPhysicalPortsPowerResponseData> cabinetSuppliesPhysicalPortsPowerWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, CabinetSuppliesPhysicalPortsPowerRequestData body);
 
 
   /**
-   * Query Power ports
-   * Query for querying all basic target entity data
+   * Get relations to Physical port (power) entities
+   * For more information call the basic query of the power port entity
    * Note, this is equivalent to the other <code>cabinetSuppliesPhysicalPortsPower</code> method,
    * but with the query parameters collected into a single Map parameter. This
    * is convenient for services with optional query parameters, especially when
@@ -1109,18 +1661,18 @@ public interface CabinetSuppliesApi extends ApiClient.Api {
    *   <ul>
    *   <li>sessionId - Session-ID (required)</li>
    *   </ul>
-   * @return CabinetSuppliesPhysicalPortsPowerResponse
+   * @return CabinetSuppliesPhysicalPortsPowerResponseData
    */
   @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/PhysicalPortsPower?sessionId={sessionId}")
   @Headers({
   "Content-Type: application/json",
   "Accept: application/json",
   })
-  CabinetSuppliesPhysicalPortsPowerResponse cabinetSuppliesPhysicalPortsPower(@Param("elid") String elid, CabinetSuppliesPhysicalPortsPowerRequest body, @QueryMap(encoded=true) CabinetSuppliesPhysicalPortsPowerQueryParams queryParams);
+  CabinetSuppliesPhysicalPortsPowerResponseData cabinetSuppliesPhysicalPortsPower(@Param("elid") String elid, CabinetSuppliesPhysicalPortsPowerRequestData body, @QueryMap(encoded=true) CabinetSuppliesPhysicalPortsPowerQueryParams queryParams);
 
   /**
-  * Query Power ports
-  * Query for querying all basic target entity data
+  * Get relations to Physical port (power) entities
+  * For more information call the basic query of the power port entity
   * Note, this is equivalent to the other <code>cabinetSuppliesPhysicalPortsPower</code> that receives the query parameters as a map,
   * but this one also exposes the Http response headers
               * @param elid  (required)
@@ -1130,14 +1682,14 @@ public interface CabinetSuppliesApi extends ApiClient.Api {
       *   <ul>
           *   <li>sessionId - Session-ID (required)</li>
       *   </ul>
-          * @return CabinetSuppliesPhysicalPortsPowerResponse
+          * @return CabinetSuppliesPhysicalPortsPowerResponseData
       */
       @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/PhysicalPortsPower?sessionId={sessionId}")
       @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
       })
-   ApiResponse<CabinetSuppliesPhysicalPortsPowerResponse> cabinetSuppliesPhysicalPortsPowerWithHttpInfo(@Param("elid") String elid, CabinetSuppliesPhysicalPortsPowerRequest body, @QueryMap(encoded=true) CabinetSuppliesPhysicalPortsPowerQueryParams queryParams);
+   ApiResponse<CabinetSuppliesPhysicalPortsPowerResponseData> cabinetSuppliesPhysicalPortsPowerWithHttpInfo(@Param("elid") String elid, CabinetSuppliesPhysicalPortsPowerRequestData body, @QueryMap(encoded=true) CabinetSuppliesPhysicalPortsPowerQueryParams queryParams);
 
 
    /**
@@ -1146,6 +1698,95 @@ public interface CabinetSuppliesApi extends ApiClient.Api {
    */
   public static class CabinetSuppliesPhysicalPortsPowerQueryParams extends HashMap<String, Object> {
     public CabinetSuppliesPhysicalPortsPowerQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Query Power ports
+   * Query for fetching all basic target entity data.
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return CabinetSuppliesPhysicalPortsPowerExtendedResponse
+   */
+  @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/PhysicalPortsPowerExtended?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  CabinetSuppliesPhysicalPortsPowerExtendedResponse cabinetSuppliesPhysicalPortsPowerExtended(@Param("sessionId") String sessionId, @Param("elid") String elid, CabinetSuppliesPhysicalPortsPowerExtendedRequest body);
+
+  /**
+   * Query Power ports
+   * Similar to <code>cabinetSuppliesPhysicalPortsPowerExtended</code> but it also returns the http response headers .
+   * Query for fetching all basic target entity data.
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/PhysicalPortsPowerExtended?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<CabinetSuppliesPhysicalPortsPowerExtendedResponse> cabinetSuppliesPhysicalPortsPowerExtendedWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, CabinetSuppliesPhysicalPortsPowerExtendedRequest body);
+
+
+  /**
+   * Query Power ports
+   * Query for fetching all basic target entity data.
+   * Note, this is equivalent to the other <code>cabinetSuppliesPhysicalPortsPowerExtended</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link CabinetSuppliesPhysicalPortsPowerExtendedQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return CabinetSuppliesPhysicalPortsPowerExtendedResponse
+   */
+  @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/PhysicalPortsPowerExtended?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  CabinetSuppliesPhysicalPortsPowerExtendedResponse cabinetSuppliesPhysicalPortsPowerExtended(@Param("elid") String elid, CabinetSuppliesPhysicalPortsPowerExtendedRequest body, @QueryMap(encoded=true) CabinetSuppliesPhysicalPortsPowerExtendedQueryParams queryParams);
+
+  /**
+  * Query Power ports
+  * Query for fetching all basic target entity data.
+  * Note, this is equivalent to the other <code>cabinetSuppliesPhysicalPortsPowerExtended</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return CabinetSuppliesPhysicalPortsPowerExtendedResponse
+      */
+      @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/PhysicalPortsPowerExtended?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<CabinetSuppliesPhysicalPortsPowerExtendedResponse> cabinetSuppliesPhysicalPortsPowerExtendedWithHttpInfo(@Param("elid") String elid, CabinetSuppliesPhysicalPortsPowerExtendedRequest body, @QueryMap(encoded=true) CabinetSuppliesPhysicalPortsPowerExtendedQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>cabinetSuppliesPhysicalPortsPowerExtended</code> method in a fluent style.
+   */
+  public static class CabinetSuppliesPhysicalPortsPowerExtendedQueryParams extends HashMap<String, Object> {
+    public CabinetSuppliesPhysicalPortsPowerExtendedQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -1322,6 +1963,91 @@ public interface CabinetSuppliesApi extends ApiClient.Api {
   }
 
   /**
+   * Extended geo coordinates
+   * 
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return CabinetSuppliesQueryExtendedGeoCoordinatesResponse
+   */
+  @RequestLine("POST /api/rest/entity/cabinetSupplies/queryExtendedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  CabinetSuppliesQueryExtendedGeoCoordinatesResponse cabinetSuppliesQueryExtendedGeoCoordinates(@Param("sessionId") String sessionId, CabinetSuppliesQueryExtendedGeoCoordinatesRequest body);
+
+  /**
+   * Extended geo coordinates
+   * Similar to <code>cabinetSuppliesQueryExtendedGeoCoordinates</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/cabinetSupplies/queryExtendedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<CabinetSuppliesQueryExtendedGeoCoordinatesResponse> cabinetSuppliesQueryExtendedGeoCoordinatesWithHttpInfo(@Param("sessionId") String sessionId, CabinetSuppliesQueryExtendedGeoCoordinatesRequest body);
+
+
+  /**
+   * Extended geo coordinates
+   * 
+   * Note, this is equivalent to the other <code>cabinetSuppliesQueryExtendedGeoCoordinates</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link CabinetSuppliesQueryExtendedGeoCoordinatesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return CabinetSuppliesQueryExtendedGeoCoordinatesResponse
+   */
+  @RequestLine("POST /api/rest/entity/cabinetSupplies/queryExtendedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  CabinetSuppliesQueryExtendedGeoCoordinatesResponse cabinetSuppliesQueryExtendedGeoCoordinates(CabinetSuppliesQueryExtendedGeoCoordinatesRequest body, @QueryMap(encoded=true) CabinetSuppliesQueryExtendedGeoCoordinatesQueryParams queryParams);
+
+  /**
+  * Extended geo coordinates
+  * 
+  * Note, this is equivalent to the other <code>cabinetSuppliesQueryExtendedGeoCoordinates</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return CabinetSuppliesQueryExtendedGeoCoordinatesResponse
+      */
+      @RequestLine("POST /api/rest/entity/cabinetSupplies/queryExtendedGeoCoordinates?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<CabinetSuppliesQueryExtendedGeoCoordinatesResponse> cabinetSuppliesQueryExtendedGeoCoordinatesWithHttpInfo(CabinetSuppliesQueryExtendedGeoCoordinatesRequest body, @QueryMap(encoded=true) CabinetSuppliesQueryExtendedGeoCoordinatesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>cabinetSuppliesQueryExtendedGeoCoordinates</code> method in a fluent style.
+   */
+  public static class CabinetSuppliesQueryExtendedGeoCoordinatesQueryParams extends HashMap<String, Object> {
+    public CabinetSuppliesQueryExtendedGeoCoordinatesQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Extended query scroll first
    * Queries linked master data and zone data. This query supports scrolling. Calls the query and returns the first results including the scroll-ID for the next call.
    * @param sessionId Session-ID (required)
@@ -1486,6 +2212,184 @@ public interface CabinetSuppliesApi extends ApiClient.Api {
    */
   public static class CabinetSuppliesQueryExtendedScrollMoreQueryParams extends HashMap<String, Object> {
     public CabinetSuppliesQueryExtendedScrollMoreQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Query device services 
+   * Query services for device 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return CabinetSuppliesServicesResponse
+   */
+  @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/Services?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  CabinetSuppliesServicesResponse cabinetSuppliesServices(@Param("sessionId") String sessionId, @Param("elid") String elid, CabinetSuppliesServicesRequest body);
+
+  /**
+   * Query device services 
+   * Similar to <code>cabinetSuppliesServices</code> but it also returns the http response headers .
+   * Query services for device 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/Services?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<CabinetSuppliesServicesResponse> cabinetSuppliesServicesWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, CabinetSuppliesServicesRequest body);
+
+
+  /**
+   * Query device services 
+   * Query services for device 
+   * Note, this is equivalent to the other <code>cabinetSuppliesServices</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link CabinetSuppliesServicesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return CabinetSuppliesServicesResponse
+   */
+  @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/Services?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  CabinetSuppliesServicesResponse cabinetSuppliesServices(@Param("elid") String elid, CabinetSuppliesServicesRequest body, @QueryMap(encoded=true) CabinetSuppliesServicesQueryParams queryParams);
+
+  /**
+  * Query device services 
+  * Query services for device 
+  * Note, this is equivalent to the other <code>cabinetSuppliesServices</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return CabinetSuppliesServicesResponse
+      */
+      @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/Services?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<CabinetSuppliesServicesResponse> cabinetSuppliesServicesWithHttpInfo(@Param("elid") String elid, CabinetSuppliesServicesRequest body, @QueryMap(encoded=true) CabinetSuppliesServicesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>cabinetSuppliesServices</code> method in a fluent style.
+   */
+  public static class CabinetSuppliesServicesQueryParams extends HashMap<String, Object> {
+    public CabinetSuppliesServicesQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Site entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return CabinetSuppliesSitesResponseData
+   */
+  @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/Sites?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  CabinetSuppliesSitesResponseData cabinetSuppliesSites(@Param("sessionId") String sessionId, @Param("elid") String elid, CabinetSuppliesSitesRequestData body);
+
+  /**
+   * Get relations to Site entities
+   * Similar to <code>cabinetSuppliesSites</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/Sites?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<CabinetSuppliesSitesResponseData> cabinetSuppliesSitesWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, CabinetSuppliesSitesRequestData body);
+
+
+  /**
+   * Get relations to Site entities
+   * 
+   * Note, this is equivalent to the other <code>cabinetSuppliesSites</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link CabinetSuppliesSitesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return CabinetSuppliesSitesResponseData
+   */
+  @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/Sites?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  CabinetSuppliesSitesResponseData cabinetSuppliesSites(@Param("elid") String elid, CabinetSuppliesSitesRequestData body, @QueryMap(encoded=true) CabinetSuppliesSitesQueryParams queryParams);
+
+  /**
+  * Get relations to Site entities
+  * 
+  * Note, this is equivalent to the other <code>cabinetSuppliesSites</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return CabinetSuppliesSitesResponseData
+      */
+      @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/Sites?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<CabinetSuppliesSitesResponseData> cabinetSuppliesSitesWithHttpInfo(@Param("elid") String elid, CabinetSuppliesSitesRequestData body, @QueryMap(encoded=true) CabinetSuppliesSitesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>cabinetSuppliesSites</code> method in a fluent style.
+   */
+  public static class CabinetSuppliesSitesQueryParams extends HashMap<String, Object> {
+    public CabinetSuppliesSitesQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -2894,6 +3798,95 @@ public interface CabinetSuppliesApi extends ApiClient.Api {
    */
   public static class PlaceInZoneCabinetSuppliesQueryParams extends HashMap<String, Object> {
     public PlaceInZoneCabinetSuppliesQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Replace object
+   * Replace object
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return ReplaceObjectCabinetSuppliesResponse
+   */
+  @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/replaceObject?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ReplaceObjectCabinetSuppliesResponse replaceObjectCabinetSupplies(@Param("sessionId") String sessionId, @Param("elid") String elid, ReplaceObjectCabinetSuppliesRequestData body);
+
+  /**
+   * Replace object
+   * Similar to <code>replaceObjectCabinetSupplies</code> but it also returns the http response headers .
+   * Replace object
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/replaceObject?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<ReplaceObjectCabinetSuppliesResponse> replaceObjectCabinetSuppliesWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ReplaceObjectCabinetSuppliesRequestData body);
+
+
+  /**
+   * Replace object
+   * Replace object
+   * Note, this is equivalent to the other <code>replaceObjectCabinetSupplies</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link ReplaceObjectCabinetSuppliesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return ReplaceObjectCabinetSuppliesResponse
+   */
+  @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/replaceObject?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  ReplaceObjectCabinetSuppliesResponse replaceObjectCabinetSupplies(@Param("elid") String elid, ReplaceObjectCabinetSuppliesRequestData body, @QueryMap(encoded=true) ReplaceObjectCabinetSuppliesQueryParams queryParams);
+
+  /**
+  * Replace object
+  * Replace object
+  * Note, this is equivalent to the other <code>replaceObjectCabinetSupplies</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return ReplaceObjectCabinetSuppliesResponse
+      */
+      @RequestLine("POST /api/rest/entity/cabinetSupplies/{elid}/replaceObject?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<ReplaceObjectCabinetSuppliesResponse> replaceObjectCabinetSuppliesWithHttpInfo(@Param("elid") String elid, ReplaceObjectCabinetSuppliesRequestData body, @QueryMap(encoded=true) ReplaceObjectCabinetSuppliesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>replaceObjectCabinetSupplies</code> method in a fluent style.
+   */
+  public static class ReplaceObjectCabinetSuppliesQueryParams extends HashMap<String, Object> {
+    public ReplaceObjectCabinetSuppliesQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

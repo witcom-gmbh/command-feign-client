@@ -27,13 +27,13 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-04T13:31:32.601557352Z[Etc/UTC]")
 public interface CustomPostalAddressApi extends ApiClient.Api {
 
 
   /**
    * Create
-   * Create Postal adress
+   * Create Postal address
    * @param sessionId Session-ID (required)
    * @param body  (required)
    * @return CreateCustomPostalAddressResponse
@@ -48,7 +48,7 @@ public interface CustomPostalAddressApi extends ApiClient.Api {
   /**
    * Create
    * Similar to <code>createCustomPostalAddress</code> but it also returns the http response headers .
-   * Create Postal adress
+   * Create Postal address
    * @param sessionId Session-ID (required)
    * @param body  (required)
    * @return A ApiResponse that wraps the response boyd and the http headers.
@@ -63,7 +63,7 @@ public interface CustomPostalAddressApi extends ApiClient.Api {
 
   /**
    * Create
-   * Create Postal adress
+   * Create Postal address
    * Note, this is equivalent to the other <code>createCustomPostalAddress</code> method,
    * but with the query parameters collected into a single Map parameter. This
    * is convenient for services with optional query parameters, especially when
@@ -86,7 +86,7 @@ public interface CustomPostalAddressApi extends ApiClient.Api {
 
   /**
   * Create
-  * Create Postal adress
+  * Create Postal address
   * Note, this is equivalent to the other <code>createCustomPostalAddress</code> that receives the query parameters as a map,
   * but this one also exposes the Http response headers
               * @param body  (required)
@@ -470,7 +470,7 @@ public interface CustomPostalAddressApi extends ApiClient.Api {
 
   /**
    * Delete
-   * Delete Postal adress
+   * Delete Postal address
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
@@ -486,7 +486,7 @@ public interface CustomPostalAddressApi extends ApiClient.Api {
   /**
    * Delete
    * Similar to <code>deleteCustomPostalAddress</code> but it also returns the http response headers .
-   * Delete Postal adress
+   * Delete Postal address
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
@@ -502,7 +502,7 @@ public interface CustomPostalAddressApi extends ApiClient.Api {
 
   /**
    * Delete
-   * Delete Postal adress
+   * Delete Postal address
    * Note, this is equivalent to the other <code>deleteCustomPostalAddress</code> method,
    * but with the query parameters collected into a single Map parameter. This
    * is convenient for services with optional query parameters, especially when
@@ -526,7 +526,7 @@ public interface CustomPostalAddressApi extends ApiClient.Api {
 
   /**
   * Delete
-  * Delete Postal adress
+  * Delete Postal address
   * Note, this is equivalent to the other <code>deleteCustomPostalAddress</code> that receives the query parameters as a map,
   * but this one also exposes the Http response headers
               * @param elid  (required)
@@ -559,7 +559,7 @@ public interface CustomPostalAddressApi extends ApiClient.Api {
 
   /**
    * Modify
-   * Modify Postal adress
+   * Modify Postal address
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
@@ -575,7 +575,7 @@ public interface CustomPostalAddressApi extends ApiClient.Api {
   /**
    * Modify
    * Similar to <code>updateCustomPostalAddress</code> but it also returns the http response headers .
-   * Modify Postal adress
+   * Modify Postal address
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
@@ -591,7 +591,7 @@ public interface CustomPostalAddressApi extends ApiClient.Api {
 
   /**
    * Modify
-   * Modify Postal adress
+   * Modify Postal address
    * Note, this is equivalent to the other <code>updateCustomPostalAddress</code> method,
    * but with the query parameters collected into a single Map parameter. This
    * is convenient for services with optional query parameters, especially when
@@ -615,7 +615,7 @@ public interface CustomPostalAddressApi extends ApiClient.Api {
 
   /**
   * Modify
-  * Modify Postal adress
+  * Modify Postal address
   * Note, this is equivalent to the other <code>updateCustomPostalAddress</code> that receives the query parameters as a map,
   * but this one also exposes the Http response headers
               * @param elid  (required)

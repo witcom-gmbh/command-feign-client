@@ -4,6 +4,8 @@ import com.fntsoftware.businessgateway.ApiClient;
 import com.fntsoftware.businessgateway.EncodingUtils;
 import com.fntsoftware.businessgateway.entities.ApiResponse;
 
+import com.fntsoftware.businessgateway.entities.CreateBulkUniqueIdHierarchyUniqueIdHierarchyRequestData;
+import com.fntsoftware.businessgateway.entities.CreateBulkUniqueIdHierarchyUniqueIdHierarchyResponse;
 import com.fntsoftware.businessgateway.entities.CreateUniqueIdHierarchyRequestData;
 import com.fntsoftware.businessgateway.entities.CreateUniqueIdHierarchyResponse;
 import com.fntsoftware.businessgateway.entities.DeleteUniqueIdHierarchyRequestData;
@@ -17,9 +19,94 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-04T13:31:32.601557352Z[Etc/UTC]")
 public interface UniqueIdHierarchyApi extends ApiClient.Api {
 
+
+  /**
+   * Create bulk for unique ID hierarchy
+   * Create bulk unique ID hierarchy
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return CreateBulkUniqueIdHierarchyUniqueIdHierarchyResponse
+   */
+  @RequestLine("POST /api/rest/entity/uniqueIdHierarchy/createBulkUniqueIdHierarchy?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  CreateBulkUniqueIdHierarchyUniqueIdHierarchyResponse createBulkUniqueIdHierarchyUniqueIdHierarchy(@Param("sessionId") String sessionId, CreateBulkUniqueIdHierarchyUniqueIdHierarchyRequestData body);
+
+  /**
+   * Create bulk for unique ID hierarchy
+   * Similar to <code>createBulkUniqueIdHierarchyUniqueIdHierarchy</code> but it also returns the http response headers .
+   * Create bulk unique ID hierarchy
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/uniqueIdHierarchy/createBulkUniqueIdHierarchy?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<CreateBulkUniqueIdHierarchyUniqueIdHierarchyResponse> createBulkUniqueIdHierarchyUniqueIdHierarchyWithHttpInfo(@Param("sessionId") String sessionId, CreateBulkUniqueIdHierarchyUniqueIdHierarchyRequestData body);
+
+
+  /**
+   * Create bulk for unique ID hierarchy
+   * Create bulk unique ID hierarchy
+   * Note, this is equivalent to the other <code>createBulkUniqueIdHierarchyUniqueIdHierarchy</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link CreateBulkUniqueIdHierarchyUniqueIdHierarchyQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return CreateBulkUniqueIdHierarchyUniqueIdHierarchyResponse
+   */
+  @RequestLine("POST /api/rest/entity/uniqueIdHierarchy/createBulkUniqueIdHierarchy?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  CreateBulkUniqueIdHierarchyUniqueIdHierarchyResponse createBulkUniqueIdHierarchyUniqueIdHierarchy(CreateBulkUniqueIdHierarchyUniqueIdHierarchyRequestData body, @QueryMap(encoded=true) CreateBulkUniqueIdHierarchyUniqueIdHierarchyQueryParams queryParams);
+
+  /**
+  * Create bulk for unique ID hierarchy
+  * Create bulk unique ID hierarchy
+  * Note, this is equivalent to the other <code>createBulkUniqueIdHierarchyUniqueIdHierarchy</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return CreateBulkUniqueIdHierarchyUniqueIdHierarchyResponse
+      */
+      @RequestLine("POST /api/rest/entity/uniqueIdHierarchy/createBulkUniqueIdHierarchy?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<CreateBulkUniqueIdHierarchyUniqueIdHierarchyResponse> createBulkUniqueIdHierarchyUniqueIdHierarchyWithHttpInfo(CreateBulkUniqueIdHierarchyUniqueIdHierarchyRequestData body, @QueryMap(encoded=true) CreateBulkUniqueIdHierarchyUniqueIdHierarchyQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>createBulkUniqueIdHierarchyUniqueIdHierarchy</code> method in a fluent style.
+   */
+  public static class CreateBulkUniqueIdHierarchyUniqueIdHierarchyQueryParams extends HashMap<String, Object> {
+    public CreateBulkUniqueIdHierarchyUniqueIdHierarchyQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
 
   /**
    * Create

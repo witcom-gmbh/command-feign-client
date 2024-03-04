@@ -16,8 +16,8 @@ import com.fntsoftware.businessgateway.entities.StorageUnitQtree100037RequestDat
 import com.fntsoftware.businessgateway.entities.StorageUnitQtree100037ResponseData;
 import com.fntsoftware.businessgateway.entities.StorageUnitQtreeContractsRequestData;
 import com.fntsoftware.businessgateway.entities.StorageUnitQtreeContractsResponseData;
-import com.fntsoftware.businessgateway.entities.StorageUnitQtreeCustomServersRequestData;
-import com.fntsoftware.businessgateway.entities.StorageUnitQtreeCustomServersResponseData;
+import com.fntsoftware.businessgateway.entities.StorageUnitQtreeCustomServersBaseRequestData;
+import com.fntsoftware.businessgateway.entities.StorageUnitQtreeCustomServersBaseResponseData;
 import com.fntsoftware.businessgateway.entities.StorageUnitQtreeFileSystemsRequestData;
 import com.fntsoftware.businessgateway.entities.StorageUnitQtreeFileSystemsResponseData;
 import com.fntsoftware.businessgateway.entities.StorageUnitQtreeFrameContractsRequestData;
@@ -53,7 +53,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-04T13:31:32.601557352Z[Etc/UTC]")
 public interface StorageUnitQtreeApi extends ApiClient.Api {
 
 
@@ -588,44 +588,44 @@ public interface StorageUnitQtreeApi extends ApiClient.Api {
   }
 
   /**
-   * Get relations to Server entities
+   * Get relations to Server (base) entities
    * 
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
-   * @return StorageUnitQtreeCustomServersResponseData
+   * @return StorageUnitQtreeCustomServersBaseResponseData
    */
-  @RequestLine("POST /api/rest/entity/storageUnitQtree/{elid}/CustomServers?sessionId={sessionId}")
+  @RequestLine("POST /api/rest/entity/storageUnitQtree/{elid}/CustomServersBase?sessionId={sessionId}")
   @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  StorageUnitQtreeCustomServersResponseData storageUnitQtreeCustomServers(@Param("sessionId") String sessionId, @Param("elid") String elid, StorageUnitQtreeCustomServersRequestData body);
+  StorageUnitQtreeCustomServersBaseResponseData storageUnitQtreeCustomServersBase(@Param("sessionId") String sessionId, @Param("elid") String elid, StorageUnitQtreeCustomServersBaseRequestData body);
 
   /**
-   * Get relations to Server entities
-   * Similar to <code>storageUnitQtreeCustomServers</code> but it also returns the http response headers .
+   * Get relations to Server (base) entities
+   * Similar to <code>storageUnitQtreeCustomServersBase</code> but it also returns the http response headers .
    * 
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
    * @return A ApiResponse that wraps the response boyd and the http headers.
    */
-  @RequestLine("POST /api/rest/entity/storageUnitQtree/{elid}/CustomServers?sessionId={sessionId}")
+  @RequestLine("POST /api/rest/entity/storageUnitQtree/{elid}/CustomServersBase?sessionId={sessionId}")
   @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  ApiResponse<StorageUnitQtreeCustomServersResponseData> storageUnitQtreeCustomServersWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, StorageUnitQtreeCustomServersRequestData body);
+  ApiResponse<StorageUnitQtreeCustomServersBaseResponseData> storageUnitQtreeCustomServersBaseWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, StorageUnitQtreeCustomServersBaseRequestData body);
 
 
   /**
-   * Get relations to Server entities
+   * Get relations to Server (base) entities
    * 
-   * Note, this is equivalent to the other <code>storageUnitQtreeCustomServers</code> method,
+   * Note, this is equivalent to the other <code>storageUnitQtreeCustomServersBase</code> method,
    * but with the query parameters collected into a single Map parameter. This
    * is convenient for services with optional query parameters, especially when
-   * used with the {@link StorageUnitQtreeCustomServersQueryParams} class that allows for
+   * used with the {@link StorageUnitQtreeCustomServersBaseQueryParams} class that allows for
    * building up this map in a fluent style.
    * @param elid  (required)
    * @param body  (required)
@@ -634,19 +634,19 @@ public interface StorageUnitQtreeApi extends ApiClient.Api {
    *   <ul>
    *   <li>sessionId - Session-ID (required)</li>
    *   </ul>
-   * @return StorageUnitQtreeCustomServersResponseData
+   * @return StorageUnitQtreeCustomServersBaseResponseData
    */
-  @RequestLine("POST /api/rest/entity/storageUnitQtree/{elid}/CustomServers?sessionId={sessionId}")
+  @RequestLine("POST /api/rest/entity/storageUnitQtree/{elid}/CustomServersBase?sessionId={sessionId}")
   @Headers({
   "Content-Type: application/json",
   "Accept: application/json",
   })
-  StorageUnitQtreeCustomServersResponseData storageUnitQtreeCustomServers(@Param("elid") String elid, StorageUnitQtreeCustomServersRequestData body, @QueryMap(encoded=true) StorageUnitQtreeCustomServersQueryParams queryParams);
+  StorageUnitQtreeCustomServersBaseResponseData storageUnitQtreeCustomServersBase(@Param("elid") String elid, StorageUnitQtreeCustomServersBaseRequestData body, @QueryMap(encoded=true) StorageUnitQtreeCustomServersBaseQueryParams queryParams);
 
   /**
-  * Get relations to Server entities
+  * Get relations to Server (base) entities
   * 
-  * Note, this is equivalent to the other <code>storageUnitQtreeCustomServers</code> that receives the query parameters as a map,
+  * Note, this is equivalent to the other <code>storageUnitQtreeCustomServersBase</code> that receives the query parameters as a map,
   * but this one also exposes the Http response headers
               * @param elid  (required)
               * @param body  (required)
@@ -655,22 +655,22 @@ public interface StorageUnitQtreeApi extends ApiClient.Api {
       *   <ul>
           *   <li>sessionId - Session-ID (required)</li>
       *   </ul>
-          * @return StorageUnitQtreeCustomServersResponseData
+          * @return StorageUnitQtreeCustomServersBaseResponseData
       */
-      @RequestLine("POST /api/rest/entity/storageUnitQtree/{elid}/CustomServers?sessionId={sessionId}")
+      @RequestLine("POST /api/rest/entity/storageUnitQtree/{elid}/CustomServersBase?sessionId={sessionId}")
       @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
       })
-   ApiResponse<StorageUnitQtreeCustomServersResponseData> storageUnitQtreeCustomServersWithHttpInfo(@Param("elid") String elid, StorageUnitQtreeCustomServersRequestData body, @QueryMap(encoded=true) StorageUnitQtreeCustomServersQueryParams queryParams);
+   ApiResponse<StorageUnitQtreeCustomServersBaseResponseData> storageUnitQtreeCustomServersBaseWithHttpInfo(@Param("elid") String elid, StorageUnitQtreeCustomServersBaseRequestData body, @QueryMap(encoded=true) StorageUnitQtreeCustomServersBaseQueryParams queryParams);
 
 
    /**
    * A convenience class for generating query parameters for the
-   * <code>storageUnitQtreeCustomServers</code> method in a fluent style.
+   * <code>storageUnitQtreeCustomServersBase</code> method in a fluent style.
    */
-  public static class StorageUnitQtreeCustomServersQueryParams extends HashMap<String, Object> {
-    public StorageUnitQtreeCustomServersQueryParams sessionId(final String value) {
+  public static class StorageUnitQtreeCustomServersBaseQueryParams extends HashMap<String, Object> {
+    public StorageUnitQtreeCustomServersBaseQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

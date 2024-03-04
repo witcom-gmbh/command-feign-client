@@ -4,6 +4,10 @@ import com.fntsoftware.businessgateway.ApiClient;
 import com.fntsoftware.businessgateway.EncodingUtils;
 import com.fntsoftware.businessgateway.entities.ApiResponse;
 
+import com.fntsoftware.businessgateway.entities.AddChangeTypeDeviceMasterDeviceRequestData;
+import com.fntsoftware.businessgateway.entities.AddChangeTypeDeviceMasterDeviceResponse;
+import com.fntsoftware.businessgateway.entities.AddModuleSlotCompatibilityDeviceMasterDeviceRequestData;
+import com.fntsoftware.businessgateway.entities.AddModuleSlotCompatibilityDeviceMasterDeviceResponse;
 import com.fntsoftware.businessgateway.entities.DeviceMasterDeviceChassisRequestData;
 import com.fntsoftware.businessgateway.entities.DeviceMasterDeviceChassisResponseData;
 import com.fntsoftware.businessgateway.entities.DeviceMasterDeviceDataSocketsRequestData;
@@ -16,18 +20,28 @@ import com.fntsoftware.businessgateway.entities.DeviceMasterDeviceModulesRequest
 import com.fntsoftware.businessgateway.entities.DeviceMasterDeviceModulesResponseData;
 import com.fntsoftware.businessgateway.entities.DeviceMasterDevicePassiveModulesRequestData;
 import com.fntsoftware.businessgateway.entities.DeviceMasterDevicePassiveModulesResponseData;
+import com.fntsoftware.businessgateway.entities.DeviceMasterDevicePowerGridRequestData;
+import com.fntsoftware.businessgateway.entities.DeviceMasterDevicePowerGridResponseData;
 import com.fntsoftware.businessgateway.entities.DeviceMasterDeviceQueryRequest;
 import com.fntsoftware.businessgateway.entities.DeviceMasterDeviceQueryResponse;
+import com.fntsoftware.businessgateway.entities.DeviceMasterDeviceServersBaseRequestData;
+import com.fntsoftware.businessgateway.entities.DeviceMasterDeviceServersBaseResponseData;
 import com.fntsoftware.businessgateway.entities.DeviceMasterDeviceServersRequestData;
 import com.fntsoftware.businessgateway.entities.DeviceMasterDeviceServersResponseData;
 import com.fntsoftware.businessgateway.entities.DeviceMasterDeviceSlotsRequest;
 import com.fntsoftware.businessgateway.entities.DeviceMasterDeviceSlotsResponse;
+import com.fntsoftware.businessgateway.entities.DeviceMasterDeviceStoragesBaseRequestData;
+import com.fntsoftware.businessgateway.entities.DeviceMasterDeviceStoragesBaseResponseData;
 import com.fntsoftware.businessgateway.entities.DeviceMasterDeviceStoragesRequestData;
 import com.fntsoftware.businessgateway.entities.DeviceMasterDeviceStoragesResponseData;
 import com.fntsoftware.businessgateway.entities.DeviceMasterDeviceSystemAttributesRequest;
 import com.fntsoftware.businessgateway.entities.DeviceMasterDeviceSystemAttributesResponse;
 import com.fntsoftware.businessgateway.entities.DeviceMasterDeviceTerminalsRequestData;
 import com.fntsoftware.businessgateway.entities.DeviceMasterDeviceTerminalsResponseData;
+import com.fntsoftware.businessgateway.entities.RemoveChangeTypeDeviceMasterDeviceRequestData;
+import com.fntsoftware.businessgateway.entities.RemoveChangeTypeDeviceMasterDeviceResponse;
+import com.fntsoftware.businessgateway.entities.RemoveModuleSlotCompatibilityDeviceMasterDeviceRequestData;
+import com.fntsoftware.businessgateway.entities.RemoveModuleSlotCompatibilityDeviceMasterDeviceResponse;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -35,9 +49,187 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-04T13:31:32.601557352Z[Etc/UTC]")
 public interface DeviceMasterDeviceApi extends ApiClient.Api {
 
+
+  /**
+   * Add change type
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return AddChangeTypeDeviceMasterDeviceResponse
+   */
+  @RequestLine("POST /api/rest/entity/deviceMasterDevice/{elid}/addChangeType?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  AddChangeTypeDeviceMasterDeviceResponse addChangeTypeDeviceMasterDevice(@Param("sessionId") String sessionId, @Param("elid") String elid, AddChangeTypeDeviceMasterDeviceRequestData body);
+
+  /**
+   * Add change type
+   * Similar to <code>addChangeTypeDeviceMasterDevice</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/deviceMasterDevice/{elid}/addChangeType?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<AddChangeTypeDeviceMasterDeviceResponse> addChangeTypeDeviceMasterDeviceWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, AddChangeTypeDeviceMasterDeviceRequestData body);
+
+
+  /**
+   * Add change type
+   * 
+   * Note, this is equivalent to the other <code>addChangeTypeDeviceMasterDevice</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link AddChangeTypeDeviceMasterDeviceQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return AddChangeTypeDeviceMasterDeviceResponse
+   */
+  @RequestLine("POST /api/rest/entity/deviceMasterDevice/{elid}/addChangeType?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  AddChangeTypeDeviceMasterDeviceResponse addChangeTypeDeviceMasterDevice(@Param("elid") String elid, AddChangeTypeDeviceMasterDeviceRequestData body, @QueryMap(encoded=true) AddChangeTypeDeviceMasterDeviceQueryParams queryParams);
+
+  /**
+  * Add change type
+  * 
+  * Note, this is equivalent to the other <code>addChangeTypeDeviceMasterDevice</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return AddChangeTypeDeviceMasterDeviceResponse
+      */
+      @RequestLine("POST /api/rest/entity/deviceMasterDevice/{elid}/addChangeType?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<AddChangeTypeDeviceMasterDeviceResponse> addChangeTypeDeviceMasterDeviceWithHttpInfo(@Param("elid") String elid, AddChangeTypeDeviceMasterDeviceRequestData body, @QueryMap(encoded=true) AddChangeTypeDeviceMasterDeviceQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>addChangeTypeDeviceMasterDevice</code> method in a fluent style.
+   */
+  public static class AddChangeTypeDeviceMasterDeviceQueryParams extends HashMap<String, Object> {
+    public AddChangeTypeDeviceMasterDeviceQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Add module/slot
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return AddModuleSlotCompatibilityDeviceMasterDeviceResponse
+   */
+  @RequestLine("POST /api/rest/entity/deviceMasterDevice/{elid}/addModuleSlotCompatibility?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  AddModuleSlotCompatibilityDeviceMasterDeviceResponse addModuleSlotCompatibilityDeviceMasterDevice(@Param("sessionId") String sessionId, @Param("elid") String elid, AddModuleSlotCompatibilityDeviceMasterDeviceRequestData body);
+
+  /**
+   * Add module/slot
+   * Similar to <code>addModuleSlotCompatibilityDeviceMasterDevice</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/deviceMasterDevice/{elid}/addModuleSlotCompatibility?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<AddModuleSlotCompatibilityDeviceMasterDeviceResponse> addModuleSlotCompatibilityDeviceMasterDeviceWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, AddModuleSlotCompatibilityDeviceMasterDeviceRequestData body);
+
+
+  /**
+   * Add module/slot
+   * 
+   * Note, this is equivalent to the other <code>addModuleSlotCompatibilityDeviceMasterDevice</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link AddModuleSlotCompatibilityDeviceMasterDeviceQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return AddModuleSlotCompatibilityDeviceMasterDeviceResponse
+   */
+  @RequestLine("POST /api/rest/entity/deviceMasterDevice/{elid}/addModuleSlotCompatibility?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  AddModuleSlotCompatibilityDeviceMasterDeviceResponse addModuleSlotCompatibilityDeviceMasterDevice(@Param("elid") String elid, AddModuleSlotCompatibilityDeviceMasterDeviceRequestData body, @QueryMap(encoded=true) AddModuleSlotCompatibilityDeviceMasterDeviceQueryParams queryParams);
+
+  /**
+  * Add module/slot
+  * 
+  * Note, this is equivalent to the other <code>addModuleSlotCompatibilityDeviceMasterDevice</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return AddModuleSlotCompatibilityDeviceMasterDeviceResponse
+      */
+      @RequestLine("POST /api/rest/entity/deviceMasterDevice/{elid}/addModuleSlotCompatibility?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<AddModuleSlotCompatibilityDeviceMasterDeviceResponse> addModuleSlotCompatibilityDeviceMasterDeviceWithHttpInfo(@Param("elid") String elid, AddModuleSlotCompatibilityDeviceMasterDeviceRequestData body, @QueryMap(encoded=true) AddModuleSlotCompatibilityDeviceMasterDeviceQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>addModuleSlotCompatibilityDeviceMasterDevice</code> method in a fluent style.
+   */
+  public static class AddModuleSlotCompatibilityDeviceMasterDeviceQueryParams extends HashMap<String, Object> {
+    public AddModuleSlotCompatibilityDeviceMasterDeviceQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
 
   /**
    * Get relations to Chassis entities
@@ -570,6 +762,95 @@ public interface DeviceMasterDeviceApi extends ApiClient.Api {
   }
 
   /**
+   * Get relations to Power grid entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return DeviceMasterDevicePowerGridResponseData
+   */
+  @RequestLine("POST /api/rest/entity/deviceMasterDevice/{elid}/PowerGrid?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  DeviceMasterDevicePowerGridResponseData deviceMasterDevicePowerGrid(@Param("sessionId") String sessionId, @Param("elid") String elid, DeviceMasterDevicePowerGridRequestData body);
+
+  /**
+   * Get relations to Power grid entities
+   * Similar to <code>deviceMasterDevicePowerGrid</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/deviceMasterDevice/{elid}/PowerGrid?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<DeviceMasterDevicePowerGridResponseData> deviceMasterDevicePowerGridWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, DeviceMasterDevicePowerGridRequestData body);
+
+
+  /**
+   * Get relations to Power grid entities
+   * 
+   * Note, this is equivalent to the other <code>deviceMasterDevicePowerGrid</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link DeviceMasterDevicePowerGridQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return DeviceMasterDevicePowerGridResponseData
+   */
+  @RequestLine("POST /api/rest/entity/deviceMasterDevice/{elid}/PowerGrid?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  DeviceMasterDevicePowerGridResponseData deviceMasterDevicePowerGrid(@Param("elid") String elid, DeviceMasterDevicePowerGridRequestData body, @QueryMap(encoded=true) DeviceMasterDevicePowerGridQueryParams queryParams);
+
+  /**
+  * Get relations to Power grid entities
+  * 
+  * Note, this is equivalent to the other <code>deviceMasterDevicePowerGrid</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return DeviceMasterDevicePowerGridResponseData
+      */
+      @RequestLine("POST /api/rest/entity/deviceMasterDevice/{elid}/PowerGrid?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<DeviceMasterDevicePowerGridResponseData> deviceMasterDevicePowerGridWithHttpInfo(@Param("elid") String elid, DeviceMasterDevicePowerGridRequestData body, @QueryMap(encoded=true) DeviceMasterDevicePowerGridQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>deviceMasterDevicePowerGrid</code> method in a fluent style.
+   */
+  public static class DeviceMasterDevicePowerGridQueryParams extends HashMap<String, Object> {
+    public DeviceMasterDevicePowerGridQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Basic query
    * Query for all basic target entity data
    * @param sessionId Session-ID (required)
@@ -738,6 +1019,95 @@ public interface DeviceMasterDeviceApi extends ApiClient.Api {
    */
   public static class DeviceMasterDeviceServersQueryParams extends HashMap<String, Object> {
     public DeviceMasterDeviceServersQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Server (base) entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return DeviceMasterDeviceServersBaseResponseData
+   */
+  @RequestLine("POST /api/rest/entity/deviceMasterDevice/{elid}/ServersBase?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  DeviceMasterDeviceServersBaseResponseData deviceMasterDeviceServersBase(@Param("sessionId") String sessionId, @Param("elid") String elid, DeviceMasterDeviceServersBaseRequestData body);
+
+  /**
+   * Get relations to Server (base) entities
+   * Similar to <code>deviceMasterDeviceServersBase</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/deviceMasterDevice/{elid}/ServersBase?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<DeviceMasterDeviceServersBaseResponseData> deviceMasterDeviceServersBaseWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, DeviceMasterDeviceServersBaseRequestData body);
+
+
+  /**
+   * Get relations to Server (base) entities
+   * 
+   * Note, this is equivalent to the other <code>deviceMasterDeviceServersBase</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link DeviceMasterDeviceServersBaseQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return DeviceMasterDeviceServersBaseResponseData
+   */
+  @RequestLine("POST /api/rest/entity/deviceMasterDevice/{elid}/ServersBase?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  DeviceMasterDeviceServersBaseResponseData deviceMasterDeviceServersBase(@Param("elid") String elid, DeviceMasterDeviceServersBaseRequestData body, @QueryMap(encoded=true) DeviceMasterDeviceServersBaseQueryParams queryParams);
+
+  /**
+  * Get relations to Server (base) entities
+  * 
+  * Note, this is equivalent to the other <code>deviceMasterDeviceServersBase</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return DeviceMasterDeviceServersBaseResponseData
+      */
+      @RequestLine("POST /api/rest/entity/deviceMasterDevice/{elid}/ServersBase?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<DeviceMasterDeviceServersBaseResponseData> deviceMasterDeviceServersBaseWithHttpInfo(@Param("elid") String elid, DeviceMasterDeviceServersBaseRequestData body, @QueryMap(encoded=true) DeviceMasterDeviceServersBaseQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>deviceMasterDeviceServersBase</code> method in a fluent style.
+   */
+  public static class DeviceMasterDeviceServersBaseQueryParams extends HashMap<String, Object> {
+    public DeviceMasterDeviceServersBaseQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -922,6 +1292,95 @@ public interface DeviceMasterDeviceApi extends ApiClient.Api {
   }
 
   /**
+   * Get relations to Storage (base) entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return DeviceMasterDeviceStoragesBaseResponseData
+   */
+  @RequestLine("POST /api/rest/entity/deviceMasterDevice/{elid}/StoragesBase?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  DeviceMasterDeviceStoragesBaseResponseData deviceMasterDeviceStoragesBase(@Param("sessionId") String sessionId, @Param("elid") String elid, DeviceMasterDeviceStoragesBaseRequestData body);
+
+  /**
+   * Get relations to Storage (base) entities
+   * Similar to <code>deviceMasterDeviceStoragesBase</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/deviceMasterDevice/{elid}/StoragesBase?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<DeviceMasterDeviceStoragesBaseResponseData> deviceMasterDeviceStoragesBaseWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, DeviceMasterDeviceStoragesBaseRequestData body);
+
+
+  /**
+   * Get relations to Storage (base) entities
+   * 
+   * Note, this is equivalent to the other <code>deviceMasterDeviceStoragesBase</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link DeviceMasterDeviceStoragesBaseQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return DeviceMasterDeviceStoragesBaseResponseData
+   */
+  @RequestLine("POST /api/rest/entity/deviceMasterDevice/{elid}/StoragesBase?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  DeviceMasterDeviceStoragesBaseResponseData deviceMasterDeviceStoragesBase(@Param("elid") String elid, DeviceMasterDeviceStoragesBaseRequestData body, @QueryMap(encoded=true) DeviceMasterDeviceStoragesBaseQueryParams queryParams);
+
+  /**
+  * Get relations to Storage (base) entities
+  * 
+  * Note, this is equivalent to the other <code>deviceMasterDeviceStoragesBase</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return DeviceMasterDeviceStoragesBaseResponseData
+      */
+      @RequestLine("POST /api/rest/entity/deviceMasterDevice/{elid}/StoragesBase?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<DeviceMasterDeviceStoragesBaseResponseData> deviceMasterDeviceStoragesBaseWithHttpInfo(@Param("elid") String elid, DeviceMasterDeviceStoragesBaseRequestData body, @QueryMap(encoded=true) DeviceMasterDeviceStoragesBaseQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>deviceMasterDeviceStoragesBase</code> method in a fluent style.
+   */
+  public static class DeviceMasterDeviceStoragesBaseQueryParams extends HashMap<String, Object> {
+    public DeviceMasterDeviceStoragesBaseQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Query system attributes
    * Query for all system attributes
    * @param sessionId Session-ID (required)
@@ -1094,6 +1553,184 @@ public interface DeviceMasterDeviceApi extends ApiClient.Api {
    */
   public static class DeviceMasterDeviceTerminalsQueryParams extends HashMap<String, Object> {
     public DeviceMasterDeviceTerminalsQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Remove change type
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return RemoveChangeTypeDeviceMasterDeviceResponse
+   */
+  @RequestLine("POST /api/rest/entity/deviceMasterDevice/{elid}/removeChangeType?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  RemoveChangeTypeDeviceMasterDeviceResponse removeChangeTypeDeviceMasterDevice(@Param("sessionId") String sessionId, @Param("elid") String elid, RemoveChangeTypeDeviceMasterDeviceRequestData body);
+
+  /**
+   * Remove change type
+   * Similar to <code>removeChangeTypeDeviceMasterDevice</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/deviceMasterDevice/{elid}/removeChangeType?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<RemoveChangeTypeDeviceMasterDeviceResponse> removeChangeTypeDeviceMasterDeviceWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, RemoveChangeTypeDeviceMasterDeviceRequestData body);
+
+
+  /**
+   * Remove change type
+   * 
+   * Note, this is equivalent to the other <code>removeChangeTypeDeviceMasterDevice</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link RemoveChangeTypeDeviceMasterDeviceQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return RemoveChangeTypeDeviceMasterDeviceResponse
+   */
+  @RequestLine("POST /api/rest/entity/deviceMasterDevice/{elid}/removeChangeType?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  RemoveChangeTypeDeviceMasterDeviceResponse removeChangeTypeDeviceMasterDevice(@Param("elid") String elid, RemoveChangeTypeDeviceMasterDeviceRequestData body, @QueryMap(encoded=true) RemoveChangeTypeDeviceMasterDeviceQueryParams queryParams);
+
+  /**
+  * Remove change type
+  * 
+  * Note, this is equivalent to the other <code>removeChangeTypeDeviceMasterDevice</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return RemoveChangeTypeDeviceMasterDeviceResponse
+      */
+      @RequestLine("POST /api/rest/entity/deviceMasterDevice/{elid}/removeChangeType?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<RemoveChangeTypeDeviceMasterDeviceResponse> removeChangeTypeDeviceMasterDeviceWithHttpInfo(@Param("elid") String elid, RemoveChangeTypeDeviceMasterDeviceRequestData body, @QueryMap(encoded=true) RemoveChangeTypeDeviceMasterDeviceQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>removeChangeTypeDeviceMasterDevice</code> method in a fluent style.
+   */
+  public static class RemoveChangeTypeDeviceMasterDeviceQueryParams extends HashMap<String, Object> {
+    public RemoveChangeTypeDeviceMasterDeviceQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Remove module/slot
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return RemoveModuleSlotCompatibilityDeviceMasterDeviceResponse
+   */
+  @RequestLine("POST /api/rest/entity/deviceMasterDevice/{elid}/removeModuleSlotCompatibility?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  RemoveModuleSlotCompatibilityDeviceMasterDeviceResponse removeModuleSlotCompatibilityDeviceMasterDevice(@Param("sessionId") String sessionId, @Param("elid") String elid, RemoveModuleSlotCompatibilityDeviceMasterDeviceRequestData body);
+
+  /**
+   * Remove module/slot
+   * Similar to <code>removeModuleSlotCompatibilityDeviceMasterDevice</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/deviceMasterDevice/{elid}/removeModuleSlotCompatibility?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<RemoveModuleSlotCompatibilityDeviceMasterDeviceResponse> removeModuleSlotCompatibilityDeviceMasterDeviceWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, RemoveModuleSlotCompatibilityDeviceMasterDeviceRequestData body);
+
+
+  /**
+   * Remove module/slot
+   * 
+   * Note, this is equivalent to the other <code>removeModuleSlotCompatibilityDeviceMasterDevice</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link RemoveModuleSlotCompatibilityDeviceMasterDeviceQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return RemoveModuleSlotCompatibilityDeviceMasterDeviceResponse
+   */
+  @RequestLine("POST /api/rest/entity/deviceMasterDevice/{elid}/removeModuleSlotCompatibility?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  RemoveModuleSlotCompatibilityDeviceMasterDeviceResponse removeModuleSlotCompatibilityDeviceMasterDevice(@Param("elid") String elid, RemoveModuleSlotCompatibilityDeviceMasterDeviceRequestData body, @QueryMap(encoded=true) RemoveModuleSlotCompatibilityDeviceMasterDeviceQueryParams queryParams);
+
+  /**
+  * Remove module/slot
+  * 
+  * Note, this is equivalent to the other <code>removeModuleSlotCompatibilityDeviceMasterDevice</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return RemoveModuleSlotCompatibilityDeviceMasterDeviceResponse
+      */
+      @RequestLine("POST /api/rest/entity/deviceMasterDevice/{elid}/removeModuleSlotCompatibility?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<RemoveModuleSlotCompatibilityDeviceMasterDeviceResponse> removeModuleSlotCompatibilityDeviceMasterDeviceWithHttpInfo(@Param("elid") String elid, RemoveModuleSlotCompatibilityDeviceMasterDeviceRequestData body, @QueryMap(encoded=true) RemoveModuleSlotCompatibilityDeviceMasterDeviceQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>removeModuleSlotCompatibilityDeviceMasterDevice</code> method in a fluent style.
+   */
+  public static class RemoveModuleSlotCompatibilityDeviceMasterDeviceQueryParams extends HashMap<String, Object> {
+    public RemoveModuleSlotCompatibilityDeviceMasterDeviceQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

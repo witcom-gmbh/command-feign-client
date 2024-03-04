@@ -24,12 +24,8 @@ import com.fntsoftware.businessgateway.entities.LogicalPortContractsRequestData;
 import com.fntsoftware.businessgateway.entities.LogicalPortContractsResponseData;
 import com.fntsoftware.businessgateway.entities.LogicalPortCustomIpaccessSvcRequestData;
 import com.fntsoftware.businessgateway.entities.LogicalPortCustomIpaccessSvcResponseData;
-import com.fntsoftware.businessgateway.entities.LogicalPortCustomSvidCVlanRequestData;
-import com.fntsoftware.businessgateway.entities.LogicalPortCustomSvidCVlanResponseData;
-import com.fntsoftware.businessgateway.entities.LogicalPortCustomSvidSVlanRequestData;
-import com.fntsoftware.businessgateway.entities.LogicalPortCustomSvidSVlanResponseData;
-import com.fntsoftware.businessgateway.entities.LogicalPortCustomSvidVlanRequestData;
-import com.fntsoftware.businessgateway.entities.LogicalPortCustomSvidVlanResponseData;
+import com.fntsoftware.businessgateway.entities.LogicalPortCustomSvidRequestData;
+import com.fntsoftware.businessgateway.entities.LogicalPortCustomSvidResponseData;
 import com.fntsoftware.businessgateway.entities.LogicalPortCustomTcoInterconnectRequestData;
 import com.fntsoftware.businessgateway.entities.LogicalPortCustomTcoInterconnectResponseData;
 import com.fntsoftware.businessgateway.entities.LogicalPortDeviceAllRequestData;
@@ -44,6 +40,8 @@ import com.fntsoftware.businessgateway.entities.LogicalPortNetworkElementRequest
 import com.fntsoftware.businessgateway.entities.LogicalPortNetworkElementResponseData;
 import com.fntsoftware.businessgateway.entities.LogicalPortOrganizationsRequestData;
 import com.fntsoftware.businessgateway.entities.LogicalPortOrganizationsResponseData;
+import com.fntsoftware.businessgateway.entities.LogicalPortParentDeviceRequestData;
+import com.fntsoftware.businessgateway.entities.LogicalPortParentDeviceResponseData;
 import com.fntsoftware.businessgateway.entities.LogicalPortPersonGroupsRequestData;
 import com.fntsoftware.businessgateway.entities.LogicalPortPersonGroupsResponseData;
 import com.fntsoftware.businessgateway.entities.LogicalPortPersonsRequestData;
@@ -73,7 +71,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-04T13:31:32.601557352Z[Etc/UTC]")
 public interface LogicalPortApi extends ApiClient.Api {
 
 
@@ -961,39 +959,39 @@ public interface LogicalPortApi extends ApiClient.Api {
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
-   * @return LogicalPortCustomSvidCVlanResponseData
+   * @return LogicalPortCustomSvidResponseData
    */
-  @RequestLine("POST /api/rest/entity/logicalPort/{elid}/CustomSvidCVlan?sessionId={sessionId}")
+  @RequestLine("POST /api/rest/entity/logicalPort/{elid}/CustomSvid?sessionId={sessionId}")
   @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  LogicalPortCustomSvidCVlanResponseData logicalPortCustomSvidCVlan(@Param("sessionId") String sessionId, @Param("elid") String elid, LogicalPortCustomSvidCVlanRequestData body);
+  LogicalPortCustomSvidResponseData logicalPortCustomSvid(@Param("sessionId") String sessionId, @Param("elid") String elid, LogicalPortCustomSvidRequestData body);
 
   /**
    * Get relations to S-VLAN entities
-   * Similar to <code>logicalPortCustomSvidCVlan</code> but it also returns the http response headers .
+   * Similar to <code>logicalPortCustomSvid</code> but it also returns the http response headers .
    * 
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
    * @return A ApiResponse that wraps the response boyd and the http headers.
    */
-  @RequestLine("POST /api/rest/entity/logicalPort/{elid}/CustomSvidCVlan?sessionId={sessionId}")
+  @RequestLine("POST /api/rest/entity/logicalPort/{elid}/CustomSvid?sessionId={sessionId}")
   @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  ApiResponse<LogicalPortCustomSvidCVlanResponseData> logicalPortCustomSvidCVlanWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, LogicalPortCustomSvidCVlanRequestData body);
+  ApiResponse<LogicalPortCustomSvidResponseData> logicalPortCustomSvidWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, LogicalPortCustomSvidRequestData body);
 
 
   /**
    * Get relations to S-VLAN entities
    * 
-   * Note, this is equivalent to the other <code>logicalPortCustomSvidCVlan</code> method,
+   * Note, this is equivalent to the other <code>logicalPortCustomSvid</code> method,
    * but with the query parameters collected into a single Map parameter. This
    * is convenient for services with optional query parameters, especially when
-   * used with the {@link LogicalPortCustomSvidCVlanQueryParams} class that allows for
+   * used with the {@link LogicalPortCustomSvidQueryParams} class that allows for
    * building up this map in a fluent style.
    * @param elid  (required)
    * @param body  (required)
@@ -1002,19 +1000,19 @@ public interface LogicalPortApi extends ApiClient.Api {
    *   <ul>
    *   <li>sessionId - Session-ID (required)</li>
    *   </ul>
-   * @return LogicalPortCustomSvidCVlanResponseData
+   * @return LogicalPortCustomSvidResponseData
    */
-  @RequestLine("POST /api/rest/entity/logicalPort/{elid}/CustomSvidCVlan?sessionId={sessionId}")
+  @RequestLine("POST /api/rest/entity/logicalPort/{elid}/CustomSvid?sessionId={sessionId}")
   @Headers({
   "Content-Type: application/json",
   "Accept: application/json",
   })
-  LogicalPortCustomSvidCVlanResponseData logicalPortCustomSvidCVlan(@Param("elid") String elid, LogicalPortCustomSvidCVlanRequestData body, @QueryMap(encoded=true) LogicalPortCustomSvidCVlanQueryParams queryParams);
+  LogicalPortCustomSvidResponseData logicalPortCustomSvid(@Param("elid") String elid, LogicalPortCustomSvidRequestData body, @QueryMap(encoded=true) LogicalPortCustomSvidQueryParams queryParams);
 
   /**
   * Get relations to S-VLAN entities
   * 
-  * Note, this is equivalent to the other <code>logicalPortCustomSvidCVlan</code> that receives the query parameters as a map,
+  * Note, this is equivalent to the other <code>logicalPortCustomSvid</code> that receives the query parameters as a map,
   * but this one also exposes the Http response headers
               * @param elid  (required)
               * @param body  (required)
@@ -1023,200 +1021,22 @@ public interface LogicalPortApi extends ApiClient.Api {
       *   <ul>
           *   <li>sessionId - Session-ID (required)</li>
       *   </ul>
-          * @return LogicalPortCustomSvidCVlanResponseData
+          * @return LogicalPortCustomSvidResponseData
       */
-      @RequestLine("POST /api/rest/entity/logicalPort/{elid}/CustomSvidCVlan?sessionId={sessionId}")
+      @RequestLine("POST /api/rest/entity/logicalPort/{elid}/CustomSvid?sessionId={sessionId}")
       @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
       })
-   ApiResponse<LogicalPortCustomSvidCVlanResponseData> logicalPortCustomSvidCVlanWithHttpInfo(@Param("elid") String elid, LogicalPortCustomSvidCVlanRequestData body, @QueryMap(encoded=true) LogicalPortCustomSvidCVlanQueryParams queryParams);
+   ApiResponse<LogicalPortCustomSvidResponseData> logicalPortCustomSvidWithHttpInfo(@Param("elid") String elid, LogicalPortCustomSvidRequestData body, @QueryMap(encoded=true) LogicalPortCustomSvidQueryParams queryParams);
 
 
    /**
    * A convenience class for generating query parameters for the
-   * <code>logicalPortCustomSvidCVlan</code> method in a fluent style.
+   * <code>logicalPortCustomSvid</code> method in a fluent style.
    */
-  public static class LogicalPortCustomSvidCVlanQueryParams extends HashMap<String, Object> {
-    public LogicalPortCustomSvidCVlanQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Get relations to S-VLAN entities
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return LogicalPortCustomSvidSVlanResponseData
-   */
-  @RequestLine("POST /api/rest/entity/logicalPort/{elid}/CustomSvidSVlan?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  LogicalPortCustomSvidSVlanResponseData logicalPortCustomSvidSVlan(@Param("sessionId") String sessionId, @Param("elid") String elid, LogicalPortCustomSvidSVlanRequestData body);
-
-  /**
-   * Get relations to S-VLAN entities
-   * Similar to <code>logicalPortCustomSvidSVlan</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/logicalPort/{elid}/CustomSvidSVlan?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<LogicalPortCustomSvidSVlanResponseData> logicalPortCustomSvidSVlanWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, LogicalPortCustomSvidSVlanRequestData body);
-
-
-  /**
-   * Get relations to S-VLAN entities
-   * 
-   * Note, this is equivalent to the other <code>logicalPortCustomSvidSVlan</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link LogicalPortCustomSvidSVlanQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return LogicalPortCustomSvidSVlanResponseData
-   */
-  @RequestLine("POST /api/rest/entity/logicalPort/{elid}/CustomSvidSVlan?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  LogicalPortCustomSvidSVlanResponseData logicalPortCustomSvidSVlan(@Param("elid") String elid, LogicalPortCustomSvidSVlanRequestData body, @QueryMap(encoded=true) LogicalPortCustomSvidSVlanQueryParams queryParams);
-
-  /**
-  * Get relations to S-VLAN entities
-  * 
-  * Note, this is equivalent to the other <code>logicalPortCustomSvidSVlan</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return LogicalPortCustomSvidSVlanResponseData
-      */
-      @RequestLine("POST /api/rest/entity/logicalPort/{elid}/CustomSvidSVlan?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<LogicalPortCustomSvidSVlanResponseData> logicalPortCustomSvidSVlanWithHttpInfo(@Param("elid") String elid, LogicalPortCustomSvidSVlanRequestData body, @QueryMap(encoded=true) LogicalPortCustomSvidSVlanQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>logicalPortCustomSvidSVlan</code> method in a fluent style.
-   */
-  public static class LogicalPortCustomSvidSVlanQueryParams extends HashMap<String, Object> {
-    public LogicalPortCustomSvidSVlanQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Get relations to S-VLAN entities
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return LogicalPortCustomSvidVlanResponseData
-   */
-  @RequestLine("POST /api/rest/entity/logicalPort/{elid}/CustomSvidVlan?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  LogicalPortCustomSvidVlanResponseData logicalPortCustomSvidVlan(@Param("sessionId") String sessionId, @Param("elid") String elid, LogicalPortCustomSvidVlanRequestData body);
-
-  /**
-   * Get relations to S-VLAN entities
-   * Similar to <code>logicalPortCustomSvidVlan</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/logicalPort/{elid}/CustomSvidVlan?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<LogicalPortCustomSvidVlanResponseData> logicalPortCustomSvidVlanWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, LogicalPortCustomSvidVlanRequestData body);
-
-
-  /**
-   * Get relations to S-VLAN entities
-   * 
-   * Note, this is equivalent to the other <code>logicalPortCustomSvidVlan</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link LogicalPortCustomSvidVlanQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return LogicalPortCustomSvidVlanResponseData
-   */
-  @RequestLine("POST /api/rest/entity/logicalPort/{elid}/CustomSvidVlan?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  LogicalPortCustomSvidVlanResponseData logicalPortCustomSvidVlan(@Param("elid") String elid, LogicalPortCustomSvidVlanRequestData body, @QueryMap(encoded=true) LogicalPortCustomSvidVlanQueryParams queryParams);
-
-  /**
-  * Get relations to S-VLAN entities
-  * 
-  * Note, this is equivalent to the other <code>logicalPortCustomSvidVlan</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return LogicalPortCustomSvidVlanResponseData
-      */
-      @RequestLine("POST /api/rest/entity/logicalPort/{elid}/CustomSvidVlan?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<LogicalPortCustomSvidVlanResponseData> logicalPortCustomSvidVlanWithHttpInfo(@Param("elid") String elid, LogicalPortCustomSvidVlanRequestData body, @QueryMap(encoded=true) LogicalPortCustomSvidVlanQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>logicalPortCustomSvidVlan</code> method in a fluent style.
-   */
-  public static class LogicalPortCustomSvidVlanQueryParams extends HashMap<String, Object> {
-    public LogicalPortCustomSvidVlanQueryParams sessionId(final String value) {
+  public static class LogicalPortCustomSvidQueryParams extends HashMap<String, Object> {
+    public LogicalPortCustomSvidQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -1840,6 +1660,95 @@ public interface LogicalPortApi extends ApiClient.Api {
    */
   public static class LogicalPortOrganizationsQueryParams extends HashMap<String, Object> {
     public LogicalPortOrganizationsQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to ParentDeviceToLogicalPortLink entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return LogicalPortParentDeviceResponseData
+   */
+  @RequestLine("POST /api/rest/entity/logicalPort/{elid}/ParentDevice?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  LogicalPortParentDeviceResponseData logicalPortParentDevice(@Param("sessionId") String sessionId, @Param("elid") String elid, LogicalPortParentDeviceRequestData body);
+
+  /**
+   * Get relations to ParentDeviceToLogicalPortLink entities
+   * Similar to <code>logicalPortParentDevice</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/logicalPort/{elid}/ParentDevice?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<LogicalPortParentDeviceResponseData> logicalPortParentDeviceWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, LogicalPortParentDeviceRequestData body);
+
+
+  /**
+   * Get relations to ParentDeviceToLogicalPortLink entities
+   * 
+   * Note, this is equivalent to the other <code>logicalPortParentDevice</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link LogicalPortParentDeviceQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return LogicalPortParentDeviceResponseData
+   */
+  @RequestLine("POST /api/rest/entity/logicalPort/{elid}/ParentDevice?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  LogicalPortParentDeviceResponseData logicalPortParentDevice(@Param("elid") String elid, LogicalPortParentDeviceRequestData body, @QueryMap(encoded=true) LogicalPortParentDeviceQueryParams queryParams);
+
+  /**
+  * Get relations to ParentDeviceToLogicalPortLink entities
+  * 
+  * Note, this is equivalent to the other <code>logicalPortParentDevice</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return LogicalPortParentDeviceResponseData
+      */
+      @RequestLine("POST /api/rest/entity/logicalPort/{elid}/ParentDevice?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<LogicalPortParentDeviceResponseData> logicalPortParentDeviceWithHttpInfo(@Param("elid") String elid, LogicalPortParentDeviceRequestData body, @QueryMap(encoded=true) LogicalPortParentDeviceQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>logicalPortParentDevice</code> method in a fluent style.
+   */
+  public static class LogicalPortParentDeviceQueryParams extends HashMap<String, Object> {
+    public LogicalPortParentDeviceQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

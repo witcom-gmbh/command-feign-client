@@ -38,8 +38,6 @@ import com.fntsoftware.businessgateway.entities.InterfaceQueryRequest;
 import com.fntsoftware.businessgateway.entities.InterfaceQueryResponse;
 import com.fntsoftware.businessgateway.entities.InterfaceSystemAttributesRequest;
 import com.fntsoftware.businessgateway.entities.InterfaceSystemAttributesResponse;
-import com.fntsoftware.businessgateway.entities.InterfaceVirtualClientsRequestData;
-import com.fntsoftware.businessgateway.entities.InterfaceVirtualClientsResponseData;
 import com.fntsoftware.businessgateway.entities.InterfaceVirtualNasServersRequestData;
 import com.fntsoftware.businessgateway.entities.InterfaceVirtualNasServersResponseData;
 import com.fntsoftware.businessgateway.entities.InterfaceVirtualServersRequestData;
@@ -57,7 +55,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-04T13:31:32.601557352Z[Etc/UTC]")
 public interface InterfaceApi extends ApiClient.Api {
 
 
@@ -1561,95 +1559,6 @@ public interface InterfaceApi extends ApiClient.Api {
    */
   public static class InterfaceSystemAttributesQueryParams extends HashMap<String, Object> {
     public InterfaceSystemAttributesQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Get relations to Virtual client entities
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return InterfaceVirtualClientsResponseData
-   */
-  @RequestLine("POST /api/rest/entity/interface/{elid}/VirtualClients?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  InterfaceVirtualClientsResponseData interfaceVirtualClients(@Param("sessionId") String sessionId, @Param("elid") String elid, InterfaceVirtualClientsRequestData body);
-
-  /**
-   * Get relations to Virtual client entities
-   * Similar to <code>interfaceVirtualClients</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/interface/{elid}/VirtualClients?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<InterfaceVirtualClientsResponseData> interfaceVirtualClientsWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, InterfaceVirtualClientsRequestData body);
-
-
-  /**
-   * Get relations to Virtual client entities
-   * 
-   * Note, this is equivalent to the other <code>interfaceVirtualClients</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link InterfaceVirtualClientsQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return InterfaceVirtualClientsResponseData
-   */
-  @RequestLine("POST /api/rest/entity/interface/{elid}/VirtualClients?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  InterfaceVirtualClientsResponseData interfaceVirtualClients(@Param("elid") String elid, InterfaceVirtualClientsRequestData body, @QueryMap(encoded=true) InterfaceVirtualClientsQueryParams queryParams);
-
-  /**
-  * Get relations to Virtual client entities
-  * 
-  * Note, this is equivalent to the other <code>interfaceVirtualClients</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return InterfaceVirtualClientsResponseData
-      */
-      @RequestLine("POST /api/rest/entity/interface/{elid}/VirtualClients?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<InterfaceVirtualClientsResponseData> interfaceVirtualClientsWithHttpInfo(@Param("elid") String elid, InterfaceVirtualClientsRequestData body, @QueryMap(encoded=true) InterfaceVirtualClientsQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>interfaceVirtualClients</code> method in a fluent style.
-   */
-  public static class InterfaceVirtualClientsQueryParams extends HashMap<String, Object> {
-    public InterfaceVirtualClientsQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

@@ -28,12 +28,12 @@ import com.fntsoftware.businessgateway.entities.ServerfarmPersonsRequestData;
 import com.fntsoftware.businessgateway.entities.ServerfarmPersonsResponseData;
 import com.fntsoftware.businessgateway.entities.ServerfarmQueryRequest;
 import com.fntsoftware.businessgateway.entities.ServerfarmQueryResponse;
+import com.fntsoftware.businessgateway.entities.ServerfarmServersBaseRequestData;
+import com.fntsoftware.businessgateway.entities.ServerfarmServersBaseResponseData;
 import com.fntsoftware.businessgateway.entities.ServerfarmServersRequestData;
 import com.fntsoftware.businessgateway.entities.ServerfarmServersResponseData;
 import com.fntsoftware.businessgateway.entities.ServerfarmSystemAttributesRequest;
 import com.fntsoftware.businessgateway.entities.ServerfarmSystemAttributesResponse;
-import com.fntsoftware.businessgateway.entities.ServerfarmVirtualClientsRequestData;
-import com.fntsoftware.businessgateway.entities.ServerfarmVirtualClientsResponseData;
 import com.fntsoftware.businessgateway.entities.ServerfarmVirtualServersRequestData;
 import com.fntsoftware.businessgateway.entities.ServerfarmVirtualServersResponseData;
 import com.fntsoftware.businessgateway.entities.UpdateServerfarmRequestData;
@@ -47,7 +47,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-04T13:31:32.601557352Z[Etc/UTC]")
 public interface ServerfarmApi extends ApiClient.Api {
 
 
@@ -1201,6 +1201,95 @@ public interface ServerfarmApi extends ApiClient.Api {
   }
 
   /**
+   * Get relations to Server (base) entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return ServerfarmServersBaseResponseData
+   */
+  @RequestLine("POST /api/rest/entity/serverfarm/{elid}/ServersBase?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ServerfarmServersBaseResponseData serverfarmServersBase(@Param("sessionId") String sessionId, @Param("elid") String elid, ServerfarmServersBaseRequestData body);
+
+  /**
+   * Get relations to Server (base) entities
+   * Similar to <code>serverfarmServersBase</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/serverfarm/{elid}/ServersBase?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<ServerfarmServersBaseResponseData> serverfarmServersBaseWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ServerfarmServersBaseRequestData body);
+
+
+  /**
+   * Get relations to Server (base) entities
+   * 
+   * Note, this is equivalent to the other <code>serverfarmServersBase</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link ServerfarmServersBaseQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return ServerfarmServersBaseResponseData
+   */
+  @RequestLine("POST /api/rest/entity/serverfarm/{elid}/ServersBase?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  ServerfarmServersBaseResponseData serverfarmServersBase(@Param("elid") String elid, ServerfarmServersBaseRequestData body, @QueryMap(encoded=true) ServerfarmServersBaseQueryParams queryParams);
+
+  /**
+  * Get relations to Server (base) entities
+  * 
+  * Note, this is equivalent to the other <code>serverfarmServersBase</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return ServerfarmServersBaseResponseData
+      */
+      @RequestLine("POST /api/rest/entity/serverfarm/{elid}/ServersBase?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<ServerfarmServersBaseResponseData> serverfarmServersBaseWithHttpInfo(@Param("elid") String elid, ServerfarmServersBaseRequestData body, @QueryMap(encoded=true) ServerfarmServersBaseQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>serverfarmServersBase</code> method in a fluent style.
+   */
+  public static class ServerfarmServersBaseQueryParams extends HashMap<String, Object> {
+    public ServerfarmServersBaseQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Query system attributes
    * Query for all system attributes
    * @param sessionId Session-ID (required)
@@ -1284,95 +1373,6 @@ public interface ServerfarmApi extends ApiClient.Api {
    */
   public static class ServerfarmSystemAttributesQueryParams extends HashMap<String, Object> {
     public ServerfarmSystemAttributesQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Get relations to Virtual client entities
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return ServerfarmVirtualClientsResponseData
-   */
-  @RequestLine("POST /api/rest/entity/serverfarm/{elid}/VirtualClients?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ServerfarmVirtualClientsResponseData serverfarmVirtualClients(@Param("sessionId") String sessionId, @Param("elid") String elid, ServerfarmVirtualClientsRequestData body);
-
-  /**
-   * Get relations to Virtual client entities
-   * Similar to <code>serverfarmVirtualClients</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/serverfarm/{elid}/VirtualClients?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<ServerfarmVirtualClientsResponseData> serverfarmVirtualClientsWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ServerfarmVirtualClientsRequestData body);
-
-
-  /**
-   * Get relations to Virtual client entities
-   * 
-   * Note, this is equivalent to the other <code>serverfarmVirtualClients</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link ServerfarmVirtualClientsQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return ServerfarmVirtualClientsResponseData
-   */
-  @RequestLine("POST /api/rest/entity/serverfarm/{elid}/VirtualClients?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  ServerfarmVirtualClientsResponseData serverfarmVirtualClients(@Param("elid") String elid, ServerfarmVirtualClientsRequestData body, @QueryMap(encoded=true) ServerfarmVirtualClientsQueryParams queryParams);
-
-  /**
-  * Get relations to Virtual client entities
-  * 
-  * Note, this is equivalent to the other <code>serverfarmVirtualClients</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return ServerfarmVirtualClientsResponseData
-      */
-      @RequestLine("POST /api/rest/entity/serverfarm/{elid}/VirtualClients?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<ServerfarmVirtualClientsResponseData> serverfarmVirtualClientsWithHttpInfo(@Param("elid") String elid, ServerfarmVirtualClientsRequestData body, @QueryMap(encoded=true) ServerfarmVirtualClientsQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>serverfarmVirtualClients</code> method in a fluent style.
-   */
-  public static class ServerfarmVirtualClientsQueryParams extends HashMap<String, Object> {
-    public ServerfarmVirtualClientsQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

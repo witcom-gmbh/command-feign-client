@@ -4,6 +4,10 @@ import com.fntsoftware.businessgateway.ApiClient;
 import com.fntsoftware.businessgateway.EncodingUtils;
 import com.fntsoftware.businessgateway.entities.ApiResponse;
 
+import com.fntsoftware.businessgateway.entities.CreateTraySectionTypeRequestData;
+import com.fntsoftware.businessgateway.entities.CreateTraySectionTypeResponse;
+import com.fntsoftware.businessgateway.entities.DeleteTraySectionTypeRequestData;
+import com.fntsoftware.businessgateway.entities.DeleteTraySectionTypeResponse;
 import com.fntsoftware.businessgateway.entities.TraySectionTypeContractsRequestData;
 import com.fntsoftware.businessgateway.entities.TraySectionTypeContractsResponseData;
 import com.fntsoftware.businessgateway.entities.TraySectionTypeDuctTypesRequestData;
@@ -26,6 +30,8 @@ import com.fntsoftware.businessgateway.entities.TraySectionTypeTraySectionsReque
 import com.fntsoftware.businessgateway.entities.TraySectionTypeTraySectionsResponseData;
 import com.fntsoftware.businessgateway.entities.UpdateSystemAttributesTraySectionTypeRequestData;
 import com.fntsoftware.businessgateway.entities.UpdateSystemAttributesTraySectionTypeResponse;
+import com.fntsoftware.businessgateway.entities.UpdateTraySectionTypeRequestData;
+import com.fntsoftware.businessgateway.entities.UpdateTraySectionTypeResponse;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -33,9 +39,183 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-04T13:31:32.601557352Z[Etc/UTC]")
 public interface TraySectionTypeApi extends ApiClient.Api {
 
+
+  /**
+   * Create
+   * Create Tray section type
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return CreateTraySectionTypeResponse
+   */
+  @RequestLine("POST /api/rest/entity/traySectionType/create?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  CreateTraySectionTypeResponse createTraySectionType(@Param("sessionId") String sessionId, CreateTraySectionTypeRequestData body);
+
+  /**
+   * Create
+   * Similar to <code>createTraySectionType</code> but it also returns the http response headers .
+   * Create Tray section type
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/traySectionType/create?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<CreateTraySectionTypeResponse> createTraySectionTypeWithHttpInfo(@Param("sessionId") String sessionId, CreateTraySectionTypeRequestData body);
+
+
+  /**
+   * Create
+   * Create Tray section type
+   * Note, this is equivalent to the other <code>createTraySectionType</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link CreateTraySectionTypeQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return CreateTraySectionTypeResponse
+   */
+  @RequestLine("POST /api/rest/entity/traySectionType/create?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  CreateTraySectionTypeResponse createTraySectionType(CreateTraySectionTypeRequestData body, @QueryMap(encoded=true) CreateTraySectionTypeQueryParams queryParams);
+
+  /**
+  * Create
+  * Create Tray section type
+  * Note, this is equivalent to the other <code>createTraySectionType</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return CreateTraySectionTypeResponse
+      */
+      @RequestLine("POST /api/rest/entity/traySectionType/create?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<CreateTraySectionTypeResponse> createTraySectionTypeWithHttpInfo(CreateTraySectionTypeRequestData body, @QueryMap(encoded=true) CreateTraySectionTypeQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>createTraySectionType</code> method in a fluent style.
+   */
+  public static class CreateTraySectionTypeQueryParams extends HashMap<String, Object> {
+    public CreateTraySectionTypeQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Delete
+   * Delete Tray section type
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return DeleteTraySectionTypeResponse
+   */
+  @RequestLine("POST /api/rest/entity/traySectionType/{elid}/delete?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  DeleteTraySectionTypeResponse deleteTraySectionType(@Param("sessionId") String sessionId, @Param("elid") String elid, DeleteTraySectionTypeRequestData body);
+
+  /**
+   * Delete
+   * Similar to <code>deleteTraySectionType</code> but it also returns the http response headers .
+   * Delete Tray section type
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/traySectionType/{elid}/delete?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<DeleteTraySectionTypeResponse> deleteTraySectionTypeWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, DeleteTraySectionTypeRequestData body);
+
+
+  /**
+   * Delete
+   * Delete Tray section type
+   * Note, this is equivalent to the other <code>deleteTraySectionType</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link DeleteTraySectionTypeQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return DeleteTraySectionTypeResponse
+   */
+  @RequestLine("POST /api/rest/entity/traySectionType/{elid}/delete?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  DeleteTraySectionTypeResponse deleteTraySectionType(@Param("elid") String elid, DeleteTraySectionTypeRequestData body, @QueryMap(encoded=true) DeleteTraySectionTypeQueryParams queryParams);
+
+  /**
+  * Delete
+  * Delete Tray section type
+  * Note, this is equivalent to the other <code>deleteTraySectionType</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return DeleteTraySectionTypeResponse
+      */
+      @RequestLine("POST /api/rest/entity/traySectionType/{elid}/delete?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<DeleteTraySectionTypeResponse> deleteTraySectionTypeWithHttpInfo(@Param("elid") String elid, DeleteTraySectionTypeRequestData body, @QueryMap(encoded=true) DeleteTraySectionTypeQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>deleteTraySectionType</code> method in a fluent style.
+   */
+  public static class DeleteTraySectionTypeQueryParams extends HashMap<String, Object> {
+    public DeleteTraySectionTypeQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
 
   /**
    * Get relations to Contract entities
@@ -1007,6 +1187,95 @@ public interface TraySectionTypeApi extends ApiClient.Api {
    */
   public static class UpdateSystemAttributesTraySectionTypeQueryParams extends HashMap<String, Object> {
     public UpdateSystemAttributesTraySectionTypeQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Modify
+   * Modify Tray section type
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return UpdateTraySectionTypeResponse
+   */
+  @RequestLine("POST /api/rest/entity/traySectionType/{elid}/update?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  UpdateTraySectionTypeResponse updateTraySectionType(@Param("sessionId") String sessionId, @Param("elid") String elid, UpdateTraySectionTypeRequestData body);
+
+  /**
+   * Modify
+   * Similar to <code>updateTraySectionType</code> but it also returns the http response headers .
+   * Modify Tray section type
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/traySectionType/{elid}/update?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<UpdateTraySectionTypeResponse> updateTraySectionTypeWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, UpdateTraySectionTypeRequestData body);
+
+
+  /**
+   * Modify
+   * Modify Tray section type
+   * Note, this is equivalent to the other <code>updateTraySectionType</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link UpdateTraySectionTypeQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return UpdateTraySectionTypeResponse
+   */
+  @RequestLine("POST /api/rest/entity/traySectionType/{elid}/update?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  UpdateTraySectionTypeResponse updateTraySectionType(@Param("elid") String elid, UpdateTraySectionTypeRequestData body, @QueryMap(encoded=true) UpdateTraySectionTypeQueryParams queryParams);
+
+  /**
+  * Modify
+  * Modify Tray section type
+  * Note, this is equivalent to the other <code>updateTraySectionType</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return UpdateTraySectionTypeResponse
+      */
+      @RequestLine("POST /api/rest/entity/traySectionType/{elid}/update?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<UpdateTraySectionTypeResponse> updateTraySectionTypeWithHttpInfo(@Param("elid") String elid, UpdateTraySectionTypeRequestData body, @QueryMap(encoded=true) UpdateTraySectionTypeQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>updateTraySectionType</code> method in a fluent style.
+   */
+  public static class UpdateTraySectionTypeQueryParams extends HashMap<String, Object> {
+    public UpdateTraySectionTypeQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

@@ -24,6 +24,8 @@ import com.fntsoftware.businessgateway.entities.PlaceInWarehouseStorageRequestDa
 import com.fntsoftware.businessgateway.entities.PlaceInWarehouseStorageResponse;
 import com.fntsoftware.businessgateway.entities.PlaceInZoneStorageRequestData;
 import com.fntsoftware.businessgateway.entities.PlaceInZoneStorageResponse;
+import com.fntsoftware.businessgateway.entities.ReplaceObjectStorageRequestData;
+import com.fntsoftware.businessgateway.entities.ReplaceObjectStorageResponse;
 import com.fntsoftware.businessgateway.entities.StorageContractsRequestData;
 import com.fntsoftware.businessgateway.entities.StorageContractsResponseData;
 import com.fntsoftware.businessgateway.entities.StorageDeviceMasterRequestData;
@@ -32,10 +34,18 @@ import com.fntsoftware.businessgateway.entities.StorageDevicesAllRequestData;
 import com.fntsoftware.businessgateway.entities.StorageDevicesAllResponseData;
 import com.fntsoftware.businessgateway.entities.StorageDrivesRequestData;
 import com.fntsoftware.businessgateway.entities.StorageDrivesResponseData;
+import com.fntsoftware.businessgateway.entities.StorageDuctDataRequest;
+import com.fntsoftware.businessgateway.entities.StorageDuctDataResponse;
+import com.fntsoftware.businessgateway.entities.StorageDuctsRequestData;
+import com.fntsoftware.businessgateway.entities.StorageDuctsResponseData;
 import com.fntsoftware.businessgateway.entities.StorageFrameContractsRequestData;
 import com.fntsoftware.businessgateway.entities.StorageFrameContractsResponseData;
 import com.fntsoftware.businessgateway.entities.StorageHardDisksRequestData;
 import com.fntsoftware.businessgateway.entities.StorageHardDisksResponseData;
+import com.fntsoftware.businessgateway.entities.StorageInheritedGeoCoordinatesRequest;
+import com.fntsoftware.businessgateway.entities.StorageInheritedGeoCoordinatesResponse;
+import com.fntsoftware.businessgateway.entities.StorageInstalledSubCardsRecursiveRequest;
+import com.fntsoftware.businessgateway.entities.StorageInstalledSubCardsRecursiveResponse;
 import com.fntsoftware.businessgateway.entities.StorageInstalledSubCardsRequest;
 import com.fntsoftware.businessgateway.entities.StorageInstalledSubCardsResponse;
 import com.fntsoftware.businessgateway.entities.StorageInterfacesRequestData;
@@ -60,6 +70,8 @@ import com.fntsoftware.businessgateway.entities.StorageMaintenanceWindowsRequest
 import com.fntsoftware.businessgateway.entities.StorageMaintenanceWindowsResponseData;
 import com.fntsoftware.businessgateway.entities.StorageModemsRequestData;
 import com.fntsoftware.businessgateway.entities.StorageModemsResponseData;
+import com.fntsoftware.businessgateway.entities.StorageMultiDuctsRequestData;
+import com.fntsoftware.businessgateway.entities.StorageMultiDuctsResponseData;
 import com.fntsoftware.businessgateway.entities.StorageNetworksAndNetrangesRequest;
 import com.fntsoftware.businessgateway.entities.StorageNetworksAndNetrangesResponse;
 import com.fntsoftware.businessgateway.entities.StorageOperatingSystemInstallationRequestData;
@@ -70,14 +82,20 @@ import com.fntsoftware.businessgateway.entities.StoragePersonGroupsRequestData;
 import com.fntsoftware.businessgateway.entities.StoragePersonGroupsResponseData;
 import com.fntsoftware.businessgateway.entities.StoragePersonsRequestData;
 import com.fntsoftware.businessgateway.entities.StoragePersonsResponseData;
+import com.fntsoftware.businessgateway.entities.StoragePhysicalPortsDataExtendedRequest;
+import com.fntsoftware.businessgateway.entities.StoragePhysicalPortsDataExtendedResponse;
 import com.fntsoftware.businessgateway.entities.StoragePhysicalPortsDataRequestData;
 import com.fntsoftware.businessgateway.entities.StoragePhysicalPortsDataResponseData;
-import com.fntsoftware.businessgateway.entities.StoragePhysicalPortsPowerRequest;
-import com.fntsoftware.businessgateway.entities.StoragePhysicalPortsPowerResponse;
+import com.fntsoftware.businessgateway.entities.StoragePhysicalPortsPowerExtendedRequest;
+import com.fntsoftware.businessgateway.entities.StoragePhysicalPortsPowerExtendedResponse;
+import com.fntsoftware.businessgateway.entities.StoragePhysicalPortsPowerRequestData;
+import com.fntsoftware.businessgateway.entities.StoragePhysicalPortsPowerResponseData;
 import com.fntsoftware.businessgateway.entities.StoragePluginCardsRequestData;
 import com.fntsoftware.businessgateway.entities.StoragePluginCardsResponseData;
 import com.fntsoftware.businessgateway.entities.StorageProcessorsRequestData;
 import com.fntsoftware.businessgateway.entities.StorageProcessorsResponseData;
+import com.fntsoftware.businessgateway.entities.StorageQueryExtendedGeoCoordinatesRequest;
+import com.fntsoftware.businessgateway.entities.StorageQueryExtendedGeoCoordinatesResponse;
 import com.fntsoftware.businessgateway.entities.StorageQueryExtendedRequest;
 import com.fntsoftware.businessgateway.entities.StorageQueryExtendedResponse;
 import com.fntsoftware.businessgateway.entities.StorageQueryExtendedScrollFirstRequest;
@@ -88,6 +106,10 @@ import com.fntsoftware.businessgateway.entities.StorageQueryRequest;
 import com.fntsoftware.businessgateway.entities.StorageQueryResponse;
 import com.fntsoftware.businessgateway.entities.StorageRaidControllersRequestData;
 import com.fntsoftware.businessgateway.entities.StorageRaidControllersResponseData;
+import com.fntsoftware.businessgateway.entities.StorageServicesRequest;
+import com.fntsoftware.businessgateway.entities.StorageServicesResponse;
+import com.fntsoftware.businessgateway.entities.StorageSitesRequestData;
+import com.fntsoftware.businessgateway.entities.StorageSitesResponseData;
 import com.fntsoftware.businessgateway.entities.StorageSlotRequestData;
 import com.fntsoftware.businessgateway.entities.StorageSlotResponseData;
 import com.fntsoftware.businessgateway.entities.StorageStorageUnitVolumesRequestData;
@@ -119,7 +141,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-04T13:31:32.601557352Z[Etc/UTC]")
 public interface StorageApi extends ApiClient.Api {
 
 
@@ -998,6 +1020,95 @@ public interface StorageApi extends ApiClient.Api {
   }
 
   /**
+   * Replace object
+   * Replace object
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return ReplaceObjectStorageResponse
+   */
+  @RequestLine("POST /api/rest/entity/storage/{elid}/replaceObject?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ReplaceObjectStorageResponse replaceObjectStorage(@Param("sessionId") String sessionId, @Param("elid") String elid, ReplaceObjectStorageRequestData body);
+
+  /**
+   * Replace object
+   * Similar to <code>replaceObjectStorage</code> but it also returns the http response headers .
+   * Replace object
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/storage/{elid}/replaceObject?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<ReplaceObjectStorageResponse> replaceObjectStorageWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ReplaceObjectStorageRequestData body);
+
+
+  /**
+   * Replace object
+   * Replace object
+   * Note, this is equivalent to the other <code>replaceObjectStorage</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link ReplaceObjectStorageQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return ReplaceObjectStorageResponse
+   */
+  @RequestLine("POST /api/rest/entity/storage/{elid}/replaceObject?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  ReplaceObjectStorageResponse replaceObjectStorage(@Param("elid") String elid, ReplaceObjectStorageRequestData body, @QueryMap(encoded=true) ReplaceObjectStorageQueryParams queryParams);
+
+  /**
+  * Replace object
+  * Replace object
+  * Note, this is equivalent to the other <code>replaceObjectStorage</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return ReplaceObjectStorageResponse
+      */
+      @RequestLine("POST /api/rest/entity/storage/{elid}/replaceObject?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<ReplaceObjectStorageResponse> replaceObjectStorageWithHttpInfo(@Param("elid") String elid, ReplaceObjectStorageRequestData body, @QueryMap(encoded=true) ReplaceObjectStorageQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>replaceObjectStorage</code> method in a fluent style.
+   */
+  public static class ReplaceObjectStorageQueryParams extends HashMap<String, Object> {
+    public ReplaceObjectStorageQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Get relations to Contract entities
    * 
    * @param sessionId Session-ID (required)
@@ -1354,6 +1465,184 @@ public interface StorageApi extends ApiClient.Api {
   }
 
   /**
+   * Query duct data
+   * Query associated ducts and multipipes
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return StorageDuctDataResponse
+   */
+  @RequestLine("POST /api/rest/entity/storage/{elid}/DuctData?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  StorageDuctDataResponse storageDuctData(@Param("sessionId") String sessionId, @Param("elid") String elid, StorageDuctDataRequest body);
+
+  /**
+   * Query duct data
+   * Similar to <code>storageDuctData</code> but it also returns the http response headers .
+   * Query associated ducts and multipipes
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/storage/{elid}/DuctData?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<StorageDuctDataResponse> storageDuctDataWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, StorageDuctDataRequest body);
+
+
+  /**
+   * Query duct data
+   * Query associated ducts and multipipes
+   * Note, this is equivalent to the other <code>storageDuctData</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link StorageDuctDataQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return StorageDuctDataResponse
+   */
+  @RequestLine("POST /api/rest/entity/storage/{elid}/DuctData?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  StorageDuctDataResponse storageDuctData(@Param("elid") String elid, StorageDuctDataRequest body, @QueryMap(encoded=true) StorageDuctDataQueryParams queryParams);
+
+  /**
+  * Query duct data
+  * Query associated ducts and multipipes
+  * Note, this is equivalent to the other <code>storageDuctData</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return StorageDuctDataResponse
+      */
+      @RequestLine("POST /api/rest/entity/storage/{elid}/DuctData?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<StorageDuctDataResponse> storageDuctDataWithHttpInfo(@Param("elid") String elid, StorageDuctDataRequest body, @QueryMap(encoded=true) StorageDuctDataQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>storageDuctData</code> method in a fluent style.
+   */
+  public static class StorageDuctDataQueryParams extends HashMap<String, Object> {
+    public StorageDuctDataQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Duct entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return StorageDuctsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/storage/{elid}/Ducts?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  StorageDuctsResponseData storageDucts(@Param("sessionId") String sessionId, @Param("elid") String elid, StorageDuctsRequestData body);
+
+  /**
+   * Get relations to Duct entities
+   * Similar to <code>storageDucts</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/storage/{elid}/Ducts?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<StorageDuctsResponseData> storageDuctsWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, StorageDuctsRequestData body);
+
+
+  /**
+   * Get relations to Duct entities
+   * 
+   * Note, this is equivalent to the other <code>storageDucts</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link StorageDuctsQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return StorageDuctsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/storage/{elid}/Ducts?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  StorageDuctsResponseData storageDucts(@Param("elid") String elid, StorageDuctsRequestData body, @QueryMap(encoded=true) StorageDuctsQueryParams queryParams);
+
+  /**
+  * Get relations to Duct entities
+  * 
+  * Note, this is equivalent to the other <code>storageDucts</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return StorageDuctsResponseData
+      */
+      @RequestLine("POST /api/rest/entity/storage/{elid}/Ducts?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<StorageDuctsResponseData> storageDuctsWithHttpInfo(@Param("elid") String elid, StorageDuctsRequestData body, @QueryMap(encoded=true) StorageDuctsQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>storageDucts</code> method in a fluent style.
+   */
+  public static class StorageDuctsQueryParams extends HashMap<String, Object> {
+    public StorageDuctsQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Get relations to Frame contract entities
    * 
    * @param sessionId Session-ID (required)
@@ -1532,6 +1821,91 @@ public interface StorageApi extends ApiClient.Api {
   }
 
   /**
+   * Query inherited coordinates
+   * Query the own coordinates of an object or inherit them from parents
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return StorageInheritedGeoCoordinatesResponse
+   */
+  @RequestLine("POST /api/rest/entity/storage/inheritedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  StorageInheritedGeoCoordinatesResponse storageInheritedGeoCoordinates(@Param("sessionId") String sessionId, StorageInheritedGeoCoordinatesRequest body);
+
+  /**
+   * Query inherited coordinates
+   * Similar to <code>storageInheritedGeoCoordinates</code> but it also returns the http response headers .
+   * Query the own coordinates of an object or inherit them from parents
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/storage/inheritedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<StorageInheritedGeoCoordinatesResponse> storageInheritedGeoCoordinatesWithHttpInfo(@Param("sessionId") String sessionId, StorageInheritedGeoCoordinatesRequest body);
+
+
+  /**
+   * Query inherited coordinates
+   * Query the own coordinates of an object or inherit them from parents
+   * Note, this is equivalent to the other <code>storageInheritedGeoCoordinates</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link StorageInheritedGeoCoordinatesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return StorageInheritedGeoCoordinatesResponse
+   */
+  @RequestLine("POST /api/rest/entity/storage/inheritedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  StorageInheritedGeoCoordinatesResponse storageInheritedGeoCoordinates(StorageInheritedGeoCoordinatesRequest body, @QueryMap(encoded=true) StorageInheritedGeoCoordinatesQueryParams queryParams);
+
+  /**
+  * Query inherited coordinates
+  * Query the own coordinates of an object or inherit them from parents
+  * Note, this is equivalent to the other <code>storageInheritedGeoCoordinates</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return StorageInheritedGeoCoordinatesResponse
+      */
+      @RequestLine("POST /api/rest/entity/storage/inheritedGeoCoordinates?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<StorageInheritedGeoCoordinatesResponse> storageInheritedGeoCoordinatesWithHttpInfo(StorageInheritedGeoCoordinatesRequest body, @QueryMap(encoded=true) StorageInheritedGeoCoordinatesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>storageInheritedGeoCoordinates</code> method in a fluent style.
+   */
+  public static class StorageInheritedGeoCoordinatesQueryParams extends HashMap<String, Object> {
+    public StorageInheritedGeoCoordinatesQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Query installed subcards
    * Queries installed subcards. Only direct subcards will be returned. Free slot positions will not be returned.
    * @param sessionId Session-ID (required)
@@ -1615,6 +1989,95 @@ public interface StorageApi extends ApiClient.Api {
    */
   public static class StorageInstalledSubCardsQueryParams extends HashMap<String, Object> {
     public StorageInstalledSubCardsQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Query installed sub-cards recursively
+   * Queries installed sub-cards from a device. Free slot positions are not supplied.
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return StorageInstalledSubCardsRecursiveResponse
+   */
+  @RequestLine("POST /api/rest/entity/storage/{elid}/InstalledSubCardsRecursive?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  StorageInstalledSubCardsRecursiveResponse storageInstalledSubCardsRecursive(@Param("sessionId") String sessionId, @Param("elid") String elid, StorageInstalledSubCardsRecursiveRequest body);
+
+  /**
+   * Query installed sub-cards recursively
+   * Similar to <code>storageInstalledSubCardsRecursive</code> but it also returns the http response headers .
+   * Queries installed sub-cards from a device. Free slot positions are not supplied.
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/storage/{elid}/InstalledSubCardsRecursive?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<StorageInstalledSubCardsRecursiveResponse> storageInstalledSubCardsRecursiveWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, StorageInstalledSubCardsRecursiveRequest body);
+
+
+  /**
+   * Query installed sub-cards recursively
+   * Queries installed sub-cards from a device. Free slot positions are not supplied.
+   * Note, this is equivalent to the other <code>storageInstalledSubCardsRecursive</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link StorageInstalledSubCardsRecursiveQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return StorageInstalledSubCardsRecursiveResponse
+   */
+  @RequestLine("POST /api/rest/entity/storage/{elid}/InstalledSubCardsRecursive?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  StorageInstalledSubCardsRecursiveResponse storageInstalledSubCardsRecursive(@Param("elid") String elid, StorageInstalledSubCardsRecursiveRequest body, @QueryMap(encoded=true) StorageInstalledSubCardsRecursiveQueryParams queryParams);
+
+  /**
+  * Query installed sub-cards recursively
+  * Queries installed sub-cards from a device. Free slot positions are not supplied.
+  * Note, this is equivalent to the other <code>storageInstalledSubCardsRecursive</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return StorageInstalledSubCardsRecursiveResponse
+      */
+      @RequestLine("POST /api/rest/entity/storage/{elid}/InstalledSubCardsRecursive?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<StorageInstalledSubCardsRecursiveResponse> storageInstalledSubCardsRecursiveWithHttpInfo(@Param("elid") String elid, StorageInstalledSubCardsRecursiveRequest body, @QueryMap(encoded=true) StorageInstalledSubCardsRecursiveQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>storageInstalledSubCardsRecursive</code> method in a fluent style.
+   */
+  public static class StorageInstalledSubCardsRecursiveQueryParams extends HashMap<String, Object> {
+    public StorageInstalledSubCardsRecursiveQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -2600,6 +3063,95 @@ public interface StorageApi extends ApiClient.Api {
   }
 
   /**
+   * Get relations to Multiducts entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return StorageMultiDuctsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/storage/{elid}/MultiDucts?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  StorageMultiDuctsResponseData storageMultiDucts(@Param("sessionId") String sessionId, @Param("elid") String elid, StorageMultiDuctsRequestData body);
+
+  /**
+   * Get relations to Multiducts entities
+   * Similar to <code>storageMultiDucts</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/storage/{elid}/MultiDucts?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<StorageMultiDuctsResponseData> storageMultiDuctsWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, StorageMultiDuctsRequestData body);
+
+
+  /**
+   * Get relations to Multiducts entities
+   * 
+   * Note, this is equivalent to the other <code>storageMultiDucts</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link StorageMultiDuctsQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return StorageMultiDuctsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/storage/{elid}/MultiDucts?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  StorageMultiDuctsResponseData storageMultiDucts(@Param("elid") String elid, StorageMultiDuctsRequestData body, @QueryMap(encoded=true) StorageMultiDuctsQueryParams queryParams);
+
+  /**
+  * Get relations to Multiducts entities
+  * 
+  * Note, this is equivalent to the other <code>storageMultiDucts</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return StorageMultiDuctsResponseData
+      */
+      @RequestLine("POST /api/rest/entity/storage/{elid}/MultiDucts?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<StorageMultiDuctsResponseData> storageMultiDuctsWithHttpInfo(@Param("elid") String elid, StorageMultiDuctsRequestData body, @QueryMap(encoded=true) StorageMultiDuctsQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>storageMultiDucts</code> method in a fluent style.
+   */
+  public static class StorageMultiDuctsQueryParams extends HashMap<String, Object> {
+    public StorageMultiDuctsQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Nets / Net ranges
    * Query for querying all basic target entity data
    * @param sessionId Session-ID (required)
@@ -3134,24 +3686,113 @@ public interface StorageApi extends ApiClient.Api {
   }
 
   /**
-   * Query Power ports
-   * Query for all basic target entity data
+   * Query physical ports data extended
+   * Query for fetching all basic target entity data.
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
-   * @return StoragePhysicalPortsPowerResponse
+   * @return StoragePhysicalPortsDataExtendedResponse
+   */
+  @RequestLine("POST /api/rest/entity/storage/{elid}/PhysicalPortsDataExtended?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  StoragePhysicalPortsDataExtendedResponse storagePhysicalPortsDataExtended(@Param("sessionId") String sessionId, @Param("elid") String elid, StoragePhysicalPortsDataExtendedRequest body);
+
+  /**
+   * Query physical ports data extended
+   * Similar to <code>storagePhysicalPortsDataExtended</code> but it also returns the http response headers .
+   * Query for fetching all basic target entity data.
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/storage/{elid}/PhysicalPortsDataExtended?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<StoragePhysicalPortsDataExtendedResponse> storagePhysicalPortsDataExtendedWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, StoragePhysicalPortsDataExtendedRequest body);
+
+
+  /**
+   * Query physical ports data extended
+   * Query for fetching all basic target entity data.
+   * Note, this is equivalent to the other <code>storagePhysicalPortsDataExtended</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link StoragePhysicalPortsDataExtendedQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return StoragePhysicalPortsDataExtendedResponse
+   */
+  @RequestLine("POST /api/rest/entity/storage/{elid}/PhysicalPortsDataExtended?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  StoragePhysicalPortsDataExtendedResponse storagePhysicalPortsDataExtended(@Param("elid") String elid, StoragePhysicalPortsDataExtendedRequest body, @QueryMap(encoded=true) StoragePhysicalPortsDataExtendedQueryParams queryParams);
+
+  /**
+  * Query physical ports data extended
+  * Query for fetching all basic target entity data.
+  * Note, this is equivalent to the other <code>storagePhysicalPortsDataExtended</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return StoragePhysicalPortsDataExtendedResponse
+      */
+      @RequestLine("POST /api/rest/entity/storage/{elid}/PhysicalPortsDataExtended?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<StoragePhysicalPortsDataExtendedResponse> storagePhysicalPortsDataExtendedWithHttpInfo(@Param("elid") String elid, StoragePhysicalPortsDataExtendedRequest body, @QueryMap(encoded=true) StoragePhysicalPortsDataExtendedQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>storagePhysicalPortsDataExtended</code> method in a fluent style.
+   */
+  public static class StoragePhysicalPortsDataExtendedQueryParams extends HashMap<String, Object> {
+    public StoragePhysicalPortsDataExtendedQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Physical port (power) entities
+   * For more information call the basic query of the power port entity
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return StoragePhysicalPortsPowerResponseData
    */
   @RequestLine("POST /api/rest/entity/storage/{elid}/PhysicalPortsPower?sessionId={sessionId}")
   @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  StoragePhysicalPortsPowerResponse storagePhysicalPortsPower(@Param("sessionId") String sessionId, @Param("elid") String elid, StoragePhysicalPortsPowerRequest body);
+  StoragePhysicalPortsPowerResponseData storagePhysicalPortsPower(@Param("sessionId") String sessionId, @Param("elid") String elid, StoragePhysicalPortsPowerRequestData body);
 
   /**
-   * Query Power ports
+   * Get relations to Physical port (power) entities
    * Similar to <code>storagePhysicalPortsPower</code> but it also returns the http response headers .
-   * Query for all basic target entity data
+   * For more information call the basic query of the power port entity
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
@@ -3162,12 +3803,12 @@ public interface StorageApi extends ApiClient.Api {
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  ApiResponse<StoragePhysicalPortsPowerResponse> storagePhysicalPortsPowerWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, StoragePhysicalPortsPowerRequest body);
+  ApiResponse<StoragePhysicalPortsPowerResponseData> storagePhysicalPortsPowerWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, StoragePhysicalPortsPowerRequestData body);
 
 
   /**
-   * Query Power ports
-   * Query for all basic target entity data
+   * Get relations to Physical port (power) entities
+   * For more information call the basic query of the power port entity
    * Note, this is equivalent to the other <code>storagePhysicalPortsPower</code> method,
    * but with the query parameters collected into a single Map parameter. This
    * is convenient for services with optional query parameters, especially when
@@ -3180,18 +3821,18 @@ public interface StorageApi extends ApiClient.Api {
    *   <ul>
    *   <li>sessionId - Session-ID (required)</li>
    *   </ul>
-   * @return StoragePhysicalPortsPowerResponse
+   * @return StoragePhysicalPortsPowerResponseData
    */
   @RequestLine("POST /api/rest/entity/storage/{elid}/PhysicalPortsPower?sessionId={sessionId}")
   @Headers({
   "Content-Type: application/json",
   "Accept: application/json",
   })
-  StoragePhysicalPortsPowerResponse storagePhysicalPortsPower(@Param("elid") String elid, StoragePhysicalPortsPowerRequest body, @QueryMap(encoded=true) StoragePhysicalPortsPowerQueryParams queryParams);
+  StoragePhysicalPortsPowerResponseData storagePhysicalPortsPower(@Param("elid") String elid, StoragePhysicalPortsPowerRequestData body, @QueryMap(encoded=true) StoragePhysicalPortsPowerQueryParams queryParams);
 
   /**
-  * Query Power ports
-  * Query for all basic target entity data
+  * Get relations to Physical port (power) entities
+  * For more information call the basic query of the power port entity
   * Note, this is equivalent to the other <code>storagePhysicalPortsPower</code> that receives the query parameters as a map,
   * but this one also exposes the Http response headers
               * @param elid  (required)
@@ -3201,14 +3842,14 @@ public interface StorageApi extends ApiClient.Api {
       *   <ul>
           *   <li>sessionId - Session-ID (required)</li>
       *   </ul>
-          * @return StoragePhysicalPortsPowerResponse
+          * @return StoragePhysicalPortsPowerResponseData
       */
       @RequestLine("POST /api/rest/entity/storage/{elid}/PhysicalPortsPower?sessionId={sessionId}")
       @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
       })
-   ApiResponse<StoragePhysicalPortsPowerResponse> storagePhysicalPortsPowerWithHttpInfo(@Param("elid") String elid, StoragePhysicalPortsPowerRequest body, @QueryMap(encoded=true) StoragePhysicalPortsPowerQueryParams queryParams);
+   ApiResponse<StoragePhysicalPortsPowerResponseData> storagePhysicalPortsPowerWithHttpInfo(@Param("elid") String elid, StoragePhysicalPortsPowerRequestData body, @QueryMap(encoded=true) StoragePhysicalPortsPowerQueryParams queryParams);
 
 
    /**
@@ -3217,6 +3858,95 @@ public interface StorageApi extends ApiClient.Api {
    */
   public static class StoragePhysicalPortsPowerQueryParams extends HashMap<String, Object> {
     public StoragePhysicalPortsPowerQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Query Power ports
+   * Query for fetching all basic target entity data.
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return StoragePhysicalPortsPowerExtendedResponse
+   */
+  @RequestLine("POST /api/rest/entity/storage/{elid}/PhysicalPortsPowerExtended?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  StoragePhysicalPortsPowerExtendedResponse storagePhysicalPortsPowerExtended(@Param("sessionId") String sessionId, @Param("elid") String elid, StoragePhysicalPortsPowerExtendedRequest body);
+
+  /**
+   * Query Power ports
+   * Similar to <code>storagePhysicalPortsPowerExtended</code> but it also returns the http response headers .
+   * Query for fetching all basic target entity data.
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/storage/{elid}/PhysicalPortsPowerExtended?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<StoragePhysicalPortsPowerExtendedResponse> storagePhysicalPortsPowerExtendedWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, StoragePhysicalPortsPowerExtendedRequest body);
+
+
+  /**
+   * Query Power ports
+   * Query for fetching all basic target entity data.
+   * Note, this is equivalent to the other <code>storagePhysicalPortsPowerExtended</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link StoragePhysicalPortsPowerExtendedQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return StoragePhysicalPortsPowerExtendedResponse
+   */
+  @RequestLine("POST /api/rest/entity/storage/{elid}/PhysicalPortsPowerExtended?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  StoragePhysicalPortsPowerExtendedResponse storagePhysicalPortsPowerExtended(@Param("elid") String elid, StoragePhysicalPortsPowerExtendedRequest body, @QueryMap(encoded=true) StoragePhysicalPortsPowerExtendedQueryParams queryParams);
+
+  /**
+  * Query Power ports
+  * Query for fetching all basic target entity data.
+  * Note, this is equivalent to the other <code>storagePhysicalPortsPowerExtended</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return StoragePhysicalPortsPowerExtendedResponse
+      */
+      @RequestLine("POST /api/rest/entity/storage/{elid}/PhysicalPortsPowerExtended?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<StoragePhysicalPortsPowerExtendedResponse> storagePhysicalPortsPowerExtendedWithHttpInfo(@Param("elid") String elid, StoragePhysicalPortsPowerExtendedRequest body, @QueryMap(encoded=true) StoragePhysicalPortsPowerExtendedQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>storagePhysicalPortsPowerExtended</code> method in a fluent style.
+   */
+  public static class StoragePhysicalPortsPowerExtendedQueryParams extends HashMap<String, Object> {
+    public StoragePhysicalPortsPowerExtendedQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -3571,6 +4301,91 @@ public interface StorageApi extends ApiClient.Api {
   }
 
   /**
+   * Extended geo coordinates
+   * 
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return StorageQueryExtendedGeoCoordinatesResponse
+   */
+  @RequestLine("POST /api/rest/entity/storage/queryExtendedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  StorageQueryExtendedGeoCoordinatesResponse storageQueryExtendedGeoCoordinates(@Param("sessionId") String sessionId, StorageQueryExtendedGeoCoordinatesRequest body);
+
+  /**
+   * Extended geo coordinates
+   * Similar to <code>storageQueryExtendedGeoCoordinates</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/storage/queryExtendedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<StorageQueryExtendedGeoCoordinatesResponse> storageQueryExtendedGeoCoordinatesWithHttpInfo(@Param("sessionId") String sessionId, StorageQueryExtendedGeoCoordinatesRequest body);
+
+
+  /**
+   * Extended geo coordinates
+   * 
+   * Note, this is equivalent to the other <code>storageQueryExtendedGeoCoordinates</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link StorageQueryExtendedGeoCoordinatesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return StorageQueryExtendedGeoCoordinatesResponse
+   */
+  @RequestLine("POST /api/rest/entity/storage/queryExtendedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  StorageQueryExtendedGeoCoordinatesResponse storageQueryExtendedGeoCoordinates(StorageQueryExtendedGeoCoordinatesRequest body, @QueryMap(encoded=true) StorageQueryExtendedGeoCoordinatesQueryParams queryParams);
+
+  /**
+  * Extended geo coordinates
+  * 
+  * Note, this is equivalent to the other <code>storageQueryExtendedGeoCoordinates</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return StorageQueryExtendedGeoCoordinatesResponse
+      */
+      @RequestLine("POST /api/rest/entity/storage/queryExtendedGeoCoordinates?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<StorageQueryExtendedGeoCoordinatesResponse> storageQueryExtendedGeoCoordinatesWithHttpInfo(StorageQueryExtendedGeoCoordinatesRequest body, @QueryMap(encoded=true) StorageQueryExtendedGeoCoordinatesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>storageQueryExtendedGeoCoordinates</code> method in a fluent style.
+   */
+  public static class StorageQueryExtendedGeoCoordinatesQueryParams extends HashMap<String, Object> {
+    public StorageQueryExtendedGeoCoordinatesQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Extended query scroll first
    * Queries linked master data and zone data. This query supports scrolling. Calls the query and returns the first results including the scroll-ID for the next call.
    * @param sessionId Session-ID (required)
@@ -3824,6 +4639,184 @@ public interface StorageApi extends ApiClient.Api {
    */
   public static class StorageRaidControllersQueryParams extends HashMap<String, Object> {
     public StorageRaidControllersQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Query device services 
+   * Query services for device 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return StorageServicesResponse
+   */
+  @RequestLine("POST /api/rest/entity/storage/{elid}/Services?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  StorageServicesResponse storageServices(@Param("sessionId") String sessionId, @Param("elid") String elid, StorageServicesRequest body);
+
+  /**
+   * Query device services 
+   * Similar to <code>storageServices</code> but it also returns the http response headers .
+   * Query services for device 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/storage/{elid}/Services?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<StorageServicesResponse> storageServicesWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, StorageServicesRequest body);
+
+
+  /**
+   * Query device services 
+   * Query services for device 
+   * Note, this is equivalent to the other <code>storageServices</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link StorageServicesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return StorageServicesResponse
+   */
+  @RequestLine("POST /api/rest/entity/storage/{elid}/Services?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  StorageServicesResponse storageServices(@Param("elid") String elid, StorageServicesRequest body, @QueryMap(encoded=true) StorageServicesQueryParams queryParams);
+
+  /**
+  * Query device services 
+  * Query services for device 
+  * Note, this is equivalent to the other <code>storageServices</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return StorageServicesResponse
+      */
+      @RequestLine("POST /api/rest/entity/storage/{elid}/Services?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<StorageServicesResponse> storageServicesWithHttpInfo(@Param("elid") String elid, StorageServicesRequest body, @QueryMap(encoded=true) StorageServicesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>storageServices</code> method in a fluent style.
+   */
+  public static class StorageServicesQueryParams extends HashMap<String, Object> {
+    public StorageServicesQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Site entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return StorageSitesResponseData
+   */
+  @RequestLine("POST /api/rest/entity/storage/{elid}/Sites?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  StorageSitesResponseData storageSites(@Param("sessionId") String sessionId, @Param("elid") String elid, StorageSitesRequestData body);
+
+  /**
+   * Get relations to Site entities
+   * Similar to <code>storageSites</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/storage/{elid}/Sites?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<StorageSitesResponseData> storageSitesWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, StorageSitesRequestData body);
+
+
+  /**
+   * Get relations to Site entities
+   * 
+   * Note, this is equivalent to the other <code>storageSites</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link StorageSitesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return StorageSitesResponseData
+   */
+  @RequestLine("POST /api/rest/entity/storage/{elid}/Sites?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  StorageSitesResponseData storageSites(@Param("elid") String elid, StorageSitesRequestData body, @QueryMap(encoded=true) StorageSitesQueryParams queryParams);
+
+  /**
+  * Get relations to Site entities
+  * 
+  * Note, this is equivalent to the other <code>storageSites</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return StorageSitesResponseData
+      */
+      @RequestLine("POST /api/rest/entity/storage/{elid}/Sites?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<StorageSitesResponseData> storageSitesWithHttpInfo(@Param("elid") String elid, StorageSitesRequestData body, @QueryMap(encoded=true) StorageSitesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>storageSites</code> method in a fluent style.
+   */
+  public static class StorageSitesQueryParams extends HashMap<String, Object> {
+    public StorageSitesQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

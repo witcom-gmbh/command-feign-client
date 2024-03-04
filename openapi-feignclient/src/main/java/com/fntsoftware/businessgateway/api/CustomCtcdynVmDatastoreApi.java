@@ -33,7 +33,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-04T13:31:32.601557352Z[Etc/UTC]")
 public interface CustomCtcdynVmDatastoreApi extends ApiClient.Api {
 
 
@@ -390,7 +390,7 @@ public interface CustomCtcdynVmDatastoreApi extends ApiClient.Api {
   }
 
   /**
-   * Get relations to Server entities
+   * Get relations to Server (base) entities
    * 
    * @param sessionId Session-ID (required)
    * @param elid  (required)
@@ -405,7 +405,7 @@ public interface CustomCtcdynVmDatastoreApi extends ApiClient.Api {
   CustomCtcdynVmDatastore100036ResponseData customCtcdynVmDatastore100036(@Param("sessionId") String sessionId, @Param("elid") String elid, CustomCtcdynVmDatastore100036RequestData body);
 
   /**
-   * Get relations to Server entities
+   * Get relations to Server (base) entities
    * Similar to <code>customCtcdynVmDatastore100036</code> but it also returns the http response headers .
    * 
    * @param sessionId Session-ID (required)
@@ -422,7 +422,7 @@ public interface CustomCtcdynVmDatastoreApi extends ApiClient.Api {
 
 
   /**
-   * Get relations to Server entities
+   * Get relations to Server (base) entities
    * 
    * Note, this is equivalent to the other <code>customCtcdynVmDatastore100036</code> method,
    * but with the query parameters collected into a single Map parameter. This
@@ -446,7 +446,7 @@ public interface CustomCtcdynVmDatastoreApi extends ApiClient.Api {
   CustomCtcdynVmDatastore100036ResponseData customCtcdynVmDatastore100036(@Param("elid") String elid, CustomCtcdynVmDatastore100036RequestData body, @QueryMap(encoded=true) CustomCtcdynVmDatastore100036QueryParams queryParams);
 
   /**
-  * Get relations to Server entities
+  * Get relations to Server (base) entities
   * 
   * Note, this is equivalent to the other <code>customCtcdynVmDatastore100036</code> that receives the query parameters as a map,
   * but this one also exposes the Http response headers

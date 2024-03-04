@@ -4,6 +4,8 @@ import com.fntsoftware.businessgateway.ApiClient;
 import com.fntsoftware.businessgateway.EncodingUtils;
 import com.fntsoftware.businessgateway.entities.ApiResponse;
 
+import com.fntsoftware.businessgateway.entities.CreateBulkUniqueIdMappingUniqueIdMappingRequestData;
+import com.fntsoftware.businessgateway.entities.CreateBulkUniqueIdMappingUniqueIdMappingResponse;
 import com.fntsoftware.businessgateway.entities.CreateUniqueIdMappingRequestData;
 import com.fntsoftware.businessgateway.entities.CreateUniqueIdMappingResponse;
 import com.fntsoftware.businessgateway.entities.DeleteUniqueIdMappingRequestData;
@@ -17,9 +19,94 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-04T13:31:32.601557352Z[Etc/UTC]")
 public interface UniqueIdMappingApi extends ApiClient.Api {
 
+
+  /**
+   * Create bulk for unique ID assignment
+   * Create bulk unique ID assignment
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return CreateBulkUniqueIdMappingUniqueIdMappingResponse
+   */
+  @RequestLine("POST /api/rest/entity/uniqueIdMapping/createBulkUniqueIdMapping?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  CreateBulkUniqueIdMappingUniqueIdMappingResponse createBulkUniqueIdMappingUniqueIdMapping(@Param("sessionId") String sessionId, CreateBulkUniqueIdMappingUniqueIdMappingRequestData body);
+
+  /**
+   * Create bulk for unique ID assignment
+   * Similar to <code>createBulkUniqueIdMappingUniqueIdMapping</code> but it also returns the http response headers .
+   * Create bulk unique ID assignment
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/uniqueIdMapping/createBulkUniqueIdMapping?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<CreateBulkUniqueIdMappingUniqueIdMappingResponse> createBulkUniqueIdMappingUniqueIdMappingWithHttpInfo(@Param("sessionId") String sessionId, CreateBulkUniqueIdMappingUniqueIdMappingRequestData body);
+
+
+  /**
+   * Create bulk for unique ID assignment
+   * Create bulk unique ID assignment
+   * Note, this is equivalent to the other <code>createBulkUniqueIdMappingUniqueIdMapping</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link CreateBulkUniqueIdMappingUniqueIdMappingQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return CreateBulkUniqueIdMappingUniqueIdMappingResponse
+   */
+  @RequestLine("POST /api/rest/entity/uniqueIdMapping/createBulkUniqueIdMapping?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  CreateBulkUniqueIdMappingUniqueIdMappingResponse createBulkUniqueIdMappingUniqueIdMapping(CreateBulkUniqueIdMappingUniqueIdMappingRequestData body, @QueryMap(encoded=true) CreateBulkUniqueIdMappingUniqueIdMappingQueryParams queryParams);
+
+  /**
+  * Create bulk for unique ID assignment
+  * Create bulk unique ID assignment
+  * Note, this is equivalent to the other <code>createBulkUniqueIdMappingUniqueIdMapping</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return CreateBulkUniqueIdMappingUniqueIdMappingResponse
+      */
+      @RequestLine("POST /api/rest/entity/uniqueIdMapping/createBulkUniqueIdMapping?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<CreateBulkUniqueIdMappingUniqueIdMappingResponse> createBulkUniqueIdMappingUniqueIdMappingWithHttpInfo(CreateBulkUniqueIdMappingUniqueIdMappingRequestData body, @QueryMap(encoded=true) CreateBulkUniqueIdMappingUniqueIdMappingQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>createBulkUniqueIdMappingUniqueIdMapping</code> method in a fluent style.
+   */
+  public static class CreateBulkUniqueIdMappingUniqueIdMappingQueryParams extends HashMap<String, Object> {
+    public CreateBulkUniqueIdMappingUniqueIdMappingQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
 
   /**
    * Create

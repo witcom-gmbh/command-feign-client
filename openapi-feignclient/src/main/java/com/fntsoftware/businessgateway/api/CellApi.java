@@ -4,8 +4,8 @@ import com.fntsoftware.businessgateway.ApiClient;
 import com.fntsoftware.businessgateway.EncodingUtils;
 import com.fntsoftware.businessgateway.entities.ApiResponse;
 
-import com.fntsoftware.businessgateway.entities.CellAntennaRequestData;
-import com.fntsoftware.businessgateway.entities.CellAntennaResponseData;
+import com.fntsoftware.businessgateway.entities.CellAntennasRequestData;
+import com.fntsoftware.businessgateway.entities.CellAntennasResponseData;
 import com.fntsoftware.businessgateway.entities.CellCellEnhancerRequestData;
 import com.fntsoftware.businessgateway.entities.CellCellEnhancerResponseData;
 import com.fntsoftware.businessgateway.entities.CellCellsRequestData;
@@ -45,7 +45,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-04T13:31:32.601557352Z[Etc/UTC]")
 public interface CellApi extends ApiClient.Api {
 
 
@@ -55,39 +55,39 @@ public interface CellApi extends ApiClient.Api {
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
-   * @return CellAntennaResponseData
+   * @return CellAntennasResponseData
    */
-  @RequestLine("POST /api/rest/entity/cell/{elid}/Antenna?sessionId={sessionId}")
+  @RequestLine("POST /api/rest/entity/cell/{elid}/Antennas?sessionId={sessionId}")
   @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  CellAntennaResponseData cellAntenna(@Param("sessionId") String sessionId, @Param("elid") String elid, CellAntennaRequestData body);
+  CellAntennasResponseData cellAntennas(@Param("sessionId") String sessionId, @Param("elid") String elid, CellAntennasRequestData body);
 
   /**
    * Get relations to Antenna entities
-   * Similar to <code>cellAntenna</code> but it also returns the http response headers .
+   * Similar to <code>cellAntennas</code> but it also returns the http response headers .
    * 
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
    * @return A ApiResponse that wraps the response boyd and the http headers.
    */
-  @RequestLine("POST /api/rest/entity/cell/{elid}/Antenna?sessionId={sessionId}")
+  @RequestLine("POST /api/rest/entity/cell/{elid}/Antennas?sessionId={sessionId}")
   @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  ApiResponse<CellAntennaResponseData> cellAntennaWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, CellAntennaRequestData body);
+  ApiResponse<CellAntennasResponseData> cellAntennasWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, CellAntennasRequestData body);
 
 
   /**
    * Get relations to Antenna entities
    * 
-   * Note, this is equivalent to the other <code>cellAntenna</code> method,
+   * Note, this is equivalent to the other <code>cellAntennas</code> method,
    * but with the query parameters collected into a single Map parameter. This
    * is convenient for services with optional query parameters, especially when
-   * used with the {@link CellAntennaQueryParams} class that allows for
+   * used with the {@link CellAntennasQueryParams} class that allows for
    * building up this map in a fluent style.
    * @param elid  (required)
    * @param body  (required)
@@ -96,19 +96,19 @@ public interface CellApi extends ApiClient.Api {
    *   <ul>
    *   <li>sessionId - Session-ID (required)</li>
    *   </ul>
-   * @return CellAntennaResponseData
+   * @return CellAntennasResponseData
    */
-  @RequestLine("POST /api/rest/entity/cell/{elid}/Antenna?sessionId={sessionId}")
+  @RequestLine("POST /api/rest/entity/cell/{elid}/Antennas?sessionId={sessionId}")
   @Headers({
   "Content-Type: application/json",
   "Accept: application/json",
   })
-  CellAntennaResponseData cellAntenna(@Param("elid") String elid, CellAntennaRequestData body, @QueryMap(encoded=true) CellAntennaQueryParams queryParams);
+  CellAntennasResponseData cellAntennas(@Param("elid") String elid, CellAntennasRequestData body, @QueryMap(encoded=true) CellAntennasQueryParams queryParams);
 
   /**
   * Get relations to Antenna entities
   * 
-  * Note, this is equivalent to the other <code>cellAntenna</code> that receives the query parameters as a map,
+  * Note, this is equivalent to the other <code>cellAntennas</code> that receives the query parameters as a map,
   * but this one also exposes the Http response headers
               * @param elid  (required)
               * @param body  (required)
@@ -117,22 +117,22 @@ public interface CellApi extends ApiClient.Api {
       *   <ul>
           *   <li>sessionId - Session-ID (required)</li>
       *   </ul>
-          * @return CellAntennaResponseData
+          * @return CellAntennasResponseData
       */
-      @RequestLine("POST /api/rest/entity/cell/{elid}/Antenna?sessionId={sessionId}")
+      @RequestLine("POST /api/rest/entity/cell/{elid}/Antennas?sessionId={sessionId}")
       @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
       })
-   ApiResponse<CellAntennaResponseData> cellAntennaWithHttpInfo(@Param("elid") String elid, CellAntennaRequestData body, @QueryMap(encoded=true) CellAntennaQueryParams queryParams);
+   ApiResponse<CellAntennasResponseData> cellAntennasWithHttpInfo(@Param("elid") String elid, CellAntennasRequestData body, @QueryMap(encoded=true) CellAntennasQueryParams queryParams);
 
 
    /**
    * A convenience class for generating query parameters for the
-   * <code>cellAntenna</code> method in a fluent style.
+   * <code>cellAntennas</code> method in a fluent style.
    */
-  public static class CellAntennaQueryParams extends HashMap<String, Object> {
-    public CellAntennaQueryParams sessionId(final String value) {
+  public static class CellAntennasQueryParams extends HashMap<String, Object> {
+    public CellAntennasQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

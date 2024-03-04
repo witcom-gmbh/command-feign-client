@@ -20,8 +20,16 @@ import com.fntsoftware.businessgateway.entities.NmModuleContractsRequestData;
 import com.fntsoftware.businessgateway.entities.NmModuleContractsResponseData;
 import com.fntsoftware.businessgateway.entities.NmModuleDeviceMasterRequestData;
 import com.fntsoftware.businessgateway.entities.NmModuleDeviceMasterResponseData;
+import com.fntsoftware.businessgateway.entities.NmModuleDuctDataRequest;
+import com.fntsoftware.businessgateway.entities.NmModuleDuctDataResponse;
+import com.fntsoftware.businessgateway.entities.NmModuleDuctsRequestData;
+import com.fntsoftware.businessgateway.entities.NmModuleDuctsResponseData;
 import com.fntsoftware.businessgateway.entities.NmModuleFrameContractsRequestData;
 import com.fntsoftware.businessgateway.entities.NmModuleFrameContractsResponseData;
+import com.fntsoftware.businessgateway.entities.NmModuleInheritedGeoCoordinatesRequest;
+import com.fntsoftware.businessgateway.entities.NmModuleInheritedGeoCoordinatesResponse;
+import com.fntsoftware.businessgateway.entities.NmModuleInstalledSubCardsRecursiveRequest;
+import com.fntsoftware.businessgateway.entities.NmModuleInstalledSubCardsRecursiveResponse;
 import com.fntsoftware.businessgateway.entities.NmModuleInstalledSubCardsRequest;
 import com.fntsoftware.businessgateway.entities.NmModuleInstalledSubCardsResponse;
 import com.fntsoftware.businessgateway.entities.NmModuleInterfacesRequestData;
@@ -40,6 +48,8 @@ import com.fntsoftware.businessgateway.entities.NmModuleLogicalPortsRequestData;
 import com.fntsoftware.businessgateway.entities.NmModuleLogicalPortsResponseData;
 import com.fntsoftware.businessgateway.entities.NmModuleMaintenanceContractsRequestData;
 import com.fntsoftware.businessgateway.entities.NmModuleMaintenanceContractsResponseData;
+import com.fntsoftware.businessgateway.entities.NmModuleMultiDuctsRequestData;
+import com.fntsoftware.businessgateway.entities.NmModuleMultiDuctsResponseData;
 import com.fntsoftware.businessgateway.entities.NmModuleNetworksAndNetrangesRequest;
 import com.fntsoftware.businessgateway.entities.NmModuleNetworksAndNetrangesResponse;
 import com.fntsoftware.businessgateway.entities.NmModuleOperatingSystemInstallationRequestData;
@@ -50,10 +60,16 @@ import com.fntsoftware.businessgateway.entities.NmModulePersonGroupsRequestData;
 import com.fntsoftware.businessgateway.entities.NmModulePersonGroupsResponseData;
 import com.fntsoftware.businessgateway.entities.NmModulePersonsRequestData;
 import com.fntsoftware.businessgateway.entities.NmModulePersonsResponseData;
+import com.fntsoftware.businessgateway.entities.NmModulePhysicalPortsDataExtendedRequest;
+import com.fntsoftware.businessgateway.entities.NmModulePhysicalPortsDataExtendedResponse;
 import com.fntsoftware.businessgateway.entities.NmModulePhysicalPortsDataRequestData;
 import com.fntsoftware.businessgateway.entities.NmModulePhysicalPortsDataResponseData;
-import com.fntsoftware.businessgateway.entities.NmModulePhysicalPortsPowerRequest;
-import com.fntsoftware.businessgateway.entities.NmModulePhysicalPortsPowerResponse;
+import com.fntsoftware.businessgateway.entities.NmModulePhysicalPortsPowerExtendedRequest;
+import com.fntsoftware.businessgateway.entities.NmModulePhysicalPortsPowerExtendedResponse;
+import com.fntsoftware.businessgateway.entities.NmModulePhysicalPortsPowerRequestData;
+import com.fntsoftware.businessgateway.entities.NmModulePhysicalPortsPowerResponseData;
+import com.fntsoftware.businessgateway.entities.NmModuleQueryExtendedGeoCoordinatesRequest;
+import com.fntsoftware.businessgateway.entities.NmModuleQueryExtendedGeoCoordinatesResponse;
 import com.fntsoftware.businessgateway.entities.NmModuleQueryExtendedRequest;
 import com.fntsoftware.businessgateway.entities.NmModuleQueryExtendedResponse;
 import com.fntsoftware.businessgateway.entities.NmModuleQueryExtendedScrollFirstRequest;
@@ -62,6 +78,10 @@ import com.fntsoftware.businessgateway.entities.NmModuleQueryExtendedScrollMoreR
 import com.fntsoftware.businessgateway.entities.NmModuleQueryExtendedScrollMoreResponse;
 import com.fntsoftware.businessgateway.entities.NmModuleQueryRequest;
 import com.fntsoftware.businessgateway.entities.NmModuleQueryResponse;
+import com.fntsoftware.businessgateway.entities.NmModuleServicesRequest;
+import com.fntsoftware.businessgateway.entities.NmModuleServicesResponse;
+import com.fntsoftware.businessgateway.entities.NmModuleSitesRequestData;
+import com.fntsoftware.businessgateway.entities.NmModuleSitesResponseData;
 import com.fntsoftware.businessgateway.entities.NmModuleSlotRequestData;
 import com.fntsoftware.businessgateway.entities.NmModuleSlotResponseData;
 import com.fntsoftware.businessgateway.entities.NmModuleSwitchCabinetRequestData;
@@ -86,6 +106,8 @@ import com.fntsoftware.businessgateway.entities.PlaceInWarehouseNmModuleRequestD
 import com.fntsoftware.businessgateway.entities.PlaceInWarehouseNmModuleResponse;
 import com.fntsoftware.businessgateway.entities.PlaceInZoneNmModuleRequestData;
 import com.fntsoftware.businessgateway.entities.PlaceInZoneNmModuleResponse;
+import com.fntsoftware.businessgateway.entities.ReplaceObjectNmModuleRequestData;
+import com.fntsoftware.businessgateway.entities.ReplaceObjectNmModuleResponse;
 import com.fntsoftware.businessgateway.entities.UpdateNmModuleRequestData;
 import com.fntsoftware.businessgateway.entities.UpdateNmModuleResponse;
 import com.fntsoftware.businessgateway.entities.UpdateSystemAttributesNmModuleRequestData;
@@ -97,7 +119,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-04T13:31:32.601557352Z[Etc/UTC]")
 public interface NmModuleApi extends ApiClient.Api {
 
 
@@ -814,6 +836,184 @@ public interface NmModuleApi extends ApiClient.Api {
   }
 
   /**
+   * Query duct data
+   * Query associated ducts and multipipes
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return NmModuleDuctDataResponse
+   */
+  @RequestLine("POST /api/rest/entity/nmModule/{elid}/DuctData?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  NmModuleDuctDataResponse nmModuleDuctData(@Param("sessionId") String sessionId, @Param("elid") String elid, NmModuleDuctDataRequest body);
+
+  /**
+   * Query duct data
+   * Similar to <code>nmModuleDuctData</code> but it also returns the http response headers .
+   * Query associated ducts and multipipes
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/nmModule/{elid}/DuctData?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<NmModuleDuctDataResponse> nmModuleDuctDataWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, NmModuleDuctDataRequest body);
+
+
+  /**
+   * Query duct data
+   * Query associated ducts and multipipes
+   * Note, this is equivalent to the other <code>nmModuleDuctData</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link NmModuleDuctDataQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return NmModuleDuctDataResponse
+   */
+  @RequestLine("POST /api/rest/entity/nmModule/{elid}/DuctData?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  NmModuleDuctDataResponse nmModuleDuctData(@Param("elid") String elid, NmModuleDuctDataRequest body, @QueryMap(encoded=true) NmModuleDuctDataQueryParams queryParams);
+
+  /**
+  * Query duct data
+  * Query associated ducts and multipipes
+  * Note, this is equivalent to the other <code>nmModuleDuctData</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return NmModuleDuctDataResponse
+      */
+      @RequestLine("POST /api/rest/entity/nmModule/{elid}/DuctData?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<NmModuleDuctDataResponse> nmModuleDuctDataWithHttpInfo(@Param("elid") String elid, NmModuleDuctDataRequest body, @QueryMap(encoded=true) NmModuleDuctDataQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>nmModuleDuctData</code> method in a fluent style.
+   */
+  public static class NmModuleDuctDataQueryParams extends HashMap<String, Object> {
+    public NmModuleDuctDataQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Duct entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return NmModuleDuctsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/nmModule/{elid}/Ducts?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  NmModuleDuctsResponseData nmModuleDucts(@Param("sessionId") String sessionId, @Param("elid") String elid, NmModuleDuctsRequestData body);
+
+  /**
+   * Get relations to Duct entities
+   * Similar to <code>nmModuleDucts</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/nmModule/{elid}/Ducts?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<NmModuleDuctsResponseData> nmModuleDuctsWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, NmModuleDuctsRequestData body);
+
+
+  /**
+   * Get relations to Duct entities
+   * 
+   * Note, this is equivalent to the other <code>nmModuleDucts</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link NmModuleDuctsQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return NmModuleDuctsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/nmModule/{elid}/Ducts?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  NmModuleDuctsResponseData nmModuleDucts(@Param("elid") String elid, NmModuleDuctsRequestData body, @QueryMap(encoded=true) NmModuleDuctsQueryParams queryParams);
+
+  /**
+  * Get relations to Duct entities
+  * 
+  * Note, this is equivalent to the other <code>nmModuleDucts</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return NmModuleDuctsResponseData
+      */
+      @RequestLine("POST /api/rest/entity/nmModule/{elid}/Ducts?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<NmModuleDuctsResponseData> nmModuleDuctsWithHttpInfo(@Param("elid") String elid, NmModuleDuctsRequestData body, @QueryMap(encoded=true) NmModuleDuctsQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>nmModuleDucts</code> method in a fluent style.
+   */
+  public static class NmModuleDuctsQueryParams extends HashMap<String, Object> {
+    public NmModuleDuctsQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Get relations to Frame contract entities
    * 
    * @param sessionId Session-ID (required)
@@ -903,6 +1103,91 @@ public interface NmModuleApi extends ApiClient.Api {
   }
 
   /**
+   * Query inherited coordinates
+   * Query the own coordinates of an object or inherit them from parents
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return NmModuleInheritedGeoCoordinatesResponse
+   */
+  @RequestLine("POST /api/rest/entity/nmModule/inheritedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  NmModuleInheritedGeoCoordinatesResponse nmModuleInheritedGeoCoordinates(@Param("sessionId") String sessionId, NmModuleInheritedGeoCoordinatesRequest body);
+
+  /**
+   * Query inherited coordinates
+   * Similar to <code>nmModuleInheritedGeoCoordinates</code> but it also returns the http response headers .
+   * Query the own coordinates of an object or inherit them from parents
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/nmModule/inheritedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<NmModuleInheritedGeoCoordinatesResponse> nmModuleInheritedGeoCoordinatesWithHttpInfo(@Param("sessionId") String sessionId, NmModuleInheritedGeoCoordinatesRequest body);
+
+
+  /**
+   * Query inherited coordinates
+   * Query the own coordinates of an object or inherit them from parents
+   * Note, this is equivalent to the other <code>nmModuleInheritedGeoCoordinates</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link NmModuleInheritedGeoCoordinatesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return NmModuleInheritedGeoCoordinatesResponse
+   */
+  @RequestLine("POST /api/rest/entity/nmModule/inheritedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  NmModuleInheritedGeoCoordinatesResponse nmModuleInheritedGeoCoordinates(NmModuleInheritedGeoCoordinatesRequest body, @QueryMap(encoded=true) NmModuleInheritedGeoCoordinatesQueryParams queryParams);
+
+  /**
+  * Query inherited coordinates
+  * Query the own coordinates of an object or inherit them from parents
+  * Note, this is equivalent to the other <code>nmModuleInheritedGeoCoordinates</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return NmModuleInheritedGeoCoordinatesResponse
+      */
+      @RequestLine("POST /api/rest/entity/nmModule/inheritedGeoCoordinates?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<NmModuleInheritedGeoCoordinatesResponse> nmModuleInheritedGeoCoordinatesWithHttpInfo(NmModuleInheritedGeoCoordinatesRequest body, @QueryMap(encoded=true) NmModuleInheritedGeoCoordinatesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>nmModuleInheritedGeoCoordinates</code> method in a fluent style.
+   */
+  public static class NmModuleInheritedGeoCoordinatesQueryParams extends HashMap<String, Object> {
+    public NmModuleInheritedGeoCoordinatesQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Query installed subcards
    * Queries installed subcards. Only direct subcards will be returned. Free slot positions will not be returned.
    * @param sessionId Session-ID (required)
@@ -986,6 +1271,95 @@ public interface NmModuleApi extends ApiClient.Api {
    */
   public static class NmModuleInstalledSubCardsQueryParams extends HashMap<String, Object> {
     public NmModuleInstalledSubCardsQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Query installed sub-cards recursively
+   * Queries installed sub-cards from a device. Free slot positions are not supplied.
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return NmModuleInstalledSubCardsRecursiveResponse
+   */
+  @RequestLine("POST /api/rest/entity/nmModule/{elid}/InstalledSubCardsRecursive?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  NmModuleInstalledSubCardsRecursiveResponse nmModuleInstalledSubCardsRecursive(@Param("sessionId") String sessionId, @Param("elid") String elid, NmModuleInstalledSubCardsRecursiveRequest body);
+
+  /**
+   * Query installed sub-cards recursively
+   * Similar to <code>nmModuleInstalledSubCardsRecursive</code> but it also returns the http response headers .
+   * Queries installed sub-cards from a device. Free slot positions are not supplied.
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/nmModule/{elid}/InstalledSubCardsRecursive?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<NmModuleInstalledSubCardsRecursiveResponse> nmModuleInstalledSubCardsRecursiveWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, NmModuleInstalledSubCardsRecursiveRequest body);
+
+
+  /**
+   * Query installed sub-cards recursively
+   * Queries installed sub-cards from a device. Free slot positions are not supplied.
+   * Note, this is equivalent to the other <code>nmModuleInstalledSubCardsRecursive</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link NmModuleInstalledSubCardsRecursiveQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return NmModuleInstalledSubCardsRecursiveResponse
+   */
+  @RequestLine("POST /api/rest/entity/nmModule/{elid}/InstalledSubCardsRecursive?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  NmModuleInstalledSubCardsRecursiveResponse nmModuleInstalledSubCardsRecursive(@Param("elid") String elid, NmModuleInstalledSubCardsRecursiveRequest body, @QueryMap(encoded=true) NmModuleInstalledSubCardsRecursiveQueryParams queryParams);
+
+  /**
+  * Query installed sub-cards recursively
+  * Queries installed sub-cards from a device. Free slot positions are not supplied.
+  * Note, this is equivalent to the other <code>nmModuleInstalledSubCardsRecursive</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return NmModuleInstalledSubCardsRecursiveResponse
+      */
+      @RequestLine("POST /api/rest/entity/nmModule/{elid}/InstalledSubCardsRecursive?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<NmModuleInstalledSubCardsRecursiveResponse> nmModuleInstalledSubCardsRecursiveWithHttpInfo(@Param("elid") String elid, NmModuleInstalledSubCardsRecursiveRequest body, @QueryMap(encoded=true) NmModuleInstalledSubCardsRecursiveQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>nmModuleInstalledSubCardsRecursive</code> method in a fluent style.
+   */
+  public static class NmModuleInstalledSubCardsRecursiveQueryParams extends HashMap<String, Object> {
+    public NmModuleInstalledSubCardsRecursiveQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -1704,6 +2078,95 @@ public interface NmModuleApi extends ApiClient.Api {
   }
 
   /**
+   * Get relations to Multiducts entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return NmModuleMultiDuctsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/nmModule/{elid}/MultiDucts?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  NmModuleMultiDuctsResponseData nmModuleMultiDucts(@Param("sessionId") String sessionId, @Param("elid") String elid, NmModuleMultiDuctsRequestData body);
+
+  /**
+   * Get relations to Multiducts entities
+   * Similar to <code>nmModuleMultiDucts</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/nmModule/{elid}/MultiDucts?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<NmModuleMultiDuctsResponseData> nmModuleMultiDuctsWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, NmModuleMultiDuctsRequestData body);
+
+
+  /**
+   * Get relations to Multiducts entities
+   * 
+   * Note, this is equivalent to the other <code>nmModuleMultiDucts</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link NmModuleMultiDuctsQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return NmModuleMultiDuctsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/nmModule/{elid}/MultiDucts?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  NmModuleMultiDuctsResponseData nmModuleMultiDucts(@Param("elid") String elid, NmModuleMultiDuctsRequestData body, @QueryMap(encoded=true) NmModuleMultiDuctsQueryParams queryParams);
+
+  /**
+  * Get relations to Multiducts entities
+  * 
+  * Note, this is equivalent to the other <code>nmModuleMultiDucts</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return NmModuleMultiDuctsResponseData
+      */
+      @RequestLine("POST /api/rest/entity/nmModule/{elid}/MultiDucts?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<NmModuleMultiDuctsResponseData> nmModuleMultiDuctsWithHttpInfo(@Param("elid") String elid, NmModuleMultiDuctsRequestData body, @QueryMap(encoded=true) NmModuleMultiDuctsQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>nmModuleMultiDucts</code> method in a fluent style.
+   */
+  public static class NmModuleMultiDuctsQueryParams extends HashMap<String, Object> {
+    public NmModuleMultiDuctsQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Nets / Net ranges
    * Query for querying all basic target entity data
    * @param sessionId Session-ID (required)
@@ -2238,24 +2701,113 @@ public interface NmModuleApi extends ApiClient.Api {
   }
 
   /**
-   * Query Power ports
-   * Query for querying all basic target entity data
+   * Query physical ports data extended
+   * Query for fetching all basic target entity data.
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
-   * @return NmModulePhysicalPortsPowerResponse
+   * @return NmModulePhysicalPortsDataExtendedResponse
+   */
+  @RequestLine("POST /api/rest/entity/nmModule/{elid}/PhysicalPortsDataExtended?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  NmModulePhysicalPortsDataExtendedResponse nmModulePhysicalPortsDataExtended(@Param("sessionId") String sessionId, @Param("elid") String elid, NmModulePhysicalPortsDataExtendedRequest body);
+
+  /**
+   * Query physical ports data extended
+   * Similar to <code>nmModulePhysicalPortsDataExtended</code> but it also returns the http response headers .
+   * Query for fetching all basic target entity data.
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/nmModule/{elid}/PhysicalPortsDataExtended?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<NmModulePhysicalPortsDataExtendedResponse> nmModulePhysicalPortsDataExtendedWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, NmModulePhysicalPortsDataExtendedRequest body);
+
+
+  /**
+   * Query physical ports data extended
+   * Query for fetching all basic target entity data.
+   * Note, this is equivalent to the other <code>nmModulePhysicalPortsDataExtended</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link NmModulePhysicalPortsDataExtendedQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return NmModulePhysicalPortsDataExtendedResponse
+   */
+  @RequestLine("POST /api/rest/entity/nmModule/{elid}/PhysicalPortsDataExtended?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  NmModulePhysicalPortsDataExtendedResponse nmModulePhysicalPortsDataExtended(@Param("elid") String elid, NmModulePhysicalPortsDataExtendedRequest body, @QueryMap(encoded=true) NmModulePhysicalPortsDataExtendedQueryParams queryParams);
+
+  /**
+  * Query physical ports data extended
+  * Query for fetching all basic target entity data.
+  * Note, this is equivalent to the other <code>nmModulePhysicalPortsDataExtended</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return NmModulePhysicalPortsDataExtendedResponse
+      */
+      @RequestLine("POST /api/rest/entity/nmModule/{elid}/PhysicalPortsDataExtended?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<NmModulePhysicalPortsDataExtendedResponse> nmModulePhysicalPortsDataExtendedWithHttpInfo(@Param("elid") String elid, NmModulePhysicalPortsDataExtendedRequest body, @QueryMap(encoded=true) NmModulePhysicalPortsDataExtendedQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>nmModulePhysicalPortsDataExtended</code> method in a fluent style.
+   */
+  public static class NmModulePhysicalPortsDataExtendedQueryParams extends HashMap<String, Object> {
+    public NmModulePhysicalPortsDataExtendedQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Physical port (power) entities
+   * For more information call the basic query of the power port entity
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return NmModulePhysicalPortsPowerResponseData
    */
   @RequestLine("POST /api/rest/entity/nmModule/{elid}/PhysicalPortsPower?sessionId={sessionId}")
   @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  NmModulePhysicalPortsPowerResponse nmModulePhysicalPortsPower(@Param("sessionId") String sessionId, @Param("elid") String elid, NmModulePhysicalPortsPowerRequest body);
+  NmModulePhysicalPortsPowerResponseData nmModulePhysicalPortsPower(@Param("sessionId") String sessionId, @Param("elid") String elid, NmModulePhysicalPortsPowerRequestData body);
 
   /**
-   * Query Power ports
+   * Get relations to Physical port (power) entities
    * Similar to <code>nmModulePhysicalPortsPower</code> but it also returns the http response headers .
-   * Query for querying all basic target entity data
+   * For more information call the basic query of the power port entity
    * @param sessionId Session-ID (required)
    * @param elid  (required)
    * @param body  (required)
@@ -2266,12 +2818,12 @@ public interface NmModuleApi extends ApiClient.Api {
     "Content-Type: application/json",
     "Accept: application/json",
   })
-  ApiResponse<NmModulePhysicalPortsPowerResponse> nmModulePhysicalPortsPowerWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, NmModulePhysicalPortsPowerRequest body);
+  ApiResponse<NmModulePhysicalPortsPowerResponseData> nmModulePhysicalPortsPowerWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, NmModulePhysicalPortsPowerRequestData body);
 
 
   /**
-   * Query Power ports
-   * Query for querying all basic target entity data
+   * Get relations to Physical port (power) entities
+   * For more information call the basic query of the power port entity
    * Note, this is equivalent to the other <code>nmModulePhysicalPortsPower</code> method,
    * but with the query parameters collected into a single Map parameter. This
    * is convenient for services with optional query parameters, especially when
@@ -2284,18 +2836,18 @@ public interface NmModuleApi extends ApiClient.Api {
    *   <ul>
    *   <li>sessionId - Session-ID (required)</li>
    *   </ul>
-   * @return NmModulePhysicalPortsPowerResponse
+   * @return NmModulePhysicalPortsPowerResponseData
    */
   @RequestLine("POST /api/rest/entity/nmModule/{elid}/PhysicalPortsPower?sessionId={sessionId}")
   @Headers({
   "Content-Type: application/json",
   "Accept: application/json",
   })
-  NmModulePhysicalPortsPowerResponse nmModulePhysicalPortsPower(@Param("elid") String elid, NmModulePhysicalPortsPowerRequest body, @QueryMap(encoded=true) NmModulePhysicalPortsPowerQueryParams queryParams);
+  NmModulePhysicalPortsPowerResponseData nmModulePhysicalPortsPower(@Param("elid") String elid, NmModulePhysicalPortsPowerRequestData body, @QueryMap(encoded=true) NmModulePhysicalPortsPowerQueryParams queryParams);
 
   /**
-  * Query Power ports
-  * Query for querying all basic target entity data
+  * Get relations to Physical port (power) entities
+  * For more information call the basic query of the power port entity
   * Note, this is equivalent to the other <code>nmModulePhysicalPortsPower</code> that receives the query parameters as a map,
   * but this one also exposes the Http response headers
               * @param elid  (required)
@@ -2305,14 +2857,14 @@ public interface NmModuleApi extends ApiClient.Api {
       *   <ul>
           *   <li>sessionId - Session-ID (required)</li>
       *   </ul>
-          * @return NmModulePhysicalPortsPowerResponse
+          * @return NmModulePhysicalPortsPowerResponseData
       */
       @RequestLine("POST /api/rest/entity/nmModule/{elid}/PhysicalPortsPower?sessionId={sessionId}")
       @Headers({
     "Content-Type: application/json",
     "Accept: application/json",
       })
-   ApiResponse<NmModulePhysicalPortsPowerResponse> nmModulePhysicalPortsPowerWithHttpInfo(@Param("elid") String elid, NmModulePhysicalPortsPowerRequest body, @QueryMap(encoded=true) NmModulePhysicalPortsPowerQueryParams queryParams);
+   ApiResponse<NmModulePhysicalPortsPowerResponseData> nmModulePhysicalPortsPowerWithHttpInfo(@Param("elid") String elid, NmModulePhysicalPortsPowerRequestData body, @QueryMap(encoded=true) NmModulePhysicalPortsPowerQueryParams queryParams);
 
 
    /**
@@ -2321,6 +2873,95 @@ public interface NmModuleApi extends ApiClient.Api {
    */
   public static class NmModulePhysicalPortsPowerQueryParams extends HashMap<String, Object> {
     public NmModulePhysicalPortsPowerQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Query Power ports
+   * Query for fetching all basic target entity data.
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return NmModulePhysicalPortsPowerExtendedResponse
+   */
+  @RequestLine("POST /api/rest/entity/nmModule/{elid}/PhysicalPortsPowerExtended?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  NmModulePhysicalPortsPowerExtendedResponse nmModulePhysicalPortsPowerExtended(@Param("sessionId") String sessionId, @Param("elid") String elid, NmModulePhysicalPortsPowerExtendedRequest body);
+
+  /**
+   * Query Power ports
+   * Similar to <code>nmModulePhysicalPortsPowerExtended</code> but it also returns the http response headers .
+   * Query for fetching all basic target entity data.
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/nmModule/{elid}/PhysicalPortsPowerExtended?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<NmModulePhysicalPortsPowerExtendedResponse> nmModulePhysicalPortsPowerExtendedWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, NmModulePhysicalPortsPowerExtendedRequest body);
+
+
+  /**
+   * Query Power ports
+   * Query for fetching all basic target entity data.
+   * Note, this is equivalent to the other <code>nmModulePhysicalPortsPowerExtended</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link NmModulePhysicalPortsPowerExtendedQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return NmModulePhysicalPortsPowerExtendedResponse
+   */
+  @RequestLine("POST /api/rest/entity/nmModule/{elid}/PhysicalPortsPowerExtended?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  NmModulePhysicalPortsPowerExtendedResponse nmModulePhysicalPortsPowerExtended(@Param("elid") String elid, NmModulePhysicalPortsPowerExtendedRequest body, @QueryMap(encoded=true) NmModulePhysicalPortsPowerExtendedQueryParams queryParams);
+
+  /**
+  * Query Power ports
+  * Query for fetching all basic target entity data.
+  * Note, this is equivalent to the other <code>nmModulePhysicalPortsPowerExtended</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return NmModulePhysicalPortsPowerExtendedResponse
+      */
+      @RequestLine("POST /api/rest/entity/nmModule/{elid}/PhysicalPortsPowerExtended?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<NmModulePhysicalPortsPowerExtendedResponse> nmModulePhysicalPortsPowerExtendedWithHttpInfo(@Param("elid") String elid, NmModulePhysicalPortsPowerExtendedRequest body, @QueryMap(encoded=true) NmModulePhysicalPortsPowerExtendedQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>nmModulePhysicalPortsPowerExtended</code> method in a fluent style.
+   */
+  public static class NmModulePhysicalPortsPowerExtendedQueryParams extends HashMap<String, Object> {
+    public NmModulePhysicalPortsPowerExtendedQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -2497,6 +3138,91 @@ public interface NmModuleApi extends ApiClient.Api {
   }
 
   /**
+   * Extended geo coordinates
+   * 
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return NmModuleQueryExtendedGeoCoordinatesResponse
+   */
+  @RequestLine("POST /api/rest/entity/nmModule/queryExtendedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  NmModuleQueryExtendedGeoCoordinatesResponse nmModuleQueryExtendedGeoCoordinates(@Param("sessionId") String sessionId, NmModuleQueryExtendedGeoCoordinatesRequest body);
+
+  /**
+   * Extended geo coordinates
+   * Similar to <code>nmModuleQueryExtendedGeoCoordinates</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/nmModule/queryExtendedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<NmModuleQueryExtendedGeoCoordinatesResponse> nmModuleQueryExtendedGeoCoordinatesWithHttpInfo(@Param("sessionId") String sessionId, NmModuleQueryExtendedGeoCoordinatesRequest body);
+
+
+  /**
+   * Extended geo coordinates
+   * 
+   * Note, this is equivalent to the other <code>nmModuleQueryExtendedGeoCoordinates</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link NmModuleQueryExtendedGeoCoordinatesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return NmModuleQueryExtendedGeoCoordinatesResponse
+   */
+  @RequestLine("POST /api/rest/entity/nmModule/queryExtendedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  NmModuleQueryExtendedGeoCoordinatesResponse nmModuleQueryExtendedGeoCoordinates(NmModuleQueryExtendedGeoCoordinatesRequest body, @QueryMap(encoded=true) NmModuleQueryExtendedGeoCoordinatesQueryParams queryParams);
+
+  /**
+  * Extended geo coordinates
+  * 
+  * Note, this is equivalent to the other <code>nmModuleQueryExtendedGeoCoordinates</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return NmModuleQueryExtendedGeoCoordinatesResponse
+      */
+      @RequestLine("POST /api/rest/entity/nmModule/queryExtendedGeoCoordinates?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<NmModuleQueryExtendedGeoCoordinatesResponse> nmModuleQueryExtendedGeoCoordinatesWithHttpInfo(NmModuleQueryExtendedGeoCoordinatesRequest body, @QueryMap(encoded=true) NmModuleQueryExtendedGeoCoordinatesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>nmModuleQueryExtendedGeoCoordinates</code> method in a fluent style.
+   */
+  public static class NmModuleQueryExtendedGeoCoordinatesQueryParams extends HashMap<String, Object> {
+    public NmModuleQueryExtendedGeoCoordinatesQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Extended query scroll first
    * Queries linked master data and zone data. This query supports scrolling. Calls the query and returns the first results including the scroll-ID for the next call.
    * @param sessionId Session-ID (required)
@@ -2661,6 +3387,184 @@ public interface NmModuleApi extends ApiClient.Api {
    */
   public static class NmModuleQueryExtendedScrollMoreQueryParams extends HashMap<String, Object> {
     public NmModuleQueryExtendedScrollMoreQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Query device services 
+   * Query services for device 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return NmModuleServicesResponse
+   */
+  @RequestLine("POST /api/rest/entity/nmModule/{elid}/Services?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  NmModuleServicesResponse nmModuleServices(@Param("sessionId") String sessionId, @Param("elid") String elid, NmModuleServicesRequest body);
+
+  /**
+   * Query device services 
+   * Similar to <code>nmModuleServices</code> but it also returns the http response headers .
+   * Query services for device 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/nmModule/{elid}/Services?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<NmModuleServicesResponse> nmModuleServicesWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, NmModuleServicesRequest body);
+
+
+  /**
+   * Query device services 
+   * Query services for device 
+   * Note, this is equivalent to the other <code>nmModuleServices</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link NmModuleServicesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return NmModuleServicesResponse
+   */
+  @RequestLine("POST /api/rest/entity/nmModule/{elid}/Services?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  NmModuleServicesResponse nmModuleServices(@Param("elid") String elid, NmModuleServicesRequest body, @QueryMap(encoded=true) NmModuleServicesQueryParams queryParams);
+
+  /**
+  * Query device services 
+  * Query services for device 
+  * Note, this is equivalent to the other <code>nmModuleServices</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return NmModuleServicesResponse
+      */
+      @RequestLine("POST /api/rest/entity/nmModule/{elid}/Services?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<NmModuleServicesResponse> nmModuleServicesWithHttpInfo(@Param("elid") String elid, NmModuleServicesRequest body, @QueryMap(encoded=true) NmModuleServicesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>nmModuleServices</code> method in a fluent style.
+   */
+  public static class NmModuleServicesQueryParams extends HashMap<String, Object> {
+    public NmModuleServicesQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Site entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return NmModuleSitesResponseData
+   */
+  @RequestLine("POST /api/rest/entity/nmModule/{elid}/Sites?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  NmModuleSitesResponseData nmModuleSites(@Param("sessionId") String sessionId, @Param("elid") String elid, NmModuleSitesRequestData body);
+
+  /**
+   * Get relations to Site entities
+   * Similar to <code>nmModuleSites</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/nmModule/{elid}/Sites?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<NmModuleSitesResponseData> nmModuleSitesWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, NmModuleSitesRequestData body);
+
+
+  /**
+   * Get relations to Site entities
+   * 
+   * Note, this is equivalent to the other <code>nmModuleSites</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link NmModuleSitesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return NmModuleSitesResponseData
+   */
+  @RequestLine("POST /api/rest/entity/nmModule/{elid}/Sites?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  NmModuleSitesResponseData nmModuleSites(@Param("elid") String elid, NmModuleSitesRequestData body, @QueryMap(encoded=true) NmModuleSitesQueryParams queryParams);
+
+  /**
+  * Get relations to Site entities
+  * 
+  * Note, this is equivalent to the other <code>nmModuleSites</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return NmModuleSitesResponseData
+      */
+      @RequestLine("POST /api/rest/entity/nmModule/{elid}/Sites?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<NmModuleSitesResponseData> nmModuleSitesWithHttpInfo(@Param("elid") String elid, NmModuleSitesRequestData body, @QueryMap(encoded=true) NmModuleSitesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>nmModuleSites</code> method in a fluent style.
+   */
+  public static class NmModuleSitesQueryParams extends HashMap<String, Object> {
+    public NmModuleSitesQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -3713,6 +4617,95 @@ public interface NmModuleApi extends ApiClient.Api {
    */
   public static class PlaceInZoneNmModuleQueryParams extends HashMap<String, Object> {
     public PlaceInZoneNmModuleQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Replace object
+   * Replace object
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return ReplaceObjectNmModuleResponse
+   */
+  @RequestLine("POST /api/rest/entity/nmModule/{elid}/replaceObject?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ReplaceObjectNmModuleResponse replaceObjectNmModule(@Param("sessionId") String sessionId, @Param("elid") String elid, ReplaceObjectNmModuleRequestData body);
+
+  /**
+   * Replace object
+   * Similar to <code>replaceObjectNmModule</code> but it also returns the http response headers .
+   * Replace object
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/nmModule/{elid}/replaceObject?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<ReplaceObjectNmModuleResponse> replaceObjectNmModuleWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ReplaceObjectNmModuleRequestData body);
+
+
+  /**
+   * Replace object
+   * Replace object
+   * Note, this is equivalent to the other <code>replaceObjectNmModule</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link ReplaceObjectNmModuleQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return ReplaceObjectNmModuleResponse
+   */
+  @RequestLine("POST /api/rest/entity/nmModule/{elid}/replaceObject?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  ReplaceObjectNmModuleResponse replaceObjectNmModule(@Param("elid") String elid, ReplaceObjectNmModuleRequestData body, @QueryMap(encoded=true) ReplaceObjectNmModuleQueryParams queryParams);
+
+  /**
+  * Replace object
+  * Replace object
+  * Note, this is equivalent to the other <code>replaceObjectNmModule</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return ReplaceObjectNmModuleResponse
+      */
+      @RequestLine("POST /api/rest/entity/nmModule/{elid}/replaceObject?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<ReplaceObjectNmModuleResponse> replaceObjectNmModuleWithHttpInfo(@Param("elid") String elid, ReplaceObjectNmModuleRequestData body, @QueryMap(encoded=true) ReplaceObjectNmModuleQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>replaceObjectNmModule</code> method in a fluent style.
+   */
+  public static class ReplaceObjectNmModuleQueryParams extends HashMap<String, Object> {
+    public ReplaceObjectNmModuleQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

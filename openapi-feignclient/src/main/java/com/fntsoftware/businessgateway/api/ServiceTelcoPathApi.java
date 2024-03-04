@@ -4,8 +4,12 @@ import com.fntsoftware.businessgateway.ApiClient;
 import com.fntsoftware.businessgateway.EncodingUtils;
 import com.fntsoftware.businessgateway.entities.ApiResponse;
 
+import com.fntsoftware.businessgateway.entities.AddRoutePacketDataServiceTelcoPathRequestData;
+import com.fntsoftware.businessgateway.entities.AddRoutePacketDataServiceTelcoPathResponse;
 import com.fntsoftware.businessgateway.entities.AddRouteServiceTelcoPathRequestData;
 import com.fntsoftware.businessgateway.entities.AddRouteServiceTelcoPathResponse;
+import com.fntsoftware.businessgateway.entities.ChangeServiceTypeServiceTelcoPathRequestData;
+import com.fntsoftware.businessgateway.entities.ChangeServiceTypeServiceTelcoPathResponse;
 import com.fntsoftware.businessgateway.entities.CreatePacketDataServiceTelcoPathRequestData;
 import com.fntsoftware.businessgateway.entities.CreatePacketDataServiceTelcoPathResponse;
 import com.fntsoftware.businessgateway.entities.CreateServiceTelcoPathRequestData;
@@ -32,14 +36,20 @@ import com.fntsoftware.businessgateway.entities.ServiceTelcoPathCustomPowerCable
 import com.fntsoftware.businessgateway.entities.ServiceTelcoPathCustomPowerCablesResponseData;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoPathDevicesAllRequestData;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoPathDevicesAllResponseData;
+import com.fntsoftware.businessgateway.entities.ServiceTelcoPathEndZoneRequestData;
+import com.fntsoftware.businessgateway.entities.ServiceTelcoPathEndZoneResponseData;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoPathFrameContractsRequestData;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoPathFrameContractsResponseData;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoPathHigherLevelServicesRequestData;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoPathHigherLevelServicesResponseData;
+import com.fntsoftware.businessgateway.entities.ServiceTelcoPathLogicalPortEndRequestData;
+import com.fntsoftware.businessgateway.entities.ServiceTelcoPathLogicalPortEndResponseData;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoPathLogicalPortOutputEndRequestData;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoPathLogicalPortOutputEndResponseData;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoPathLogicalPortOutputStartRequestData;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoPathLogicalPortOutputStartResponseData;
+import com.fntsoftware.businessgateway.entities.ServiceTelcoPathLogicalPortStartRequestData;
+import com.fntsoftware.businessgateway.entities.ServiceTelcoPathLogicalPortStartResponseData;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoPathMaintenanceContractsRequestData;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoPathMaintenanceContractsResponseData;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoPathOrganizationsRequestData;
@@ -62,6 +72,8 @@ import com.fntsoftware.businessgateway.entities.ServiceTelcoPathServiceTypeDefin
 import com.fntsoftware.businessgateway.entities.ServiceTelcoPathServiceTypeDefinitionResponseData;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoPathServicesTelcoRequestData;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoPathServicesTelcoResponseData;
+import com.fntsoftware.businessgateway.entities.ServiceTelcoPathStartZoneRequestData;
+import com.fntsoftware.businessgateway.entities.ServiceTelcoPathStartZoneResponseData;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoPathStructuresRequest;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoPathStructuresResponse;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoPathSuccessorsRequestData;
@@ -70,6 +82,8 @@ import com.fntsoftware.businessgateway.entities.ServiceTelcoPathSystemAttributes
 import com.fntsoftware.businessgateway.entities.ServiceTelcoPathSystemAttributesResponse;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoPathVlansRequestData;
 import com.fntsoftware.businessgateway.entities.ServiceTelcoPathVlansResponseData;
+import com.fntsoftware.businessgateway.entities.SwitchRoutePacketDataServiceTelcoPathRequestData;
+import com.fntsoftware.businessgateway.entities.SwitchRoutePacketDataServiceTelcoPathResponse;
 import com.fntsoftware.businessgateway.entities.SwitchRouteServiceTelcoPathRequestData;
 import com.fntsoftware.businessgateway.entities.SwitchRouteServiceTelcoPathResponse;
 import com.fntsoftware.businessgateway.entities.UpdatePacketDataServiceTelcoPathRequestData;
@@ -85,9 +99,98 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-04T13:31:32.601557352Z[Etc/UTC]")
 public interface ServiceTelcoPathApi extends ApiClient.Api {
 
+
+  /**
+   * Add packet data route
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return AddRoutePacketDataServiceTelcoPathResponse
+   */
+  @RequestLine("POST /api/rest/entity/serviceTelcoPath/{elid}/addRoutePacketData?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  AddRoutePacketDataServiceTelcoPathResponse addRoutePacketDataServiceTelcoPath(@Param("sessionId") String sessionId, @Param("elid") String elid, AddRoutePacketDataServiceTelcoPathRequestData body);
+
+  /**
+   * Add packet data route
+   * Similar to <code>addRoutePacketDataServiceTelcoPath</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/serviceTelcoPath/{elid}/addRoutePacketData?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<AddRoutePacketDataServiceTelcoPathResponse> addRoutePacketDataServiceTelcoPathWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, AddRoutePacketDataServiceTelcoPathRequestData body);
+
+
+  /**
+   * Add packet data route
+   * 
+   * Note, this is equivalent to the other <code>addRoutePacketDataServiceTelcoPath</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link AddRoutePacketDataServiceTelcoPathQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return AddRoutePacketDataServiceTelcoPathResponse
+   */
+  @RequestLine("POST /api/rest/entity/serviceTelcoPath/{elid}/addRoutePacketData?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  AddRoutePacketDataServiceTelcoPathResponse addRoutePacketDataServiceTelcoPath(@Param("elid") String elid, AddRoutePacketDataServiceTelcoPathRequestData body, @QueryMap(encoded=true) AddRoutePacketDataServiceTelcoPathQueryParams queryParams);
+
+  /**
+  * Add packet data route
+  * 
+  * Note, this is equivalent to the other <code>addRoutePacketDataServiceTelcoPath</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return AddRoutePacketDataServiceTelcoPathResponse
+      */
+      @RequestLine("POST /api/rest/entity/serviceTelcoPath/{elid}/addRoutePacketData?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<AddRoutePacketDataServiceTelcoPathResponse> addRoutePacketDataServiceTelcoPathWithHttpInfo(@Param("elid") String elid, AddRoutePacketDataServiceTelcoPathRequestData body, @QueryMap(encoded=true) AddRoutePacketDataServiceTelcoPathQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>addRoutePacketDataServiceTelcoPath</code> method in a fluent style.
+   */
+  public static class AddRoutePacketDataServiceTelcoPathQueryParams extends HashMap<String, Object> {
+    public AddRoutePacketDataServiceTelcoPathQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
 
   /**
    * Add route
@@ -173,6 +276,95 @@ public interface ServiceTelcoPathApi extends ApiClient.Api {
    */
   public static class AddRouteServiceTelcoPathQueryParams extends HashMap<String, Object> {
     public AddRouteServiceTelcoPathQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Service type replacement
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return ChangeServiceTypeServiceTelcoPathResponse
+   */
+  @RequestLine("POST /api/rest/entity/serviceTelcoPath/{elid}/changeServiceType?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ChangeServiceTypeServiceTelcoPathResponse changeServiceTypeServiceTelcoPath(@Param("sessionId") String sessionId, @Param("elid") String elid, ChangeServiceTypeServiceTelcoPathRequestData body);
+
+  /**
+   * Service type replacement
+   * Similar to <code>changeServiceTypeServiceTelcoPath</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/serviceTelcoPath/{elid}/changeServiceType?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<ChangeServiceTypeServiceTelcoPathResponse> changeServiceTypeServiceTelcoPathWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ChangeServiceTypeServiceTelcoPathRequestData body);
+
+
+  /**
+   * Service type replacement
+   * 
+   * Note, this is equivalent to the other <code>changeServiceTypeServiceTelcoPath</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link ChangeServiceTypeServiceTelcoPathQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return ChangeServiceTypeServiceTelcoPathResponse
+   */
+  @RequestLine("POST /api/rest/entity/serviceTelcoPath/{elid}/changeServiceType?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  ChangeServiceTypeServiceTelcoPathResponse changeServiceTypeServiceTelcoPath(@Param("elid") String elid, ChangeServiceTypeServiceTelcoPathRequestData body, @QueryMap(encoded=true) ChangeServiceTypeServiceTelcoPathQueryParams queryParams);
+
+  /**
+  * Service type replacement
+  * 
+  * Note, this is equivalent to the other <code>changeServiceTypeServiceTelcoPath</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return ChangeServiceTypeServiceTelcoPathResponse
+      */
+      @RequestLine("POST /api/rest/entity/serviceTelcoPath/{elid}/changeServiceType?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<ChangeServiceTypeServiceTelcoPathResponse> changeServiceTypeServiceTelcoPathWithHttpInfo(@Param("elid") String elid, ChangeServiceTypeServiceTelcoPathRequestData body, @QueryMap(encoded=true) ChangeServiceTypeServiceTelcoPathQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>changeServiceTypeServiceTelcoPath</code> method in a fluent style.
+   */
+  public static class ChangeServiceTypeServiceTelcoPathQueryParams extends HashMap<String, Object> {
+    public ChangeServiceTypeServiceTelcoPathQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -1328,6 +1520,95 @@ public interface ServiceTelcoPathApi extends ApiClient.Api {
   }
 
   /**
+   * Get relations to End zone entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return ServiceTelcoPathEndZoneResponseData
+   */
+  @RequestLine("POST /api/rest/entity/serviceTelcoPath/{elid}/EndZone?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ServiceTelcoPathEndZoneResponseData serviceTelcoPathEndZone(@Param("sessionId") String sessionId, @Param("elid") String elid, ServiceTelcoPathEndZoneRequestData body);
+
+  /**
+   * Get relations to End zone entities
+   * Similar to <code>serviceTelcoPathEndZone</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/serviceTelcoPath/{elid}/EndZone?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<ServiceTelcoPathEndZoneResponseData> serviceTelcoPathEndZoneWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ServiceTelcoPathEndZoneRequestData body);
+
+
+  /**
+   * Get relations to End zone entities
+   * 
+   * Note, this is equivalent to the other <code>serviceTelcoPathEndZone</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link ServiceTelcoPathEndZoneQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return ServiceTelcoPathEndZoneResponseData
+   */
+  @RequestLine("POST /api/rest/entity/serviceTelcoPath/{elid}/EndZone?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  ServiceTelcoPathEndZoneResponseData serviceTelcoPathEndZone(@Param("elid") String elid, ServiceTelcoPathEndZoneRequestData body, @QueryMap(encoded=true) ServiceTelcoPathEndZoneQueryParams queryParams);
+
+  /**
+  * Get relations to End zone entities
+  * 
+  * Note, this is equivalent to the other <code>serviceTelcoPathEndZone</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return ServiceTelcoPathEndZoneResponseData
+      */
+      @RequestLine("POST /api/rest/entity/serviceTelcoPath/{elid}/EndZone?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<ServiceTelcoPathEndZoneResponseData> serviceTelcoPathEndZoneWithHttpInfo(@Param("elid") String elid, ServiceTelcoPathEndZoneRequestData body, @QueryMap(encoded=true) ServiceTelcoPathEndZoneQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>serviceTelcoPathEndZone</code> method in a fluent style.
+   */
+  public static class ServiceTelcoPathEndZoneQueryParams extends HashMap<String, Object> {
+    public ServiceTelcoPathEndZoneQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Get relations to Frame contract entities
    * 
    * @param sessionId Session-ID (required)
@@ -1506,6 +1787,95 @@ public interface ServiceTelcoPathApi extends ApiClient.Api {
   }
 
   /**
+   * Get relations to Logical port End point entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return ServiceTelcoPathLogicalPortEndResponseData
+   */
+  @RequestLine("POST /api/rest/entity/serviceTelcoPath/{elid}/LogicalPortEnd?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ServiceTelcoPathLogicalPortEndResponseData serviceTelcoPathLogicalPortEnd(@Param("sessionId") String sessionId, @Param("elid") String elid, ServiceTelcoPathLogicalPortEndRequestData body);
+
+  /**
+   * Get relations to Logical port End point entities
+   * Similar to <code>serviceTelcoPathLogicalPortEnd</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/serviceTelcoPath/{elid}/LogicalPortEnd?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<ServiceTelcoPathLogicalPortEndResponseData> serviceTelcoPathLogicalPortEndWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ServiceTelcoPathLogicalPortEndRequestData body);
+
+
+  /**
+   * Get relations to Logical port End point entities
+   * 
+   * Note, this is equivalent to the other <code>serviceTelcoPathLogicalPortEnd</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link ServiceTelcoPathLogicalPortEndQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return ServiceTelcoPathLogicalPortEndResponseData
+   */
+  @RequestLine("POST /api/rest/entity/serviceTelcoPath/{elid}/LogicalPortEnd?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  ServiceTelcoPathLogicalPortEndResponseData serviceTelcoPathLogicalPortEnd(@Param("elid") String elid, ServiceTelcoPathLogicalPortEndRequestData body, @QueryMap(encoded=true) ServiceTelcoPathLogicalPortEndQueryParams queryParams);
+
+  /**
+  * Get relations to Logical port End point entities
+  * 
+  * Note, this is equivalent to the other <code>serviceTelcoPathLogicalPortEnd</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return ServiceTelcoPathLogicalPortEndResponseData
+      */
+      @RequestLine("POST /api/rest/entity/serviceTelcoPath/{elid}/LogicalPortEnd?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<ServiceTelcoPathLogicalPortEndResponseData> serviceTelcoPathLogicalPortEndWithHttpInfo(@Param("elid") String elid, ServiceTelcoPathLogicalPortEndRequestData body, @QueryMap(encoded=true) ServiceTelcoPathLogicalPortEndQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>serviceTelcoPathLogicalPortEnd</code> method in a fluent style.
+   */
+  public static class ServiceTelcoPathLogicalPortEndQueryParams extends HashMap<String, Object> {
+    public ServiceTelcoPathLogicalPortEndQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Get relations to Output port end entities
    * 
    * @param sessionId Session-ID (required)
@@ -1678,6 +2048,95 @@ public interface ServiceTelcoPathApi extends ApiClient.Api {
    */
   public static class ServiceTelcoPathLogicalPortOutputStartQueryParams extends HashMap<String, Object> {
     public ServiceTelcoPathLogicalPortOutputStartQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Logical port Starting point entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return ServiceTelcoPathLogicalPortStartResponseData
+   */
+  @RequestLine("POST /api/rest/entity/serviceTelcoPath/{elid}/LogicalPortStart?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ServiceTelcoPathLogicalPortStartResponseData serviceTelcoPathLogicalPortStart(@Param("sessionId") String sessionId, @Param("elid") String elid, ServiceTelcoPathLogicalPortStartRequestData body);
+
+  /**
+   * Get relations to Logical port Starting point entities
+   * Similar to <code>serviceTelcoPathLogicalPortStart</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/serviceTelcoPath/{elid}/LogicalPortStart?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<ServiceTelcoPathLogicalPortStartResponseData> serviceTelcoPathLogicalPortStartWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ServiceTelcoPathLogicalPortStartRequestData body);
+
+
+  /**
+   * Get relations to Logical port Starting point entities
+   * 
+   * Note, this is equivalent to the other <code>serviceTelcoPathLogicalPortStart</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link ServiceTelcoPathLogicalPortStartQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return ServiceTelcoPathLogicalPortStartResponseData
+   */
+  @RequestLine("POST /api/rest/entity/serviceTelcoPath/{elid}/LogicalPortStart?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  ServiceTelcoPathLogicalPortStartResponseData serviceTelcoPathLogicalPortStart(@Param("elid") String elid, ServiceTelcoPathLogicalPortStartRequestData body, @QueryMap(encoded=true) ServiceTelcoPathLogicalPortStartQueryParams queryParams);
+
+  /**
+  * Get relations to Logical port Starting point entities
+  * 
+  * Note, this is equivalent to the other <code>serviceTelcoPathLogicalPortStart</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return ServiceTelcoPathLogicalPortStartResponseData
+      */
+      @RequestLine("POST /api/rest/entity/serviceTelcoPath/{elid}/LogicalPortStart?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<ServiceTelcoPathLogicalPortStartResponseData> serviceTelcoPathLogicalPortStartWithHttpInfo(@Param("elid") String elid, ServiceTelcoPathLogicalPortStartRequestData body, @QueryMap(encoded=true) ServiceTelcoPathLogicalPortStartQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>serviceTelcoPathLogicalPortStart</code> method in a fluent style.
+   */
+  public static class ServiceTelcoPathLogicalPortStartQueryParams extends HashMap<String, Object> {
+    public ServiceTelcoPathLogicalPortStartQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -2659,6 +3118,95 @@ public interface ServiceTelcoPathApi extends ApiClient.Api {
   }
 
   /**
+   * Get relations to Start zone entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return ServiceTelcoPathStartZoneResponseData
+   */
+  @RequestLine("POST /api/rest/entity/serviceTelcoPath/{elid}/StartZone?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ServiceTelcoPathStartZoneResponseData serviceTelcoPathStartZone(@Param("sessionId") String sessionId, @Param("elid") String elid, ServiceTelcoPathStartZoneRequestData body);
+
+  /**
+   * Get relations to Start zone entities
+   * Similar to <code>serviceTelcoPathStartZone</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/serviceTelcoPath/{elid}/StartZone?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<ServiceTelcoPathStartZoneResponseData> serviceTelcoPathStartZoneWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ServiceTelcoPathStartZoneRequestData body);
+
+
+  /**
+   * Get relations to Start zone entities
+   * 
+   * Note, this is equivalent to the other <code>serviceTelcoPathStartZone</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link ServiceTelcoPathStartZoneQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return ServiceTelcoPathStartZoneResponseData
+   */
+  @RequestLine("POST /api/rest/entity/serviceTelcoPath/{elid}/StartZone?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  ServiceTelcoPathStartZoneResponseData serviceTelcoPathStartZone(@Param("elid") String elid, ServiceTelcoPathStartZoneRequestData body, @QueryMap(encoded=true) ServiceTelcoPathStartZoneQueryParams queryParams);
+
+  /**
+  * Get relations to Start zone entities
+  * 
+  * Note, this is equivalent to the other <code>serviceTelcoPathStartZone</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return ServiceTelcoPathStartZoneResponseData
+      */
+      @RequestLine("POST /api/rest/entity/serviceTelcoPath/{elid}/StartZone?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<ServiceTelcoPathStartZoneResponseData> serviceTelcoPathStartZoneWithHttpInfo(@Param("elid") String elid, ServiceTelcoPathStartZoneRequestData body, @QueryMap(encoded=true) ServiceTelcoPathStartZoneQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>serviceTelcoPathStartZone</code> method in a fluent style.
+   */
+  public static class ServiceTelcoPathStartZoneQueryParams extends HashMap<String, Object> {
+    public ServiceTelcoPathStartZoneQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Query structures
    * Queries the structures from one object
    * @param sessionId Session-ID (required)
@@ -3009,6 +3557,95 @@ public interface ServiceTelcoPathApi extends ApiClient.Api {
    */
   public static class ServiceTelcoPathVlansQueryParams extends HashMap<String, Object> {
     public ServiceTelcoPathVlansQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Switch packet data route
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return SwitchRoutePacketDataServiceTelcoPathResponse
+   */
+  @RequestLine("POST /api/rest/entity/serviceTelcoPath/{elid}/switchRoutePacketData?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  SwitchRoutePacketDataServiceTelcoPathResponse switchRoutePacketDataServiceTelcoPath(@Param("sessionId") String sessionId, @Param("elid") String elid, SwitchRoutePacketDataServiceTelcoPathRequestData body);
+
+  /**
+   * Switch packet data route
+   * Similar to <code>switchRoutePacketDataServiceTelcoPath</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/serviceTelcoPath/{elid}/switchRoutePacketData?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<SwitchRoutePacketDataServiceTelcoPathResponse> switchRoutePacketDataServiceTelcoPathWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, SwitchRoutePacketDataServiceTelcoPathRequestData body);
+
+
+  /**
+   * Switch packet data route
+   * 
+   * Note, this is equivalent to the other <code>switchRoutePacketDataServiceTelcoPath</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link SwitchRoutePacketDataServiceTelcoPathQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return SwitchRoutePacketDataServiceTelcoPathResponse
+   */
+  @RequestLine("POST /api/rest/entity/serviceTelcoPath/{elid}/switchRoutePacketData?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  SwitchRoutePacketDataServiceTelcoPathResponse switchRoutePacketDataServiceTelcoPath(@Param("elid") String elid, SwitchRoutePacketDataServiceTelcoPathRequestData body, @QueryMap(encoded=true) SwitchRoutePacketDataServiceTelcoPathQueryParams queryParams);
+
+  /**
+  * Switch packet data route
+  * 
+  * Note, this is equivalent to the other <code>switchRoutePacketDataServiceTelcoPath</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return SwitchRoutePacketDataServiceTelcoPathResponse
+      */
+      @RequestLine("POST /api/rest/entity/serviceTelcoPath/{elid}/switchRoutePacketData?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<SwitchRoutePacketDataServiceTelcoPathResponse> switchRoutePacketDataServiceTelcoPathWithHttpInfo(@Param("elid") String elid, SwitchRoutePacketDataServiceTelcoPathRequestData body, @QueryMap(encoded=true) SwitchRoutePacketDataServiceTelcoPathQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>switchRoutePacketDataServiceTelcoPath</code> method in a fluent style.
+   */
+  public static class SwitchRoutePacketDataServiceTelcoPathQueryParams extends HashMap<String, Object> {
+    public SwitchRoutePacketDataServiceTelcoPathQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

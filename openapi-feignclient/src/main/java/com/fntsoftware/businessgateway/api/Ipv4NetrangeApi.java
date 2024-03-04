@@ -16,6 +16,8 @@ import com.fntsoftware.businessgateway.entities.Ipv4NetrangeDomainRequestData;
 import com.fntsoftware.businessgateway.entities.Ipv4NetrangeDomainResponseData;
 import com.fntsoftware.businessgateway.entities.Ipv4NetrangeFrameContractsRequestData;
 import com.fntsoftware.businessgateway.entities.Ipv4NetrangeFrameContractsResponseData;
+import com.fntsoftware.businessgateway.entities.Ipv4NetrangeIpv4AddressesRequestData;
+import com.fntsoftware.businessgateway.entities.Ipv4NetrangeIpv4AddressesResponseData;
 import com.fntsoftware.businessgateway.entities.Ipv4NetrangeIpv4NetworkRequestData;
 import com.fntsoftware.businessgateway.entities.Ipv4NetrangeIpv4NetworkResponseData;
 import com.fntsoftware.businessgateway.entities.Ipv4NetrangeMaintenanceContractsRequestData;
@@ -34,8 +36,6 @@ import com.fntsoftware.businessgateway.entities.Ipv4NetrangeQueryRequest;
 import com.fntsoftware.businessgateway.entities.Ipv4NetrangeQueryResponse;
 import com.fntsoftware.businessgateway.entities.Ipv4NetrangeSystemAttributesRequest;
 import com.fntsoftware.businessgateway.entities.Ipv4NetrangeSystemAttributesResponse;
-import com.fntsoftware.businessgateway.entities.Ipv4NetrangeVirtualClientsRequestData;
-import com.fntsoftware.businessgateway.entities.Ipv4NetrangeVirtualClientsResponseData;
 import com.fntsoftware.businessgateway.entities.Ipv4NetrangeVirtualNasServersRequestData;
 import com.fntsoftware.businessgateway.entities.Ipv4NetrangeVirtualNasServersResponseData;
 import com.fntsoftware.businessgateway.entities.Ipv4NetrangeVirtualServersRequestData;
@@ -55,7 +55,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-04T13:31:32.601557352Z[Etc/UTC]")
 public interface Ipv4NetrangeApi extends ApiClient.Api {
 
 
@@ -584,6 +584,95 @@ public interface Ipv4NetrangeApi extends ApiClient.Api {
    */
   public static class Ipv4NetrangeFrameContractsQueryParams extends HashMap<String, Object> {
     public Ipv4NetrangeFrameContractsQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to IPv4 address entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return Ipv4NetrangeIpv4AddressesResponseData
+   */
+  @RequestLine("POST /api/rest/entity/ipv4Netrange/{elid}/Ipv4Addresses?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  Ipv4NetrangeIpv4AddressesResponseData ipv4NetrangeIpv4Addresses(@Param("sessionId") String sessionId, @Param("elid") String elid, Ipv4NetrangeIpv4AddressesRequestData body);
+
+  /**
+   * Get relations to IPv4 address entities
+   * Similar to <code>ipv4NetrangeIpv4Addresses</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/ipv4Netrange/{elid}/Ipv4Addresses?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<Ipv4NetrangeIpv4AddressesResponseData> ipv4NetrangeIpv4AddressesWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, Ipv4NetrangeIpv4AddressesRequestData body);
+
+
+  /**
+   * Get relations to IPv4 address entities
+   * 
+   * Note, this is equivalent to the other <code>ipv4NetrangeIpv4Addresses</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link Ipv4NetrangeIpv4AddressesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return Ipv4NetrangeIpv4AddressesResponseData
+   */
+  @RequestLine("POST /api/rest/entity/ipv4Netrange/{elid}/Ipv4Addresses?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  Ipv4NetrangeIpv4AddressesResponseData ipv4NetrangeIpv4Addresses(@Param("elid") String elid, Ipv4NetrangeIpv4AddressesRequestData body, @QueryMap(encoded=true) Ipv4NetrangeIpv4AddressesQueryParams queryParams);
+
+  /**
+  * Get relations to IPv4 address entities
+  * 
+  * Note, this is equivalent to the other <code>ipv4NetrangeIpv4Addresses</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return Ipv4NetrangeIpv4AddressesResponseData
+      */
+      @RequestLine("POST /api/rest/entity/ipv4Netrange/{elid}/Ipv4Addresses?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<Ipv4NetrangeIpv4AddressesResponseData> ipv4NetrangeIpv4AddressesWithHttpInfo(@Param("elid") String elid, Ipv4NetrangeIpv4AddressesRequestData body, @QueryMap(encoded=true) Ipv4NetrangeIpv4AddressesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>ipv4NetrangeIpv4Addresses</code> method in a fluent style.
+   */
+  public static class Ipv4NetrangeIpv4AddressesQueryParams extends HashMap<String, Object> {
+    public Ipv4NetrangeIpv4AddressesQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -1381,95 +1470,6 @@ public interface Ipv4NetrangeApi extends ApiClient.Api {
    */
   public static class Ipv4NetrangeSystemAttributesQueryParams extends HashMap<String, Object> {
     public Ipv4NetrangeSystemAttributesQueryParams sessionId(final String value) {
-      put("sessionId", EncodingUtils.encode(value));
-      return this;
-    }
-  }
-
-  /**
-   * Get relations to Virtual client entities
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return Ipv4NetrangeVirtualClientsResponseData
-   */
-  @RequestLine("POST /api/rest/entity/ipv4Netrange/{elid}/VirtualClients?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  Ipv4NetrangeVirtualClientsResponseData ipv4NetrangeVirtualClients(@Param("sessionId") String sessionId, @Param("elid") String elid, Ipv4NetrangeVirtualClientsRequestData body);
-
-  /**
-   * Get relations to Virtual client entities
-   * Similar to <code>ipv4NetrangeVirtualClients</code> but it also returns the http response headers .
-   * 
-   * @param sessionId Session-ID (required)
-   * @param elid  (required)
-   * @param body  (required)
-   * @return A ApiResponse that wraps the response boyd and the http headers.
-   */
-  @RequestLine("POST /api/rest/entity/ipv4Netrange/{elid}/VirtualClients?sessionId={sessionId}")
-  @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-  })
-  ApiResponse<Ipv4NetrangeVirtualClientsResponseData> ipv4NetrangeVirtualClientsWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, Ipv4NetrangeVirtualClientsRequestData body);
-
-
-  /**
-   * Get relations to Virtual client entities
-   * 
-   * Note, this is equivalent to the other <code>ipv4NetrangeVirtualClients</code> method,
-   * but with the query parameters collected into a single Map parameter. This
-   * is convenient for services with optional query parameters, especially when
-   * used with the {@link Ipv4NetrangeVirtualClientsQueryParams} class that allows for
-   * building up this map in a fluent style.
-   * @param elid  (required)
-   * @param body  (required)
-   * @param queryParams Map of query parameters as name-value pairs
-   *   <p>The following elements may be specified in the query map:</p>
-   *   <ul>
-   *   <li>sessionId - Session-ID (required)</li>
-   *   </ul>
-   * @return Ipv4NetrangeVirtualClientsResponseData
-   */
-  @RequestLine("POST /api/rest/entity/ipv4Netrange/{elid}/VirtualClients?sessionId={sessionId}")
-  @Headers({
-  "Content-Type: application/json",
-  "Accept: application/json",
-  })
-  Ipv4NetrangeVirtualClientsResponseData ipv4NetrangeVirtualClients(@Param("elid") String elid, Ipv4NetrangeVirtualClientsRequestData body, @QueryMap(encoded=true) Ipv4NetrangeVirtualClientsQueryParams queryParams);
-
-  /**
-  * Get relations to Virtual client entities
-  * 
-  * Note, this is equivalent to the other <code>ipv4NetrangeVirtualClients</code> that receives the query parameters as a map,
-  * but this one also exposes the Http response headers
-              * @param elid  (required)
-              * @param body  (required)
-      * @param queryParams Map of query parameters as name-value pairs
-      *   <p>The following elements may be specified in the query map:</p>
-      *   <ul>
-          *   <li>sessionId - Session-ID (required)</li>
-      *   </ul>
-          * @return Ipv4NetrangeVirtualClientsResponseData
-      */
-      @RequestLine("POST /api/rest/entity/ipv4Netrange/{elid}/VirtualClients?sessionId={sessionId}")
-      @Headers({
-    "Content-Type: application/json",
-    "Accept: application/json",
-      })
-   ApiResponse<Ipv4NetrangeVirtualClientsResponseData> ipv4NetrangeVirtualClientsWithHttpInfo(@Param("elid") String elid, Ipv4NetrangeVirtualClientsRequestData body, @QueryMap(encoded=true) Ipv4NetrangeVirtualClientsQueryParams queryParams);
-
-
-   /**
-   * A convenience class for generating query parameters for the
-   * <code>ipv4NetrangeVirtualClients</code> method in a fluent style.
-   */
-  public static class Ipv4NetrangeVirtualClientsQueryParams extends HashMap<String, Object> {
-    public Ipv4NetrangeVirtualClientsQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

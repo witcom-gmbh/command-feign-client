@@ -4,8 +4,14 @@ import com.fntsoftware.businessgateway.ApiClient;
 import com.fntsoftware.businessgateway.EncodingUtils;
 import com.fntsoftware.businessgateway.entities.ApiResponse;
 
+import com.fntsoftware.businessgateway.entities.CreateNodeTypeRequestData;
+import com.fntsoftware.businessgateway.entities.CreateNodeTypeResponse;
+import com.fntsoftware.businessgateway.entities.DeleteNodeTypeRequestData;
+import com.fntsoftware.businessgateway.entities.DeleteNodeTypeResponse;
 import com.fntsoftware.businessgateway.entities.NodeTypeContractsRequestData;
 import com.fntsoftware.businessgateway.entities.NodeTypeContractsResponseData;
+import com.fntsoftware.businessgateway.entities.NodeTypeDeviceMasterRequestData;
+import com.fntsoftware.businessgateway.entities.NodeTypeDeviceMasterResponseData;
 import com.fntsoftware.businessgateway.entities.NodeTypeFrameContractsRequestData;
 import com.fntsoftware.businessgateway.entities.NodeTypeFrameContractsResponseData;
 import com.fntsoftware.businessgateway.entities.NodeTypeMaintenanceContractsRequestData;
@@ -24,6 +30,8 @@ import com.fntsoftware.businessgateway.entities.NodeTypeQueryRequest;
 import com.fntsoftware.businessgateway.entities.NodeTypeQueryResponse;
 import com.fntsoftware.businessgateway.entities.NodeTypeSystemAttributesRequest;
 import com.fntsoftware.businessgateway.entities.NodeTypeSystemAttributesResponse;
+import com.fntsoftware.businessgateway.entities.UpdateNodeTypeRequestData;
+import com.fntsoftware.businessgateway.entities.UpdateNodeTypeResponse;
 import com.fntsoftware.businessgateway.entities.UpdateSystemAttributesNodeTypeRequestData;
 import com.fntsoftware.businessgateway.entities.UpdateSystemAttributesNodeTypeResponse;
 
@@ -33,9 +41,183 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-04T13:31:32.601557352Z[Etc/UTC]")
 public interface NodeTypeApi extends ApiClient.Api {
 
+
+  /**
+   * Create
+   * Create Node type
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return CreateNodeTypeResponse
+   */
+  @RequestLine("POST /api/rest/entity/nodeType/create?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  CreateNodeTypeResponse createNodeType(@Param("sessionId") String sessionId, CreateNodeTypeRequestData body);
+
+  /**
+   * Create
+   * Similar to <code>createNodeType</code> but it also returns the http response headers .
+   * Create Node type
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/nodeType/create?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<CreateNodeTypeResponse> createNodeTypeWithHttpInfo(@Param("sessionId") String sessionId, CreateNodeTypeRequestData body);
+
+
+  /**
+   * Create
+   * Create Node type
+   * Note, this is equivalent to the other <code>createNodeType</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link CreateNodeTypeQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return CreateNodeTypeResponse
+   */
+  @RequestLine("POST /api/rest/entity/nodeType/create?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  CreateNodeTypeResponse createNodeType(CreateNodeTypeRequestData body, @QueryMap(encoded=true) CreateNodeTypeQueryParams queryParams);
+
+  /**
+  * Create
+  * Create Node type
+  * Note, this is equivalent to the other <code>createNodeType</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return CreateNodeTypeResponse
+      */
+      @RequestLine("POST /api/rest/entity/nodeType/create?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<CreateNodeTypeResponse> createNodeTypeWithHttpInfo(CreateNodeTypeRequestData body, @QueryMap(encoded=true) CreateNodeTypeQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>createNodeType</code> method in a fluent style.
+   */
+  public static class CreateNodeTypeQueryParams extends HashMap<String, Object> {
+    public CreateNodeTypeQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Delete
+   * Delete Node type
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return DeleteNodeTypeResponse
+   */
+  @RequestLine("POST /api/rest/entity/nodeType/{elid}/delete?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  DeleteNodeTypeResponse deleteNodeType(@Param("sessionId") String sessionId, @Param("elid") String elid, DeleteNodeTypeRequestData body);
+
+  /**
+   * Delete
+   * Similar to <code>deleteNodeType</code> but it also returns the http response headers .
+   * Delete Node type
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/nodeType/{elid}/delete?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<DeleteNodeTypeResponse> deleteNodeTypeWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, DeleteNodeTypeRequestData body);
+
+
+  /**
+   * Delete
+   * Delete Node type
+   * Note, this is equivalent to the other <code>deleteNodeType</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link DeleteNodeTypeQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return DeleteNodeTypeResponse
+   */
+  @RequestLine("POST /api/rest/entity/nodeType/{elid}/delete?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  DeleteNodeTypeResponse deleteNodeType(@Param("elid") String elid, DeleteNodeTypeRequestData body, @QueryMap(encoded=true) DeleteNodeTypeQueryParams queryParams);
+
+  /**
+  * Delete
+  * Delete Node type
+  * Note, this is equivalent to the other <code>deleteNodeType</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return DeleteNodeTypeResponse
+      */
+      @RequestLine("POST /api/rest/entity/nodeType/{elid}/delete?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<DeleteNodeTypeResponse> deleteNodeTypeWithHttpInfo(@Param("elid") String elid, DeleteNodeTypeRequestData body, @QueryMap(encoded=true) DeleteNodeTypeQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>deleteNodeType</code> method in a fluent style.
+   */
+  public static class DeleteNodeTypeQueryParams extends HashMap<String, Object> {
+    public DeleteNodeTypeQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
 
   /**
    * Get relations to Contract entities
@@ -121,6 +303,95 @@ public interface NodeTypeApi extends ApiClient.Api {
    */
   public static class NodeTypeContractsQueryParams extends HashMap<String, Object> {
     public NodeTypeContractsQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Device master entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return NodeTypeDeviceMasterResponseData
+   */
+  @RequestLine("POST /api/rest/entity/nodeType/{elid}/DeviceMaster?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  NodeTypeDeviceMasterResponseData nodeTypeDeviceMaster(@Param("sessionId") String sessionId, @Param("elid") String elid, NodeTypeDeviceMasterRequestData body);
+
+  /**
+   * Get relations to Device master entities
+   * Similar to <code>nodeTypeDeviceMaster</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/nodeType/{elid}/DeviceMaster?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<NodeTypeDeviceMasterResponseData> nodeTypeDeviceMasterWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, NodeTypeDeviceMasterRequestData body);
+
+
+  /**
+   * Get relations to Device master entities
+   * 
+   * Note, this is equivalent to the other <code>nodeTypeDeviceMaster</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link NodeTypeDeviceMasterQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return NodeTypeDeviceMasterResponseData
+   */
+  @RequestLine("POST /api/rest/entity/nodeType/{elid}/DeviceMaster?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  NodeTypeDeviceMasterResponseData nodeTypeDeviceMaster(@Param("elid") String elid, NodeTypeDeviceMasterRequestData body, @QueryMap(encoded=true) NodeTypeDeviceMasterQueryParams queryParams);
+
+  /**
+  * Get relations to Device master entities
+  * 
+  * Note, this is equivalent to the other <code>nodeTypeDeviceMaster</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return NodeTypeDeviceMasterResponseData
+      */
+      @RequestLine("POST /api/rest/entity/nodeType/{elid}/DeviceMaster?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<NodeTypeDeviceMasterResponseData> nodeTypeDeviceMasterWithHttpInfo(@Param("elid") String elid, NodeTypeDeviceMasterRequestData body, @QueryMap(encoded=true) NodeTypeDeviceMasterQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>nodeTypeDeviceMaster</code> method in a fluent style.
+   */
+  public static class NodeTypeDeviceMasterQueryParams extends HashMap<String, Object> {
+    public NodeTypeDeviceMasterQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -918,6 +1189,95 @@ public interface NodeTypeApi extends ApiClient.Api {
    */
   public static class NodeTypeSystemAttributesQueryParams extends HashMap<String, Object> {
     public NodeTypeSystemAttributesQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Modify
+   * Modify Node type
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return UpdateNodeTypeResponse
+   */
+  @RequestLine("POST /api/rest/entity/nodeType/{elid}/update?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  UpdateNodeTypeResponse updateNodeType(@Param("sessionId") String sessionId, @Param("elid") String elid, UpdateNodeTypeRequestData body);
+
+  /**
+   * Modify
+   * Similar to <code>updateNodeType</code> but it also returns the http response headers .
+   * Modify Node type
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/nodeType/{elid}/update?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<UpdateNodeTypeResponse> updateNodeTypeWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, UpdateNodeTypeRequestData body);
+
+
+  /**
+   * Modify
+   * Modify Node type
+   * Note, this is equivalent to the other <code>updateNodeType</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link UpdateNodeTypeQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return UpdateNodeTypeResponse
+   */
+  @RequestLine("POST /api/rest/entity/nodeType/{elid}/update?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  UpdateNodeTypeResponse updateNodeType(@Param("elid") String elid, UpdateNodeTypeRequestData body, @QueryMap(encoded=true) UpdateNodeTypeQueryParams queryParams);
+
+  /**
+  * Modify
+  * Modify Node type
+  * Note, this is equivalent to the other <code>updateNodeType</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return UpdateNodeTypeResponse
+      */
+      @RequestLine("POST /api/rest/entity/nodeType/{elid}/update?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<UpdateNodeTypeResponse> updateNodeTypeWithHttpInfo(@Param("elid") String elid, UpdateNodeTypeRequestData body, @QueryMap(encoded=true) UpdateNodeTypeQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>updateNodeType</code> method in a fluent style.
+   */
+  public static class UpdateNodeTypeQueryParams extends HashMap<String, Object> {
+    public UpdateNodeTypeQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

@@ -22,8 +22,12 @@ import com.fntsoftware.businessgateway.entities.DuctDuctTypeRequestData;
 import com.fntsoftware.businessgateway.entities.DuctDuctTypeResponseData;
 import com.fntsoftware.businessgateway.entities.DuctFrameContractsRequestData;
 import com.fntsoftware.businessgateway.entities.DuctFrameContractsResponseData;
+import com.fntsoftware.businessgateway.entities.DuctFromDeviceAllRequestData;
+import com.fntsoftware.businessgateway.entities.DuctFromDeviceAllResponseData;
 import com.fntsoftware.businessgateway.entities.DuctFromNodeRequestData;
 import com.fntsoftware.businessgateway.entities.DuctFromNodeResponseData;
+import com.fntsoftware.businessgateway.entities.DuctInheritedGeoCoordinatesRequest;
+import com.fntsoftware.businessgateway.entities.DuctInheritedGeoCoordinatesResponse;
 import com.fntsoftware.businessgateway.entities.DuctMaintenanceContractsRequestData;
 import com.fntsoftware.businessgateway.entities.DuctMaintenanceContractsResponseData;
 import com.fntsoftware.businessgateway.entities.DuctOrganizationsRequestData;
@@ -36,6 +40,8 @@ import com.fntsoftware.businessgateway.entities.DuctQueryRequest;
 import com.fntsoftware.businessgateway.entities.DuctQueryResponse;
 import com.fntsoftware.businessgateway.entities.DuctSystemAttributesRequest;
 import com.fntsoftware.businessgateway.entities.DuctSystemAttributesResponse;
+import com.fntsoftware.businessgateway.entities.DuctToDeviceAllRequestData;
+import com.fntsoftware.businessgateway.entities.DuctToDeviceAllResponseData;
 import com.fntsoftware.businessgateway.entities.DuctToNodeRequestData;
 import com.fntsoftware.businessgateway.entities.DuctToNodeResponseData;
 import com.fntsoftware.businessgateway.entities.LockReleaseDuctDuctRequestData;
@@ -51,7 +57,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-04T13:31:32.601557352Z[Etc/UTC]")
 public interface DuctApi extends ApiClient.Api {
 
 
@@ -853,6 +859,95 @@ public interface DuctApi extends ApiClient.Api {
   }
 
   /**
+   * Get relations to Device (all) entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return DuctFromDeviceAllResponseData
+   */
+  @RequestLine("POST /api/rest/entity/duct/{elid}/FromDeviceAll?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  DuctFromDeviceAllResponseData ductFromDeviceAll(@Param("sessionId") String sessionId, @Param("elid") String elid, DuctFromDeviceAllRequestData body);
+
+  /**
+   * Get relations to Device (all) entities
+   * Similar to <code>ductFromDeviceAll</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/duct/{elid}/FromDeviceAll?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<DuctFromDeviceAllResponseData> ductFromDeviceAllWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, DuctFromDeviceAllRequestData body);
+
+
+  /**
+   * Get relations to Device (all) entities
+   * 
+   * Note, this is equivalent to the other <code>ductFromDeviceAll</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link DuctFromDeviceAllQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return DuctFromDeviceAllResponseData
+   */
+  @RequestLine("POST /api/rest/entity/duct/{elid}/FromDeviceAll?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  DuctFromDeviceAllResponseData ductFromDeviceAll(@Param("elid") String elid, DuctFromDeviceAllRequestData body, @QueryMap(encoded=true) DuctFromDeviceAllQueryParams queryParams);
+
+  /**
+  * Get relations to Device (all) entities
+  * 
+  * Note, this is equivalent to the other <code>ductFromDeviceAll</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return DuctFromDeviceAllResponseData
+      */
+      @RequestLine("POST /api/rest/entity/duct/{elid}/FromDeviceAll?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<DuctFromDeviceAllResponseData> ductFromDeviceAllWithHttpInfo(@Param("elid") String elid, DuctFromDeviceAllRequestData body, @QueryMap(encoded=true) DuctFromDeviceAllQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>ductFromDeviceAll</code> method in a fluent style.
+   */
+  public static class DuctFromDeviceAllQueryParams extends HashMap<String, Object> {
+    public DuctFromDeviceAllQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Get relations to Node entities
    * 
    * @param sessionId Session-ID (required)
@@ -936,6 +1031,91 @@ public interface DuctApi extends ApiClient.Api {
    */
   public static class DuctFromNodeQueryParams extends HashMap<String, Object> {
     public DuctFromNodeQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Query inherited coordinates
+   * Query the own coordinates of an object or inherit them from parents
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return DuctInheritedGeoCoordinatesResponse
+   */
+  @RequestLine("POST /api/rest/entity/duct/inheritedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  DuctInheritedGeoCoordinatesResponse ductInheritedGeoCoordinates(@Param("sessionId") String sessionId, DuctInheritedGeoCoordinatesRequest body);
+
+  /**
+   * Query inherited coordinates
+   * Similar to <code>ductInheritedGeoCoordinates</code> but it also returns the http response headers .
+   * Query the own coordinates of an object or inherit them from parents
+   * @param sessionId Session-ID (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/duct/inheritedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<DuctInheritedGeoCoordinatesResponse> ductInheritedGeoCoordinatesWithHttpInfo(@Param("sessionId") String sessionId, DuctInheritedGeoCoordinatesRequest body);
+
+
+  /**
+   * Query inherited coordinates
+   * Query the own coordinates of an object or inherit them from parents
+   * Note, this is equivalent to the other <code>ductInheritedGeoCoordinates</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link DuctInheritedGeoCoordinatesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return DuctInheritedGeoCoordinatesResponse
+   */
+  @RequestLine("POST /api/rest/entity/duct/inheritedGeoCoordinates?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  DuctInheritedGeoCoordinatesResponse ductInheritedGeoCoordinates(DuctInheritedGeoCoordinatesRequest body, @QueryMap(encoded=true) DuctInheritedGeoCoordinatesQueryParams queryParams);
+
+  /**
+  * Query inherited coordinates
+  * Query the own coordinates of an object or inherit them from parents
+  * Note, this is equivalent to the other <code>ductInheritedGeoCoordinates</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return DuctInheritedGeoCoordinatesResponse
+      */
+      @RequestLine("POST /api/rest/entity/duct/inheritedGeoCoordinates?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<DuctInheritedGeoCoordinatesResponse> ductInheritedGeoCoordinatesWithHttpInfo(DuctInheritedGeoCoordinatesRequest body, @QueryMap(encoded=true) DuctInheritedGeoCoordinatesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>ductInheritedGeoCoordinates</code> method in a fluent style.
+   */
+  public static class DuctInheritedGeoCoordinatesQueryParams extends HashMap<String, Object> {
+    public DuctInheritedGeoCoordinatesQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -1466,6 +1646,95 @@ public interface DuctApi extends ApiClient.Api {
    */
   public static class DuctSystemAttributesQueryParams extends HashMap<String, Object> {
     public DuctSystemAttributesQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Device (all) entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return DuctToDeviceAllResponseData
+   */
+  @RequestLine("POST /api/rest/entity/duct/{elid}/ToDeviceAll?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  DuctToDeviceAllResponseData ductToDeviceAll(@Param("sessionId") String sessionId, @Param("elid") String elid, DuctToDeviceAllRequestData body);
+
+  /**
+   * Get relations to Device (all) entities
+   * Similar to <code>ductToDeviceAll</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/duct/{elid}/ToDeviceAll?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<DuctToDeviceAllResponseData> ductToDeviceAllWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, DuctToDeviceAllRequestData body);
+
+
+  /**
+   * Get relations to Device (all) entities
+   * 
+   * Note, this is equivalent to the other <code>ductToDeviceAll</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link DuctToDeviceAllQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return DuctToDeviceAllResponseData
+   */
+  @RequestLine("POST /api/rest/entity/duct/{elid}/ToDeviceAll?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  DuctToDeviceAllResponseData ductToDeviceAll(@Param("elid") String elid, DuctToDeviceAllRequestData body, @QueryMap(encoded=true) DuctToDeviceAllQueryParams queryParams);
+
+  /**
+  * Get relations to Device (all) entities
+  * 
+  * Note, this is equivalent to the other <code>ductToDeviceAll</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return DuctToDeviceAllResponseData
+      */
+      @RequestLine("POST /api/rest/entity/duct/{elid}/ToDeviceAll?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<DuctToDeviceAllResponseData> ductToDeviceAllWithHttpInfo(@Param("elid") String elid, DuctToDeviceAllRequestData body, @QueryMap(encoded=true) DuctToDeviceAllQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>ductToDeviceAll</code> method in a fluent style.
+   */
+  public static class DuctToDeviceAllQueryParams extends HashMap<String, Object> {
+    public DuctToDeviceAllQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

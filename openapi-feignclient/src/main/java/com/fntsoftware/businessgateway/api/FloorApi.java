@@ -10,6 +10,8 @@ import com.fntsoftware.businessgateway.entities.CreateFloorRequestData;
 import com.fntsoftware.businessgateway.entities.CreateFloorResponse;
 import com.fntsoftware.businessgateway.entities.DeleteFloorRequestData;
 import com.fntsoftware.businessgateway.entities.DeleteFloorResponse;
+import com.fntsoftware.businessgateway.entities.FloorAttachmentsRequestData;
+import com.fntsoftware.businessgateway.entities.FloorAttachmentsResponseData;
 import com.fntsoftware.businessgateway.entities.FloorBuildingRequestData;
 import com.fntsoftware.businessgateway.entities.FloorBuildingResponseData;
 import com.fntsoftware.businessgateway.entities.FloorContractsRequestData;
@@ -26,10 +28,14 @@ import com.fntsoftware.businessgateway.entities.FloorPersonGroupsRequestData;
 import com.fntsoftware.businessgateway.entities.FloorPersonGroupsResponseData;
 import com.fntsoftware.businessgateway.entities.FloorPersonsRequestData;
 import com.fntsoftware.businessgateway.entities.FloorPersonsResponseData;
+import com.fntsoftware.businessgateway.entities.FloorPostalAddressesRequestData;
+import com.fntsoftware.businessgateway.entities.FloorPostalAddressesResponseData;
 import com.fntsoftware.businessgateway.entities.FloorQueryRequest;
 import com.fntsoftware.businessgateway.entities.FloorQueryResponse;
 import com.fntsoftware.businessgateway.entities.FloorRoomsRequestData;
 import com.fntsoftware.businessgateway.entities.FloorRoomsResponseData;
+import com.fntsoftware.businessgateway.entities.FloorSitesRequestData;
+import com.fntsoftware.businessgateway.entities.FloorSitesResponseData;
 import com.fntsoftware.businessgateway.entities.FloorSystemAttributesRequest;
 import com.fntsoftware.businessgateway.entities.FloorSystemAttributesResponse;
 import com.fntsoftware.businessgateway.entities.FloorTopzonesRequestData;
@@ -45,7 +51,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-04T13:31:32.601557352Z[Etc/UTC]")
 public interface FloorApi extends ApiClient.Api {
 
 
@@ -307,6 +313,95 @@ public interface FloorApi extends ApiClient.Api {
    */
   public static class DeleteFloorQueryParams extends HashMap<String, Object> {
     public DeleteFloorQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Attachments entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return FloorAttachmentsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/floor/{elid}/Attachments?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  FloorAttachmentsResponseData floorAttachments(@Param("sessionId") String sessionId, @Param("elid") String elid, FloorAttachmentsRequestData body);
+
+  /**
+   * Get relations to Attachments entities
+   * Similar to <code>floorAttachments</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/floor/{elid}/Attachments?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<FloorAttachmentsResponseData> floorAttachmentsWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, FloorAttachmentsRequestData body);
+
+
+  /**
+   * Get relations to Attachments entities
+   * 
+   * Note, this is equivalent to the other <code>floorAttachments</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link FloorAttachmentsQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return FloorAttachmentsResponseData
+   */
+  @RequestLine("POST /api/rest/entity/floor/{elid}/Attachments?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  FloorAttachmentsResponseData floorAttachments(@Param("elid") String elid, FloorAttachmentsRequestData body, @QueryMap(encoded=true) FloorAttachmentsQueryParams queryParams);
+
+  /**
+  * Get relations to Attachments entities
+  * 
+  * Note, this is equivalent to the other <code>floorAttachments</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return FloorAttachmentsResponseData
+      */
+      @RequestLine("POST /api/rest/entity/floor/{elid}/Attachments?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<FloorAttachmentsResponseData> floorAttachmentsWithHttpInfo(@Param("elid") String elid, FloorAttachmentsRequestData body, @QueryMap(encoded=true) FloorAttachmentsQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>floorAttachments</code> method in a fluent style.
+   */
+  public static class FloorAttachmentsQueryParams extends HashMap<String, Object> {
+    public FloorAttachmentsQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
@@ -1025,6 +1120,95 @@ public interface FloorApi extends ApiClient.Api {
   }
 
   /**
+   * Get relations to Postal address entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return FloorPostalAddressesResponseData
+   */
+  @RequestLine("POST /api/rest/entity/floor/{elid}/PostalAddresses?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  FloorPostalAddressesResponseData floorPostalAddresses(@Param("sessionId") String sessionId, @Param("elid") String elid, FloorPostalAddressesRequestData body);
+
+  /**
+   * Get relations to Postal address entities
+   * Similar to <code>floorPostalAddresses</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/floor/{elid}/PostalAddresses?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<FloorPostalAddressesResponseData> floorPostalAddressesWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, FloorPostalAddressesRequestData body);
+
+
+  /**
+   * Get relations to Postal address entities
+   * 
+   * Note, this is equivalent to the other <code>floorPostalAddresses</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link FloorPostalAddressesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return FloorPostalAddressesResponseData
+   */
+  @RequestLine("POST /api/rest/entity/floor/{elid}/PostalAddresses?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  FloorPostalAddressesResponseData floorPostalAddresses(@Param("elid") String elid, FloorPostalAddressesRequestData body, @QueryMap(encoded=true) FloorPostalAddressesQueryParams queryParams);
+
+  /**
+  * Get relations to Postal address entities
+  * 
+  * Note, this is equivalent to the other <code>floorPostalAddresses</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return FloorPostalAddressesResponseData
+      */
+      @RequestLine("POST /api/rest/entity/floor/{elid}/PostalAddresses?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<FloorPostalAddressesResponseData> floorPostalAddressesWithHttpInfo(@Param("elid") String elid, FloorPostalAddressesRequestData body, @QueryMap(encoded=true) FloorPostalAddressesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>floorPostalAddresses</code> method in a fluent style.
+   */
+  public static class FloorPostalAddressesQueryParams extends HashMap<String, Object> {
+    public FloorPostalAddressesQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
    * Basic query
    * Query for all basic target entity data
    * @param sessionId Session-ID (required)
@@ -1193,6 +1377,95 @@ public interface FloorApi extends ApiClient.Api {
    */
   public static class FloorRoomsQueryParams extends HashMap<String, Object> {
     public FloorRoomsQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Site entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return FloorSitesResponseData
+   */
+  @RequestLine("POST /api/rest/entity/floor/{elid}/Sites?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  FloorSitesResponseData floorSites(@Param("sessionId") String sessionId, @Param("elid") String elid, FloorSitesRequestData body);
+
+  /**
+   * Get relations to Site entities
+   * Similar to <code>floorSites</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/floor/{elid}/Sites?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<FloorSitesResponseData> floorSitesWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, FloorSitesRequestData body);
+
+
+  /**
+   * Get relations to Site entities
+   * 
+   * Note, this is equivalent to the other <code>floorSites</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link FloorSitesQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return FloorSitesResponseData
+   */
+  @RequestLine("POST /api/rest/entity/floor/{elid}/Sites?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  FloorSitesResponseData floorSites(@Param("elid") String elid, FloorSitesRequestData body, @QueryMap(encoded=true) FloorSitesQueryParams queryParams);
+
+  /**
+  * Get relations to Site entities
+  * 
+  * Note, this is equivalent to the other <code>floorSites</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return FloorSitesResponseData
+      */
+      @RequestLine("POST /api/rest/entity/floor/{elid}/Sites?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<FloorSitesResponseData> floorSitesWithHttpInfo(@Param("elid") String elid, FloorSitesRequestData body, @QueryMap(encoded=true) FloorSitesQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>floorSites</code> method in a fluent style.
+   */
+  public static class FloorSitesQueryParams extends HashMap<String, Object> {
+    public FloorSitesQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }

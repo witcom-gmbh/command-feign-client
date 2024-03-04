@@ -50,6 +50,10 @@ import com.fntsoftware.businessgateway.entities.ResourceGroupSoftwareInstancesWi
 import com.fntsoftware.businessgateway.entities.ResourceGroupSoftwareInstancesWindowsserviceResponseData;
 import com.fntsoftware.businessgateway.entities.ResourceGroupSystemAttributesRequest;
 import com.fntsoftware.businessgateway.entities.ResourceGroupSystemAttributesResponse;
+import com.fntsoftware.businessgateway.entities.ResourceGroupTenantRequestData;
+import com.fntsoftware.businessgateway.entities.ResourceGroupTenantResponseData;
+import com.fntsoftware.businessgateway.entities.ResourceGroupVirtualServersRequestData;
+import com.fntsoftware.businessgateway.entities.ResourceGroupVirtualServersResponseData;
 import com.fntsoftware.businessgateway.entities.UpdateResourceGroupRequestData;
 import com.fntsoftware.businessgateway.entities.UpdateResourceGroupResponse;
 import com.fntsoftware.businessgateway.entities.UpdateSystemAttributesResourceGroupRequestData;
@@ -61,7 +65,7 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-02-26T11:20:24.990023935Z[Etc/UTC]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-03-04T13:31:32.601557352Z[Etc/UTC]")
 public interface ResourceGroupApi extends ApiClient.Api {
 
 
@@ -2099,6 +2103,184 @@ public interface ResourceGroupApi extends ApiClient.Api {
    */
   public static class ResourceGroupSystemAttributesQueryParams extends HashMap<String, Object> {
     public ResourceGroupSystemAttributesQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Tenant entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return ResourceGroupTenantResponseData
+   */
+  @RequestLine("POST /api/rest/entity/resourceGroup/{elid}/Tenant?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ResourceGroupTenantResponseData resourceGroupTenant(@Param("sessionId") String sessionId, @Param("elid") String elid, ResourceGroupTenantRequestData body);
+
+  /**
+   * Get relations to Tenant entities
+   * Similar to <code>resourceGroupTenant</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/resourceGroup/{elid}/Tenant?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<ResourceGroupTenantResponseData> resourceGroupTenantWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ResourceGroupTenantRequestData body);
+
+
+  /**
+   * Get relations to Tenant entities
+   * 
+   * Note, this is equivalent to the other <code>resourceGroupTenant</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link ResourceGroupTenantQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return ResourceGroupTenantResponseData
+   */
+  @RequestLine("POST /api/rest/entity/resourceGroup/{elid}/Tenant?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  ResourceGroupTenantResponseData resourceGroupTenant(@Param("elid") String elid, ResourceGroupTenantRequestData body, @QueryMap(encoded=true) ResourceGroupTenantQueryParams queryParams);
+
+  /**
+  * Get relations to Tenant entities
+  * 
+  * Note, this is equivalent to the other <code>resourceGroupTenant</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return ResourceGroupTenantResponseData
+      */
+      @RequestLine("POST /api/rest/entity/resourceGroup/{elid}/Tenant?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<ResourceGroupTenantResponseData> resourceGroupTenantWithHttpInfo(@Param("elid") String elid, ResourceGroupTenantRequestData body, @QueryMap(encoded=true) ResourceGroupTenantQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>resourceGroupTenant</code> method in a fluent style.
+   */
+  public static class ResourceGroupTenantQueryParams extends HashMap<String, Object> {
+    public ResourceGroupTenantQueryParams sessionId(final String value) {
+      put("sessionId", EncodingUtils.encode(value));
+      return this;
+    }
+  }
+
+  /**
+   * Get relations to Virtual server entities
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return ResourceGroupVirtualServersResponseData
+   */
+  @RequestLine("POST /api/rest/entity/resourceGroup/{elid}/VirtualServers?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ResourceGroupVirtualServersResponseData resourceGroupVirtualServers(@Param("sessionId") String sessionId, @Param("elid") String elid, ResourceGroupVirtualServersRequestData body);
+
+  /**
+   * Get relations to Virtual server entities
+   * Similar to <code>resourceGroupVirtualServers</code> but it also returns the http response headers .
+   * 
+   * @param sessionId Session-ID (required)
+   * @param elid  (required)
+   * @param body  (required)
+   * @return A ApiResponse that wraps the response boyd and the http headers.
+   */
+  @RequestLine("POST /api/rest/entity/resourceGroup/{elid}/VirtualServers?sessionId={sessionId}")
+  @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+  })
+  ApiResponse<ResourceGroupVirtualServersResponseData> resourceGroupVirtualServersWithHttpInfo(@Param("sessionId") String sessionId, @Param("elid") String elid, ResourceGroupVirtualServersRequestData body);
+
+
+  /**
+   * Get relations to Virtual server entities
+   * 
+   * Note, this is equivalent to the other <code>resourceGroupVirtualServers</code> method,
+   * but with the query parameters collected into a single Map parameter. This
+   * is convenient for services with optional query parameters, especially when
+   * used with the {@link ResourceGroupVirtualServersQueryParams} class that allows for
+   * building up this map in a fluent style.
+   * @param elid  (required)
+   * @param body  (required)
+   * @param queryParams Map of query parameters as name-value pairs
+   *   <p>The following elements may be specified in the query map:</p>
+   *   <ul>
+   *   <li>sessionId - Session-ID (required)</li>
+   *   </ul>
+   * @return ResourceGroupVirtualServersResponseData
+   */
+  @RequestLine("POST /api/rest/entity/resourceGroup/{elid}/VirtualServers?sessionId={sessionId}")
+  @Headers({
+  "Content-Type: application/json",
+  "Accept: application/json",
+  })
+  ResourceGroupVirtualServersResponseData resourceGroupVirtualServers(@Param("elid") String elid, ResourceGroupVirtualServersRequestData body, @QueryMap(encoded=true) ResourceGroupVirtualServersQueryParams queryParams);
+
+  /**
+  * Get relations to Virtual server entities
+  * 
+  * Note, this is equivalent to the other <code>resourceGroupVirtualServers</code> that receives the query parameters as a map,
+  * but this one also exposes the Http response headers
+              * @param elid  (required)
+              * @param body  (required)
+      * @param queryParams Map of query parameters as name-value pairs
+      *   <p>The following elements may be specified in the query map:</p>
+      *   <ul>
+          *   <li>sessionId - Session-ID (required)</li>
+      *   </ul>
+          * @return ResourceGroupVirtualServersResponseData
+      */
+      @RequestLine("POST /api/rest/entity/resourceGroup/{elid}/VirtualServers?sessionId={sessionId}")
+      @Headers({
+    "Content-Type: application/json",
+    "Accept: application/json",
+      })
+   ApiResponse<ResourceGroupVirtualServersResponseData> resourceGroupVirtualServersWithHttpInfo(@Param("elid") String elid, ResourceGroupVirtualServersRequestData body, @QueryMap(encoded=true) ResourceGroupVirtualServersQueryParams queryParams);
+
+
+   /**
+   * A convenience class for generating query parameters for the
+   * <code>resourceGroupVirtualServers</code> method in a fluent style.
+   */
+  public static class ResourceGroupVirtualServersQueryParams extends HashMap<String, Object> {
+    public ResourceGroupVirtualServersQueryParams sessionId(final String value) {
       put("sessionId", EncodingUtils.encode(value));
       return this;
     }
