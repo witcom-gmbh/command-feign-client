@@ -2,6 +2,16 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v2.1.0 - 2024-03-05
+#### Documentation
+- Corrects typos in README - (edb1434) - iceman91176
+#### Features
+- Bump again for Command Version 1006152-master-20240221-16  - (04391c1) - iceman91176
+- Really bump to Command Version 1006152-master-20240221-16  - (bb4dc01) - iceman91176
+- Bump to Command Version 1006152-master-20240221-16 - (31f28a8) - iceman91176
+
+- - -
+
 ## v2.0.0 - 2024-02-01
 #### Documentation
 - Updates docs - (2274445) - iceman91176
