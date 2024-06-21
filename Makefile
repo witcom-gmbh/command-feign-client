@@ -21,7 +21,7 @@ specs/command-openapi.json: tools/bge2swagger.jar tools/openapi-generator-cli.ja
 	cat /tmp/out/openapi.json | jq '.info.version = "$(API_VERSION)"' > ./specs/command-openapi.json
 
 build: specs/command-openapi.json
-	mvn package
+	mvn -Pgenerate-client package
 
 deploy: specs/command-openapi.json
-	mvn deploy
+	mvn -Pgenerate-client deploy

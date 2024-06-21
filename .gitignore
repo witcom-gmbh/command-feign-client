@@ -108,3 +108,4 @@ local.properties
 .vscode/settings.json
 src/main/resources/openapi/bge.yml
 .devcontainer/.env
+openapi-feignclient/**

@@ -92,7 +92,7 @@ steps:
     - name: cache
       path: /drone/cache
     commands:
-    - mvn -P \!clean-build deploy -DskipTests=true -B -Dmaven.repo.local=/drone/cache -gs settings.xml
+    - mvn -Pgenerate-client deploy -DskipTests=true -B -Dmaven.repo.local=/drone/cache -gs settings.xml
     when:
       event:
       - tag
@@ -107,7 +107,7 @@ steps:
     - name: cache
       path: /drone/cache
     commands:
-    - mvn -P \!clean-build deploy -DskipTests=true -B -Dmaven.repo.local=/drone/cache -gs settings.xml
+    - mvn -Pgenerate-client deploy -DskipTests=true -B -Dmaven.repo.local=/drone/cache -gs settings.xml
     when:
       event:
         exclude:
