@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v2.1.2 - 2024-06-21
+#### Improvements
+- Makes build more stable  - (4edb1e7) - iceman91176
+
+- - -
+
 ## v2.1.1 - 2024-06-21
 #### Improvements
 - Integrate entity-changes for ip-access-service - (b959e9d) - iceman91176
