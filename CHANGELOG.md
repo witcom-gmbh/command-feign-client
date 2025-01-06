@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v2.2.1 - 2025-01-06
+#### Improvements
+- Adds ip-interface / patchpoint relation - (495f761) - iceman91176
+
+- - -
+
 ## v2.2.0 - 2024-11-29
 #### Features
 - Adds custom patchpoint entity - (f64e63e) - iceman91176
