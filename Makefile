@@ -1,10 +1,13 @@
 OPENAPI_GENERATOR_RELEASE	?= 7.2.0
 BGE2SWAGGER_RELEASE			?= 2.0.0
 API_VERSION					?= $(shell date '+%Y%m%d%H%M%S')
+ENTITY_LIST					?= bearer,building,campus,chassis,configurationData,configurationDataAttributeSet,configurationDataConfiguration,configurationDataLayer,custom.ipaccessSvc,custom.patchpoint,custom.postalAddress,custom.colocation,deviceAll,deviceMasterDevice,floor,interface,ipv4Address,ipv4Network,ipv6Address,ipv6Network,logicalPort,organization,person,physicalPortData,room,scrollQuery,server,serviceSam,serviceTelco,serviceTelcoPath,serviceTelcoUnroutedMultipoint,serviceTelcoUnroutedPath,serviceTypeDefinition,signalTrace,signalPath,switchCabinet,virtualServer,zone,easysearch,login
+
 all: clean deploy
 
 clean:
 	rm -f ./specs/command-openapi.json
+	rm -rf openapi-feignclient/src
 
 tools/bge2swagger.jar:
 	@echo "Installing bge2swagger"
@@ -16,7 +19,7 @@ tools/openapi-generator-cli.jar:
 
 specs/command-openapi.json: tools/bge2swagger.jar tools/openapi-generator-cli.jar
 	@echo "Generate basic specs from ${CMD_BASE_URL}"
-	GENERATOR_OUTPUT="/tmp/command-swagger.json" java -jar tools/bge2swagger.jar
+	GENERATOR_OUTPUT="/tmp/command-swagger.json" ENTITY_LIST="$(ENTITY_LIST)" java -jar tools/bge2swagger.jar
 	java -jar ./tools/openapi-generator-cli.jar generate -g openapi -o /tmp/out -i /tmp/command-swagger.json
 	cat /tmp/out/openapi.json | jq '.info.version = "$(API_VERSION)"' > ./specs/command-openapi.json
 
