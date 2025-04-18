@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v3.0.0 - 2025-04-18
+#### Improvements
+- Reduces the size of the client - (645a7a6) - iceman91176
+
+- - -
+
 ## v2.3.0 - 2025-04-17
 #### Features
 - Adds colocation-resource entity - (cde75c8) - iceman91176
