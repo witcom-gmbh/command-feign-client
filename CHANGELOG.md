@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v3.1.1 - 2025-05-22
+#### Improvements
+- Adds patchpoint-improvements - (3ea6968) - iceman91176
+
+- - -
+
 ## v3.1.0 - 2025-04-25
 #### Features
 - Bump to command 14.2.1 - (9eaa2ac) - iceman91176
