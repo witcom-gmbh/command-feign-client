@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v3.1.2 - 2025-06-15
+#### Improvements
+- Removes deprecated custom virtualization entities - (be5051d) - iceman91176
+
+- - -
+
 ## v3.1.1 - 2025-05-22
 #### Improvements
 - Adds patchpoint-improvements - (3ea6968) - iceman91176
