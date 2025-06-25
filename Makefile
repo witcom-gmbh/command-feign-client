@@ -1,7 +1,7 @@
 OPENAPI_GENERATOR_RELEASE	?= 7.2.0
 BGE2SWAGGER_RELEASE			?= 2.1.0
 API_VERSION					?= $(shell date '+%Y%m%d%H%M%S')
-ENTITY_LIST					?= bearer,building,campus,chassis,configurationData,configurationDataAttributeSet,configurationDataConfiguration,configurationDataLayer,custom.ipaccessSvc,custom.patchpoint,custom.postalAddress,custom.colocation,deviceAll,deviceMasterDevice,floor,interface,ipv4Address,ipv4Network,ipv6Address,ipv6Network,logicalPort,organization,person,physicalPortData,room,scrollQuery,server,serviceSam,serviceTelco,serviceTelcoPath,serviceTelcoUnroutedMultipoint,serviceTelcoUnroutedPath,serviceTypeDefinition,signalTrace,signalPath,switchCabinet,virtualServer,zone,easysearch,login
+ENTITY_LIST					?= bearer,building,campus,chassis,configurationData,configurationDataAttributeSet,configurationDataConfiguration,configurationDataLayer,contract,custom.ipaccessSvc,custom.patchpoint,custom.postalAddress,custom.colocation,custom.tcoInterconnect,deviceAll,deviceMasterDevice,floor,interface,ipv4Address,ipv4Network,ipv6Address,ipv6Network,logicalPort,organization,person,physicalPortData,room,scrollQuery,server,serviceSam,serviceTelco,serviceTelcoPath,serviceTelcoUnroutedMultipoint,serviceTelcoUnroutedPath,serviceTypeDefinition,signalTrace,signalPath,switchCabinet,virtualServer,zone,easysearch,login
 
 all: clean deploy
 
