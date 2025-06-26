@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v3.1.3 - 2025-06-26
+#### Improvements
+- Adds contract and tcoInterconnect APIs - (3ca6085) - iceman91176
+
+- - -
+
 ## v3.1.2 - 2025-06-15
 #### Improvements
 - Removes deprecated custom virtualization entities - (be5051d) - iceman91176
