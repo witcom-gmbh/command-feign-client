@@ -47,8 +47,8 @@
 			"xqVersion": "none",
 			"jaqVersion": "none"
 		},
-		"ghcr.io/devcontainers-contrib/features/age:1": {"version": "v1.1.1"},
-		"ghcr.io/devcontainers-contrib/features/age-keygen:1": {"version": "v1.1.1"},
+		"ghcr.io/devcontainers-extra/features/age:1": {"version": "v1.1.1"},
+		// "ghcr.io/devcontainers-contrib/features/age-keygen:1": {"version": "v1.1.1"},
 		"ghcr.io/rio/features/chezmoi:1": {},
 		"ghcr.io/witcom-gmbh/devcontainer-features/cocogitto:latest": {},
 		"ghcr.io/devcontainers/features/java:1": {
