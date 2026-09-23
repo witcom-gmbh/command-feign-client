@@ -3,7 +3,7 @@
   "info": {
     "description": "Swagger API for FNT Command Business Gateway",
     "title": "Swagger for Command BGE",
-    "version": "20250705181721"
+    "version": "20260923180917"
   },
   "servers": [
     {
@@ -47868,6 +47868,10 @@
         },
         "type": "array"
       },
+      "accYesNo": {
+        "title": "accYesNo",
+        "type": "string"
+      },
       "UpdateVirtualServerCreateLinkFailoverClusterRequestData": {
         "properties": {
           "linkedElid": {
@@ -48506,6 +48510,9 @@
           "circuit": {
             "type": "string"
           },
+          "cRunbookUrl": {
+            "type": "string"
+          },
           "floorElid": {
             "type": "string"
           },
@@ -48591,6 +48598,9 @@
           "maxPower": {
             "format": "BigDecimal",
             "type": "number"
+          },
+          "cStandardMaintenance": {
+            "$ref": "#/components/schemas/accYesNo"
           },
           "consoleConnection": {
             "type": "string"
@@ -49525,6 +49535,9 @@
           "circuit": {
             "$ref": "#/components/schemas/RestrictionsString"
           },
+          "cRunbookUrl": {
+            "$ref": "#/components/schemas/RestrictionsString"
+          },
           "systemRuntime": {
             "$ref": "#/components/schemas/RestrictionsNumeric"
           },
@@ -49572,6 +49585,9 @@
           },
           "maxPower": {
             "$ref": "#/components/schemas/RestrictionsNumeric"
+          },
+          "cStandardMaintenance": {
+            "$ref": "#/components/schemas/RestrictionsString"
           },
           "consoleConnection": {
             "$ref": "#/components/schemas/RestrictionsString"
@@ -54412,6 +54428,9 @@
           "lifecycleStatusDate": {
             "$ref": "#/components/schemas/RestrictionsDate"
           },
+          "cRunbookUrl": {
+            "$ref": "#/components/schemas/RestrictionsString"
+          },
           "lifecycleStatus": {
             "$ref": "#/components/schemas/RestrictionsString"
           },
@@ -54485,6 +54504,9 @@
             "$ref": "#/components/schemas/RestrictionsString"
           },
           "visibleId": {
+            "$ref": "#/components/schemas/RestrictionsString"
+          },
+          "cStandardMaintenance": {
             "$ref": "#/components/schemas/RestrictionsString"
           },
           "virtualMachineType": {
@@ -56634,6 +56656,9 @@
           "lifecycleStatusDate": {
             "$ref": "#/components/schemas/RestrictionsDate"
           },
+          "cRunbookUrl": {
+            "$ref": "#/components/schemas/RestrictionsString"
+          },
           "lifecycleStatus": {
             "$ref": "#/components/schemas/RestrictionsString"
           },
@@ -56707,6 +56732,9 @@
             "$ref": "#/components/schemas/RestrictionsString"
           },
           "visibleId": {
+            "$ref": "#/components/schemas/RestrictionsString"
+          },
+          "cStandardMaintenance": {
             "$ref": "#/components/schemas/RestrictionsString"
           },
           "virtualMachineType": {
@@ -57498,6 +57526,9 @@
           "circuit": {
             "type": "string"
           },
+          "cRunbookUrl": {
+            "type": "string"
+          },
           "sourceSystem": {
             "$ref": "#/components/schemas/sysSourceSystem"
           },
@@ -57557,6 +57588,9 @@
           "maxPower": {
             "format": "BigDecimal",
             "type": "number"
+          },
+          "cStandardMaintenance": {
+            "$ref": "#/components/schemas/accYesNo"
           },
           "consoleConnection": {
             "type": "string"
@@ -64644,6 +64678,9 @@
           "sourceId": {
             "type": "string"
           },
+          "cRunbookUrl": {
+            "type": "string"
+          },
           "lifecycleStatus": {
             "$ref": "#/components/schemas/srmLifecycleStatus"
           },
@@ -64723,6 +64760,9 @@
           },
           "visibleId": {
             "type": "string"
+          },
+          "cStandardMaintenance": {
+            "$ref": "#/components/schemas/accYesNo"
           },
           "virtualMachineType": {
             "$ref": "#/components/schemas/srmVirtMachineType"
@@ -67183,6 +67223,9 @@
           "circuit": {
             "type": "string"
           },
+          "cRunbookUrl": {
+            "type": "string"
+          },
           "sourceSystem": {
             "$ref": "#/components/schemas/sysSourceSystem"
           },
@@ -67259,6 +67302,9 @@
           "maxPower": {
             "format": "BigDecimal",
             "type": "number"
+          },
+          "cStandardMaintenance": {
+            "$ref": "#/components/schemas/accYesNo"
           },
           "consoleConnection": {
             "type": "string"
@@ -67660,6 +67706,9 @@
           "sourceId": {
             "type": "string"
           },
+          "cRunbookUrl": {
+            "type": "string"
+          },
           "lifecycleStatus": {
             "$ref": "#/components/schemas/srmLifecycleStatus"
           },
@@ -67742,6 +67791,9 @@
           },
           "visibleId": {
             "type": "string"
+          },
+          "cStandardMaintenance": {
+            "$ref": "#/components/schemas/accYesNo"
           },
           "virtualMachineType": {
             "$ref": "#/components/schemas/srmVirtMachineType"
@@ -75520,6 +75572,9 @@
           "circuit": {
             "type": "string"
           },
+          "cRunbookUrl": {
+            "type": "string"
+          },
           "lifecycleStatus": {
             "$ref": "#/components/schemas/srmLifecycleStatus"
           },
@@ -75635,6 +75690,9 @@
           "maxPower": {
             "format": "BigDecimal",
             "type": "number"
+          },
+          "cStandardMaintenance": {
+            "$ref": "#/components/schemas/accYesNo"
           },
           "consoleConnection": {
             "type": "string"
@@ -85428,6 +85486,9 @@
           "circuit": {
             "type": "string"
           },
+          "cRunbookUrl": {
+            "type": "string"
+          },
           "lifecycleStatus": {
             "$ref": "#/components/schemas/srmLifecycleStatus"
           },
@@ -85543,6 +85604,9 @@
           "maxPower": {
             "format": "BigDecimal",
             "type": "number"
+          },
+          "cStandardMaintenance": {
+            "$ref": "#/components/schemas/accYesNo"
           },
           "consoleConnection": {
             "type": "string"
@@ -86541,6 +86605,9 @@
           "circuit": {
             "type": "string"
           },
+          "cRunbookUrl": {
+            "type": "string"
+          },
           "floorElid": {
             "type": "string"
           },
@@ -86613,6 +86680,9 @@
           "maxPower": {
             "format": "BigDecimal",
             "type": "number"
+          },
+          "cStandardMaintenance": {
+            "$ref": "#/components/schemas/accYesNo"
           },
           "consoleConnection": {
             "type": "string"
@@ -86771,6 +86841,9 @@
           "sourceId": {
             "$ref": "#/components/schemas/RestrictionsString"
           },
+          "cRunbookUrl": {
+            "$ref": "#/components/schemas/RestrictionsString"
+          },
           "lifecycleStatus": {
             "$ref": "#/components/schemas/RestrictionsString"
           },
@@ -86847,6 +86920,9 @@
             "$ref": "#/components/schemas/RestrictionsString"
           },
           "visibleId": {
+            "$ref": "#/components/schemas/RestrictionsString"
+          },
+          "cStandardMaintenance": {
             "$ref": "#/components/schemas/RestrictionsString"
           },
           "first": {
@@ -91879,6 +91955,9 @@
           "circuit": {
             "type": "string"
           },
+          "cRunbookUrl": {
+            "type": "string"
+          },
           "sourceSystem": {
             "$ref": "#/components/schemas/sysSourceSystem"
           },
@@ -91938,6 +92017,9 @@
           "maxPower": {
             "format": "BigDecimal",
             "type": "number"
+          },
+          "cStandardMaintenance": {
+            "$ref": "#/components/schemas/accYesNo"
           },
           "consoleConnection": {
             "type": "string"
@@ -101825,6 +101907,9 @@
           "circuit": {
             "$ref": "#/components/schemas/RestrictionsString"
           },
+          "cRunbookUrl": {
+            "$ref": "#/components/schemas/RestrictionsString"
+          },
           "systemRuntime": {
             "$ref": "#/components/schemas/RestrictionsNumeric"
           },
@@ -101872,6 +101957,9 @@
           },
           "maxPower": {
             "$ref": "#/components/schemas/RestrictionsNumeric"
+          },
+          "cStandardMaintenance": {
+            "$ref": "#/components/schemas/RestrictionsString"
           },
           "consoleConnection": {
             "$ref": "#/components/schemas/RestrictionsString"
@@ -105964,6 +106052,9 @@
           "circuit": {
             "$ref": "#/components/schemas/RestrictionsString"
           },
+          "cRunbookUrl": {
+            "$ref": "#/components/schemas/RestrictionsString"
+          },
           "systemRuntime": {
             "$ref": "#/components/schemas/RestrictionsNumeric"
           },
@@ -106011,6 +106102,9 @@
           },
           "maxPower": {
             "$ref": "#/components/schemas/RestrictionsNumeric"
+          },
+          "cStandardMaintenance": {
+            "$ref": "#/components/schemas/RestrictionsString"
           },
           "consoleConnection": {
             "$ref": "#/components/schemas/RestrictionsString"
@@ -108444,6 +108538,9 @@
           "circuit": {
             "type": "string"
           },
+          "cRunbookUrl": {
+            "type": "string"
+          },
           "sourceSystem": {
             "$ref": "#/components/schemas/sysSourceSystem"
           },
@@ -108503,6 +108600,9 @@
           "maxPower": {
             "format": "BigDecimal",
             "type": "number"
+          },
+          "cStandardMaintenance": {
+            "$ref": "#/components/schemas/accYesNo"
           },
           "consoleConnection": {
             "type": "string"
@@ -108752,6 +108852,9 @@
           "circuit": {
             "type": "string"
           },
+          "cRunbookUrl": {
+            "type": "string"
+          },
           "systemRuntime": {
             "format": "BigDecimal",
             "type": "number"
@@ -108805,6 +108908,9 @@
           "maxPower": {
             "format": "BigDecimal",
             "type": "number"
+          },
+          "cStandardMaintenance": {
+            "$ref": "#/components/schemas/accYesNo"
           },
           "consoleConnection": {
             "type": "string"
@@ -110286,6 +110392,9 @@
           "circuit": {
             "$ref": "#/components/schemas/RestrictionsString"
           },
+          "cRunbookUrl": {
+            "$ref": "#/components/schemas/RestrictionsString"
+          },
           "floorElid": {
             "$ref": "#/components/schemas/RestrictionsString"
           },
@@ -110360,6 +110469,9 @@
           },
           "maxPower": {
             "$ref": "#/components/schemas/RestrictionsNumeric"
+          },
+          "cStandardMaintenance": {
+            "$ref": "#/components/schemas/RestrictionsString"
           },
           "consoleConnection": {
             "$ref": "#/components/schemas/RestrictionsString"
@@ -111282,6 +111394,9 @@
           "circuit": {
             "$ref": "#/components/schemas/RestrictionsString"
           },
+          "cRunbookUrl": {
+            "$ref": "#/components/schemas/RestrictionsString"
+          },
           "lifecycleStatus": {
             "$ref": "#/components/schemas/RestrictionsString"
           },
@@ -111386,6 +111501,9 @@
           },
           "maxPower": {
             "$ref": "#/components/schemas/RestrictionsNumeric"
+          },
+          "cStandardMaintenance": {
+            "$ref": "#/components/schemas/RestrictionsString"
           },
           "consoleConnection": {
             "$ref": "#/components/schemas/RestrictionsString"
@@ -112518,6 +112636,9 @@
           "lifecycleStatusDate": {
             "$ref": "#/components/schemas/RestrictionsDate"
           },
+          "cRunbookUrl": {
+            "$ref": "#/components/schemas/RestrictionsString"
+          },
           "lifecycleStatus": {
             "$ref": "#/components/schemas/RestrictionsString"
           },
@@ -112591,6 +112712,9 @@
             "$ref": "#/components/schemas/RestrictionsString"
           },
           "visibleId": {
+            "$ref": "#/components/schemas/RestrictionsString"
+          },
+          "cStandardMaintenance": {
             "$ref": "#/components/schemas/RestrictionsString"
           },
           "virtualMachineType": {
@@ -120656,6 +120780,9 @@
           "sourceId": {
             "type": "string"
           },
+          "cRunbookUrl": {
+            "type": "string"
+          },
           "lifecycleStatus": {
             "$ref": "#/components/schemas/srmLifecycleStatus"
           },
@@ -120732,6 +120859,9 @@
           },
           "visibleId": {
             "type": "string"
+          },
+          "cStandardMaintenance": {
+            "$ref": "#/components/schemas/accYesNo"
           },
           "virtualMachineType": {
             "$ref": "#/components/schemas/srmVirtMachineType"
@@ -123299,6 +123429,9 @@
           "attributePowerConsumptionSpc": {
             "$ref": "#/components/schemas/RestrictionsNumeric"
           },
+          "attributeCRunbookUrl": {
+            "$ref": "#/components/schemas/RestrictionsString"
+          },
           "attributeSystemRuntime": {
             "$ref": "#/components/schemas/RestrictionsNumeric"
           },
@@ -123379,6 +123512,9 @@
           },
           "attributeDeconstructionDate": {
             "$ref": "#/components/schemas/RestrictionsDate"
+          },
+          "attributeCStandardMaintenance": {
+            "$ref": "#/components/schemas/RestrictionsString"
           },
           "attributeServiceAgency": {
             "$ref": "#/components/schemas/RestrictionsString"
@@ -124236,6 +124372,9 @@
           "lifecycleStatusDate": {
             "$ref": "#/components/schemas/RestrictionsDate"
           },
+          "cRunbookUrl": {
+            "$ref": "#/components/schemas/RestrictionsString"
+          },
           "lifecycleStatus": {
             "$ref": "#/components/schemas/RestrictionsString"
           },
@@ -124309,6 +124448,9 @@
             "$ref": "#/components/schemas/RestrictionsString"
           },
           "visibleId": {
+            "$ref": "#/components/schemas/RestrictionsString"
+          },
+          "cStandardMaintenance": {
             "$ref": "#/components/schemas/RestrictionsString"
           },
           "virtualMachineType": {
@@ -127892,6 +128034,9 @@
           "circuit": {
             "$ref": "#/components/schemas/RestrictionsString"
           },
+          "cRunbookUrl": {
+            "$ref": "#/components/schemas/RestrictionsString"
+          },
           "sourceSystem": {
             "$ref": "#/components/schemas/RestrictionsString"
           },
@@ -127957,6 +128102,9 @@
           },
           "maxPower": {
             "$ref": "#/components/schemas/RestrictionsNumeric"
+          },
+          "cStandardMaintenance": {
+            "$ref": "#/components/schemas/RestrictionsString"
           },
           "consoleConnection": {
             "$ref": "#/components/schemas/RestrictionsString"
@@ -128651,6 +128799,9 @@
           "circuit": {
             "type": "string"
           },
+          "cRunbookUrl": {
+            "type": "string"
+          },
           "sourceSystem": {
             "$ref": "#/components/schemas/sysSourceSystem"
           },
@@ -128707,6 +128858,9 @@
           "maxPower": {
             "format": "BigDecimal",
             "type": "number"
+          },
+          "cStandardMaintenance": {
+            "$ref": "#/components/schemas/accYesNo"
           },
           "consoleConnection": {
             "type": "string"
@@ -130274,6 +130428,9 @@
           "circuit": {
             "type": "string"
           },
+          "cRunbookUrl": {
+            "type": "string"
+          },
           "floorElid": {
             "type": "string"
           },
@@ -130359,6 +130516,9 @@
           "maxPower": {
             "format": "BigDecimal",
             "type": "number"
+          },
+          "cStandardMaintenance": {
+            "$ref": "#/components/schemas/accYesNo"
           },
           "consoleConnection": {
             "type": "string"
@@ -143801,6 +143961,9 @@
           "circuit": {
             "$ref": "#/components/schemas/RestrictionsString"
           },
+          "cRunbookUrl": {
+            "$ref": "#/components/schemas/RestrictionsString"
+          },
           "systemRuntime": {
             "$ref": "#/components/schemas/RestrictionsNumeric"
           },
@@ -143848,6 +144011,9 @@
           },
           "maxPower": {
             "$ref": "#/components/schemas/RestrictionsNumeric"
+          },
+          "cStandardMaintenance": {
+            "$ref": "#/components/schemas/RestrictionsString"
           },
           "consoleConnection": {
             "$ref": "#/components/schemas/RestrictionsString"
@@ -144128,6 +144294,9 @@
           "circuit": {
             "$ref": "#/components/schemas/RestrictionsString"
           },
+          "cRunbookUrl": {
+            "$ref": "#/components/schemas/RestrictionsString"
+          },
           "lifecycleStatus": {
             "$ref": "#/components/schemas/RestrictionsString"
           },
@@ -144232,6 +144401,9 @@
           },
           "maxPower": {
             "$ref": "#/components/schemas/RestrictionsNumeric"
+          },
+          "cStandardMaintenance": {
+            "$ref": "#/components/schemas/RestrictionsString"
           },
           "consoleConnection": {
             "$ref": "#/components/schemas/RestrictionsString"
@@ -149526,6 +149698,9 @@
           "circuit": {
             "type": "string"
           },
+          "cRunbookUrl": {
+            "type": "string"
+          },
           "systemRuntime": {
             "format": "BigDecimal",
             "type": "number"
@@ -149579,6 +149754,9 @@
           "maxPower": {
             "format": "BigDecimal",
             "type": "number"
+          },
+          "cStandardMaintenance": {
+            "$ref": "#/components/schemas/accYesNo"
           },
           "consoleConnection": {
             "type": "string"
@@ -152098,6 +152276,9 @@
           "circuit": {
             "type": "string"
           },
+          "cRunbookUrl": {
+            "type": "string"
+          },
           "floorElid": {
             "type": "string"
           },
@@ -152170,6 +152351,9 @@
           "maxPower": {
             "format": "BigDecimal",
             "type": "number"
+          },
+          "cStandardMaintenance": {
+            "$ref": "#/components/schemas/accYesNo"
           },
           "consoleConnection": {
             "type": "string"
@@ -157413,6 +157597,9 @@
           "circuit": {
             "type": "string"
           },
+          "cRunbookUrl": {
+            "type": "string"
+          },
           "floorElid": {
             "type": "string"
           },
@@ -157498,6 +157685,9 @@
           "maxPower": {
             "format": "BigDecimal",
             "type": "number"
+          },
+          "cStandardMaintenance": {
+            "$ref": "#/components/schemas/accYesNo"
           },
           "consoleConnection": {
             "type": "string"
@@ -165004,6 +165194,9 @@
           "circuit": {
             "$ref": "#/components/schemas/RestrictionsString"
           },
+          "cRunbookUrl": {
+            "$ref": "#/components/schemas/RestrictionsString"
+          },
           "systemRuntime": {
             "$ref": "#/components/schemas/RestrictionsNumeric"
           },
@@ -165051,6 +165244,9 @@
           },
           "maxPower": {
             "$ref": "#/components/schemas/RestrictionsNumeric"
+          },
+          "cStandardMaintenance": {
+            "$ref": "#/components/schemas/RestrictionsString"
           },
           "consoleConnection": {
             "$ref": "#/components/schemas/RestrictionsString"
@@ -168076,10 +168272,6 @@
           "contextId": {
             "type": "string"
           },
-          "socketNo": {
-            "format": "BigDecimal",
-            "type": "number"
-          },
           "vtpDomain": {
             "type": "string"
           },
@@ -168087,9 +168279,6 @@
             "type": "string"
           },
           "vlan": {
-            "type": "string"
-          },
-          "socketSide": {
             "type": "string"
           },
           "portSpeed": {
@@ -173285,6 +173474,9 @@
           "sourceId": {
             "type": "string"
           },
+          "cRunbookUrl": {
+            "type": "string"
+          },
           "lifecycleStatus": {
             "$ref": "#/components/schemas/srmLifecycleStatus"
           },
@@ -173364,6 +173556,9 @@
           },
           "visibleId": {
             "type": "string"
+          },
+          "cStandardMaintenance": {
+            "$ref": "#/components/schemas/accYesNo"
           },
           "addVirtualDrive": {
             "items": {
@@ -178520,6 +178715,9 @@
             "format": "date-time",
             "type": "string"
           },
+          "cRunbookUrl": {
+            "type": "string"
+          },
           "lifecycleStatus": {
             "$ref": "#/components/schemas/srmLifecycleStatus"
           },
@@ -178599,6 +178797,9 @@
           },
           "visibleId": {
             "type": "string"
+          },
+          "cStandardMaintenance": {
+            "$ref": "#/components/schemas/accYesNo"
           },
           "virtualMachineType": {
             "$ref": "#/components/schemas/srmVirtMachineType"
@@ -182780,6 +182981,9 @@
           "circuit": {
             "type": "string"
           },
+          "cRunbookUrl": {
+            "type": "string"
+          },
           "sourceSystem": {
             "$ref": "#/components/schemas/sysSourceSystem"
           },
@@ -182839,6 +183043,9 @@
           "maxPower": {
             "format": "BigDecimal",
             "type": "number"
+          },
+          "cStandardMaintenance": {
+            "$ref": "#/components/schemas/accYesNo"
           },
           "consoleConnection": {
             "type": "string"
@@ -188453,6 +188660,9 @@
           "sourceId": {
             "type": "string"
           },
+          "cRunbookUrl": {
+            "type": "string"
+          },
           "lifecycleStatus": {
             "$ref": "#/components/schemas/srmLifecycleStatus"
           },
@@ -188535,6 +188745,9 @@
           },
           "visibleId": {
             "type": "string"
+          },
+          "cStandardMaintenance": {
+            "$ref": "#/components/schemas/accYesNo"
           },
           "addVirtualDrive": {
             "items": {
