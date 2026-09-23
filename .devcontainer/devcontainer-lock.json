@@ -1,0 +1,29 @@
+{
+  "features": {
+    "ghcr.io/devcontainers-extra/features/age:1": {
+      "version": "1.0.16",
+      "resolved": "ghcr.io/devcontainers-extra/features/age@sha256:78469fe5d5ded6a24d50bdb5dbd083c5cd44639969563f122a6a92d3a9326136",
+      "integrity": "sha256:78469fe5d5ded6a24d50bdb5dbd083c5cd44639969563f122a6a92d3a9326136"
+    },
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "1.8.3",
+      "resolved": "ghcr.io/devcontainers/features/java@sha256:61a839211feda1e2a1f10646648a948e733e4d98d770f3a4b6698a3c5fc92abe",
+      "integrity": "sha256:61a839211feda1e2a1f10646648a948e733e4d98d770f3a4b6698a3c5fc92abe"
+    },
+    "ghcr.io/eitsupi/devcontainer-features/jq-likes:2": {
+      "version": "2.1.1",
+      "resolved": "ghcr.io/eitsupi/devcontainer-features/jq-likes@sha256:6a8b044f9f424097ec6d212167836b26994a76a556cbcb202084be79fe8032bd",
+      "integrity": "sha256:6a8b044f9f424097ec6d212167836b26994a76a556cbcb202084be79fe8032bd"
+    },
+    "ghcr.io/rio/features/chezmoi:1": {
+      "version": "1.1.1",
+      "resolved": "ghcr.io/rio/features/chezmoi@sha256:1a32b6f89dc8d631ef56dd538e81c06c0d473e6f0a399f9e629d7de4a473d15a",
+      "integrity": "sha256:1a32b6f89dc8d631ef56dd538e81c06c0d473e6f0a399f9e629d7de4a473d15a"
+    },
+    "ghcr.io/witcom-gmbh/devcontainer-features/cocogitto:latest": {
+      "version": "0.0.1",
+      "resolved": "ghcr.io/witcom-gmbh/devcontainer-features/cocogitto@sha256:b462a75ad834cf67645d69e2f7ae172caa6a0efe94216e764ac7a7ad2bae8ff6",
+      "integrity": "sha256:b462a75ad834cf67645d69e2f7ae172caa6a0efe94216e764ac7a7ad2bae8ff6"
+    }
+  }
+}
