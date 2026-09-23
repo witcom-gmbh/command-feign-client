@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## v3.2.0 - 2026-09-23
+#### Features
+- Adds runbook-url and standard-maintenance fields to server-classes - (3721932) - iceman91176
+
+- - -
+
 ## v3.1.4 - 2025-07-05
 #### Bug Fixes
 - Fixes regression of re-added entities - (4d156eb) - iceman91176
